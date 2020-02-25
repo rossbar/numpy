@@ -247,6 +247,18 @@ _convert_from_tuple(PyObject *obj, int align)
 	        PyTuple_GET_SIZE(obj));
         return NULL;
     }
+    /* Allowed formats are: 
+     * (flexible_dtype, itemsize), (fixed_dtype, shape), or
+     * (field_name, field_dtype)
+     */
+/*    if (PyTuple_Check(PyTuple_GET_ITEM(obj, 0)) && 
+        PyTuple_Check(PyTuple_GET_ITEM(obj, 1))) {
+        PyErr_Format(PyExc_TypeError,
+            "Tuple must have format %s or %s",
+            "(flexible_dtype, itemsize)", "(fixed_dtype, shape)");
+        return NULL;
+    }
+*/
     PyArray_Descr *type = _convert_from_any(PyTuple_GET_ITEM(obj, 0), align);
     if (type == NULL) {
         return NULL;
