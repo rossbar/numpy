@@ -128,6 +128,7 @@ numpy/core/src/common/npy_binsearch.h
 numpy/core/src/common/npy_partition.h
 numpy/core/src/common/npy_sort.h
 numpy/core/src/common/templ_common.h
+numpy/core/src/common/npy_cpu_features.c
 numpy/core/src/multiarray/_multiarray_tests.c
 numpy/core/src/multiarray/arraytypes.c
 numpy/core/src/multiarray/einsum.c
