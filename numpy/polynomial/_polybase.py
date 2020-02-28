@@ -92,7 +92,16 @@ class ABCPolyBase(abc.ABC):
         8 : "\u2088",
         9 : "\u2089"
     }
-
+    @classmethod
+    def _num_to_superscript(cls, num):
+        return ''.join(
+            [cls._superscript_mapping[int(digit)] for digit in list(str(num))]
+        )
+    @classmethod
+    def _num_to_subscript(cls, num):
+        return ''.join(
+            [cls._subscript_mapping[int(digit)] for digit in list(str(num))]
+        )
 
     @property
     @abc.abstractmethod
@@ -321,9 +330,9 @@ class ABCPolyBase(abc.ABC):
                 out += f"- {coef}"
             # Handle different bases
             if self.basis_name is None:
-                out += f"x{self._superscript_mapping[power]} "
+                out += f"x{self._num_to_superscript(power)} "
             else:
-                out += f"{self.basis_name}{self._subscript_mapping[power]}(x) "
+                out += f"{self.basis_name}{self._num_to_subscript(power)}(x) "
         return out
 
     @classmethod
