@@ -67,6 +67,33 @@ class ABCPolyBase(abc.ABC):
     # Limit runaway size. T_n^m has degree n*m
     maxpower = 100
 
+    # Unicode character mappings for improved __str__
+    _superscript_mapping = {
+        0 : "\u2070",
+        1 : "\u00B9",
+        2 : "\u00B2",
+        3 : "\u00B3",
+        4 : "\u2074",
+        5 : "\u2075",
+        6 : "\u2076",
+        7 : "\u2077",
+        8 : "\u2078",
+        9 : "\u2079"
+    }
+    _subscript_mapping = {
+        0 : "\u2080",
+        1 : "\u2081",
+        2 : "\u2082",
+        3 : "\u2083",
+        4 : "\u2084",
+        5 : "\u2085",
+        6 : "\u2086",
+        7 : "\u2087",
+        8 : "\u2088",
+        9 : "\u2089"
+    }
+
+
     @property
     @abc.abstractmethod
     def domain(self):
@@ -284,9 +311,20 @@ class ABCPolyBase(abc.ABC):
         return f"{name}({coef}, domain={domain}, window={window})"
 
     def __str__(self):
-        coef = str(self.coef)
-        name = self.nickname
-        return f"{name}({coef})"
+        out = f"{self.coef[0]} "
+        for i, coef in enumerate(self.coef[1:]):
+            power = i + 1
+            # Determine +/-
+            if coef >= 0:
+                out += f"+ {coef}"
+            else:
+                out += f"- {coef}"
+            # Handle different bases
+            if self.basis_name is None:
+                out += f"x{self._superscript_mapping[power]} "
+            else:
+                out += f"{self.basis_name}{self._subscript_mapping[power]}(x) "
+        return out
 
     @classmethod
     def _repr_latex_term(cls, i, arg_str, needs_parens):
