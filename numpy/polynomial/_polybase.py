@@ -330,13 +330,13 @@ class ABCPolyBase(abc.ABC):
             if coef >= 0:
                 out += f"+ {coef}"
             else:
-                out += f"- {coef}"
+                out += f"- {np.abs(coef)}"
             # Handle different bases
             if self.basis_name is None:
                 out += f"x{self._num_to_superscript(power)} "
             else:
                 out += f"{self.basis_name}{self._num_to_subscript(power)}(x) "
-        return out
+        return out.rstrip(" ")
 
     @classmethod
     def _repr_latex_term(cls, i, arg_str, needs_parens):
