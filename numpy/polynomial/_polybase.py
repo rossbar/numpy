@@ -320,10 +320,13 @@ class ABCPolyBase(abc.ABC):
         return f"{name}({coef}, domain={domain}, window={window})"
 
     def __str__(self):
+        out = ""
+        if self.coef[0] < 0:
+            out += "-"
         out = f"{self.coef[0]} "
         for i, coef in enumerate(self.coef[1:]):
             power = i + 1
-            # Determine +/-
+            # Determine +/- symbol
             if coef >= 0:
                 out += f"+ {coef}"
             else:
