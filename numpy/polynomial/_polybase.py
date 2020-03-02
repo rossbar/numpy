@@ -68,40 +68,30 @@ class ABCPolyBase(abc.ABC):
     maxpower = 100
 
     # Unicode character mappings for improved __str__
-    _superscript_mapping = {
-        0 : "\u2070",
-        1 : "\u00B9",
-        2 : "\u00B2",
-        3 : "\u00B3",
-        4 : "\u2074",
-        5 : "\u2075",
-        6 : "\u2076",
-        7 : "\u2077",
-        8 : "\u2078",
-        9 : "\u2079"
-    }
-    _subscript_mapping = {
-        0 : "\u2080",
-        1 : "\u2081",
-        2 : "\u2082",
-        3 : "\u2083",
-        4 : "\u2084",
-        5 : "\u2085",
-        6 : "\u2086",
-        7 : "\u2087",
-        8 : "\u2088",
-        9 : "\u2089"
-    }
-    @classmethod
-    def _num_to_superscript(cls, num):
-        return ''.join(
-            [cls._superscript_mapping[int(digit)] for digit in list(str(num))]
-        )
-    @classmethod
-    def _num_to_subscript(cls, num):
-        return ''.join(
-            [cls._subscript_mapping[int(digit)] for digit in list(str(num))]
-        )
+    _superscript_mapping = str.maketrans({
+        "0" : "⁰",
+        "1" : "¹",
+        "2" : "²",
+        "3" : "³",
+        "4" : "⁴",
+        "5" : "⁵",
+        "6" : "⁶",
+        "7" : "⁷",
+        "8" : "⁸",
+        "9" : "⁹"
+    })
+    _subscript_mapping = str.maketrans({
+        "0" : "₀",
+        "1" : "₁",
+        "2" : "₂",
+        "3" : "₃",
+        "4" : "₄",
+        "5" : "₅",
+        "6" : "₆",
+        "7" : "₇",
+        "8" : "₈",
+        "9" : "₉"
+    })
 
     @property
     @abc.abstractmethod
@@ -325,7 +315,7 @@ class ABCPolyBase(abc.ABC):
             out += "-"
         out = f"{self.coef[0]} "
         for i, coef in enumerate(self.coef[1:]):
-            power = i + 1
+            power = str(i + 1)
             # Determine +/- symbol
             if coef >= 0:
                 out += f"+ {coef}"
@@ -333,9 +323,10 @@ class ABCPolyBase(abc.ABC):
                 out += f"- {np.abs(coef)}"
             # Handle different bases
             if self.basis_name is None:
-                out += f"x{self._num_to_superscript(power)} "
+                out += f"x{power.translate(self._superscript_mapping)} "
             else:
-                out += f"{self.basis_name}{self._num_to_subscript(power)}(x) "
+                out += (f"{self.basis_name}"
+                        f"{power.translate(self._subscript_mapping)}(x) ")
         return out.rstrip(" ")
 
     @classmethod
