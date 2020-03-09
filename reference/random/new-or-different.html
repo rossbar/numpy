@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -197,22 +197,22 @@ Cython.</p></li>
 <span class="gp">In [4]: </span><span class="o">%</span><span class="k">timeit</span> rg.standard_normal(100000)
 <span class="gp">   ...: </span><span class="o">%</span><span class="k">timeit</span> numpy.random.standard_normal(100000)
 <span class="gp">   ...: </span>
-<span class="go">1.09 ms +- 18.8 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
-<span class="go">1.89 ms +- 41.3 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">978 us +- 2.72 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">1.81 ms +- 1.46 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="o">%</span><span class="k">timeit</span> rg.standard_exponential(100000)
 <span class="gp">   ...: </span><span class="o">%</span><span class="k">timeit</span> numpy.random.standard_exponential(100000)
 <span class="gp">   ...: </span>
-<span class="go">399 us +- 586 ns per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
-<span class="go">1.37 ms +- 7.44 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">365 us +- 1.39 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">1.29 ms +- 834 ns per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
 </pre></div>
 </div>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span><span class="o">%</span><span class="k">timeit</span> rg.standard_gamma(3.0, 100000)
 <span class="gp">   ...: </span><span class="o">%</span><span class="k">timeit</span> numpy.random.standard_gamma(3.0, 100000)
 <span class="gp">   ...: </span>
-<span class="go">1.91 ms +- 4.69 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
-<span class="go">3.53 ms +- 7.01 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
+<span class="go">1.83 ms +- 41 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)</span>
+<span class="go">3.52 ms +- 34.3 us per loop (mean +- std. dev. of 7 runs, 100 loops each)</span>
 </pre></div>
 </div>
 <ul class="simple">
@@ -281,10 +281,10 @@ BitGenerators in parallel.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

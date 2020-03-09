@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.laguerre.lagder<a class="headerlink" href="#numpy-polynomial-laguerre-lagder" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.laguerre.lagder">
-<code class="sig-prename descclassname">numpy.polynomial.laguerre.</code><code class="sig-name descname">lagder</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">m=1</em>, <em class="sig-param">scl=1</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/laguerre.py#L588-L671"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.laguerre.lagder" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.laguerre.</code><code class="sig-name descname">lagder</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">m=1</em>, <em class="sig-param">scl=1</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/laguerre.py#L586-L669"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.laguerre.lagder" title="Permalink to this definition">¶</a></dt>
 <dd><p>Differentiate a Laguerre series.</p>
 <p>Returns the Laguerre series coefficients <em class="xref py py-obj">c</em> differentiated <em class="xref py py-obj">m</em> times
 along <em class="xref py py-obj">axis</em>.  At each iteration the result is multiplied by <em class="xref py py-obj">scl</em> (the
@@ -164,7 +164,7 @@ resemble the same operation on a power series. Thus the result of this
 function may be “unintuitive,” albeit correct; see Examples section
 below.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial.laguerre</span> <span class="kn">import</span> <span class="n">lagder</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial.laguerre</span> <span class="kn">import</span> <span class="n">lagder</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lagder</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span>  <span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.</span><span class="p">])</span>
 <span class="go">array([1.,  2.,  3.])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lagder</span><span class="p">([</span> <span class="mf">1.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.</span><span class="p">,</span>  <span class="mf">3.</span><span class="p">],</span> <span class="n">m</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
@@ -196,10 +196,10 @@ below.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

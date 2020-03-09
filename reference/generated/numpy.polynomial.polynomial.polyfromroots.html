@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.polynomial.polyfromroots<a class="headerlink" href="#numpy-polynomial-polynomial-polyfromroots" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.polynomial.polyfromroots">
-<code class="sig-prename descclassname">numpy.polynomial.polynomial.</code><code class="sig-name descname">polyfromroots</code><span class="sig-paren">(</span><em class="sig-param">roots</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/polynomial.py#L149-L207"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.polynomial.polyfromroots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.polynomial.</code><code class="sig-name descname">polyfromroots</code><span class="sig-paren">(</span><em class="sig-param">roots</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/polynomial.py#L147-L205"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.polynomial.polyfromroots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a monic polynomial with given roots.</p>
 <p>Return the coefficients of the polynomial</p>
 <div class="math">
@@ -160,7 +160,7 @@ of the form <em class="xref py py-obj">(x - r_i)</em>, i.e.</p>
 </div><p>where <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">==</span> <span class="pre">len(roots)</span> <span class="pre">-</span> <span class="pre">1</span></code>; note that this implies that <em class="xref py py-obj">1</em> is always
 returned for <img class="math" src="../../_images/math/e9f4d366f1d155ec8c37d785708c0c47e20de43d.svg" alt="a_n"/>.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial</span> <span class="kn">import</span> <span class="n">polynomial</span> <span class="k">as</span> <span class="n">P</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial</span> <span class="kn">import</span> <span class="n">polynomial</span> <span class="k">as</span> <span class="n">P</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">P</span><span class="o">.</span><span class="n">polyfromroots</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># x(x - 1)(x + 1) = x^3 - x</span>
 <span class="go">array([ 0., -1.,  0.,  1.])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">j</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -193,10 +193,10 @@ returned for <img class="math" src="../../_images/math/e9f4d366f1d155ec8c37d7857
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

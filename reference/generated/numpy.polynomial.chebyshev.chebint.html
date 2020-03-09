@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.chebyshev.chebint<a class="headerlink" href="#numpy-polynomial-chebyshev-chebint" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.chebyshev.chebint">
-<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebint</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">m=1</em>, <em class="sig-param">k=[]</em>, <em class="sig-param">lbnd=0</em>, <em class="sig-param">scl=1</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L963-L1087"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebint" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebint</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">m=1</em>, <em class="sig-param">k=[]</em>, <em class="sig-param">lbnd=0</em>, <em class="sig-param">scl=1</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L961-L1085"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebint" title="Permalink to this definition">¶</a></dt>
 <dd><p>Integrate a Chebyshev series.</p>
 <p>Returns the Chebyshev series coefficients <em class="xref py py-obj">c</em> integrated <em class="xref py py-obj">m</em> times from
 <em class="xref py py-obj">lbnd</em> along <em class="xref py py-obj">axis</em>. At each iteration the resulting series is
@@ -186,7 +186,7 @@ to be “reprojected” onto the C-series basis set.  Thus, typically,
 the result of this function is “unintuitive,” albeit correct; see
 Examples section below.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial</span> <span class="kn">import</span> <span class="n">chebyshev</span> <span class="k">as</span> <span class="n">C</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial</span> <span class="kn">import</span> <span class="n">chebyshev</span> <span class="k">as</span> <span class="n">C</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">chebint</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 <span class="go">array([ 0.5, -0.5,  0.5,  0.5])</span>
@@ -226,10 +226,10 @@ Examples section below.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -169,24 +169,24 @@ the same shape.</p>
 <p class="rubric">Examples</p>
 <p>What is the amortization schedule for a 1 year loan of $2500 at
 8.24% interest per year compounded monthly?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">principal</span> <span class="o">=</span> <span class="mf">2500.00</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">principal</span> <span class="o">=</span> <span class="mf">2500.00</span>
 </pre></div>
 </div>
 <p>The ‘per’ variable represents the periods of the loan.  Remember that
 financial equations start the period count at 1!</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">per</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">per</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ipmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ipmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ppmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ppmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="n">per</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Each element of the sum of the ‘ipmt’ and ‘ppmt’ arrays should equal
 ‘pmt’.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pmt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pmt</span><span class="p">(</span><span class="mf">0.0824</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="o">*</span><span class="mi">12</span><span class="p">,</span> <span class="n">principal</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">allclose</span><span class="p">(</span><span class="n">ipmt</span> <span class="o">+</span> <span class="n">ppmt</span><span class="p">,</span> <span class="n">pmt</span><span class="p">)</span>
 <span class="go">True</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0:2d}</span><span class="s1"> </span><span class="si">{1:8.2f}</span><span class="s1"> </span><span class="si">{2:8.2f}</span><span class="s1"> </span><span class="si">{3:8.2f}</span><span class="s1">&#39;</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fmt</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{0:2d}</span><span class="s1"> </span><span class="si">{1:8.2f}</span><span class="s1"> </span><span class="si">{2:8.2f}</span><span class="s1"> </span><span class="si">{3:8.2f}</span><span class="s1">&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">payment</span> <span class="ow">in</span> <span class="n">per</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">index</span> <span class="o">=</span> <span class="n">payment</span> <span class="o">-</span> <span class="mi">1</span>
 <span class="gp">... </span>    <span class="n">principal</span> <span class="o">=</span> <span class="n">principal</span> <span class="o">+</span> <span class="n">ppmt</span><span class="p">[</span><span class="n">index</span><span class="p">]</span>
@@ -205,7 +205,7 @@ financial equations start the period count at 1!</p>
 <span class="go">12  -216.26    -1.49    -0.00</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interestpd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ipmt</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">interestpd</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">ipmt</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">interestpd</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">-112.98</span>
 </pre></div>
@@ -235,10 +235,10 @@ financial equations start the period count at 1!</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

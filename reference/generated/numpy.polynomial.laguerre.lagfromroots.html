@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.laguerre.lagfromroots<a class="headerlink" href="#numpy-polynomial-laguerre-lagfromroots" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.laguerre.lagfromroots">
-<code class="sig-prename descclassname">numpy.polynomial.laguerre.</code><code class="sig-name descname">lagfromroots</code><span class="sig-paren">(</span><em class="sig-param">roots</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/laguerre.py#L252-L301"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.laguerre.lagfromroots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.laguerre.</code><code class="sig-name descname">lagfromroots</code><span class="sig-paren">(</span><em class="sig-param">roots</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/laguerre.py#L250-L299"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.laguerre.lagfromroots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a Laguerre series with given roots.</p>
 <p>The function returns the coefficients of the polynomial</p>
 <div class="math">
@@ -154,7 +154,7 @@ below).</p>
 <p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">legfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">chebfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermefromroots</span></code></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial.laguerre</span> <span class="kn">import</span> <span class="n">lagfromroots</span><span class="p">,</span> <span class="n">lagval</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial.laguerre</span> <span class="kn">import</span> <span class="n">lagfromroots</span><span class="p">,</span> <span class="n">lagval</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">coef</span> <span class="o">=</span> <span class="n">lagfromroots</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">lagval</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">coef</span><span class="p">)</span>
 <span class="go">array([0.,  0.,  0.])</span>
@@ -188,10 +188,10 @@ below).</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

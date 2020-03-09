@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -121,7 +121,7 @@ N-dimensional array distributed across multiple nodes, and <a class="reference e
 a GPU.</p>
 <p>To get a feel for writing custom array containers, we’ll begin with a simple
 example that has rather narrow utility but illustrates the concepts involved.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DiagonalArray</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
@@ -134,7 +134,7 @@ example that has rather narrow utility but illustrates the concepts involved.</p
 </pre></div>
 </div>
 <p>Our custom array can be instantiated like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">DiagonalArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">DiagonalArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span>
 <span class="go">DiagonalArray(N=5, value=1)</span>
 </pre></div>
@@ -142,7 +142,7 @@ example that has rather narrow utility but illustrates the concepts involved.</p
 <p>We can convert to a numpy array using <a class="reference internal" href="../reference/generated/numpy.array.html#numpy.array" title="numpy.array"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.array</span></code></a> or
 <a class="reference internal" href="../reference/generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.asarray</span></code></a>, which will call its <code class="docutils literal notranslate"><span class="pre">__array__</span></code> method to obtain a
 standard <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="go">array([[1., 0., 0., 0., 0.],</span>
 <span class="go">       [0., 1., 0., 0., 0.],</span>
 <span class="go">       [0., 0., 1., 0., 0.],</span>
@@ -153,7 +153,7 @@ standard <code class="docutils literal notranslate"><span class="pre">numpy.ndar
 <p>If we operate on <code class="docutils literal notranslate"><span class="pre">arr</span></code> with a numpy function, numpy will again use the
 <code class="docutils literal notranslate"><span class="pre">__array__</span></code> interface to convert it to an array and then apply the function
 in the usual way.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">array([[2., 0., 0., 0., 0.],</span>
 <span class="go">       [0., 2., 0., 0., 0.],</span>
 <span class="go">       [0., 0., 2., 0., 0.],</span>
@@ -162,7 +162,7 @@ in the usual way.</p>
 </pre></div>
 </div>
 <p>Notice that the return type is a standard <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 <span class="go">numpy.ndarray</span>
 </pre></div>
 </div>
@@ -182,7 +182,7 @@ on.  For the common case, <code class="docutils literal notranslate"><span class
 <li><p><code class="docutils literal notranslate"><span class="pre">kwargs</span></code>, keyword arguments passed to the function</p></li>
 </ul>
 <p>For this example we will only handle the method <code class="docutils literal notranslate"><span class="pre">__call__</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numbers</span> <span class="kn">import</span> <span class="n">Number</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DiagonalArray</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
@@ -214,7 +214,7 @@ on.  For the common case, <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 <p>Now our custom array type passes through numpy functions.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">DiagonalArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">DiagonalArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">DiagonalArray(N=5, value=3)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
@@ -224,7 +224,7 @@ on.  For the common case, <code class="docutils literal notranslate"><span class
 </pre></div>
 </div>
 <p>At this point <code class="docutils literal notranslate"><span class="pre">arr</span> <span class="pre">+</span> <span class="pre">3</span></code> does not work.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">+</span> <span class="mi">3</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="go">TypeError: unsupported operand type(s) for *: &#39;DiagonalArray&#39; and &#39;int&#39;</span>
 </pre></div>
 </div>
@@ -232,7 +232,7 @@ on.  For the common case, <code class="docutils literal notranslate"><span class
 and so on to dispatch to the corresponding ufunc. We can achieve this
 conveniently by inheriting from the mixin
 <a class="reference internal" href="../reference/generated/numpy.lib.mixins.NDArrayOperatorsMixin.html#numpy.lib.mixins.NDArrayOperatorsMixin" title="numpy.lib.mixins.NDArrayOperatorsMixin"><code class="xref py py-class docutils literal notranslate"><span class="pre">NDArrayOperatorsMixin</span></code></a>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.lib.mixins</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.lib.mixins</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DiagonalArray</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">mixins</span><span class="o">.</span><span class="n">NDArrayOperatorsMixin</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
@@ -263,7 +263,7 @@ conveniently by inheriting from the mixin
 <span class="gp">...</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">DiagonalArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">DiagonalArray</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">+</span> <span class="mi">3</span>
 <span class="go">DiagonalArray(N=5, value=4)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span>
@@ -272,7 +272,7 @@ conveniently by inheriting from the mixin
 </div>
 <p>Now let’s tackle <code class="docutils literal notranslate"><span class="pre">__array_function__</span></code>. We’ll create dict that maps numpy
 functions to our custom variants.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">HANDLED_FUNCTIONS</span> <span class="o">=</span> <span class="p">{}</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">HANDLED_FUNCTIONS</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">DiagonalArray</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">mixins</span><span class="o">.</span><span class="n">NDArrayOperatorsMixin</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
@@ -314,7 +314,7 @@ functions to our custom variants.</p>
 </div>
 <p>A convenient pattern is to define a decorator <code class="docutils literal notranslate"><span class="pre">implements</span></code> that can be used
 to add functions to <code class="docutils literal notranslate"><span class="pre">HANDLED_FUNCTIONS</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">implements</span><span class="p">(</span><span class="n">np_function</span><span class="p">):</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">implements</span><span class="p">(</span><span class="n">np_function</span><span class="p">):</span>
 <span class="gp">... </span>   <span class="s2">&quot;Register an __array_function__ implementation for DiagonalArray objects.&quot;</span>
 <span class="gp">... </span>   <span class="k">def</span> <span class="nf">decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
 <span class="gp">... </span>       <span class="n">HANDLED_FUNCTIONS</span><span class="p">[</span><span class="n">np_function</span><span class="p">]</span> <span class="o">=</span> <span class="n">func</span>
@@ -326,7 +326,7 @@ to add functions to <code class="docutils literal notranslate"><span class="pre"
 <p>Now we write implementations of numpy functions for <code class="docutils literal notranslate"><span class="pre">DiagonalArray</span></code>.
 For completeness, to support the usage <code class="docutils literal notranslate"><span class="pre">arr.sum()</span></code> add a method <code class="docutils literal notranslate"><span class="pre">sum</span></code> that
 calls <code class="docutils literal notranslate"><span class="pre">numpy.sum(self)</span></code>, and the same for <code class="docutils literal notranslate"><span class="pre">mean</span></code>.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@implements</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@implements</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
 <span class="gp">... </span><span class="k">def</span> <span class="nf">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="s2">&quot;Implementation of np.sum for DiagonalArray objects&quot;</span>
 <span class="gp">... </span>    <span class="k">return</span> <span class="n">arr</span><span class="o">.</span><span class="n">_i</span> <span class="o">*</span> <span class="n">arr</span><span class="o">.</span><span class="n">_N</span>
@@ -348,19 +348,19 @@ calls <code class="docutils literal notranslate"><span class="pre">numpy.sum(sel
 this operation is not supported. For example, concatenating two
 <code class="docutils literal notranslate"><span class="pre">DiagonalArrays</span></code> does not produce another diagonal array, so it is not
 supported.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">arr</span><span class="p">,</span> <span class="n">arr</span><span class="p">])</span>
 <span class="go">TypeError: no implementation found for &#39;numpy.concatenate&#39; on types that implement __array_function__: [&lt;class &#39;__main__.DiagonalArray&#39;&gt;]</span>
 </pre></div>
 </div>
 <p>Additionally, our implementations of <code class="docutils literal notranslate"><span class="pre">sum</span></code> and <code class="docutils literal notranslate"><span class="pre">mean</span></code> do not accept the
 optional arguments that numpy’s implementation does.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">TypeError: sum() got an unexpected keyword argument &#39;axis&#39;</span>
 </pre></div>
 </div>
 <p>The user always has the option of converting to a normal <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> with
 <a class="reference internal" href="../reference/generated/numpy.asarray.html#numpy.asarray" title="numpy.asarray"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.asarray</span></code></a> and using standard numpy from there.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)])</span>
 <span class="go">array([[1., 0., 0., 0., 0.],</span>
 <span class="go">       [0., 1., 0., 0., 0.],</span>
 <span class="go">       [0., 0., 1., 0., 0.],</span>
@@ -400,10 +400,10 @@ examples of custom array containers.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

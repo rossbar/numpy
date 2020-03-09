@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -202,7 +202,7 @@ the <a class="reference internal" href="#numpy.distutils.misc_util.Configuration
 <dd><p>Return a dictionary compatible with the keyword arguments of distutils
 setup function.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">setup</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="o">.</span><span class="n">todict</span><span class="p">())</span>                           
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">setup</span><span class="p">(</span><span class="o">**</span><span class="n">config</span><span class="o">.</span><span class="n">todict</span><span class="p">())</span>                           
 </pre></div>
 </div>
 </dd></dl>
@@ -321,7 +321,7 @@ the data-files. This is useful when the data files are generated while
 building the package.</p>
 <p class="rubric">Examples</p>
 <p>Add files to the list of data_files to be included with the package.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">add_data_files</span><span class="p">(</span><span class="s1">&#39;foo.dat&#39;</span><span class="p">,</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">add_data_files</span><span class="p">(</span><span class="s1">&#39;foo.dat&#39;</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="p">(</span><span class="s1">&#39;fun&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;gun.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;nun/pun.dat&#39;</span><span class="p">,</span> <span class="s1">&#39;/tmp/sun.dat&#39;</span><span class="p">]),</span>
 <span class="gp">... </span>    <span class="s1">&#39;bar/cat.dat&#39;</span><span class="p">,</span>
 <span class="gp">... </span>    <span class="s1">&#39;/full/path/to/can.dat&#39;</span><span class="p">)</span>                   
@@ -386,7 +386,7 @@ to package dir.</p></li>
 <p class="rubric">Examples</p>
 <p>For example suppose the source directory contains fun/foo.dat and
 fun/bar/car.dat:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">add_data_dir</span><span class="p">(</span><span class="s1">&#39;fun&#39;</span><span class="p">)</span>                       
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">add_data_dir</span><span class="p">(</span><span class="s1">&#39;fun&#39;</span><span class="p">)</span>                       
 <span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">add_data_dir</span><span class="p">((</span><span class="s1">&#39;sun&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">))</span>              
 <span class="gp">&gt;&gt;&gt; </span><span class="bp">self</span><span class="o">.</span><span class="n">add_data_dir</span><span class="p">((</span><span class="s1">&#39;gun&#39;</span><span class="p">,</span> <span class="s1">&#39;/full/path/to/fun&#39;</span><span class="p">))</span>
 </pre></div>
@@ -885,10 +885,10 @@ for all other cases. See <a class="reference internal" href="distutils_guide.htm
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

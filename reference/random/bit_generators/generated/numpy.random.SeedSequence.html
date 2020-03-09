@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -148,7 +148,7 @@ reconstructing a <a class="reference internal" href="#numpy.random.SeedSequence"
 <p>Best practice for achieving reproducible bit streams is to use
 the default <code class="docutils literal notranslate"><span class="pre">None</span></code> for the initial entropy, and then use
 <a class="reference internal" href="numpy.random.SeedSequence.entropy.html#numpy.random.SeedSequence.entropy" title="numpy.random.SeedSequence.entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeedSequence.entropy</span></code></a> to log/pickle the <a class="reference internal" href="numpy.random.SeedSequence.entropy.html#numpy.random.SeedSequence.entropy" title="numpy.random.SeedSequence.entropy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">entropy</span></code></a> for reproducibility:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sq1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">SeedSequence</span><span class="p">()</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sq1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">SeedSequence</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sq1</span><span class="o">.</span><span class="n">entropy</span>
 <span class="go">243799254704924441050048792905230269161  # random</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">sq2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">SeedSequence</span><span class="p">(</span><span class="n">sq1</span><span class="o">.</span><span class="n">entropy</span><span class="p">)</span>
@@ -208,10 +208,10 @@ the default <code class="docutils literal notranslate"><span class="pre">None</s
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

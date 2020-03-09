@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -31,7 +31,7 @@
     <link rel="search" title="Search" href="../../search.html" >
     <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Chebyshev Series (numpy.polynomial.chebyshev)" href="../routines.polynomials.chebyshev.html" >
-    <link rel="next" title="Hermite Series (numpy.polynomial.hermite)" href="../routines.polynomials.hermite.html" >
+    <link rel="next" title="Hermite Series, “Physicists” (numpy.polynomial.hermite)" href="../routines.polynomials.hermite.html" >
     <link rel="prev" title="numpy.polynomial.chebyshev.poly2cheb" href="numpy.polynomial.chebyshev.poly2cheb.html" > 
   </head>
   <body>
@@ -71,7 +71,7 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="../routines.polynomials.hermite.html" title="Hermite Series (numpy.polynomial.hermite)"
+        <a href="../routines.polynomials.hermite.html" title="Hermite Series, “Physicists” (numpy.polynomial.hermite)"
            accesskey="N">next</a>
       </li>
       <li class="active">
@@ -93,7 +93,7 @@
                         title="previous chapter">numpy.polynomial.chebyshev.poly2cheb</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../routines.polynomials.hermite.html"
-                        title="next chapter">Hermite Series (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.polynomial.hermite</span></code>)</a></p>
+                        title="next chapter">Hermite Series, “Physicists” (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.polynomial.hermite</span></code>)</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.chebyshev.chebinterpolate<a class="headerlink" href="#numpy-polynomial-chebyshev-chebinterpolate" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.chebyshev.chebinterpolate">
-<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebinterpolate</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">deg</em>, <em class="sig-param">args=()</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L1770-L1834"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebinterpolate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebinterpolate</code><span class="sig-paren">(</span><em class="sig-param">func</em>, <em class="sig-param">deg</em>, <em class="sig-param">args=()</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L1768-L1832"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebinterpolate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Interpolate a function at the Chebyshev points of the first kind.</p>
 <p>Returns the Chebyshev series that interpolates <em class="xref py py-obj">func</em> at the Chebyshev
 points of the first kind in the interval [-1, 1]. The interpolating
@@ -157,7 +157,7 @@ is especially useful if it is known apriori that some of coefficients are
 zero. For instance, if the function is even then the coefficients of the
 terms of odd degree in the result can be set to zero.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.polynomial.chebyshev</span> <span class="k">as</span> <span class="nn">C</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.polynomial.chebyshev</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">chebfromfunction</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
 <span class="go">array([  5.00000000e-01,   8.11675684e-01,  -9.86864911e-17,</span>
 <span class="go">        -5.42457905e-02,  -2.71387850e-16,   4.51658839e-03,</span>
@@ -189,10 +189,10 @@ terms of odd degree in the result can be set to zero.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

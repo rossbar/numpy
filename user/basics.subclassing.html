@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -168,7 +168,7 @@ instance creation.</p>
 <p><em>View casting</em> is the standard ndarray mechanism by which you take an
 ndarray of any subclass, and return a view of the array as another
 (specified) subclass:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># create a completely useless ndarray subclass</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">C</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">):</span> <span class="k">pass</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># create a standard ndarray</span>
@@ -187,7 +187,7 @@ similar mechanism to <a class="reference internal" href="#view-casting"><span cl
 create a new instance from a template instance.  The most obvious place
 this has to happen is when you are taking slices of subclassed arrays.
 For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">c_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="o">=</span> <span class="n">c_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="c1"># the view is of type &#39;C&#39;</span>
 <span class="go">&lt;class &#39;C&#39;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">v</span> <span class="ow">is</span> <span class="n">c_arr</span> <span class="c1"># but it&#39;s a new instance</span>
@@ -244,7 +244,7 @@ __new__ documentation</a> for more detail.</p>
 </pre></div>
 </div>
 <p>meaning that we get:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
 <span class="go">Cls in __new__: &lt;class &#39;C&#39;&gt;</span>
 <span class="go">Args in __new__: (&#39;hello&#39;,)</span>
 <span class="go">type(self) in __init__: &lt;class &#39;C&#39;&gt;</span>
@@ -276,7 +276,7 @@ of some other class.  Consider the following:</p>
 </pre></div>
 </div>
 <p>meaning that:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">D</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">)</span>
 <span class="go">D cls is: &lt;class &#39;D&#39;&gt;</span>
 <span class="go">D args in __new__: (&#39;hello&#39;,)</span>
 <span class="go">Cls in __new__: &lt;class &#39;C&#39;&gt;</span>
@@ -358,7 +358,7 @@ methods of instance creation above.</p>
 </pre></div>
 </div>
 <p>Now:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Explicit constructor</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># Explicit constructor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">C</span><span class="p">((</span><span class="mi">10</span><span class="p">,))</span>
 <span class="go">In __new__ with class &lt;class &#39;C&#39;&gt;</span>
 <span class="go">In array_finalize:</span>
@@ -450,7 +450,7 @@ defaults for new object attributes, among other tasks.</p>
 </pre></div>
 </div>
 <p>Using the object looks like this:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">InfoArray</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span> <span class="c1"># explicit constructor</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">InfoArray</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,))</span> <span class="c1"># explicit constructor</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="go">&lt;class &#39;InfoArray&#39;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span><span class="o">.</span><span class="n">info</span> <span class="ow">is</span> <span class="kc">None</span>
@@ -501,7 +501,7 @@ as our type, and adds an extra attribute.</p>
 </pre></div>
 </div>
 <p>So:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">RealisticInfoArray</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">info</span><span class="o">=</span><span class="s1">&#39;information&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
 <span class="go">&lt;class &#39;RealisticInfoArray&#39;&gt;</span>
@@ -606,7 +606,7 @@ following.</p>
 converts any instances of its own to regular ndarray (otherwise, we’d
 get infinite recursion!), and adds an <code class="docutils literal notranslate"><span class="pre">info</span></code> dictionary that tells
 which inputs and outputs it converted. Hence, e.g.,</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">5.</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">5.</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="o">.</span><span class="n">info</span>
 <span class="go">{&#39;inputs&#39;: [0]}</span>
@@ -690,7 +690,7 @@ some print statements:</p>
 </pre></div>
 </div>
 <p>We run a ufunc on an instance of our new array:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">MySubClass</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">info</span><span class="o">=</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">MySubClass</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="n">info</span><span class="o">=</span><span class="s1">&#39;spam&#39;</span><span class="p">)</span>
 <span class="go">In __array_finalize__:</span>
 <span class="go">   self is MySubClass([0, 1, 2, 3, 4])</span>
 <span class="go">   obj is array([0, 1, 2, 3, 4])</span>
@@ -721,7 +721,7 @@ attribute.  This has all happened at the C level.</p>
         <span class="k">return</span> <span class="s1">&#39;I lost your data&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">obj</span> <span class="o">=</span> <span class="n">arr1</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">SillySubClass</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">multiply</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">arr2</span><span class="p">)</span>
@@ -757,7 +757,7 @@ created an ndarray, <code class="docutils literal notranslate"><span class="pre"
 The two objects are looking at the same memory.  NumPy keeps track of
 where the data came from for a particular array or view, with the
 <code class="docutils literal notranslate"><span class="pre">base</span></code> attribute:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># A normal ndarray, that owns its own data</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># A normal ndarray, that owns its own data</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># In this case, base is None</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">arr</span><span class="o">.</span><span class="n">base</span> <span class="ow">is</span> <span class="kc">None</span>
@@ -846,10 +846,10 @@ your function’s signature should accept <code class="docutils literal notransl
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

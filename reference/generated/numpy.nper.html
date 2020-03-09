@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -159,14 +159,14 @@ Use the corresponding function in the numpy-financial library,
 <p class="rubric">Examples</p>
 <p>If you only had $150/month to pay towards the loan, how long would it take
 to pay-off a loan of $8,000 at 7% annual interest?</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="mi">5</span><span class="p">))</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">150</span><span class="p">,</span> <span class="mi">8000</span><span class="p">),</span> <span class="mi">5</span><span class="p">))</span>
 <span class="go">64.07335</span>
 </pre></div>
 </div>
 <p>So, over 64 months would be required to pay off the loan.</p>
 <p>The same analysis could be done with several different interest rates
 and/or payments and/or total amounts to produce an entire table.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">:</span> <span class="mf">0.08</span><span class="o">/</span><span class="mi">12</span><span class="p">:</span> <span class="mf">0.01</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">nper</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ogrid</span><span class="p">[</span><span class="mf">0.07</span><span class="o">/</span><span class="mi">12</span><span class="p">:</span> <span class="mf">0.08</span><span class="o">/</span><span class="mi">12</span><span class="p">:</span> <span class="mf">0.01</span><span class="o">/</span><span class="mi">12</span><span class="p">,</span>
 <span class="gp">... </span>                   <span class="o">-</span><span class="mi">150</span>   <span class="p">:</span> <span class="o">-</span><span class="mi">99</span>     <span class="p">:</span> <span class="mi">50</span>    <span class="p">,</span>
 <span class="gp">... </span>                   <span class="mi">8000</span>   <span class="p">:</span> <span class="mi">9001</span>    <span class="p">:</span> <span class="mi">1000</span><span class="p">]))</span>
 <span class="go">array([[[ 64.07334877,  74.06368256],</span>
@@ -200,10 +200,10 @@ and/or payments and/or total amounts to produce an entire table.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

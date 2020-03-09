@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -153,7 +153,7 @@ for object arrays: for floating point, use <a class="reference internal" href="n
 </dl>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.ma</span> <span class="k">as</span> <span class="nn">ma</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.ma</span> <span class="k">as</span> <span class="nn">ma</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">food</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s1">&#39;green_eggs&#39;</span><span class="p">,</span> <span class="s1">&#39;ham&#39;</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="c1"># don&#39;t eat spoiled food</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">eat</span> <span class="o">=</span> <span class="n">ma</span><span class="o">.</span><span class="n">masked_object</span><span class="p">(</span><span class="n">food</span><span class="p">,</span> <span class="s1">&#39;green_eggs&#39;</span><span class="p">)</span>
@@ -173,7 +173,7 @@ for object arrays: for floating point, use <a class="reference internal" href="n
 </pre></div>
 </div>
 <p>Note that <em class="xref py py-obj">mask</em> is set to <code class="docutils literal notranslate"><span class="pre">nomask</span></code> if possible.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eat</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">eat</span>
 <span class="go">masked_array(data=[&#39;cheese&#39;, &#39;ham&#39;, &#39;pineapple&#39;],</span>
 <span class="go">             mask=False,</span>
 <span class="go">       fill_value=&#39;green_eggs&#39;,</span>
@@ -205,10 +205,10 @@ for object arrays: for floating point, use <a class="reference internal" href="n
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

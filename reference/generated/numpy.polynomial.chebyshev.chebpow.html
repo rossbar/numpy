@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.chebyshev.chebpow<a class="headerlink" href="#numpy-polynomial-chebyshev-chebpow" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.chebyshev.chebpow">
-<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebpow</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">pow</em>, <em class="sig-param">maxpower=16</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L813-L868"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebpow" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebpow</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">pow</em>, <em class="sig-param">maxpower=16</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L811-L866"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebpow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise a Chebyshev series to a power.</p>
 <p>Returns the Chebyshev series <em class="xref py py-obj">c</em> raised to the power <em class="xref py py-obj">pow</em>. The
 argument <em class="xref py py-obj">c</em> is a sequence of coefficients ordered from low to high.
@@ -147,7 +147,7 @@ to unmanageable size. Default is 16</p>
 <p><a class="reference internal" href="numpy.polynomial.chebyshev.chebadd.html#numpy.polynomial.chebyshev.chebadd" title="numpy.polynomial.chebyshev.chebadd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebadd</span></code></a>, <a class="reference internal" href="numpy.polynomial.chebyshev.chebsub.html#numpy.polynomial.chebyshev.chebsub" title="numpy.polynomial.chebyshev.chebsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebsub</span></code></a>, <a class="reference internal" href="numpy.polynomial.chebyshev.chebmulx.html#numpy.polynomial.chebyshev.chebmulx" title="numpy.polynomial.chebyshev.chebmulx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebmulx</span></code></a>, <a class="reference internal" href="numpy.polynomial.chebyshev.chebmul.html#numpy.polynomial.chebyshev.chebmul" title="numpy.polynomial.chebyshev.chebmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebmul</span></code></a>, <a class="reference internal" href="numpy.polynomial.chebyshev.chebdiv.html#numpy.polynomial.chebyshev.chebdiv" title="numpy.polynomial.chebyshev.chebdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebdiv</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial</span> <span class="kn">import</span> <span class="n">chebyshev</span> <span class="k">as</span> <span class="n">C</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial</span> <span class="kn">import</span> <span class="n">chebyshev</span> <span class="k">as</span> <span class="n">C</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">chebpow</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">array([15.5, 22. , 16. , ..., 12.5, 12. ,  8. ])</span>
 </pre></div>
@@ -177,10 +177,10 @@ to unmanageable size. Default is 16</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.chebyshev.chebfromroots<a class="headerlink" href="#numpy-polynomial-chebyshev-chebfromroots" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.chebyshev.chebfromroots">
-<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebfromroots</code><span class="sig-paren">(</span><em class="sig-param">roots</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L514-L562"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebfromroots" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.chebyshev.</code><code class="sig-name descname">chebfromroots</code><span class="sig-paren">(</span><em class="sig-param">roots</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/chebyshev.py#L512-L560"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.chebyshev.chebfromroots" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate a Chebyshev series with given roots.</p>
 <p>The function returns the coefficients of the polynomial</p>
 <div class="math">
@@ -154,7 +154,7 @@ below).</p>
 <p><code class="xref py py-obj docutils literal notranslate"><span class="pre">polyfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">legfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">lagfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermfromroots</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermefromroots</span></code></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.polynomial.chebyshev</span> <span class="k">as</span> <span class="nn">C</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy.polynomial.chebyshev</span> <span class="k">as</span> <span class="nn">C</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">C</span><span class="o">.</span><span class="n">chebfromroots</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># x^3 - x relative to the standard basis</span>
 <span class="go">array([ 0.  , -0.25,  0.  ,  0.25])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">j</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -187,10 +187,10 @@ below).</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

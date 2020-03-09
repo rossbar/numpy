@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -161,7 +161,7 @@ function, a common function in statistical modeling. Logit is also
 interesting because, due to the magic of IEEE standards (specifically
 IEEE 754), all of the logit functions created below
 automatically have the following behavior.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">logit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">-inf</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">logit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">inf</span>
@@ -311,7 +311,7 @@ as-is to numpy arrays. To do so we must call numpy.vectorize on it.
 For example, if a python interpreter is opened in the file containing
 the spam library or spam has been installed, one can perform the
 following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">spam</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">spam</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="go">-inf</span>
@@ -491,7 +491,7 @@ or installed to site-packages via python setup.py install.</p>
 </div>
 </div></blockquote>
 <p>After the above has been installed, it can be imported and used as follows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">npufunc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">npufunc</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="go">0.0</span>
@@ -742,7 +742,7 @@ or installed to site-packages via python setup.py install.</p>
 </div>
 </div></blockquote>
 <p>After the above has been installed, it can be imported and used as follows.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">npufunc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">npufunc</span><span class="o">.</span><span class="n">logit</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 <span class="go">0.0</span>
@@ -1079,10 +1079,10 @@ adapted from the umath module</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

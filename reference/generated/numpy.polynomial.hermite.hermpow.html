@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -30,7 +30,7 @@
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
     <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
-    <link rel="up" title="Hermite Series (numpy.polynomial.hermite)" href="../routines.polynomials.hermite.html" >
+    <link rel="up" title="Hermite Series, “Physicists” (numpy.polynomial.hermite)" href="../routines.polynomials.hermite.html" >
     <link rel="next" title="numpy.polynomial.hermite.hermval" href="numpy.polynomial.hermite.hermval.html" >
     <link rel="prev" title="numpy.polynomial.hermite.hermdiv" href="numpy.polynomial.hermite.hermdiv.html" > 
   </head>
@@ -61,7 +61,7 @@
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
           <li class="active"><a href="../routines.html" >Routines</a></li>
           <li class="active"><a href="../routines.polynomials.html" >Polynomials</a></li>
-          <li class="active"><a href="../routines.polynomials.hermite.html" accesskey="U">Hermite Series (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.polynomial.hermite</span></code>)</a></li> 
+          <li class="active"><a href="../routines.polynomials.hermite.html" accesskey="U">Hermite Series, “Physicists” (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.polynomial.hermite</span></code>)</a></li> 
     </ul>
               
               
@@ -117,7 +117,7 @@
 <h1>numpy.polynomial.hermite.hermpow<a class="headerlink" href="#numpy-polynomial-hermite-hermpow" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.hermite.hermpow">
-<code class="sig-prename descclassname">numpy.polynomial.hermite.</code><code class="sig-name descname">hermpow</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">pow</em>, <em class="sig-param">maxpower=16</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/hermite.py#L554-L588"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.hermite.hermpow" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.hermite.</code><code class="sig-name descname">hermpow</code><span class="sig-paren">(</span><em class="sig-param">c</em>, <em class="sig-param">pow</em>, <em class="sig-param">maxpower=16</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/hermite.py#L552-L586"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.hermite.hermpow" title="Permalink to this definition">¶</a></dt>
 <dd><p>Raise a Hermite series to a power.</p>
 <p>Returns the Hermite series <em class="xref py py-obj">c</em> raised to the power <em class="xref py py-obj">pow</em>. The
 argument <em class="xref py py-obj">c</em> is a sequence of coefficients ordered from low to high.
@@ -147,7 +147,7 @@ to unmanageable size. Default is 16</p>
 <p><a class="reference internal" href="numpy.polynomial.hermite.hermadd.html#numpy.polynomial.hermite.hermadd" title="numpy.polynomial.hermite.hermadd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermadd</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite.hermsub.html#numpy.polynomial.hermite.hermsub" title="numpy.polynomial.hermite.hermsub"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermsub</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite.hermmulx.html#numpy.polynomial.hermite.hermmulx" title="numpy.polynomial.hermite.hermmulx"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermmulx</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite.hermmul.html#numpy.polynomial.hermite.hermmul" title="numpy.polynomial.hermite.hermmul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermmul</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite.hermdiv.html#numpy.polynomial.hermite.hermdiv" title="numpy.polynomial.hermite.hermdiv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermdiv</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial.hermite</span> <span class="kn">import</span> <span class="n">hermpow</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.polynomial.hermite</span> <span class="kn">import</span> <span class="n">hermpow</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hermpow</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="mi">2</span><span class="p">)</span>
 <span class="go">array([81.,  52.,  82.,  12.,   9.])</span>
 </pre></div>
@@ -177,10 +177,10 @@ to unmanageable size. Default is 16</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

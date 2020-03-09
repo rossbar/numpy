@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -148,11 +148,11 @@ but Python floats on most platforms have a machine epsilon equal to
 2.2204460492503131e-16.  You can use ‘np.finfo(float).eps’ to print
 out the machine epsilon for floats.</p>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
 <span class="go">2.2204460492503131e-16 # may vary</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">real_if_close</span><span class="p">([</span><span class="mf">2.1</span> <span class="o">+</span> <span class="mf">4e-14j</span><span class="p">],</span> <span class="n">tol</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">real_if_close</span><span class="p">([</span><span class="mf">2.1</span> <span class="o">+</span> <span class="mf">4e-14j</span><span class="p">],</span> <span class="n">tol</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="go">array([2.1])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">real_if_close</span><span class="p">([</span><span class="mf">2.1</span> <span class="o">+</span> <span class="mf">4e-13j</span><span class="p">],</span> <span class="n">tol</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
 <span class="go">array([2.1+4.e-13j])</span>
@@ -183,10 +183,10 @@ out the machine epsilon for floats.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -140,7 +140,7 @@ determined. If not given, None is returned for those objects.</p>
 <p><a class="reference internal" href="numpy.sctype2char.html#numpy.sctype2char" title="numpy.sctype2char"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sctype2char</span></code></a>, <a class="reference internal" href="numpy.issctype.html#numpy.issctype" title="numpy.issctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issctype</span></code></a>, <a class="reference internal" href="numpy.issubsctype.html#numpy.issubsctype" title="numpy.issubsctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubsctype</span></code></a>, <a class="reference internal" href="numpy.issubdtype.html#numpy.issubdtype" title="numpy.issubdtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubdtype</span></code></a>, <a class="reference internal" href="numpy.maximum_sctype.html#numpy.maximum_sctype" title="numpy.maximum_sctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum_sctype</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
 <span class="go">&lt;class &#39;numpy.int32&#39;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">]))</span>
 <span class="go">&lt;class &#39;numpy.float64&#39;&gt;</span>
@@ -148,12 +148,12 @@ determined. If not given, None is returned for those objects.</p>
 <span class="go">&lt;class &#39;numpy.complex128&#39;&gt;</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="nb">dict</span><span class="p">)</span>
 <span class="go">&lt;class &#39;numpy.object_&#39;&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="s1">&#39;string&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">obj2sctype</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="nb">list</span><span class="p">)</span>
 <span class="go">&lt;class &#39;list&#39;&gt;</span>
 </pre></div>
 </div>
@@ -182,10 +182,10 @@ determined. If not given, None is returned for those objects.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

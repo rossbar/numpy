@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -163,14 +163,14 @@ floating-point datatypes. For positive <em class="xref py py-obj">decimals</em> 
 error due to the inexact representation of decimal fractions in the IEEE
 floating point standard <a class="reference internal" href="#r907366b089c1-1" id="id1">[1]</a> and errors introduced when scaling by powers
 of ten. For instance, note the extra “1” in the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">56294995342131.51</span>
 </pre></div>
 </div>
 <p>If your goal is to print such values with a fixed number of decimals, it is
 preferable to use numpy’s float printing routines to limit the number of
 printed decimals:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_float_positional</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_float_positional</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="n">precision</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 <span class="go">&#39;56294995342131.5&#39;</span>
 </pre></div>
 </div>
@@ -179,7 +179,7 @@ demanding algorithm to compute the number of digits after the decimal
 point.</p>
 <p>Alternatively, Python’s builtin <a class="reference external" href="https://docs.python.org/dev/library/functions.html#round" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a> function uses a more accurate
 but slower algorithm for 64-bit floating point values:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">56294995342131.5</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mf">16.055</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">16.055</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># equals 16.0549999999999997</span>
 <span class="go">(16.06, 16.05)</span>
@@ -198,7 +198,7 @@ Roundoff in Floating-Point Computation?”, William Kahan,
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">([</span><span class="mf">0.37</span><span class="p">,</span> <span class="mf">1.64</span><span class="p">])</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">([</span><span class="mf">0.37</span><span class="p">,</span> <span class="mf">1.64</span><span class="p">])</span>
 <span class="go">array([0.,  2.])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">around</span><span class="p">([</span><span class="mf">0.37</span><span class="p">,</span> <span class="mf">1.64</span><span class="p">],</span> <span class="n">decimals</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 <span class="go">array([0.4,  1.6])</span>
@@ -235,10 +235,10 @@ Roundoff in Floating-Point Computation?”, William Kahan,
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>

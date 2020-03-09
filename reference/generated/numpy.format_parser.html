@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+9bb6a51',
+        VERSION:     '1.19.0.dev0+562c6ce',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -153,7 +153,7 @@ used. For all available string specifiers, see <a class="reference internal" hre
 <p><a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a>, <a class="reference internal" href="numpy.typename.html#numpy.typename" title="numpy.typename"><code class="xref py py-obj docutils literal notranslate"><span class="pre">typename</span></code></a>, <a class="reference internal" href="numpy.sctype2char.html#numpy.sctype2char" title="numpy.sctype2char"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sctype2char</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="s1">&#39;&lt;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;a5&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">,</span> <span class="s1">&#39;col3&#39;</span><span class="p">],</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="s1">&#39;&lt;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;a5&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">,</span> <span class="s1">&#39;col3&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                 <span class="p">[</span><span class="s1">&#39;T1&#39;</span><span class="p">,</span> <span class="s1">&#39;T2&#39;</span><span class="p">,</span> <span class="s1">&#39;T3&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dtype</span>
 <span class="go">dtype([((&#39;T1&#39;, &#39;col1&#39;), &#39;&lt;f8&#39;), ((&#39;T2&#39;, &#39;col2&#39;), &#39;&lt;i4&#39;), ((&#39;T3&#39;, &#39;col3&#39;), &#39;S5&#39;)])</span>
 </pre></div>
@@ -161,7 +161,7 @@ used. For all available string specifiers, see <a class="reference internal" hre
 <p><em class="xref py py-obj">names</em> and/or <em class="xref py py-obj">titles</em> can be empty lists. If <em class="xref py py-obj">titles</em> is an empty list,
 titles will simply not appear. If <em class="xref py py-obj">names</em> is empty, default field names
 will be used.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;a5&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">,</span> <span class="s1">&#39;col3&#39;</span><span class="p">],</span>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="s1">&#39;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;a5&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;col1&#39;</span><span class="p">,</span> <span class="s1">&#39;col2&#39;</span><span class="p">,</span> <span class="s1">&#39;col3&#39;</span><span class="p">],</span>
 <span class="gp">... </span>                 <span class="p">[])</span><span class="o">.</span><span class="n">dtype</span>
 <span class="go">dtype([(&#39;col1&#39;, &#39;&lt;f8&#39;), (&#39;col2&#39;, &#39;&lt;i4&#39;), (&#39;col3&#39;, &#39;&lt;S5&#39;)])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">format_parser</span><span class="p">([</span><span class="s1">&#39;&lt;f8&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;i4&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;a5&#39;</span><span class="p">],</span> <span class="p">[],</span> <span class="p">[])</span><span class="o">.</span><span class="n">dtype</span>
@@ -201,10 +201,10 @@ will be used.</p>
         &copy; Copyright 2008-2019, The SciPy community.
       </li>
       <li>
-      Last updated on Feb 28, 2020.
+      Last updated on Mar 09, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.2.0.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
       </li>
     </ul>
     </div>
