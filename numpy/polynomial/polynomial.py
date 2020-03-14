@@ -1495,6 +1495,10 @@ class Polynomial(ABCPolyBase):
     window = np.array(polydomain)
     basis_name = None
 
+    @classmethod
+    def _str_term(cls, i, arg_str):
+        return f"{arg_str}{i.translate(cls._superscript_mapping)} "
+
     @staticmethod
     def _repr_latex_term(i, arg_str, needs_parens):
         if needs_parens:

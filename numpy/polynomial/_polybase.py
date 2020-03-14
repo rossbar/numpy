@@ -322,25 +322,29 @@ class ABCPolyBase(abc.ABC):
         for i, coef in enumerate(self.coef[1:]):
             next_term = ""
             power = str(i + 1)
-            # Determine +/- symbol
+            # Polynomial coefficient
             if coef >= 0:
                 next_term += f"+ {coef}"
             else:
                 next_term += f"- {np.abs(coef)}"
-            # Handle different bases
-            if self.basis_name is None:
-                next_term += f"x{power.translate(self._superscript_mapping)} "
-            else:
-                next_term += (
-                    f"{self.basis_name}"
-                    f"{power.translate(self._subscript_mapping)}(x) "
-                )
+            # Polynomial term
+            next_term += self._str_term(power, "x")
             # Handle linebreaks
             if (len(out) + len(next_term)) // linewidth != cur_line:
                 next_term = next_term.replace(" ", "\n", 1)
                 cur_line += 1
             out += next_term
         return out.rstrip(" ")
+
+    @classmethod
+    def _str_term(cls, i, arg_str):
+        """String representation of single polynomial term"""
+        if cls.basis_name is None:
+            raise NotImplementedError(
+                "Subclasses must define either a basis_name, or override "
+                "_str_term(cls, i, arg_str)"
+            )
+        return f"{cls.basis_name}{i.translate(cls._subscript_mapping)}({arg_str}) "
 
     @classmethod
     def _repr_latex_term(cls, i, arg_str, needs_parens):
