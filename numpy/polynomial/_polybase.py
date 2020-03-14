@@ -310,11 +310,15 @@ class ABCPolyBase(abc.ABC):
         return f"{name}({coef}, domain={domain}, window={window})"
 
     def __str__(self):
+        # Get configuration for line breaks
+        linewidth = np.get_printoptions().get('linewidth', 75)
+        if linewidth < 1:
+            linewidth = 1
         out = ""
         if self.coef[0] < 0:
             out += "-"
         out = f"{self.coef[0]} "
-        cur_line = len(out) // 75     # For handling linebreaks
+        cur_line = len(out) // linewidth    # For handling linebreaks
         for i, coef in enumerate(self.coef[1:]):
             next_term = ""
             power = str(i + 1)
@@ -332,7 +336,7 @@ class ABCPolyBase(abc.ABC):
                     f"{power.translate(self._subscript_mapping)}(x) "
                 )
             # Handle linebreaks
-            if (len(out) + len(next_term)) // 75 != cur_line:
+            if (len(out) + len(next_term)) // linewidth != cur_line:
                 next_term = next_term.replace(" ", "\n", 1)
                 cur_line += 1
             out += next_term
