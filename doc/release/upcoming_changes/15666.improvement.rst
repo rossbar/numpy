@@ -1,0 +1,7 @@
+Improved string representation for polynomials (__str__)
+--------------------------------------------------------
+
+The string representation (``__str__``)of all six polynomial types in
+`numpy.polynomial` now use unicode characters to represent powers
+on the basis terms. This results in improved interpretability when polynomials
+are printed.
