@@ -314,19 +314,28 @@ class ABCPolyBase(abc.ABC):
         if self.coef[0] < 0:
             out += "-"
         out = f"{self.coef[0]} "
+        cur_line = len(out) // 75     # For handling linebreaks
         for i, coef in enumerate(self.coef[1:]):
+            next_term = ""
             power = str(i + 1)
             # Determine +/- symbol
             if coef >= 0:
-                out += f"+ {coef}"
+                next_term += f"+ {coef}"
             else:
-                out += f"- {np.abs(coef)}"
+                next_term += f"- {np.abs(coef)}"
             # Handle different bases
             if self.basis_name is None:
-                out += f"x{power.translate(self._superscript_mapping)} "
+                next_term += f"x{power.translate(self._superscript_mapping)} "
             else:
-                out += (f"{self.basis_name}"
-                        f"{power.translate(self._subscript_mapping)}(x) ")
+                next_term += (
+                    f"{self.basis_name}"
+                    f"{power.translate(self._subscript_mapping)}(x) "
+                )
+            # Handle linebreaks
+            if (len(out) + len(next_term)) // 75 != cur_line:
+                next_term = next_term.replace(" ", "\n", 1)
+                cur_line += 1
+            out += next_term
         return out.rstrip(" ")
 
     @classmethod
