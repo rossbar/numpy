@@ -24,6 +24,18 @@ from numpy.linalg import eigvals, lstsq, inv
 array_function_dispatch = functools.partial(
     overrides.array_function_dispatch, module='numpy')
 
+def _check_inputs_nonpoly(func):
+    @functools.wraps(func)
+    def checked(*args, **kwargs):
+        for arg in args:
+            if not isinstance(arg, poly1d):
+                raise DeprecationWarning(
+                    f"Automatic conversion of array to poly1d will not "
+                    f"be supported by {func.__name__} in the future."
+                )
+        return func(*args, **kwargs)
+    return checked
+
 
 @set_module('numpy')
 class RankWarning(UserWarning):
@@ -739,6 +751,7 @@ def _binary_op_dispatcher(a1, a2):
     return (a1, a2)
 
 
+@_check_inputs_nonpoly
 @array_function_dispatch(_binary_op_dispatcher)
 def polyadd(a1, a2):
     """
@@ -1270,12 +1283,10 @@ class poly1d:
             return poly1d(polymul(self.coeffs, other.coeffs))
 
     def __add__(self, other):
-        other = poly1d(other)
-        return poly1d(polyadd(self.coeffs, other.coeffs))
+        return poly1d(polyadd(self, other))
 
     def __radd__(self, other):
-        other = poly1d(other)
-        return poly1d(polyadd(self.coeffs, other.coeffs))
+        return poly1d(polyadd(self, other))
 
     def __pow__(self, val):
         if not isscalar(val) or int(val) != val or val < 0:
