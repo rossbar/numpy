@@ -67,32 +67,6 @@ class ABCPolyBase(abc.ABC):
     # Limit runaway size. T_n^m has degree n*m
     maxpower = 100
 
-    # Unicode character mappings for improved __str__
-    _superscript_mapping = str.maketrans({
-        "0" : "⁰",
-        "1" : "¹",
-        "2" : "²",
-        "3" : "³",
-        "4" : "⁴",
-        "5" : "⁵",
-        "6" : "⁶",
-        "7" : "⁷",
-        "8" : "⁸",
-        "9" : "⁹"
-    })
-    _subscript_mapping = str.maketrans({
-        "0" : "₀",
-        "1" : "₁",
-        "2" : "₂",
-        "3" : "₃",
-        "4" : "₄",
-        "5" : "₅",
-        "6" : "₆",
-        "7" : "₇",
-        "8" : "₈",
-        "9" : "₉"
-    })
-
     @property
     @abc.abstractmethod
     def domain(self):
@@ -344,7 +318,7 @@ class ABCPolyBase(abc.ABC):
                 "Subclasses must define either a basis_name, or override "
                 "_str_term(cls, i, arg_str)"
             )
-        return f"{cls.basis_name}{i.translate(cls._subscript_mapping)}({arg_str}) "
+        return f"{cls.basis_name}_{i}({arg_str}) "
 
     @classmethod
     def _repr_latex_term(cls, i, arg_str, needs_parens):

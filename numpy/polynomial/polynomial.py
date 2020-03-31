@@ -1497,7 +1497,7 @@ class Polynomial(ABCPolyBase):
 
     @classmethod
     def _str_term(cls, i, arg_str):
-        return f"{arg_str}{i.translate(cls._superscript_mapping)} "
+        return f"{arg_str}**{i} "
 
     @staticmethod
     def _repr_latex_term(i, arg_str, needs_parens):
