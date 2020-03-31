@@ -284,9 +284,23 @@ class ABCPolyBase(abc.ABC):
         return f"{name}({coef}, domain={domain}, window={window})"
 
     def __str__(self):
-        coef = str(self.coef)
-        name = self.nickname
-        return f"{name}({coef})"
+        baseline, powerline = "", ""
+        if self.coef[0] < 0:
+            baseline += "-"
+        baseline = f"{self.coef[0]} "
+        for i, coef in enumerate(self.coef[1:]):
+            next_term = ""
+            power = str(i + 1)
+            # Polynomial coefficient
+            if coef >= 0:
+                next_term += f"+ {coef}"
+            else:
+                next_term += f"- {np.abs(coef)}"
+            # Polynomial term
+            next_term += "x" + " "*len(power)
+            baseline += next_term
+            powerline += " "*(len(baseline) - len(powerline) - len(power)) + power
+        return powerline.rstrip() + "\n" + baseline.rstrip()
 
     @classmethod
     def _repr_latex_term(cls, i, arg_str, needs_parens):
