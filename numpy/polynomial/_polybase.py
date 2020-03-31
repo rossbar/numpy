@@ -289,18 +289,43 @@ class ABCPolyBase(abc.ABC):
             baseline += "-"
         baseline = f"{self.coef[0]} "
         for i, coef in enumerate(self.coef[1:]):
-            next_term = ""
             power = str(i + 1)
             # Polynomial coefficient
             if coef >= 0:
-                next_term += f"+ {coef}"
+                baseline += f"+ {coef}"
             else:
-                next_term += f"- {np.abs(coef)}"
+                baseline += f"- {np.abs(coef)}"
             # Polynomial term
-            next_term += "x" + " "*len(power)
-            baseline += next_term
-            powerline += " "*(len(baseline) - len(powerline) - len(power)) + power
-        return powerline.rstrip() + "\n" + baseline.rstrip()
+            baseline, powerline = self._str_term_multiline(baseline, powerline, power, "x")
+        return self._str_compose_multiline(baseline, powerline)
+
+    @classmethod
+    def _str_compose_multiline(cls, baseline, powerline):
+        """
+        Appropriately stack baseline and powerline based on whether the
+        powerline represents superscripts or subscripts for the terms in
+        baseline.
+        """
+        if cls.basis_name is None:
+            raise NotImplementedError(
+                "Subclasses must define either a basis_name, or override "
+                "_str_compose_multiline(cls, baseline, powerline)"
+            )
+        return f"{baseline.rstrip()}\n{powerline.rstrip()}"
+
+    @classmethod
+    def _str_term_multiline(cls, baseline, powerline, i, arg_str):
+        """String representation of a single polynomial term."""
+        if cls.basis_name is None:
+            raise NotImplementedError(
+                "Subclasses must define either a basis_name, or override "
+                "_str_term_multiline(cls, baseline, powerline, i, arg_str)"
+            )
+        baseline += f"{cls.basis_name}{' '*len(i)}({arg_str})"
+        powerloc = len(baseline) - (len(powerline) + len(i) + len(arg_str) + 2)
+        powerline += " "*(powerloc) + i
+        return baseline, powerline
+
 
     @classmethod
     def _repr_latex_term(cls, i, arg_str, needs_parens):
