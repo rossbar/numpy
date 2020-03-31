@@ -1495,6 +1495,16 @@ class Polynomial(ABCPolyBase):
     window = np.array(polydomain)
     basis_name = None
 
+    @classmethod
+    def _str_compose_multiline(cls, baseline, powerline):
+        return f"{powerline.rstrip()}\n{baseline.rstrip()}"
+
+    @classmethod
+    def _str_term_multiline(cls, baseline, powerline, i, arg_str):
+        baseline += f"{arg_str}{' '*len(i)} "
+        powerline += " "*(len(baseline) - len(powerline) - len(i) - len(arg_str)) + i
+        return baseline, powerline
+
     @staticmethod
     def _repr_latex_term(i, arg_str, needs_parens):
         if needs_parens:
