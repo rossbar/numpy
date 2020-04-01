@@ -284,20 +284,35 @@ class ABCPolyBase(abc.ABC):
         return f"{name}({coef}, domain={domain}, window={window})"
 
     def __str__(self):
-        baseline, powerline = "", ""
-        if self.coef[0] < 0:
-            baseline += "-"
-        baseline = f"{self.coef[0]} "
+        linewidth = np.get_printoptions().get("linewidth", 75)
+        if linewidth < 1:
+            linewidth = 1
+        term_strs, power_strs = [], []
+        cur_termline = f"{self.coef[0]}"
+        cur_powerline = " "*len(cur_termline)
         for i, coef in enumerate(self.coef[1:]):
             power = str(i + 1)
-            # Polynomial coefficient
+            # Set sign and determine coefficient
             if coef >= 0:
-                baseline += f"+ {coef}"
+                cur_termline += " + "
+                next_coef = f"{coef}"
             else:
-                baseline += f"- {np.abs(coef)}"
+                cur_termline += " - "
+                next_coef = f"{np.abs(coef)}"
             # Polynomial term
-            baseline, powerline = self._str_term_multiline(baseline, powerline, power, "x")
-        return self._str_compose_multiline(baseline, powerline)
+            bt, pt = self._str_term_multiline(power, "x")
+            # Handle linebreaking
+            if (len(cur_termline) + len(next_coef) + len(bt) + len(power) > linewidth):
+                term_strs.append(cur_termline)
+                power_strs.append(cur_powerline)
+                cur_termline = next_coef + bt
+                cur_powerline = " "*len(next_coef) + pt
+            else:
+                cur_termline += next_coef + bt
+                cur_powerline += " "*(len(next_coef) + 3) + pt
+        term_strs.append(cur_termline)
+        power_strs.append(cur_powerline)
+        return self._str_compose_multiline(term_strs, power_strs)
 
     @classmethod
     def _str_compose_multiline(cls, baseline, powerline):
@@ -311,19 +326,18 @@ class ABCPolyBase(abc.ABC):
                 "Subclasses must define either a basis_name, or override "
                 "_str_compose_multiline(cls, baseline, powerline)"
             )
-        return f"{baseline.rstrip()}\n{powerline.rstrip()}"
+        return "\n".join([f"{x}\n{y}\n" for x, y in zip(baseline, powerline)])
 
     @classmethod
-    def _str_term_multiline(cls, baseline, powerline, i, arg_str):
+    def _str_term_multiline(cls, i, arg_str):
         """String representation of a single polynomial term."""
         if cls.basis_name is None:
             raise NotImplementedError(
                 "Subclasses must define either a basis_name, or override "
                 "_str_term_multiline(cls, baseline, powerline, i, arg_str)"
             )
-        baseline += f"{cls.basis_name}{' '*len(i)}({arg_str})"
-        powerloc = len(baseline) - (len(powerline) + len(i) + len(arg_str) + 2)
-        powerline += " "*(powerloc) + i
+        baseline = f"{cls.basis_name}{' '*len(i)}({arg_str})"
+        powerline = f"{' '*(len(cls.basis_name))}{i}{' '*(len(arg_str) + 2)}"
         return baseline, powerline
 
 
