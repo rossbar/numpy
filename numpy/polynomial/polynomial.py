@@ -1497,12 +1497,12 @@ class Polynomial(ABCPolyBase):
 
     @classmethod
     def _str_compose_multiline(cls, baseline, powerline):
-        return f"{powerline.rstrip()}\n{baseline.rstrip()}"
+        return "\n".join([f"{x}\n{y}\n" for x, y in zip(powerline, baseline)])
 
     @classmethod
-    def _str_term_multiline(cls, baseline, powerline, i, arg_str):
-        baseline += f"{arg_str}{' '*len(i)} "
-        powerline += " "*(len(baseline) - len(powerline) - len(i) - len(arg_str)) + i
+    def _str_term_multiline(cls, i, arg_str):
+        baseline = f"{arg_str}{' '*len(i)}"
+        powerline = f"{' '*len(arg_str)}{i}"
         return baseline, powerline
 
     @staticmethod
