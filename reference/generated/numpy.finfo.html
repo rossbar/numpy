@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -133,6 +133,10 @@
 </dd>
 <dt><a class="reference internal" href="numpy.iinfo.html#numpy.iinfo" title="numpy.iinfo"><code class="xref py py-obj docutils literal notranslate"><span class="pre">iinfo</span></code></a></dt><dd><p>The equivalent for integer data types.</p>
 </dd>
+<dt><a class="reference internal" href="numpy.spacing.html#numpy.spacing" title="numpy.spacing"><code class="xref py py-obj docutils literal notranslate"><span class="pre">spacing</span></code></a></dt><dd><p>The distance between a value and the nearest adjacent number</p>
+</dd>
+<dt><a class="reference internal" href="numpy.nextafter.html#numpy.nextafter" title="numpy.nextafter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nextafter</span></code></a></dt><dd><p>The next floating point value after x1 towards x2</p>
+</dd>
 </dl>
 </div>
 <p class="rubric">Notes</p>
@@ -145,12 +149,13 @@ repeatedly inside your functions is not a problem.</p>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>bits</strong><span class="classifier">int</span></dt><dd><p>The number of bits occupied by the type.</p>
 </dd>
-<dt><strong>eps</strong><span class="classifier">float</span></dt><dd><p>The smallest representable positive number such that
-<code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">+</span> <span class="pre">eps</span> <span class="pre">!=</span> <span class="pre">1.0</span></code>.  Type of <em class="xref py py-obj">eps</em> is an appropriate floating
-point type.</p>
+<dt><strong>eps</strong><span class="classifier">float</span></dt><dd><p>The difference between 1.0 and the next smallest representable float
+larger than 1.0. For example, for 64-bit binary floats in the IEEE-754
+standard, <code class="docutils literal notranslate"><span class="pre">eps</span> <span class="pre">=</span> <span class="pre">2**-52</span></code>, approximately 2.22e-16.</p>
 </dd>
-<dt><strong>epsneg</strong><span class="classifier">floating point number of the appropriate type</span></dt><dd><p>The smallest representable positive number such that
-<code class="docutils literal notranslate"><span class="pre">1.0</span> <span class="pre">-</span> <span class="pre">epsneg</span> <span class="pre">!=</span> <span class="pre">1.0</span></code>.</p>
+<dt><strong>epsneg</strong><span class="classifier">float</span></dt><dd><p>The difference between 1.0 and the next smallest representable float
+less than 1.0. For example, for 64-bit binary floats in the IEEE-754
+standard, <code class="docutils literal notranslate"><span class="pre">epsneg</span> <span class="pre">=</span> <span class="pre">2**-53</span></code>, approximately 1.11e-16.</p>
 </dd>
 <dt><strong>iexp</strong><span class="classifier">int</span></dt><dd><p>The number of bits in the exponent portion of the floating point
 representation.</p>
@@ -209,10 +214,10 @@ appropriate floating point type.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

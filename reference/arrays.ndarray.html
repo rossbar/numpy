@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -249,6 +249,11 @@ strided scheme, and correspond to memory that can be <em>addressed</em> by the s
 <p>Both the C and Fortran orders are <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-contiguous" title="(in Python v3.9)"><span class="xref std std-term">contiguous</span></a>, <em>i.e.,</em>
 single-segment, memory layouts, in which every part of the
 memory block can be accessed by some combination of the indices.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em class="xref py py-obj">Contiguous arrays</em> and <em class="xref py py-obj">single-segment arrays</em> are synonymous
+and are used interchangeably throughout the documentation.</p>
+</div>
 <p>While a C-style and Fortran-style contiguous array, which has the corresponding
 flags set, can be addressed with the above strides, the actual strides may be
 different. This can happen in two cases:</p>
@@ -272,10 +277,12 @@ base offset itself is a multiple of <em class="xref py py-obj">self.itemsize</em
 <em class="xref py py-obj">memory-alignment</em> leads to better performance on most hardware.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Points (1) and (2) are not yet applied by default. Beginning with
-NumPy 1.8.0, they are applied consistently only if the environment
-variable <code class="docutils literal notranslate"><span class="pre">NPY_RELAXED_STRIDES_CHECKING=1</span></code> was defined when NumPy
-was built. Eventually this will become the default.</p>
+<p>Points (1) and (2) can currently be disabled by the compile time
+environmental variable <code class="docutils literal notranslate"><span class="pre">NPY_RELAXED_STRIDES_CHECKING=0</span></code>,
+which was the default before NumPy 1.10.
+No users should have to do this. <code class="docutils literal notranslate"><span class="pre">NPY_RELAXED_STRIDES_DEBUG=1</span></code>
+can be used to help find errors when incorrectly relying on the strides
+in C-extension code (see below warning).</p>
 <p>You can check whether this option was enabled when your NumPy was
 built by looking at the value of <code class="docutils literal notranslate"><span class="pre">np.ones((10,1),</span>
 <span class="pre">order='C').flags.f_contiguous</span></code>. If this is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then your
@@ -464,7 +471,7 @@ more complete description.)</p>
 <td><p>Insert scalar into an array (scalar is cast to array’s dtype, if possible)</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ndarray.tostring.html#numpy.ndarray.tostring" title="numpy.ndarray.tostring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.tostring</span></code></a>([order])</p></td>
-<td><p>Construct Python bytes containing the raw data bytes in the array.</p></td>
+<td><p>A compatibility alias for <em class="xref py py-obj">tobytes</em>, with exactly the same behavior.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ndarray.tobytes.html#numpy.ndarray.tobytes" title="numpy.ndarray.tobytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.tobytes</span></code></a>([order])</p></td>
 <td><p>Construct Python bytes containing the raw data bytes in the array.</p></td>
@@ -1043,10 +1050,10 @@ and return the appropriate scalar.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

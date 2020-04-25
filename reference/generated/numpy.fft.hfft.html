@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -174,8 +174,8 @@ opposite case: here the signal has Hermitian symmetry in the time
 domain and is real in the frequency domain. So here it’s <a class="reference internal" href="#numpy.fft.hfft" title="numpy.fft.hfft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hfft</span></code></a> for
 which you must supply the length of the result if it is to be odd.</p>
 <ul class="simple">
-<li><p>even: <code class="docutils literal notranslate"><span class="pre">ihfft(hfft(a,</span> <span class="pre">2*len(a)</span> <span class="pre">-</span> <span class="pre">2)</span> <span class="pre">==</span> <span class="pre">a</span></code>, within roundoff error,</p></li>
-<li><p>odd: <code class="docutils literal notranslate"><span class="pre">ihfft(hfft(a,</span> <span class="pre">2*len(a)</span> <span class="pre">-</span> <span class="pre">1)</span> <span class="pre">==</span> <span class="pre">a</span></code>, within roundoff error.</p></li>
+<li><p>even: <code class="docutils literal notranslate"><span class="pre">ihfft(hfft(a,</span> <span class="pre">2*len(a)</span> <span class="pre">-</span> <span class="pre">2))</span> <span class="pre">==</span> <span class="pre">a</span></code>, within roundoff error,</p></li>
+<li><p>odd: <code class="docutils literal notranslate"><span class="pre">ihfft(hfft(a,</span> <span class="pre">2*len(a)</span> <span class="pre">-</span> <span class="pre">1))</span> <span class="pre">==</span> <span class="pre">a</span></code>, within roundoff error.</p></li>
 </ul>
 <p>The correct interpretation of the hermitian input depends on the length of
 the original data, as given by <em class="xref py py-obj">n</em>. This is because each input shape could
@@ -226,10 +226,10 @@ shape of the full signal <strong>must</strong> be given.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

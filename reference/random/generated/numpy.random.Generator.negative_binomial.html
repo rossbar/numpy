@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -122,13 +122,13 @@
 <dd><p>Draw samples from a negative binomial distribution.</p>
 <p>Samples are drawn from a negative binomial distribution with specified
 parameters, <em class="xref py py-obj">n</em> successes and <em class="xref py py-obj">p</em> probability of success where <em class="xref py py-obj">n</em>
-is &gt; 0 and <em class="xref py py-obj">p</em> is in the interval [0, 1].</p>
+is &gt; 0 and <em class="xref py py-obj">p</em> is in the interval (0, 1].</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>n</strong><span class="classifier">float or array_like of floats</span></dt><dd><p>Parameter of the distribution, &gt; 0.</p>
 </dd>
-<dt><strong>p</strong><span class="classifier">float or array_like of floats</span></dt><dd><p>Parameter of the distribution, &gt;= 0 and &lt;=1.</p>
+<dt><strong>p</strong><span class="classifier">float or array_like of floats</span></dt><dd><p>Parameter of the distribution. Must satisfy 0 &lt; p &lt;= 1.</p>
 </dd>
 <dt><strong>size</strong><span class="classifier">int or tuple of ints, optional</span></dt><dd><p>Output shape.  If the given shape is, e.g., <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n,</span> <span class="pre">k)</span></code>, then
 <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">k</span></code> samples are drawn.  If size is <code class="docutils literal notranslate"><span class="pre">None</span></code> (default),
@@ -207,10 +207,10 @@ single success after drilling 5 wells, after 6 wells, etc.?</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

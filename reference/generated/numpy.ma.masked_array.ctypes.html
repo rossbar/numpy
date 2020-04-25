@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -165,7 +165,7 @@ get to the next element in the array.</p>
 
 <dl class="method">
 <dt>
-<code class="sig-prename descclassname">_ctypes.</code><code class="sig-name descname">data_as</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/_internal.py#L267-L284"><span class="viewcode-link">[source]</span></a></dt>
+<code class="sig-prename descclassname">_ctypes.</code><code class="sig-name descname">data_as</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/_internal.py#L266-L283"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>Return the data pointer cast to a particular c-types object.
 For example, calling <code class="docutils literal notranslate"><span class="pre">self._as_parameter_</span></code> is equivalent to
 <code class="docutils literal notranslate"><span class="pre">self.data_as(ctypes.c_void_p)</span></code>. Perhaps you want to use the data as a
@@ -176,14 +176,14 @@ pointer to a ctypes array of floating-point data:
 
 <dl class="method">
 <dt>
-<code class="sig-prename descclassname">_ctypes.</code><code class="sig-name descname">shape_as</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/_internal.py#L286-L293"><span class="viewcode-link">[source]</span></a></dt>
+<code class="sig-prename descclassname">_ctypes.</code><code class="sig-name descname">shape_as</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/_internal.py#L285-L292"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>Return the shape tuple as an array of some other c-types
 type. For example: <code class="docutils literal notranslate"><span class="pre">self.shape_as(ctypes.c_short)</span></code>.</p>
 </dd></dl>
 
 <dl class="method">
 <dt>
-<code class="sig-prename descclassname">_ctypes.</code><code class="sig-name descname">strides_as</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/_internal.py#L295-L302"><span class="viewcode-link">[source]</span></a></dt>
+<code class="sig-prename descclassname">_ctypes.</code><code class="sig-name descname">strides_as</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">obj</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/_internal.py#L294-L301"><span class="viewcode-link">[source]</span></a></dt>
 <dd><p>Return the strides tuple as an array of some other
 c-types type. For example: <code class="docutils literal notranslate"><span class="pre">self.strides_as(ctypes.c_longlong)</span></code>.</p>
 </dd></dl>
@@ -235,10 +235,10 @@ return an integer equal to the data attribute.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

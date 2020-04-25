@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -875,7 +875,7 @@
 <td><p>Return an ndarray of indices that sort the array along the specified axis.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.sort.html#numpy.ma.sort" title="numpy.ma.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.sort</span></code></a>(a[, axis, kind, order, endwith, …])</p></td>
-<td><p>Sort the array, in-place</p></td>
+<td><p>Return a sorted copy of the masked array.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argsort.html#numpy.ma.MaskedArray.argsort" title="numpy.ma.MaskedArray.argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argsort</span></code></a>(self[, axis, kind, …])</p></td>
 <td><p>Return an ndarray of indices that sort the array along the specified axis.</p></td>
@@ -990,19 +990,22 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.apply_along_axis.html#numpy.ma.apply_along_axis" title="numpy.ma.apply_along_axis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.apply_along_axis</span></code></a>(func1d, axis, arr, …)</p></td>
 <td><p>Apply a function to 1-D slices along the given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.arange.html#numpy.ma.arange" title="numpy.ma.arange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.arange</span></code></a>([start,] stop[, step,][, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.apply_over_axes.html#numpy.ma.apply_over_axes" title="numpy.ma.apply_over_axes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.apply_over_axes</span></code></a>(func, a, axes)</p></td>
+<td><p>Apply a function repeatedly over multiple axes.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.arange.html#numpy.ma.arange" title="numpy.ma.arange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.arange</span></code></a>([start,] stop[, step,][, dtype])</p></td>
 <td><p>Return evenly spaced values within a given interval.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.choose.html#numpy.ma.choose" title="numpy.ma.choose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.choose</span></code></a>(indices, choices[, out, mode])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.choose.html#numpy.ma.choose" title="numpy.ma.choose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.choose</span></code></a>(indices, choices[, out, mode])</p></td>
 <td><p>Use an index array to construct a new array from a set of choices.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.ediff1d.html#numpy.ma.ediff1d" title="numpy.ma.ediff1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.ediff1d</span></code></a>(arr[, to_end, to_begin])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.ediff1d.html#numpy.ma.ediff1d" title="numpy.ma.ediff1d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.ediff1d</span></code></a>(arr[, to_end, to_begin])</p></td>
 <td><p>Compute the differences between consecutive elements of an array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.indices.html#numpy.ma.indices" title="numpy.ma.indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.indices</span></code></a>(dimensions[, dtype, sparse])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.indices.html#numpy.ma.indices" title="numpy.ma.indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.indices</span></code></a>(dimensions[, dtype, sparse])</p></td>
 <td><p>Return an array representing the indices of a grid.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.where.html#numpy.ma.where" title="numpy.ma.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.where</span></code></a>(condition[, x, y])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.where.html#numpy.ma.where" title="numpy.ma.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.where</span></code></a>(condition[, x, y])</p></td>
 <td><p>Return a masked array with elements from <em class="xref py py-obj">x</em> or <em class="xref py py-obj">y</em>, depending on condition.</p></td>
 </tr>
 </tbody>
@@ -1029,10 +1032,10 @@
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

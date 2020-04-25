@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -296,6 +296,9 @@ random numbers, which replaces <a class="reference internal" href="generated/num
 Python’s <a class="reference external" href="https://docs.python.org/dev/library/random.html#random.random" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random.random</span></code></a>.</p></li>
 <li><p>All BitGenerators in numpy use <a class="reference internal" href="bit_generators/generated/numpy.random.SeedSequence.html#numpy.random.SeedSequence" title="numpy.random.SeedSequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeedSequence</span></code></a> to convert seeds into
 initialized states.</p></li>
+<li><p>The addition of an <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument to methods such as
+<a class="reference internal" href="generated/numpy.random.Generator.choice.html#numpy.random.Generator.choice" title="numpy.random.Generator.choice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.choice</span></code></a>, <a class="reference internal" href="generated/numpy.random.Generator.permutation.html#numpy.random.Generator.permutation" title="numpy.random.Generator.permutation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.permutation</span></code></a>,  and <a class="reference internal" href="generated/numpy.random.Generator.shuffle.html#numpy.random.Generator.shuffle" title="numpy.random.Generator.shuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.shuffle</span></code></a>
+improves support for sampling from and shuffling multi-dimensional arrays.</p></li>
 </ul>
 <p>See <a class="reference internal" href="new-or-different.html#new-or-different"><span class="std std-ref">What’s New or Different</span></a> for a complete list of improvements and
 differences from the traditional <code class="docutils literal notranslate"><span class="pre">Randomstate</span></code>.</p>
@@ -378,10 +381,10 @@ one of three ways:</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

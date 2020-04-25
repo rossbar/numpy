@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -328,14 +328,14 @@
         <li><a href="reference/generated/numpy.ndarray.__imod__.html#numpy.ndarray.__imod__">(numpy.ndarray method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.ma.MaskedArray.__imul__.html#numpy.ma.MaskedArray.__imul__">__imul__() (numpy.ma.MaskedArray method)</a>
 
       <ul>
         <li><a href="reference/generated/numpy.ndarray.__imul__.html#numpy.ndarray.__imul__">(numpy.ndarray method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.ma.MaskedArray.__int__.html#numpy.ma.MaskedArray.__int__">__int__() (numpy.ma.MaskedArray method)</a>
 
       <ul>
@@ -392,8 +392,6 @@
         <li><a href="reference/generated/numpy.ndarray.__len__.html#numpy.ndarray.__len__">(numpy.ndarray method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/numpy.ma.MaskedArray.__long__.html#numpy.ma.MaskedArray.__long__">__long__() (numpy.ma.MaskedArray method)</a>
-</li>
       <li><a href="reference/generated/numpy.ma.MaskedArray.__lshift__.html#numpy.ma.MaskedArray.__lshift__">__lshift__() (numpy.ma.MaskedArray method)</a>
 
       <ul>
@@ -711,7 +709,11 @@
       <li><a href="user/basics.rec.html#numpy.lib.recfunctions.apply_along_fields">apply_along_fields() (in module numpy.lib.recfunctions)</a>
 </li>
       <li><a href="reference/generated/numpy.apply_over_axes.html#numpy.apply_over_axes">apply_over_axes() (in module numpy)</a>
+
+      <ul>
+        <li><a href="reference/generated/numpy.ma.apply_over_axes.html#numpy.ma.apply_over_axes">(in module numpy.ma)</a>
 </li>
+      </ul></li>
       <li><a href="reference/generated/numpy.ma.arange.html#numpy.ma.arange">arange (in module numpy.ma)</a>
 </li>
       <li><a href="reference/generated/numpy.arange.html#numpy.arange">arange() (in module numpy)</a>
@@ -4237,12 +4239,6 @@
         <li><a href="reference/generated/numpy.record.newbyteorder.html#numpy.record.newbyteorder">(numpy.record method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/numpy.ndenumerate.next.html#numpy.ndenumerate.next">next() (numpy.ndenumerate method)</a>
-
-      <ul>
-        <li><a href="reference/generated/numpy.ndindex.next.html#numpy.ndindex.next">(numpy.ndindex method)</a>
-</li>
-      </ul></li>
       <li><a href="reference/generated/numpy.nextafter.html#numpy.nextafter">nextafter (in module numpy)</a>
 </li>
       <li><a href="reference/generated/numpy.polynomial.chebyshev.Chebyshev.nickname.html#numpy.polynomial.chebyshev.Chebyshev.nickname">nickname (numpy.polynomial.chebyshev.Chebyshev attribute)</a>
@@ -4589,10 +4585,10 @@
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_halfbits_to_floatbits">npy_halfbits_to_floatbits (C function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/c-api/array.html#c.NPY_HEAPSORT">NPY_HEAPSORT (C variable)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/c-api/coremath.html#c.NPY_INFINITY">NPY_INFINITY (C variable)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.npy_int">npy_int (C type)</a>
@@ -7703,6 +7699,8 @@
 </li>
         <li><a href="reference/generated/numpy.generic.tobytes.html#numpy.generic.tobytes">(numpy.generic method)</a>
 </li>
+        <li><a href="reference/generated/numpy.lib.user_array.container.tobytes.html#numpy.lib.user_array.container.tobytes">(numpy.lib.user_array.container method)</a>
+</li>
         <li><a href="reference/generated/numpy.ma.masked_array.tobytes.html#numpy.ma.masked_array.tobytes">(numpy.ma.masked_array method)</a>
 </li>
         <li><a href="reference/generated/numpy.ma.MaskedArray.tobytes.html#numpy.ma.MaskedArray.tobytes">(numpy.ma.MaskedArray method)</a>
@@ -7776,14 +7774,14 @@
         <li><a href="reference/generated/numpy.record.tolist.html#numpy.record.tolist">(numpy.record method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.ma.masked_array.torecords.html#numpy.ma.masked_array.torecords">torecords() (numpy.ma.masked_array method)</a>
 
       <ul>
         <li><a href="reference/generated/numpy.ma.MaskedArray.torecords.html#numpy.ma.MaskedArray.torecords">(numpy.ma.MaskedArray method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.char.chararray.tostring.html#numpy.char.chararray.tostring">tostring() (numpy.char.chararray method)</a>
 
       <ul>
@@ -8220,10 +8218,10 @@
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

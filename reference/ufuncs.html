@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -531,13 +531,13 @@ stored in the <strong>signature</strong> attribute of the of the ufunc object.</
 </div></blockquote>
 <p><em>extobj</em></p>
 <blockquote>
-<div><p>a list of length 1, 2, or 3 specifying the ufunc buffer-size, the
-error mode integer, and the error call-back function. Normally, these
+<div><p>a list of length 3 specifying the ufunc buffer-size, the error
+mode integer, and the error call-back function. Normally, these
 values are looked up in a thread-specific dictionary. Passing them
 here circumvents that look up and uses the low-level specification
-provided for the error mode. This may be useful, for example, as an
-optimization for calculations requiring many ufunc calls on small arrays
-in a loop.</p>
+provided for the error mode. This may be useful, for example, as
+an optimization for calculations requiring many ufunc calls on
+small arrays in a loop.</p>
 </div></blockquote>
 </div>
 <div class="section" id="attributes">
@@ -1107,10 +1107,10 @@ single operation.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

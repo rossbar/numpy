@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -195,7 +195,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.asmatrix.html#numpy.asmatrix" title="numpy.asmatrix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">asmatrix</span></code></a>(data[, dtype])</p></td>
 <td><p>Interpret the input as a matrix.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.copy.html#numpy.copy" title="numpy.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(a[, order])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.copy.html#numpy.copy" title="numpy.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a>(a[, order, subok])</p></td>
 <td><p>Return an array copy of the given object.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.frombuffer.html#numpy.frombuffer" title="numpy.frombuffer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">frombuffer</span></code></a>(buffer[, dtype, count, offset])</p></td>
@@ -236,13 +236,13 @@
 <td><p>Construct a record array from a wide-variety of objects.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.core.records.fromarrays.html#numpy.core.records.fromarrays" title="numpy.core.records.fromarrays"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.records.fromarrays</span></code></a>(arrayList[, dtype, …])</p></td>
-<td><p>create a record array from a (flat) list of arrays</p></td>
+<td><p>Create a record array from a (flat) list of arrays</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.core.records.fromrecords.html#numpy.core.records.fromrecords" title="numpy.core.records.fromrecords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.records.fromrecords</span></code></a>(recList[, dtype, …])</p></td>
-<td><p>create a recarray from a list of records in text form</p></td>
+<td><p>Create a recarray from a list of records in text form.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.core.records.fromstring.html#numpy.core.records.fromstring" title="numpy.core.records.fromstring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.records.fromstring</span></code></a>(datastring[, dtype, …])</p></td>
-<td><p>create a (read-only) record array from binary data contained in a string</p></td>
+<td><p>Create a (read-only) record array from binary data contained in a string</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.core.records.fromfile.html#numpy.core.records.fromfile" title="numpy.core.records.fromfile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">core.records.fromfile</span></code></a>(fd[, dtype, shape, …])</p></td>
 <td><p>Create an array from binary file data</p></td>
@@ -370,10 +370,10 @@
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -30,8 +30,8 @@
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
     <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
-    <link rel="up" title="NumPy User Guide" href="index.html" >
-    <link rel="next" title="Building from source" href="building.html" >
+    <link rel="up" title="NumPy Tutorials" href="tutorials_index.html" >
+    <link rel="next" title="Tutorial: Linear algebra on n-dimensional arrays" href="tutorial-svd.html" >
     <link rel="prev" title="Miscellaneous" href="misc.html" > 
   </head>
   <body>
@@ -58,7 +58,7 @@
         <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
         
 
-          <li class="active"><a href="index.html" accesskey="U">NumPy User Guide</a></li> 
+          <li class="active"><a href="tutorials_index.html" accesskey="U">NumPy Tutorials</a></li> 
     </ul>
               
               
@@ -68,7 +68,7 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="building.html" title="Building from source"
+        <a href="tutorial-svd.html" title="Tutorial: Linear algebra on n-dimensional arrays"
            accesskey="N">next</a>
       </li>
       <li class="active">
@@ -111,8 +111,8 @@
   <p class="topless"><a href="misc.html"
                         title="previous chapter">Miscellaneous</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="building.html"
-                        title="next chapter">Building from source</a></p>
+  <p class="topless"><a href="tutorial-svd.html"
+                        title="next chapter">Tutorial: Linear algebra on n-dimensional arrays</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -537,7 +537,8 @@ values <code class="docutils literal notranslate"><span class="pre">False</span>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">y=x(:)</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">=</span> <span class="pre">x.flatten()</span></code></p></td>
-<td><p>turn array into vector (note that this forces a copy)</p></td>
+<td><p>turn array into vector (note that this forces a copy). To obtain the
+same data ordering as in Matlab, use <code class="docutils literal notranslate"><span class="pre">x.flatten('F')</span></code>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">1:10</span></code></p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">arange(1.,11.)</span></code> or <code class="docutils literal notranslate"><span class="pre">r_[1.:11.]</span></code> or  <code class="docutils literal notranslate"><span class="pre">r_[1:10:10j]</span></code></p></td>
@@ -866,10 +867,10 @@ found in the <a class="reference external" href="https://scipy.org/topical-softw
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

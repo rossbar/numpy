@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -129,18 +129,47 @@ unless told otherwise. Some of the benchmarking features in
 <code class="docutils literal notranslate"><span class="pre">runtests.py</span></code> also tell ASV to use the NumPy compiled by
 <code class="docutils literal notranslate"><span class="pre">runtests.py</span></code>. To run the benchmarks, you do not need to install a
 development version of NumPy to your current Python environment.</p>
-<p>Run a benchmark against currently checked out NumPy version (don’t
-record the result):</p>
+<p>Before beginning, ensure that <em>airspeed velocity</em> is installed.
+By default, <code class="xref py py-obj docutils literal notranslate"><span class="pre">asv</span></code> ships with support for anaconda and virtualenv:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">asv</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">virtualenv</span>
+</pre></div>
+</div>
+<p>After contributing new benchmarks, you should test them locally
+before submitting a pull request.</p>
+<p>To run all benchmarks, navigate to the root NumPy directory at
+the command line and execute:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span>
+</pre></div>
+</div>
+<p>where <code class="docutils literal notranslate"><span class="pre">--bench</span></code> activates the benchmark suite instead of the
+test suite. This builds NumPy and runs  all available benchmarks
+defined in <code class="docutils literal notranslate"><span class="pre">benchmarks/</span></code>. (Note: this could take a while. Each
+benchmark is run multiple times to measure the distribution in
+execution times.)</p>
+<p>To run benchmarks from a particular benchmark module, such as
+<code class="docutils literal notranslate"><span class="pre">bench_core.py</span></code>, simply append the filename without the extension:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span> <span class="n">bench_core</span>
 </pre></div>
 </div>
-<p>Compare change in benchmark results to another version:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span><span class="o">-</span><span class="n">compare</span> <span class="n">v1</span><span class="o">.</span><span class="mf">6.2</span> <span class="n">bench_core</span>
+<p>To run a benchmark defined in a class, such as <code class="docutils literal notranslate"><span class="pre">Mandelbrot</span></code>
+from <code class="docutils literal notranslate"><span class="pre">bench_avx.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span> <span class="n">bench_avx</span><span class="o">.</span><span class="n">Mandelbrot</span>
 </pre></div>
 </div>
-<p>Run ASV commands (record results and generate HTML):</p>
+<p>Compare change in benchmark results to another version/commit/branch:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span><span class="o">-</span><span class="n">compare</span> <span class="n">v1</span><span class="o">.</span><span class="mf">6.2</span> <span class="n">bench_core</span>
+<span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span><span class="o">-</span><span class="n">compare</span> <span class="mi">8</span><span class="n">bf4e9b</span> <span class="n">bench_core</span>
+<span class="n">python</span> <span class="n">runtests</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">bench</span><span class="o">-</span><span class="n">compare</span> <span class="n">master</span> <span class="n">bench_core</span>
+</pre></div>
+</div>
+<p>All of the commands above display the results in plain text in
+the console, and the results are not saved for comparison with
+future commits. For greater control, a graphical view, and to
+have results saved for future comparison you can run ASV commands
+(record results and generate HTML):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">benchmarks</span>
-<span class="n">asv</span> <span class="n">run</span> <span class="o">--</span><span class="n">skip</span><span class="o">-</span><span class="n">existing</span><span class="o">-</span><span class="n">commits</span> <span class="o">--</span><span class="n">steps</span> <span class="mi">10</span> <span class="n">ALL</span>
+<span class="n">asv</span> <span class="n">run</span> <span class="o">-</span><span class="n">n</span> <span class="o">-</span><span class="n">e</span> <span class="o">--</span><span class="n">python</span><span class="o">=</span><span class="n">same</span>
 <span class="n">asv</span> <span class="n">publish</span>
 <span class="n">asv</span> <span class="n">preview</span>
 </pre></div>
@@ -193,10 +222,10 @@ pagefaults to occur in the setup phase either by calling <code class="docutils l
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

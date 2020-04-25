@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -116,7 +116,7 @@
 <h1>numpy.linalg.norm<a class="headerlink" href="#numpy-linalg-norm" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.norm">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">ord=None</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">keepdims=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L2363-L2608"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.norm" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">norm</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">ord=None</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">keepdims=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L2363-L2611"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.norm" title="Permalink to this definition">¶</a></dt>
 <dd><p>Matrix or vector norm.</p>
 <p>This function is able to return one of eight different matrix norms,
 or one of an infinite number of vector norms (described below), depending
@@ -233,6 +233,8 @@ purposes.</p>
 <div><p><img class="math" src="../../_images/math/2eb3a4651ffe60b6e2e3850bb33f994191ee5b94.svg" alt="||A||_F = [\sum_{i,j} abs(a_{i,j})^2]^{1/2}"/></p>
 </div></blockquote>
 <p>The nuclear norm is the sum of the singular values.</p>
+<p>Both the Frobenius and nuclear norm orders are only defined for
+matrices and raise a ValueError when <code class="docutils literal notranslate"><span class="pre">x.ndim</span> <span class="pre">!=</span> <span class="pre">2</span></code>.</p>
 <p class="rubric">References</p>
 <dl class="citation">
 <dt class="label" id="rac1c834adb66-1"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
@@ -333,10 +335,10 @@ Baltimore, MD, Johns Hopkins University Press, 1985, pg. 15</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

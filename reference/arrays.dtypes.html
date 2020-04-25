@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -294,8 +294,8 @@ type objects according to the associations:</p>
 array scalar when used to generate a <a class="reference internal" href="generated/numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code></a> object:</p>
 <table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 78%" />
+<col style="width: 50%" />
+<col style="width: 50%" />
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a></p></td>
@@ -314,15 +314,12 @@ array scalar when used to generate a <a class="reference internal" href="generat
 <td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes_</span></code></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a></p></td>
-<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes_</span></code> (Python2) or <code class="xref py py-class docutils literal notranslate"><span class="pre">unicode_</span></code> (Python3)</p></td>
+<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">str_</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">unicode</span></code></p></td>
-<td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">unicode_</span></code></p></td>
-</tr>
-<tr class="row-even"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">buffer</span></code></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">buffer</span></code></p></td>
 <td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">void</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>(all others)</p></td>
+<tr class="row-even"><td><p>(all others)</p></td>
 <td><p><code class="xref py py-class docutils literal notranslate"><span class="pre">object_</span></code></p></td>
 </tr>
 </tbody>
@@ -338,6 +335,11 @@ See <a class="reference internal" href="#string-dtype-note"><span class="std std
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>  <span class="c1"># Python object</span>
 </pre></div>
 </div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>All other types map to <code class="docutils literal notranslate"><span class="pre">object_</span></code> for convenience. Code should expect
+that such types may map to a specific (new) dtype in future the future.</p>
 </div>
 </div></blockquote>
 <p>Types with <code class="docutils literal notranslate"><span class="pre">.dtype</span></code></p>
@@ -810,10 +812,10 @@ interpret the 4 bytes in the integer as four unsigned integers:</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

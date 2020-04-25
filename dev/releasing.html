@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -708,8 +708,7 @@ $ git commit -a -m&quot;REL: NumPy 1.14.5 release.&quot;
 </pre></div>
 </div>
 <p>Sanity check:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python runtests.py -m &quot;full&quot;  # NumPy &lt; 1.17 only
-$ python3 runtests.py -m &quot;full&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 runtests.py -m &quot;full&quot;
 </pre></div>
 </div>
 <p>Push this release directly onto the end of the maintenance branch. This
@@ -813,9 +812,9 @@ be changed after it has been pushed.</p>
 </pre></div>
 </div>
 <p>Create release notes for next release and edit them to set the version:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp doc/release/template.rst doc/release/1.14.6-notes.rst
-$ gvim doc/release/1.14.6-notes.rst
-$ git add doc/release/1.14.6-notes.rst
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ cp doc/source/release/template.rst doc/source/release/1.14.6-notes.rst
+$ gvim doc/source/release/1.14.6-notes.rst
+$ git add doc/source/release/1.14.6-notes.rst
 </pre></div>
 </div>
 <p>Add new release notes to the documentation release list:</p>
@@ -917,9 +916,18 @@ python-announce-list is BCC so that replies will not be sent to that list.</p>
 </div>
 <div class="section" id="post-release-tasks">
 <h4>Post-Release Tasks<a class="headerlink" href="#post-release-tasks" title="Permalink to this headline">¶</a></h4>
-<p>Forward port the documentation changes <code class="docutils literal notranslate"><span class="pre">doc/release/1.14.5-notes.rst</span></code>,
-<code class="docutils literal notranslate"><span class="pre">doc/changelog/1.14.5-changelog.rst</span></code> and add the release note to
-<code class="docutils literal notranslate"><span class="pre">doc/source/release.rst</span></code>.</p>
+<p>Checkout master and forward port the documentation changes:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git checkout -b update-after-1.14.5-release
+$ git checkout maintenance/1.14.x doc/source/release/1.14.5-notes.rst
+$ git checkout maintenance/1.14.x doc/changelog/1.14.5-changelog.rst
+$ gvim doc/source/release.rst  # Add link to new notes
+$ git add doc/changelog/1.14.5-changelog.rst doc/source/release/1.14.5-notes.rst
+$ git status  # check status before commit
+$ git commit -a -m&quot;REL: Update master after 1.14.5 release.&quot;
+$ git push origin HEAD
+</pre></div>
+</div>
+<p>Go to github and make a PR.</p>
 </div>
 </div>
 </div>
@@ -943,10 +951,10 @@ python-announce-list is BCC so that replies will not be sent to that list.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -425,7 +425,7 @@ using <code class="docutils literal notranslate"><span class="pre">arr.view(np.r
 <td><p>Return the array as an <code class="docutils literal notranslate"><span class="pre">a.ndim</span></code>-levels deep nested list of Python scalars.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="numpy.recarray.tostring.html#numpy.recarray.tostring" title="numpy.recarray.tostring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tostring</span></code></a>([order])</p></td>
-<td><p>Construct Python bytes containing the raw data bytes in the array.</p></td>
+<td><p>A compatibility alias for <a class="reference internal" href="numpy.recarray.tobytes.html#numpy.recarray.tobytes" title="numpy.recarray.tobytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tobytes</span></code></a>, with exactly the same behavior.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="numpy.recarray.trace.html#numpy.recarray.trace" title="numpy.recarray.trace"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace</span></code></a>([offset, axis1, axis2, dtype, out])</p></td>
 <td><p>Return the sum along diagonals of the array.</p></td>
@@ -474,10 +474,10 @@ using <code class="docutils literal notranslate"><span class="pre">arr.view(np.r
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

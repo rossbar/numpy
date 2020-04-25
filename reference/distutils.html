@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -188,7 +188,7 @@ repository or sdist for documentation.</p>
 <h2>Configuration class<a class="headerlink" href="#configuration-class" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="numpy.distutils.misc_util.Configuration">
-<em class="property">class </em><code class="sig-prename descclassname">numpy.distutils.misc_util.</code><code class="sig-name descname">Configuration</code><span class="sig-paren">(</span><em class="sig-param">package_name=None</em>, <em class="sig-param">parent_name=None</em>, <em class="sig-param">top_path=None</em>, <em class="sig-param">package_path=None</em>, <em class="sig-param">**attrs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L726-L2089"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">numpy.distutils.misc_util.</code><code class="sig-name descname">Configuration</code><span class="sig-paren">(</span><em class="sig-param">package_name=None</em>, <em class="sig-param">parent_name=None</em>, <em class="sig-param">top_path=None</em>, <em class="sig-param">package_path=None</em>, <em class="sig-param">**attrs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L726-L2088"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct a configuration instance for the given package name. If
 <em>parent_name</em> is not None, then construct the package as a
 sub-package of the <em>parent_name</em> package. If <em>top_path</em> and
@@ -726,7 +726,7 @@ setup distribution instance has been initialized.</p>
 
 <dl class="method">
 <dt id="numpy.distutils.misc_util.Configuration.get_version">
-<code class="sig-name descname">get_version</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">version_file=None</em>, <em class="sig-param">version_variable=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L1919-L1986"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.get_version" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_version</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">version_file=None</em>, <em class="sig-param">version_variable=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L1918-L1985"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.get_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Try to get version string of a package.</p>
 <p>Return a version string of the current package or None if the version
 information could not be detected.</p>
@@ -739,7 +739,7 @@ __svn_version__.py for string variables version, __version__, and
 
 <dl class="method">
 <dt id="numpy.distutils.misc_util.Configuration.make_svn_version_py">
-<code class="sig-name descname">make_svn_version_py</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">delete=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L1988-L2027"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.make_svn_version_py" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">make_svn_version_py</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">delete=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L1987-L2026"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.make_svn_version_py" title="Permalink to this definition">¶</a></dt>
 <dd><p>Appends a data function to the data_files list that will generate
 __svn_version__.py file to the current package directory.</p>
 <p>Generate package __svn_version__.py file from SVN revision number,
@@ -754,7 +754,7 @@ repository.</p>
 
 <dl class="method">
 <dt id="numpy.distutils.misc_util.Configuration.make_config_py">
-<code class="sig-name descname">make_config_py</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name='__config__'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L2069-L2077"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.make_config_py" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">make_config_py</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">name='__config__'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L2068-L2076"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.make_config_py" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate package __config__.py file containing system_info
 information used during building the package.</p>
 <p>This file is installed to the
@@ -763,7 +763,7 @@ package installation directory.</p>
 
 <dl class="method">
 <dt id="numpy.distutils.misc_util.Configuration.get_info">
-<code class="sig-name descname">get_info</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*names</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L2079-L2089"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.get_info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_info</code><span class="sig-paren">(</span><em class="sig-param">self</em>, <em class="sig-param">*names</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/distutils/misc_util.py#L2078-L2088"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.distutils.misc_util.Configuration.get_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get resources information.</p>
 <p>Return information (from system_info.get_info) for all of the names in
 the argument list in a single dictionary.</p>
@@ -781,7 +781,12 @@ is installed such that it may be used by third-party packages. To build and
 install the C library, you just use the method <em class="xref py py-obj">add_installed_library</em> instead of
 <em class="xref py py-obj">add_library</em>, which takes the same arguments except for an additional
 <code class="docutils literal notranslate"><span class="pre">install_dir</span></code> argument:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">add_installed_library</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;foo.c&#39;</span><span class="p">],</span> <span class="n">install_dir</span><span class="o">=</span><span class="s1">&#39;lib&#39;</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">hidden</span> <span class="ow">in</span> <span class="n">a</span> <span class="n">comment</span> <span class="n">so</span> <span class="k">as</span> <span class="n">to</span> <span class="n">be</span> <span class="n">included</span> <span class="ow">in</span> <span class="n">refguide</span> <span class="n">but</span> <span class="ow">not</span> <span class="n">rendered</span> <span class="n">documentation</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy.distutils.misc_util</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="n">config</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">distutils</span><span class="o">.</span><span class="n">misc_util</span><span class="o">.</span><span class="n">Configuration</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>
+  <span class="o">&gt;&gt;&gt;</span> <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;foo.c&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span> <span class="k">pass</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">config</span><span class="o">.</span><span class="n">add_installed_library</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;foo.c&#39;</span><span class="p">],</span> <span class="n">install_dir</span><span class="o">=</span><span class="s1">&#39;lib&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="section" id="npy-pkg-config-files">
@@ -842,8 +847,8 @@ installed at the same location as used for numpy, using the path returned from
 <h3>Reusing a C library from another package<a class="headerlink" href="#reusing-a-c-library-from-another-package" title="Permalink to this headline">¶</a></h3>
 <p>Info are easily retrieved from the <a class="reference internal" href="distutils/misc_util.html#numpy.distutils.misc_util.get_info" title="numpy.distutils.misc_util.get_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_info</span></code></a> function in
 <a class="reference internal" href="distutils/misc_util.html#module-numpy.distutils.misc_util" title="numpy.distutils.misc_util"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.distutils.misc_util</span></code></a>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">info</span> <span class="o">=</span> <span class="n">get_info</span><span class="p">(</span><span class="s1">&#39;npymath&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;foo.c&#39;</span><span class="p">],</span> <span class="n">extra_info</span><span class="o">=**</span><span class="n">info</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">info</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">distutils</span><span class="o">.</span><span class="n">misc_util</span><span class="o">.</span><span class="n">get_info</span><span class="p">(</span><span class="s1">&#39;npymath&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">config</span><span class="o">.</span><span class="n">add_extension</span><span class="p">(</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="n">sources</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;foo.c&#39;</span><span class="p">],</span> <span class="n">extra_info</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>An additional list of paths to look for .ini files can be given to <a class="reference internal" href="distutils/misc_util.html#numpy.distutils.misc_util.get_info" title="numpy.distutils.misc_util.get_info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_info</span></code></a>.</p>
@@ -882,10 +887,10 @@ for all other cases. See <a class="reference internal" href="distutils_guide.htm
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

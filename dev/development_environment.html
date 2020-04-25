@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -160,7 +160,7 @@ any) found on current PYTHONPATH.</p>
 arguments may be forwarded to the target embedded by <code class="docutils literal notranslate"><span class="pre">runtests.py</span></code> by passing
 the extra arguments after a bare <code class="docutils literal notranslate"><span class="pre">--</span></code>. For example, to run a test method with
 the <code class="docutils literal notranslate"><span class="pre">--pdb</span></code> flag forwarded to the target, run the following:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python runtests.py -t numpy/tests/test_scripts.py:test_f2py -- --pdb
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python runtests.py -t numpy/tests/test_scripts.py::test_f2py -- --pdb
 </pre></div>
 </div>
 <p>When using pytest as a target (the default), you can
@@ -369,10 +369,10 @@ you’ll have a pretty good understanding of the project as a whole. Good Luck!<
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.

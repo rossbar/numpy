@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+562c6ce',
+        VERSION:     '1.19.0.dev0+c0fe893',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -1146,7 +1146,7 @@ float, complex, long, bool)</p>
 <dt id="c.PyArray_IsPythonScalar">
 <code class="sig-name descname">PyArray_IsPythonScalar</code><span class="sig-paren">(</span>op<span class="sig-paren">)</span><a class="headerlink" href="#c.PyArray_IsPythonScalar" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluates true if <em>op</em> is a builtin Python scalar object (int,
-float, complex, str, unicode, long, bool).</p>
+float, complex, bytes, str, long, bool).</p>
 </dd></dl>
 
 <dl class="function">
@@ -3691,7 +3691,7 @@ int <code class="sig-name descname">PyArray_PyIntAsInt</code><span class="sig-pa
 <dd><p>Convert all kinds of Python objects (including arrays and array
 scalars) to a standard integer. On error, -1 is returned and an
 exception set. You may find useful the macro:</p>
-<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define error_converting(x) (((x) == -1) &amp;&amp; PyErr_Occurred()</span>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define error_converting(x) (((x) == -1) &amp;&amp; PyErr_Occurred())</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -4529,10 +4529,10 @@ For example, float64 -&gt; float32 is permitted with this rule.</p>
     <div class="row-fluid">
     <ul class="inline pull-left">
       <li>
-        &copy; Copyright 2008-2019, The SciPy community.
+        &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Mar 09, 2020.
+      Last updated on Apr 25, 2020.
       </li>
       <li>
       Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
