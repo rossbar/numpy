@@ -259,6 +259,24 @@ phantom_import_file = 'dump.xml'
 # Make numpydoc to generate plots for example sections
 numpydoc_use_plots = True
 
+numpydoc_xref_param_type = True
+numpydoc_xref_aliases = {
+    "array-like": ":term:array_like",
+    "array_like": ":term:array_like",
+    "scalar": ":ref:`scalar <arrays.scalars>`",
+    "dtype": "numpy.dtype",
+}
+numpydoc_xref_ignore = {
+    'default',
+    'optional',
+    'type',
+    'of',
+    'floats',
+    'ints',
+    'N',
+    'M',
+}
+
 # -----------------------------------------------------------------------------
 # Autosummary
 # -----------------------------------------------------------------------------
