@@ -271,10 +271,19 @@ numpydoc_xref_ignore = {
     'optional',
     'type',
     'of',
+    'or',
+    'shape',
     'floats',
     'ints',
     'N',
     'M',
+    'K',
+    'scalars',
+    'objects',
+    'compatible',
+    'beg',
+    'end',
+    'series',
 }
 
 # -----------------------------------------------------------------------------
