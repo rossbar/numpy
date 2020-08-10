@@ -265,6 +265,9 @@ numpydoc_xref_aliases = {
     "array_like": ":term:array_like",
     "scalar": ":ref:`scalar <arrays.scalars>`",
     "dtype": "numpy.dtype",
+    "dictionary": ":term:`python:dictionary`",
+    "function": ":term:`python:function`",
+    "ndarray.astype": "numpy.ndarray.astype",
 }
 numpydoc_xref_ignore = {
     'default',
@@ -284,6 +287,10 @@ numpydoc_xref_ignore = {
     'beg',
     'end',
     'series',
+    'arrays',
+    'ndarrays',
+    'datatypes',
+    'strings',
 }
 
 # -----------------------------------------------------------------------------
