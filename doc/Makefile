@@ -11,7 +11,7 @@ PYVER:=$(shell python3 -c 'from sys import version_info as v; print("{0}.{1}".fo
 PYTHON = python$(PYVER)
 
 # You can set these variables from the command line.
-SPHINXOPTS    ?=
+SPHINXOPTS    ?= -n
 SPHINXBUILD   ?= LANG=C sphinx-build
 PAPER         ?=
 # For merging a documentation archive into a git checkout of numpy/doc
