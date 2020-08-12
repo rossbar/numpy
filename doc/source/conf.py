@@ -291,6 +291,12 @@ numpydoc_xref_ignore = {
     'ndarrays',
     'datatypes',
     'strings',
+    'length',
+    'single', 
+    'p', 'k', 'm', 's',
+    'item',
+    'positive',
+    'negative',
 }
 
 # -----------------------------------------------------------------------------
