@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.seterrcall &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.seterrcall &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Universal functions (ufunc)" href="../ufuncs.html" >
-    <link rel="next" title="numpy.ufunc.nin" href="numpy.ufunc.nin.html" >
-    <link rel="prev" title="numpy.seterr" href="numpy.seterr.html" > 
+    <link rel="next" title="numpy.ufunc" href="numpy.ufunc.html" >
+    <link rel="prev" title="numpy.seterr" href="numpy.seterr.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -69,7 +91,7 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="numpy.ufunc.nin.html" title="numpy.ufunc.nin"
+        <a href="numpy.ufunc.html" title="numpy.ufunc"
            accesskey="N">next</a>
       </li>
       <li class="active">
@@ -90,8 +112,8 @@
   <p class="topless"><a href="numpy.seterr.html"
                         title="previous chapter">numpy.seterr</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="numpy.ufunc.nin.html"
-                        title="next chapter">numpy.ufunc.nin</a></p>
+  <p class="topless"><a href="numpy.ufunc.html"
+                        title="next chapter">numpy.ufunc</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -126,7 +148,7 @@ the provided object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>func</strong><span class="classifier">callable f(err, flag) or object with write method</span></dt><dd><p>Function to call upon floating-point errors (‘call’-mode) or
+<dt><strong>func</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#callable" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">callable</span></code></a> f(err, flag) or object with write method</span></dt><dd><p>Function to call upon floating-point errors (‘call’-mode) or
 object whose ‘write’ method is used to log such message (‘log’-mode).</p>
 <p>The call function takes two arguments. The first is a string describing
 the type of error (such as “divide by zero”, “overflow”, “underflow”,
@@ -143,15 +165,17 @@ a string.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>h</strong><span class="classifier">callable, log instance or None</span></dt><dd><p>The old error handler.</p>
+<dd class="field-even"><dl>
+<dt><strong>h</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#callable" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">callable</span></code></a>, log instance or <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></span></dt><dd><p>The old error handler.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.seterr.html#numpy.seterr" title="numpy.seterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterr</span></code></a>, <a class="reference internal" href="numpy.geterr.html#numpy.geterr" title="numpy.geterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterr</span></code></a>, <a class="reference internal" href="numpy.geterrcall.html#numpy.geterrcall" title="numpy.geterrcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterrcall</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.seterr.html#numpy.seterr" title="numpy.seterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterr</span></code></a>, <a class="reference internal" href="numpy.geterr.html#numpy.geterr" title="numpy.geterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterr</span></code></a>, <a class="reference internal" href="numpy.geterrcall.html#numpy.geterrcall" title="numpy.geterrcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterrcall</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Examples</p>
 <p>Callback upon error:</p>
@@ -224,10 +248,10 @@ a string.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

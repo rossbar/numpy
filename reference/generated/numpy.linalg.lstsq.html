@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.linalg.lstsq &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.linalg.lstsq &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.linalg.inv" href="numpy.linalg.inv.html" >
-    <link rel="prev" title="numpy.linalg.tensorsolve" href="numpy.linalg.tensorsolve.html" > 
+    <link rel="prev" title="numpy.linalg.tensorsolve" href="numpy.linalg.tensorsolve.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.linalg.lstsq<a class="headerlink" href="#numpy-linalg-lstsq" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.lstsq">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">lstsq</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">rcond='warn'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L2170-L2328"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.lstsq" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">lstsq</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">rcond='warn'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L2169-L2327"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.lstsq" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the least-squares solution to a linear matrix equation.</p>
 <p>Computes the vector x that approximatively solves the equation
 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&#64;</span> <span class="pre">x</span> <span class="pre">=</span> <span class="pre">b</span></code>. The equation may be under-, well-, or over-determined
@@ -128,13 +150,13 @@ Euclidean 2-norm <img class="math" src="../../_images/math/7d4872bf8c71b3d4510ef
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">(M, N) array_like</span></dt><dd><p>“Coefficient” matrix.</p>
+<dt><strong>a</strong><span class="classifier">(M, N) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>“Coefficient” matrix.</p>
 </dd>
-<dt><strong>b</strong><span class="classifier">{(M,), (M, K)} array_like</span></dt><dd><p>Ordinate or “dependent variable” values. If <em class="xref py py-obj">b</em> is two-dimensional,
+<dt><strong>b</strong><span class="classifier">{(M,), (M, K)} <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Ordinate or “dependent variable” values. If <em class="xref py py-obj">b</em> is two-dimensional,
 the least-squares solution is calculated for each of the <em class="xref py py-obj">K</em> columns
 of <em class="xref py py-obj">b</em>.</p>
 </dd>
-<dt><strong>rcond</strong><span class="classifier">float, optional</span></dt><dd><p>Cut-off ratio for small singular values of <em class="xref py py-obj">a</em>.
+<dt><strong>rcond</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Cut-off ratio for small singular values of <em class="xref py py-obj">a</em>.
 For the purposes of rank determination, singular values are treated
 as zero if they are smaller than <em class="xref py py-obj">rcond</em> times the largest singular
 value of <em class="xref py py-obj">a</em>.</p>
@@ -149,25 +171,25 @@ to keep using the old behavior, use <code class="docutils literal notranslate"><
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">{(N,), (N, K)} ndarray</span></dt><dd><p>Least-squares solution. If <em class="xref py py-obj">b</em> is two-dimensional,
+<dd class="field-even"><dl>
+<dt><strong>x</strong><span class="classifier">{(N,), (N, K)} <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Least-squares solution. If <em class="xref py py-obj">b</em> is two-dimensional,
 the solutions are in the <em class="xref py py-obj">K</em> columns of <em class="xref py py-obj">x</em>.</p>
 </dd>
-<dt><strong>residuals</strong><span class="classifier">{(1,), (K,), (0,)} ndarray</span></dt><dd><p>Sums of residuals; squared Euclidean 2-norm for each column in
+<dt><strong>residuals</strong><span class="classifier">{(1,), (K,), (0,)} <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Sums of residuals; squared Euclidean 2-norm for each column in
 <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">-</span> <span class="pre">a*x</span></code>.
 If the rank of <em class="xref py py-obj">a</em> is &lt; N or M &lt;= N, this is an empty array.
 If <em class="xref py py-obj">b</em> is 1-dimensional, this is a (1,) shape array.
 Otherwise the shape is (K,).</p>
 </dd>
-<dt><strong>rank</strong><span class="classifier">int</span></dt><dd><p>Rank of matrix <em class="xref py py-obj">a</em>.</p>
+<dt><strong>rank</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Rank of matrix <em class="xref py py-obj">a</em>.</p>
 </dd>
-<dt><strong>s</strong><span class="classifier">(min(M, N),) ndarray</span></dt><dd><p>Singular values of <em class="xref py py-obj">a</em>.</p>
+<dt><strong>s</strong><span class="classifier">(min(M, N),) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Singular values of <em class="xref py py-obj">a</em>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>LinAlgError</strong></dt><dd><p>If computation does not converge.</p>
+<dt>LinAlgError</dt><dd><p>If computation does not converge.</p>
 </dd>
 </dl>
 </dd>
@@ -175,7 +197,7 @@ Otherwise the shape is (K,).</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lstsq.html#scipy.linalg.lstsq" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.lstsq</span></code></a></dt><dd><p>Similar function in SciPy.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.lstsq.html#scipy.linalg.lstsq" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.lstsq</span></code></a></dt><dd><p>Similar function in SciPy.</p>
 </dd>
 </dl>
 </div>
@@ -240,10 +262,10 @@ and <code class="docutils literal notranslate"><span class="pre">p</span> <span 
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.memmap &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.memmap &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Standard array subclasses" href="../arrays.classes.html" >
     <link rel="next" title="numpy.memmap.flush" href="numpy.memmap.flush.html" >
-    <link rel="prev" title="numpy.bmat" href="numpy.bmat.html" > 
+    <link rel="prev" title="numpy.bmat" href="numpy.bmat.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -133,7 +155,7 @@ which returns a view into an mmap buffer.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>filename</strong><span class="classifier">str, file-like object, or pathlib.Path instance</span></dt><dd><p>The file name or file object to be used as the array data buffer.</p>
+<dt><strong>filename</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, file-like object, or pathlib.Path instance</span></dt><dd><p>The file name or file object to be used as the array data buffer.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">data-type, optional</span></dt><dd><p>The data-type used to interpret the file contents.
 Default is <code class="xref py py-obj docutils literal notranslate"><span class="pre">uint8</span></code>.</p>
@@ -163,7 +185,7 @@ read-only.</p></td>
 </table>
 <p>Default is ‘r+’.</p>
 </dd>
-<dt><strong>offset</strong><span class="classifier">int, optional</span></dt><dd><p>In the file, array data starts at this offset. Since <em class="xref py py-obj">offset</em> is
+<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>In the file, array data starts at this offset. Since <em class="xref py py-obj">offset</em> is
 measured in bytes, it should normally be a multiple of the byte-size
 of <a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a>. When <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">!=</span> <span class="pre">'r'</span></code>, even positive offsets beyond end of
 file are valid; The file will be extended to accommodate the
@@ -171,7 +193,7 @@ additional data. By default, <code class="docutils literal notranslate"><span cl
 the file, even if <code class="docutils literal notranslate"><span class="pre">filename</span></code> is a file pointer <code class="docutils literal notranslate"><span class="pre">fp</span></code> and
 <code class="docutils literal notranslate"><span class="pre">fp.tell()</span> <span class="pre">!=</span> <span class="pre">0</span></code>.</p>
 </dd>
-<dt><strong>shape</strong><span class="classifier">tuple, optional</span></dt><dd><p>The desired shape of the array. If <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">==</span> <span class="pre">'r'</span></code> and the number
+<dt><strong>shape</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a>, optional</span></dt><dd><p>The desired shape of the array. If <code class="docutils literal notranslate"><span class="pre">mode</span> <span class="pre">==</span> <span class="pre">'r'</span></code> and the number
 of remaining bytes after <em class="xref py py-obj">offset</em> is not a multiple of the byte-size
 of <a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a>, you must specify <a class="reference internal" href="numpy.shape.html#numpy.shape" title="numpy.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a>. By default, the returned array
 will be 1-D with the number of elements determined by file size
@@ -188,7 +210,7 @@ greater than 1-D.  The default order is ‘C’.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">lib.format.open_memmap</span></code></dt><dd><p>Create or load a memory-mapped <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file.</p>
+<dt><a class="reference internal" href="numpy.lib.format.open_memmap.html#numpy.lib.format.open_memmap" title="numpy.lib.format.open_memmap"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lib.format.open_memmap</span></code></a></dt><dd><p>Create or load a memory-mapped <code class="docutils literal notranslate"><span class="pre">.npy</span></code> file.</p>
 </dd>
 </dl>
 </div>
@@ -283,14 +305,14 @@ written into the memory copy of the array, and not written to disk:</p>
 <span class="go">memmap([  4.,   5.,   6.,   7.,   8.,   9.,  10.,  11.], dtype=float32)</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>filename</strong><span class="classifier">str or pathlib.Path instance</span></dt><dd><p>Path to the mapped file.</p>
+<dd class="field-odd"><dl>
+<dt><strong>filename</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or pathlib.Path instance</span></dt><dd><p>Path to the mapped file.</p>
 </dd>
-<dt><strong>offset</strong><span class="classifier">int</span></dt><dd><p>Offset position in the file.</p>
+<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Offset position in the file.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">str</span></dt><dd><p>File mode.</p>
+<dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>File mode.</p>
 </dd>
 </dl>
 </dd>
@@ -302,7 +324,7 @@ written into the memory copy of the array, and not written to disk:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="numpy.memmap.flush.html#numpy.memmap.flush" title="numpy.memmap.flush"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flush</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="numpy.memmap.flush.html#numpy.memmap.flush" title="numpy.memmap.flush"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flush</span></code></a>()</p></td>
 <td><p>Write any changes in the array to the file on disk.</p></td>
 </tr>
 </tbody>
@@ -332,10 +354,10 @@ written into the memory copy of the array, and not written to disk:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Array objects &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Array objects &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="NumPy Reference" href="index.html" >
     <link rel="next" title="The N-dimensional array (ndarray)" href="arrays.ndarray.html" >
-    <link rel="prev" title="NumPy Reference" href="index.html" > 
+    <link rel="prev" title="NumPy Reference" href="index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" accesskey="U">NumPy Reference</a></li> 
@@ -115,7 +137,7 @@
 <p>NumPy provides an N-dimensional array type, the <a class="reference internal" href="arrays.ndarray.html#arrays-ndarray"><span class="std std-ref">ndarray</span></a>, which describes a collection of “items” of the same
 type. The items can be <a class="reference internal" href="arrays.indexing.html#arrays-indexing"><span class="std std-ref">indexed</span></a> using for
 example N integers.</p>
-<p>All ndarrays are <a class="reference internal" href="../glossary.html#term-homogenous"><span class="xref std std-term">homogenous</span></a>: every item takes up the same size
+<p>All ndarrays are <a class="reference internal" href="../glossary.html#term-homogeneous"><span class="xref std std-term">homogeneous</span></a>: every item takes up the same size
 block of memory, and all blocks are interpreted in exactly the same
 way. How each item in the array is to be interpreted is specified by a
 separate <a class="reference internal" href="arrays.dtypes.html#arrays-dtypes"><span class="std std-ref">data-type object</span></a>, one of which is associated
@@ -233,10 +255,10 @@ is accessed.</span><a class="headerlink" href="#id1" title="Permalink to this im
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

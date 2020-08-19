@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Masked array operations &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Masked array operations &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="Masked arrays" href="maskedarray.html" >
     <link rel="next" title="numpy.ma.MaskType" href="generated/numpy.ma.MaskType.html" >
-    <link rel="prev" title="numpy.ma.MaskedArray.count" href="generated/numpy.ma.MaskedArray.count.html" > 
+    <link rel="prev" title="numpy.ma.MaskedArray.count" href="generated/numpy.ma.MaskedArray.count.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" >NumPy Reference</a></li>
@@ -279,16 +301,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.is_mask.html#numpy.ma.is_mask" title="numpy.ma.is_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.is_mask</span></code></a>(m)</p></td>
 <td><p>Return True if m is a valid, standard mask.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.all.html#numpy.ma.MaskedArray.all" title="numpy.ma.MaskedArray.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.all</span></code></a>(self[, axis, out, keepdims])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.all.html#numpy.ma.MaskedArray.all" title="numpy.ma.MaskedArray.all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.all</span></code></a>([axis, out, keepdims])</p></td>
 <td><p>Returns True if all elements evaluate to True.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.any.html#numpy.ma.MaskedArray.any" title="numpy.ma.MaskedArray.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.any</span></code></a>(self[, axis, out, keepdims])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.any.html#numpy.ma.MaskedArray.any" title="numpy.ma.MaskedArray.any"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.any</span></code></a>([axis, out, keepdims])</p></td>
 <td><p>Returns True if any of the elements of <em class="xref py py-obj">a</em> evaluate to True.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.count.html#numpy.ma.MaskedArray.count" title="numpy.ma.MaskedArray.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.count</span></code></a>(self[, axis, keepdims])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.count.html#numpy.ma.MaskedArray.count" title="numpy.ma.MaskedArray.count"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.count</span></code></a>([axis, keepdims])</p></td>
 <td><p>Count the non-masked elements of the array along the given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.nonzero.html#numpy.ma.MaskedArray.nonzero" title="numpy.ma.MaskedArray.nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.nonzero</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.nonzero.html#numpy.ma.MaskedArray.nonzero" title="numpy.ma.MaskedArray.nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.nonzero</span></code></a>()</p></td>
 <td><p>Return the indices of unmasked elements that are not zero.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.shape.html#numpy.ma.shape" title="numpy.ma.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.shape</span></code></a>(obj)</p></td>
@@ -340,13 +362,13 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.flatten.html#numpy.ma.MaskedArray.flatten" title="numpy.ma.MaskedArray.flatten"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.flatten</span></code></a>([order])</p></td>
 <td><p>Return a copy of the array collapsed into one dimension.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.ravel.html#numpy.ma.MaskedArray.ravel" title="numpy.ma.MaskedArray.ravel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.ravel</span></code></a>(self[, order])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.ravel.html#numpy.ma.MaskedArray.ravel" title="numpy.ma.MaskedArray.ravel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.ravel</span></code></a>([order])</p></td>
 <td><p>Returns a 1D version of self, as a view.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.reshape.html#numpy.ma.MaskedArray.reshape" title="numpy.ma.MaskedArray.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.reshape</span></code></a>(self, \*s, \*\*kwargs)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.reshape.html#numpy.ma.MaskedArray.reshape" title="numpy.ma.MaskedArray.reshape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.reshape</span></code></a>(*s, **kwargs)</p></td>
 <td><p>Give a new shape to the array without changing its data.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.resize.html#numpy.ma.MaskedArray.resize" title="numpy.ma.MaskedArray.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.resize</span></code></a>(self, newshape[, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.resize.html#numpy.ma.MaskedArray.resize" title="numpy.ma.MaskedArray.resize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.resize</span></code></a>(newshape[, refcheck, …])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -396,10 +418,10 @@
 <td><p>Expand the shape of an array.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.squeeze.html#numpy.ma.squeeze" title="numpy.ma.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.squeeze</span></code></a>(a[, axis])</p></td>
-<td><p>Remove single-dimensional entries from the shape of an array.</p></td>
+<td><p>Remove axes of length one from <em class="xref py py-obj">a</em>.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.squeeze.html#numpy.ma.MaskedArray.squeeze" title="numpy.ma.MaskedArray.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.squeeze</span></code></a>([axis])</p></td>
-<td><p>Remove single-dimensional entries from the shape of <em class="xref py py-obj">a</em>.</p></td>
+<td><p>Remove axes of length one from <em class="xref py py-obj">a</em>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.stack.html#numpy.ma.stack" title="numpy.ma.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.stack</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Join a sequence of arrays along a new axis.</p></td>
@@ -439,26 +461,26 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.stack.html#numpy.ma.stack" title="numpy.ma.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.stack</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Join a sequence of arrays along a new axis.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.column_stack.html#numpy.ma.column_stack" title="numpy.ma.column_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.column_stack</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Stack 1-D arrays as columns into a 2-D array.</p></td>
-</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.concatenate.html#numpy.ma.concatenate" title="numpy.ma.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.concatenate</span></code></a>(arrays[, axis])</p></td>
 <td><p>Concatenate a sequence of arrays along the given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.append.html#numpy.ma.append" title="numpy.ma.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.append</span></code></a>(a, b[, axis])</p></td>
-<td><p>Append values to the end of an array.</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.stack.html#numpy.ma.stack" title="numpy.ma.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.stack</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Join a sequence of arrays along a new axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.dstack.html#numpy.ma.dstack" title="numpy.ma.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.dstack</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Stack arrays in sequence depth wise (along third axis).</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.vstack.html#numpy.ma.vstack" title="numpy.ma.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.vstack</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Stack arrays in sequence vertically (row wise).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.hstack.html#numpy.ma.hstack" title="numpy.ma.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.hstack</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Stack arrays in sequence horizontally (column wise).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.vstack.html#numpy.ma.vstack" title="numpy.ma.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.vstack</span></code></a>(*args, **kwargs)</p></td>
-<td><p>Stack arrays in sequence vertically (row wise).</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.dstack.html#numpy.ma.dstack" title="numpy.ma.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.dstack</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Stack arrays in sequence depth wise (along third axis).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.column_stack.html#numpy.ma.column_stack" title="numpy.ma.column_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.column_stack</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Stack 1-D arrays as columns into a 2-D array.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.append.html#numpy.ma.append" title="numpy.ma.append"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.append</span></code></a>(a, b[, axis])</p></td>
+<td><p>Append values to the end of an array.</p></td>
 </tr>
 </tbody>
 </table>
@@ -565,16 +587,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.soften_mask.html#numpy.ma.soften_mask" title="numpy.ma.soften_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.soften_mask</span></code></a>(self)</p></td>
 <td><p>Force the mask to soft.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.harden_mask.html#numpy.ma.MaskedArray.harden_mask" title="numpy.ma.MaskedArray.harden_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.harden_mask</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.harden_mask.html#numpy.ma.MaskedArray.harden_mask" title="numpy.ma.MaskedArray.harden_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.harden_mask</span></code></a>()</p></td>
 <td><p>Force the mask to hard.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.soften_mask.html#numpy.ma.MaskedArray.soften_mask" title="numpy.ma.MaskedArray.soften_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.soften_mask</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.soften_mask.html#numpy.ma.MaskedArray.soften_mask" title="numpy.ma.MaskedArray.soften_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.soften_mask</span></code></a>()</p></td>
 <td><p>Force the mask to soft.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.shrink_mask.html#numpy.ma.MaskedArray.shrink_mask" title="numpy.ma.MaskedArray.shrink_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.shrink_mask</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.shrink_mask.html#numpy.ma.MaskedArray.shrink_mask" title="numpy.ma.MaskedArray.shrink_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.shrink_mask</span></code></a>()</p></td>
 <td><p>Reduce a mask to nomask when possible.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.unshare_mask.html#numpy.ma.MaskedArray.unshare_mask" title="numpy.ma.MaskedArray.unshare_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.unshare_mask</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.unshare_mask.html#numpy.ma.MaskedArray.unshare_mask" title="numpy.ma.MaskedArray.unshare_mask"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.unshare_mask</span></code></a>()</p></td>
 <td><p>Copy the mask and set the sharedmask flag to False.</p></td>
 </tr>
 </tbody>
@@ -663,10 +685,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.filled.html#numpy.ma.filled" title="numpy.ma.filled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.filled</span></code></a>(a[, fill_value])</p></td>
 <td><p>Return input as an array with masked data replaced by a fill value.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.compressed.html#numpy.ma.MaskedArray.compressed" title="numpy.ma.MaskedArray.compressed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.compressed</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.compressed.html#numpy.ma.MaskedArray.compressed" title="numpy.ma.MaskedArray.compressed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.compressed</span></code></a>()</p></td>
 <td><p>Return all the non-masked data as a 1-D array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.filled.html#numpy.ma.MaskedArray.filled" title="numpy.ma.MaskedArray.filled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.filled</span></code></a>(self[, fill_value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.filled.html#numpy.ma.MaskedArray.filled" title="numpy.ma.MaskedArray.filled"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.filled</span></code></a>([fill_value])</p></td>
 <td><p>Return a copy of self, with masked values filled with a given value.</p></td>
 </tr>
 </tbody>
@@ -680,16 +702,16 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.tofile.html#numpy.ma.MaskedArray.tofile" title="numpy.ma.MaskedArray.tofile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.tofile</span></code></a>(self, fid[, sep, format])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.tofile.html#numpy.ma.MaskedArray.tofile" title="numpy.ma.MaskedArray.tofile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.tofile</span></code></a>(fid[, sep, format])</p></td>
 <td><p>Save a masked array to a file in binary format.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.tolist.html#numpy.ma.MaskedArray.tolist" title="numpy.ma.MaskedArray.tolist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.tolist</span></code></a>(self[, fill_value])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.tolist.html#numpy.ma.MaskedArray.tolist" title="numpy.ma.MaskedArray.tolist"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.tolist</span></code></a>([fill_value])</p></td>
 <td><p>Return the data portion of the masked array as a hierarchical Python list.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.torecords.html#numpy.ma.MaskedArray.torecords" title="numpy.ma.MaskedArray.torecords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.torecords</span></code></a>(self)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.torecords.html#numpy.ma.MaskedArray.torecords" title="numpy.ma.MaskedArray.torecords"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.torecords</span></code></a>()</p></td>
 <td><p>Transforms a masked array into a flexible-type array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.tobytes.html#numpy.ma.MaskedArray.tobytes" title="numpy.ma.MaskedArray.tobytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.tobytes</span></code></a>(self[, fill_value, order])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.tobytes.html#numpy.ma.MaskedArray.tobytes" title="numpy.ma.MaskedArray.tobytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.tobytes</span></code></a>([fill_value, order])</p></td>
 <td><p>Return the array data as a string containing the raw bytes in the array.</p></td>
 </tr>
 </tbody>
@@ -718,10 +740,10 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.set_fill_value.html#numpy.ma.set_fill_value" title="numpy.ma.set_fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.set_fill_value</span></code></a>(a, fill_value)</p></td>
 <td><p>Set the filling value of a, if a is a masked array.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.get_fill_value.html#numpy.ma.MaskedArray.get_fill_value" title="numpy.ma.MaskedArray.get_fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.get_fill_value</span></code></a>(self)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.get_fill_value.html#numpy.ma.MaskedArray.get_fill_value" title="numpy.ma.MaskedArray.get_fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.get_fill_value</span></code></a>()</p></td>
 <td><p>The filling value of the masked array is a scalar.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.set_fill_value.html#numpy.ma.MaskedArray.set_fill_value" title="numpy.ma.MaskedArray.set_fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.set_fill_value</span></code></a>(self[, value])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.set_fill_value.html#numpy.ma.MaskedArray.set_fill_value" title="numpy.ma.MaskedArray.set_fill_value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.set_fill_value</span></code></a>([value])</p></td>
 <td><p></p></td>
 </tr>
 </tbody>
@@ -795,28 +817,28 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.var.html#numpy.ma.var" title="numpy.ma.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.var</span></code></a>(self[, axis, dtype, out, ddof, keepdims])</p></td>
 <td><p>Compute the variance along the specified axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.anom.html#numpy.ma.MaskedArray.anom" title="numpy.ma.MaskedArray.anom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.anom</span></code></a>(self[, axis, dtype])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.anom.html#numpy.ma.MaskedArray.anom" title="numpy.ma.MaskedArray.anom"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.anom</span></code></a>([axis, dtype])</p></td>
 <td><p>Compute the anomalies (deviations from the arithmetic mean) along the given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.cumprod.html#numpy.ma.MaskedArray.cumprod" title="numpy.ma.MaskedArray.cumprod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.cumprod</span></code></a>(self[, axis, dtype, out])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.cumprod.html#numpy.ma.MaskedArray.cumprod" title="numpy.ma.MaskedArray.cumprod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.cumprod</span></code></a>([axis, dtype, out])</p></td>
 <td><p>Return the cumulative product of the array elements over the given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.cumsum.html#numpy.ma.MaskedArray.cumsum" title="numpy.ma.MaskedArray.cumsum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.cumsum</span></code></a>(self[, axis, dtype, out])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.cumsum.html#numpy.ma.MaskedArray.cumsum" title="numpy.ma.MaskedArray.cumsum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.cumsum</span></code></a>([axis, dtype, out])</p></td>
 <td><p>Return the cumulative sum of the array elements over the given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.mean.html#numpy.ma.MaskedArray.mean" title="numpy.ma.MaskedArray.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.mean</span></code></a>(self[, axis, dtype, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.mean.html#numpy.ma.MaskedArray.mean" title="numpy.ma.MaskedArray.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.mean</span></code></a>([axis, dtype, out, keepdims])</p></td>
 <td><p>Returns the average of the array elements along given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.prod.html#numpy.ma.MaskedArray.prod" title="numpy.ma.MaskedArray.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.prod</span></code></a>(self[, axis, dtype, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.prod.html#numpy.ma.MaskedArray.prod" title="numpy.ma.MaskedArray.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.prod</span></code></a>([axis, dtype, out, keepdims])</p></td>
 <td><p>Return the product of the array elements over the given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.std.html#numpy.ma.MaskedArray.std" title="numpy.ma.MaskedArray.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.std</span></code></a>(self[, axis, dtype, out, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.std.html#numpy.ma.MaskedArray.std" title="numpy.ma.MaskedArray.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.std</span></code></a>([axis, dtype, out, ddof, …])</p></td>
 <td><p>Returns the standard deviation of the array elements along given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.sum.html#numpy.ma.MaskedArray.sum" title="numpy.ma.MaskedArray.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.sum</span></code></a>(self[, axis, dtype, out, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.sum.html#numpy.ma.MaskedArray.sum" title="numpy.ma.MaskedArray.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.sum</span></code></a>([axis, dtype, out, keepdims])</p></td>
 <td><p>Return the sum of the array elements over the given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.var.html#numpy.ma.MaskedArray.var" title="numpy.ma.MaskedArray.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.var</span></code></a>(self[, axis, dtype, out, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.var.html#numpy.ma.MaskedArray.var" title="numpy.ma.MaskedArray.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.var</span></code></a>([axis, dtype, out, ddof, …])</p></td>
 <td><p>Compute the variance along the specified axis.</p></td>
 </tr>
 </tbody>
@@ -845,19 +867,19 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.ptp.html#numpy.ma.ptp" title="numpy.ma.ptp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.ptp</span></code></a>(obj[, axis, out, fill_value, keepdims])</p></td>
 <td><p>Return (maximum - minimum) along the given dimension (i.e.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argmax.html#numpy.ma.MaskedArray.argmax" title="numpy.ma.MaskedArray.argmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argmax</span></code></a>(self[, axis, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argmax.html#numpy.ma.MaskedArray.argmax" title="numpy.ma.MaskedArray.argmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argmax</span></code></a>([axis, fill_value, out])</p></td>
 <td><p>Returns array of indices of the maximum values along the given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argmin.html#numpy.ma.MaskedArray.argmin" title="numpy.ma.MaskedArray.argmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argmin</span></code></a>(self[, axis, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argmin.html#numpy.ma.MaskedArray.argmin" title="numpy.ma.MaskedArray.argmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argmin</span></code></a>([axis, fill_value, out])</p></td>
 <td><p>Return array of indices to the minimum values along the given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.max.html#numpy.ma.MaskedArray.max" title="numpy.ma.MaskedArray.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.max</span></code></a>(self[, axis, out, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.max.html#numpy.ma.MaskedArray.max" title="numpy.ma.MaskedArray.max"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.max</span></code></a>([axis, out, fill_value, …])</p></td>
 <td><p>Return the maximum along a given axis.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.min.html#numpy.ma.MaskedArray.min" title="numpy.ma.MaskedArray.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.min</span></code></a>(self[, axis, out, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.min.html#numpy.ma.MaskedArray.min" title="numpy.ma.MaskedArray.min"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.min</span></code></a>([axis, out, fill_value, …])</p></td>
 <td><p>Return the minimum along a given axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.ptp.html#numpy.ma.MaskedArray.ptp" title="numpy.ma.MaskedArray.ptp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.ptp</span></code></a>(self[, axis, out, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.ptp.html#numpy.ma.MaskedArray.ptp" title="numpy.ma.MaskedArray.ptp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.ptp</span></code></a>([axis, out, fill_value, …])</p></td>
 <td><p>Return (maximum - minimum) along the given dimension (i.e.</p></td>
 </tr>
 </tbody>
@@ -877,10 +899,10 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.sort.html#numpy.ma.sort" title="numpy.ma.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.sort</span></code></a>(a[, axis, kind, order, endwith, …])</p></td>
 <td><p>Return a sorted copy of the masked array.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argsort.html#numpy.ma.MaskedArray.argsort" title="numpy.ma.MaskedArray.argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argsort</span></code></a>(self[, axis, kind, …])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.argsort.html#numpy.ma.MaskedArray.argsort" title="numpy.ma.MaskedArray.argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.argsort</span></code></a>([axis, kind, order, …])</p></td>
 <td><p>Return an ndarray of indices that sort the array along the specified axis.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.sort.html#numpy.ma.MaskedArray.sort" title="numpy.ma.MaskedArray.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.sort</span></code></a>(self[, axis, kind, …])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.sort.html#numpy.ma.MaskedArray.sort" title="numpy.ma.MaskedArray.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.sort</span></code></a>([axis, kind, order, …])</p></td>
 <td><p>Sort the array, in-place</p></td>
 </tr>
 </tbody>
@@ -955,7 +977,7 @@
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.around.html#numpy.ma.around" title="numpy.ma.around"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.around</span></code></a>(a, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.around.html#numpy.ma.around" title="numpy.ma.around"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.around</span></code></a></p></td>
 <td><p>Round an array to the given number of decimals.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.clip.html#numpy.ma.clip" title="numpy.ma.clip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.clip</span></code></a>(a, a_min, a_max[, out])</p></td>
@@ -967,7 +989,7 @@
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.clip.html#numpy.ma.MaskedArray.clip" title="numpy.ma.MaskedArray.clip"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.clip</span></code></a>([min, max, out])</p></td>
 <td><p>Return an array whose values are limited to <code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code>.</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.round.html#numpy.ma.MaskedArray.round" title="numpy.ma.MaskedArray.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.round</span></code></a>(self[, decimals, out])</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ma.MaskedArray.round.html#numpy.ma.MaskedArray.round" title="numpy.ma.MaskedArray.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ma.MaskedArray.round</span></code></a>([decimals, out])</p></td>
 <td><p>Return each element rounded to the given number of decimals.</p></td>
 </tr>
 </tbody>
@@ -1035,10 +1057,10 @@
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

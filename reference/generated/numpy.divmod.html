@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.divmod &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.divmod &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Mathematical functions" href="../routines.math.html" >
     <link rel="next" title="numpy.angle" href="numpy.angle.html" >
-    <link rel="prev" title="numpy.remainder" href="numpy.remainder.html" > 
+    <link rel="prev" title="numpy.remainder" href="numpy.remainder.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -124,21 +146,21 @@
 <p><code class="docutils literal notranslate"><span class="pre">np.divmod(x,</span> <span class="pre">y)</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">(x</span> <span class="pre">//</span> <span class="pre">y,</span> <span class="pre">x</span> <span class="pre">%</span> <span class="pre">y)</span></code>, but faster
 because it avoids redundant work. It is used to implement the Python
 built-in function <code class="docutils literal notranslate"><span class="pre">divmod</span></code> on NumPy arrays.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x1</strong><span class="classifier">array_like</span></dt><dd><p>Dividend array.</p>
+<dd class="field-odd"><dl>
+<dt><strong>x1</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Dividend array.</p>
 </dd>
-<dt><strong>x2</strong><span class="classifier">array_like</span></dt><dd><p>Divisor array.
+<dt><strong>x2</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Divisor array.
 If <code class="docutils literal notranslate"><span class="pre">x1.shape</span> <span class="pre">!=</span> <span class="pre">x2.shape</span></code>, they must be broadcastable to a common
 shape (which becomes the shape of the output).</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, None, or tuple of ndarray and None, optional</span></dt><dd><p>A location into which the result is stored. If provided, it must have
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> and <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, optional</span></dt><dd><p>A location into which the result is stored. If provided, it must have
 a shape that the inputs broadcast to. If not provided or None,
 a freshly-allocated array is returned. A tuple (possible only as a
 keyword argument) must have length equal to the number of outputs.</p>
 </dd>
-<dt><strong>where</strong><span class="classifier">array_like, optional</span></dt><dd><p>This condition is broadcast over the input. At locations where the
+<dt><strong>where</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, optional</span></dt><dd><p>This condition is broadcast over the input. At locations where the
 condition is True, the <em class="xref py py-obj">out</em> array will be set to the ufunc result.
 Elsewhere, the <em class="xref py py-obj">out</em> array will retain its original value.
 Note that if an uninitialized <em class="xref py py-obj">out</em> array is created via the default
@@ -151,11 +173,11 @@ remain uninitialized.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out1</strong><span class="classifier">ndarray</span></dt><dd><p>Element-wise quotient resulting from floor division.
+<dd class="field-even"><dl>
+<dt><strong>out1</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Element-wise quotient resulting from floor division.
 This is a scalar if both <em class="xref py py-obj">x1</em> and <em class="xref py py-obj">x2</em> are scalars.</p>
 </dd>
-<dt><strong>out2</strong><span class="classifier">ndarray</span></dt><dd><p>Element-wise remainder from floor division.
+<dt><strong>out2</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Element-wise remainder from floor division.
 This is a scalar if both <em class="xref py py-obj">x1</em> and <em class="xref py py-obj">x2</em> are scalars.</p>
 </dd>
 </dl>
@@ -202,10 +224,10 @@ This is a scalar if both <em class="xref py py-obj">x1</em> and <em class="xref 
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

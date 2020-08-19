@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.loadtxt &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.loadtxt &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Array creation routines" href="../routines.array-creation.html" >
     <link rel="next" title="numpy.core.records.array" href="numpy.core.records.array.html" >
-    <link rel="prev" title="numpy.fromstring" href="numpy.fromstring.html" > 
+    <link rel="prev" title="numpy.fromstring" href="numpy.fromstring.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,13 +138,13 @@
 <h1>numpy.loadtxt<a class="headerlink" href="#numpy-loadtxt" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.loadtxt">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">loadtxt</code><span class="sig-paren">(</span><em class="sig-param">fname</em>, <em class="sig-param">dtype=&lt;class 'float'&gt;</em>, <em class="sig-param">comments='#'</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">converters=None</em>, <em class="sig-param">skiprows=0</em>, <em class="sig-param">usecols=None</em>, <em class="sig-param">unpack=False</em>, <em class="sig-param">ndmin=0</em>, <em class="sig-param">encoding='bytes'</em>, <em class="sig-param">max_rows=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L791-L1182"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.loadtxt" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">loadtxt</code><span class="sig-paren">(</span><em class="sig-param">fname</em>, <em class="sig-param">dtype=&lt;class 'float'&gt;</em>, <em class="sig-param">comments='#'</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">converters=None</em>, <em class="sig-param">skiprows=0</em>, <em class="sig-param">usecols=None</em>, <em class="sig-param">unpack=False</em>, <em class="sig-param">ndmin=0</em>, <em class="sig-param">encoding='bytes'</em>, <em class="sig-param">max_rows=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L793-L1201"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.loadtxt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load data from a text file.</p>
 <p>Each row in the text file must have the same number of values.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>fname</strong><span class="classifier">file, str, or pathlib.Path</span></dt><dd><p>File, filename, or generator to read.  If the filename extension is
+<dt><strong>fname</strong><span class="classifier">file, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, or pathlib.Path</span></dt><dd><p>File, filename, or generator to read.  If the filename extension is
 <code class="docutils literal notranslate"><span class="pre">.gz</span></code> or <code class="docutils literal notranslate"><span class="pre">.bz2</span></code>, the file is first decompressed. Note that
 generators should return byte strings.</p>
 </dd>
@@ -132,23 +154,23 @@ each row will be interpreted as an element of the array.  In this
 case, the number of columns used must match the number of fields in
 the data-type.</p>
 </dd>
-<dt><strong>comments</strong><span class="classifier">str or sequence of str, optional</span></dt><dd><p>The characters or list of characters used to indicate the start of a
+<dt><strong>comments</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>The characters or list of characters used to indicate the start of a
 comment. None implies no comments. For backwards compatibility, byte
 strings will be decoded as ‘latin1’. The default is ‘#’.</p>
 </dd>
-<dt><strong>delimiter</strong><span class="classifier">str, optional</span></dt><dd><p>The string used to separate values. For backwards compatibility, byte
+<dt><strong>delimiter</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>The string used to separate values. For backwards compatibility, byte
 strings will be decoded as ‘latin1’. The default is whitespace.</p>
 </dd>
-<dt><strong>converters</strong><span class="classifier">dict, optional</span></dt><dd><p>A dictionary mapping column number to a function that will parse the
+<dt><strong>converters</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a>, optional</span></dt><dd><p>A dictionary mapping column number to a function that will parse the
 column string into the desired value.  E.g., if column 0 is a date
 string: <code class="docutils literal notranslate"><span class="pre">converters</span> <span class="pre">=</span> <span class="pre">{0:</span> <span class="pre">datestr2num}</span></code>.  Converters can also be
 used to provide a default value for missing data (but see also
 <a class="reference internal" href="numpy.genfromtxt.html#numpy.genfromtxt" title="numpy.genfromtxt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">genfromtxt</span></code></a>): <code class="docutils literal notranslate"><span class="pre">converters</span> <span class="pre">=</span> <span class="pre">{3:</span> <span class="pre">lambda</span> <span class="pre">s:</span> <span class="pre">float(s.strip()</span> <span class="pre">or</span> <span class="pre">0)}</span></code>.
 Default: None.</p>
 </dd>
-<dt><strong>skiprows</strong><span class="classifier">int, optional</span></dt><dd><p>Skip the first <em class="xref py py-obj">skiprows</em> lines, including comments; default: 0.</p>
+<dt><strong>skiprows</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Skip the first <em class="xref py py-obj">skiprows</em> lines, including comments; default: 0.</p>
 </dd>
-<dt><strong>usecols</strong><span class="classifier">int or sequence, optional</span></dt><dd><p>Which columns to read, with 0 being the first. For example,
+<dt><strong>usecols</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>, optional</span></dt><dd><p>Which columns to read, with 0 being the first. For example,
 <code class="docutils literal notranslate"><span class="pre">usecols</span> <span class="pre">=</span> <span class="pre">(1,4,5)</span></code> will extract the 2nd, 5th and 6th columns.
 The default, None, results in all columns being read.</p>
 <div class="versionchanged">
@@ -157,18 +179,18 @@ an integer instead of a tuple. E.g <code class="docutils literal notranslate"><s
 fourth column the same way as <code class="docutils literal notranslate"><span class="pre">usecols</span> <span class="pre">=</span> <span class="pre">(3,)</span></code> would.</p>
 </div>
 </dd>
-<dt><strong>unpack</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the returned array is transposed, so that arguments may be
+<dt><strong>unpack</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, the returned array is transposed, so that arguments may be
 unpacked using <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span> <span class="pre">=</span> <span class="pre">loadtxt(...)</span></code>.  When used with a structured
 data-type, arrays are returned for each field.  Default is False.</p>
 </dd>
-<dt><strong>ndmin</strong><span class="classifier">int, optional</span></dt><dd><p>The returned array will have at least <em class="xref py py-obj">ndmin</em> dimensions.
+<dt><strong>ndmin</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The returned array will have at least <em class="xref py py-obj">ndmin</em> dimensions.
 Otherwise mono-dimensional axes will be squeezed.
 Legal values: 0 (default), 1 or 2.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.6.0.</span></p>
 </div>
 </dd>
-<dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>Encoding used to decode the inputfile. Does not apply to input streams.
+<dt><strong>encoding</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Encoding used to decode the inputfile. Does not apply to input streams.
 The special value ‘bytes’ enables backward compatibility workarounds
 that ensures you receive byte arrays as results if possible and passes
 ‘latin1’ encoded strings to converters. Override this value to receive
@@ -178,7 +200,7 @@ the system default is used. The default value is ‘bytes’.</p>
 <p><span class="versionmodified added">New in version 1.14.0.</span></p>
 </div>
 </dd>
-<dt><strong>max_rows</strong><span class="classifier">int, optional</span></dt><dd><p>Read <em class="xref py py-obj">max_rows</em> lines of content after <em class="xref py py-obj">skiprows</em> lines. The default
+<dt><strong>max_rows</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Read <em class="xref py py-obj">max_rows</em> lines of content after <em class="xref py py-obj">skiprows</em> lines. The default
 is to read all the lines.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.16.0.</span></p>
@@ -187,19 +209,19 @@ is to read all the lines.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>Data read from the text file.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Data read from the text file.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.load.html#numpy.load" title="numpy.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>, <a class="reference internal" href="numpy.fromstring.html#numpy.fromstring" title="numpy.fromstring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromstring</span></code></a>, <a class="reference internal" href="numpy.fromregex.html#numpy.fromregex" title="numpy.fromregex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromregex</span></code></a></p>
 <dl class="simple">
+<dt><a class="reference internal" href="numpy.load.html#numpy.load" title="numpy.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>, <a class="reference internal" href="numpy.fromstring.html#numpy.fromstring" title="numpy.fromstring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromstring</span></code></a>, <a class="reference internal" href="numpy.fromregex.html#numpy.fromregex" title="numpy.fromregex"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromregex</span></code></a></dt><dd></dd>
 <dt><a class="reference internal" href="numpy.genfromtxt.html#numpy.genfromtxt" title="numpy.genfromtxt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">genfromtxt</span></code></a></dt><dd><p>Load data with missing values handled as specified.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.loadmat.html#scipy.io.loadmat" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.io.loadmat</span></code></a></dt><dd><p>reads MATLAB data files</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.io.loadmat.html#scipy.io.loadmat" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.io.loadmat</span></code></a></dt><dd><p>reads MATLAB data files</p>
 </dd>
 </dl>
 </div>
@@ -272,10 +294,10 @@ with a trailing minus sign into a negative number.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

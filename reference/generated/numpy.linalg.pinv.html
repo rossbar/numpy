@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.linalg.pinv &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.linalg.pinv &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.linalg.tensorinv" href="numpy.linalg.tensorinv.html" >
-    <link rel="prev" title="numpy.linalg.inv" href="numpy.linalg.inv.html" > 
+    <link rel="prev" title="numpy.linalg.inv" href="numpy.linalg.inv.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.linalg.pinv<a class="headerlink" href="#numpy-linalg-pinv" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.pinv">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">pinv</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">rcond=1e-15</em>, <em class="sig-param">hermitian=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L1916-L2012"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.pinv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">pinv</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">rcond=1e-15</em>, <em class="sig-param">hermitian=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L1915-L2011"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.pinv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the (Moore-Penrose) pseudo-inverse of a matrix.</p>
 <p>Calculate the generalized inverse of a matrix using its
 singular-value decomposition (SVD) and including all
@@ -127,14 +149,14 @@ singular-value decomposition (SVD) and including all
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">(…, M, N) array_like</span></dt><dd><p>Matrix or stack of matrices to be pseudo-inverted.</p>
+<dt><strong>a</strong><span class="classifier">(…, M, N) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Matrix or stack of matrices to be pseudo-inverted.</p>
 </dd>
-<dt><strong>rcond</strong><span class="classifier">(…) array_like of float</span></dt><dd><p>Cutoff for small singular values.
+<dt><strong>rcond</strong><span class="classifier">(…) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Cutoff for small singular values.
 Singular values less than or equal to
 <code class="docutils literal notranslate"><span class="pre">rcond</span> <span class="pre">*</span> <span class="pre">largest_singular_value</span></code> are set to zero.
 Broadcasts against the stack of matrices.</p>
 </dd>
-<dt><strong>hermitian</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, <em class="xref py py-obj">a</em> is assumed to be Hermitian (symmetric if real-valued),
+<dt><strong>hermitian</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, <em class="xref py py-obj">a</em> is assumed to be Hermitian (symmetric if real-valued),
 enabling a more efficient method for finding singular values.
 Defaults to False.</p>
 <div class="versionadded">
@@ -144,15 +166,15 @@ Defaults to False.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>B</strong><span class="classifier">(…, N, M) ndarray</span></dt><dd><p>The pseudo-inverse of <em class="xref py py-obj">a</em>. If <em class="xref py py-obj">a</em> is a <em class="xref py py-obj">matrix</em> instance, then so
+<dd class="field-even"><dl>
+<dt><strong>B</strong><span class="classifier">(…, N, M) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The pseudo-inverse of <em class="xref py py-obj">a</em>. If <em class="xref py py-obj">a</em> is a <em class="xref py py-obj">matrix</em> instance, then so
 is <em class="xref py py-obj">B</em>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>LinAlgError</strong></dt><dd><p>If the SVD computation does not converge.</p>
+<dt>LinAlgError</dt><dd><p>If the SVD computation does not converge.</p>
 </dd>
 </dl>
 </dd>
@@ -160,11 +182,11 @@ is <em class="xref py py-obj">B</em>.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.pinv.html#scipy.linalg.pinv" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.pinv</span></code></a></dt><dd><p>Similar function in SciPy.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.pinv.html#scipy.linalg.pinv" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.pinv</span></code></a></dt><dd><p>Similar function in SciPy.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.pinv2.html#scipy.linalg.pinv2" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.pinv2</span></code></a></dt><dd><p>Similar function in SciPy (SVD-based).</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.pinv2.html#scipy.linalg.pinv2" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.pinv2</span></code></a></dt><dd><p>Similar function in SciPy (SVD-based).</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.pinvh.html#scipy.linalg.pinvh" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.pinvh</span></code></a></dt><dd><p>Compute the (Moore-Penrose) pseudo-inverse of a Hermitian matrix.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.pinvh.html#scipy.linalg.pinvh" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.pinvh</span></code></a></dt><dd><p>Compute the (Moore-Penrose) pseudo-inverse of a Hermitian matrix.</p>
 </dd>
 </dl>
 </div>
@@ -224,10 +246,10 @@ FL, Academic Press, Inc., 1980, pp. 139-142.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

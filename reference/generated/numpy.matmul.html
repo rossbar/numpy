@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.matmul &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.matmul &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.tensordot" href="numpy.tensordot.html" >
-    <link rel="prev" title="numpy.outer" href="numpy.outer.html" > 
+    <link rel="prev" title="numpy.outer" href="numpy.outer.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -121,9 +143,9 @@
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>x1, x2</strong><span class="classifier">array_like</span></dt><dd><p>Input arrays, scalars not allowed.</p>
+<dt><strong>x1, x2</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input arrays, scalars not allowed.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>A location into which the result is stored. If provided, it must have
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>A location into which the result is stored. If provided, it must have
 a shape that matches the signature <em class="xref py py-obj">(n,k),(k,m)-&gt;(n,m)</em>. If not
 provided or None, a freshly-allocated array is returned.</p>
 </dd>
@@ -136,15 +158,15 @@ provided or None, a freshly-allocated array is returned.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">ndarray</span></dt><dd><p>The matrix product of the inputs.
+<dd class="field-even"><dl>
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The matrix product of the inputs.
 This is a scalar only when both x1, x2 are 1-d vectors.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl>
-<dt><strong>ValueError</strong></dt><dd><p>If the last dimension of <em class="xref py py-obj">a</em> is not the same size as
+<dt>ValueError</dt><dd><p>If the last dimension of <em class="xref py py-obj">a</em> is not the same size as
 the second-to-last dimension of <em class="xref py py-obj">b</em>.</p>
 <p>If a scalar value is passed in.</p>
 </dd>
@@ -269,10 +291,10 @@ is complex-conjugated:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

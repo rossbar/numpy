@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.nditer &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.nditer &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Indexing routines" href="../routines.indexing.html" >
     <link rel="next" title="numpy.nditer.close" href="numpy.nditer.close.html" >
-    <link rel="prev" title="numpy.fill_diagonal" href="numpy.fill_diagonal.html" > 
+    <link rel="prev" title="numpy.fill_diagonal" href="numpy.fill_diagonal.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -120,12 +142,12 @@
 <dd><p>Efficient multi-dimensional iterator object to iterate over arrays.
 To get started using this object, see the
 <a class="reference internal" href="../arrays.nditer.html#arrays-nditer"><span class="std std-ref">introductory guide to array iteration</span></a>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>op</strong><span class="classifier">ndarray or sequence of array_like</span></dt><dd><p>The array(s) to iterate over.</p>
+<dd class="field-odd"><dl>
+<dt><strong>op</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>The array(s) to iterate over.</p>
 </dd>
-<dt><strong>flags</strong><span class="classifier">sequence of str, optional</span></dt><dd><p>Flags to control the behavior of the iterator.</p>
+<dt><strong>flags</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Flags to control the behavior of the iterator.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">buffered</span></code> enables buffering when required.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">c_index</span></code> causes a C-order index to be tracked.</p></li>
@@ -156,7 +178,7 @@ which are broadcasted, also known as reduction operands.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">zerosize_ok</span></code> allows <a class="reference internal" href="numpy.nditer.itersize.html#numpy.nditer.itersize" title="numpy.nditer.itersize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">itersize</span></code></a> to be zero.</p></li>
 </ul>
 </dd>
-<dt><strong>op_flags</strong><span class="classifier">list of list of str, optional</span></dt><dd><p>This is a list of flags for each operand. At minimum, one of
+<dt><strong>op_flags</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>This is a list of flags for each operand. At minimum, one of
 <code class="docutils literal notranslate"><span class="pre">readonly</span></code>, <code class="docutils literal notranslate"><span class="pre">readwrite</span></code>, or <code class="docutils literal notranslate"><span class="pre">writeonly</span></code> must be specified.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">readonly</span></code> indicates the operand will only be read from.</p></li>
@@ -183,7 +205,7 @@ accessed only in the iterator order, to allow less conservative
 copying when <code class="docutils literal notranslate"><span class="pre">copy_if_overlap</span></code> is present.</p></li>
 </ul>
 </dd>
-<dt><strong>op_dtypes</strong><span class="classifier">dtype or tuple of dtype(s), optional</span></dt><dd><p>The required data type(s) of the operands. If copying or buffering
+<dt><strong>op_dtypes</strong><span class="classifier">dtype or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of dtype(s), optional</span></dt><dd><p>The required data type(s) of the operands. If copying or buffering
 is enabled, the data will be converted to/from their original types.</p>
 </dd>
 <dt><strong>order</strong><span class="classifier">{‘C’, ‘F’, ‘A’, ‘K’}, optional</span></dt><dd><p>Controls the iteration order. ‘C’ means C order, ‘F’ means
@@ -206,18 +228,18 @@ like float64 to float32, are allowed.</p></li>
 <li><p>‘unsafe’ means any data conversions may be done.</p></li>
 </ul>
 </dd>
-<dt><strong>op_axes</strong><span class="classifier">list of list of ints, optional</span></dt><dd><p>If provided, is a list of ints or None for each operands.
+<dt><strong>op_axes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of ints, optional</span></dt><dd><p>If provided, is a list of ints or None for each operands.
 The list of axes for an operand is a mapping from the dimensions
 of the iterator to the dimensions of the operand. A value of
 -1 can be placed for entries, causing that dimension to be
 treated as <a class="reference internal" href="../constants.html#numpy.newaxis" title="numpy.newaxis"><code class="xref py py-obj docutils literal notranslate"><span class="pre">newaxis</span></code></a>.</p>
 </dd>
-<dt><strong>itershape</strong><span class="classifier">tuple of ints, optional</span></dt><dd><p>The desired shape of the iterator. This allows <code class="docutils literal notranslate"><span class="pre">allocate</span></code> operands
+<dt><strong>itershape</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints, optional</span></dt><dd><p>The desired shape of the iterator. This allows <code class="docutils literal notranslate"><span class="pre">allocate</span></code> operands
 with a dimension mapped by op_axes not corresponding to a dimension
 of a different operand to get a value not equal to 1 for that
 dimension.</p>
 </dd>
-<dt><strong>buffersize</strong><span class="classifier">int, optional</span></dt><dd><p>When buffering is enabled, controls the size of the temporary
+<dt><strong>buffersize</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>When buffering is enabled, controls the size of the temporary
 buffers. Set to 0 for the default value.</p>
 </dd>
 </dl>
@@ -326,35 +348,35 @@ no longer write to <em class="xref py py-obj">a</em>. If writeback semantics are
 <em class="xref py py-obj">x.data</em> will still point at some part of <em class="xref py py-obj">a.data</em>, and writing to
 one will affect the other.</p>
 <p>Context management and the <a class="reference internal" href="numpy.nditer.close.html#numpy.nditer.close" title="numpy.nditer.close"><code class="xref py py-obj docutils literal notranslate"><span class="pre">close</span></code></a> method appeared in version 1.15.0.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dtypes</strong><span class="classifier">tuple of dtype(s)</span></dt><dd><p>The data types of the values provided in <a class="reference internal" href="numpy.nditer.value.html#numpy.nditer.value" title="numpy.nditer.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>. This may be
+<dd class="field-odd"><dl>
+<dt><strong>dtypes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of dtype(s)</span></dt><dd><p>The data types of the values provided in <a class="reference internal" href="numpy.nditer.value.html#numpy.nditer.value" title="numpy.nditer.value"><code class="xref py py-obj docutils literal notranslate"><span class="pre">value</span></code></a>. This may be
 different from the operand data types if buffering is enabled.
 Valid only before the iterator is closed.</p>
 </dd>
-<dt><strong>finished</strong><span class="classifier">bool</span></dt><dd><p>Whether the iteration over the operands is finished or not.</p>
+<dt><strong>finished</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Whether the iteration over the operands is finished or not.</p>
 </dd>
-<dt><strong>has_delayed_bufalloc</strong><span class="classifier">bool</span></dt><dd><p>If True, the iterator was created with the <code class="docutils literal notranslate"><span class="pre">delay_bufalloc</span></code> flag,
+<dt><strong>has_delayed_bufalloc</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, the iterator was created with the <code class="docutils literal notranslate"><span class="pre">delay_bufalloc</span></code> flag,
 and no reset() function was called on it yet.</p>
 </dd>
-<dt><strong>has_index</strong><span class="classifier">bool</span></dt><dd><p>If True, the iterator was created with either the <code class="docutils literal notranslate"><span class="pre">c_index</span></code> or
+<dt><strong>has_index</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, the iterator was created with either the <code class="docutils literal notranslate"><span class="pre">c_index</span></code> or
 the <code class="docutils literal notranslate"><span class="pre">f_index</span></code> flag, and the property <a class="reference internal" href="numpy.nditer.index.html#numpy.nditer.index" title="numpy.nditer.index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">index</span></code></a> can be used to
 retrieve it.</p>
 </dd>
-<dt><strong>has_multi_index</strong><span class="classifier">bool</span></dt><dd><p>If True, the iterator was created with the <code class="docutils literal notranslate"><span class="pre">multi_index</span></code> flag,
+<dt><strong>has_multi_index</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, the iterator was created with the <code class="docutils literal notranslate"><span class="pre">multi_index</span></code> flag,
 and the property <a class="reference internal" href="numpy.nditer.multi_index.html#numpy.nditer.multi_index" title="numpy.nditer.multi_index"><code class="xref py py-obj docutils literal notranslate"><span class="pre">multi_index</span></code></a> can be used to retrieve it.</p>
 </dd>
 <dt><strong>index</strong></dt><dd><p>When the <code class="docutils literal notranslate"><span class="pre">c_index</span></code> or <code class="docutils literal notranslate"><span class="pre">f_index</span></code> flag was used, this property
 provides access to the index. Raises a ValueError if accessed
 and <code class="docutils literal notranslate"><span class="pre">has_index</span></code> is False.</p>
 </dd>
-<dt><strong>iterationneedsapi</strong><span class="classifier">bool</span></dt><dd><p>Whether iteration requires access to the Python API, for example
+<dt><strong>iterationneedsapi</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Whether iteration requires access to the Python API, for example
 if one of the operands is an object array.</p>
 </dd>
-<dt><strong>iterindex</strong><span class="classifier">int</span></dt><dd><p>An index which matches the order of iteration.</p>
+<dt><strong>iterindex</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>An index which matches the order of iteration.</p>
 </dd>
-<dt><strong>itersize</strong><span class="classifier">int</span></dt><dd><p>Size of the iterator.</p>
+<dt><strong>itersize</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Size of the iterator.</p>
 </dd>
 <dt><strong>itviews</strong></dt><dd><p>Structured view(s) of <a class="reference internal" href="numpy.nditer.operands.html#numpy.nditer.operands" title="numpy.nditer.operands"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operands</span></code></a> in memory, matching the reordered
 and optimized iterator access pattern. Valid only before the iterator
@@ -364,13 +386,13 @@ is closed.</p>
 provides access to the index. Raises a ValueError if accessed
 accessed and <code class="docutils literal notranslate"><span class="pre">has_multi_index</span></code> is False.</p>
 </dd>
-<dt><strong>ndim</strong><span class="classifier">int</span></dt><dd><p>The dimensions of the iterator.</p>
+<dt><strong>ndim</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The dimensions of the iterator.</p>
 </dd>
-<dt><strong>nop</strong><span class="classifier">int</span></dt><dd><p>The number of iterator operands.</p>
+<dt><strong>nop</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>The number of iterator operands.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.nditer.operands.html#numpy.nditer.operands" title="numpy.nditer.operands"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operands</span></code></a><span class="classifier">tuple of operand(s)</span></dt><dd><p>operands[<em class="xref py py-obj">Slice</em>]</p>
+<dt><a class="reference internal" href="numpy.nditer.operands.html#numpy.nditer.operands" title="numpy.nditer.operands"><code class="xref py py-obj docutils literal notranslate"><span class="pre">operands</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of operand(s)</span></dt><dd><p>operands[<em class="xref py py-obj">Slice</em>]</p>
 </dd>
-<dt><strong>shape</strong><span class="classifier">tuple of ints</span></dt><dd><p>Shape tuple, the shape of the iterator.</p>
+<dt><strong>shape</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints</span></dt><dd><p>Shape tuple, the shape of the iterator.</p>
 </dd>
 <dt><strong>value</strong></dt><dd><p>Value of <code class="docutils literal notranslate"><span class="pre">operands</span></code> at current iteration. Normally, this is a
 tuple of array scalars, but if the flag <code class="docutils literal notranslate"><span class="pre">external_loop</span></code> is used,
@@ -437,10 +459,10 @@ it is a tuple of one dimensional arrays.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>Typing (numpy.typing) &mdash; NumPy v1.20.dev0 Manual</title>
+    
+    <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
+    <link rel="stylesheet" href="../_static/scipy.css" type="text/css" >
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" >
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" >
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.20.0.dev0+64619c5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" >
+    <link rel="index" title="Index" href="../genindex.html" >
+    <link rel="search" title="Search" href="../search.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+    <link rel="up" title="NumPy Reference" href="index.html" >
+    <link rel="next" title="Global State" href="global_state.html" >
+    <link rel="prev" title="numpy.kaiser" href="generated/numpy.kaiser.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
+  </head>
+  <body>
+<div class="container">
+  <div class="top-scipy-org-logo-header">
+    <a href="../index.html">
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="main">
+        
+	<div class="row-fluid">
+	  <div class="span12">
+	    <div class="spc-navbar">
+              
+    <ul class="nav nav-pills pull-left">
+        <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
+        <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
+        
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
+        
+
+          <li class="active"><a href="index.html" accesskey="U">NumPy Reference</a></li> 
+    </ul>
+              
+              
+    <ul class="nav nav-pills pull-right">
+      <li class="active">
+        <a href="../genindex.html" title="General Index"
+           accesskey="I">index</a>
+      </li>
+      <li class="active">
+        <a href="global_state.html" title="Global State"
+           accesskey="N">next</a>
+      </li>
+      <li class="active">
+        <a href="generated/numpy.kaiser.html" title="numpy.kaiser"
+           accesskey="P">previous</a>
+      </li>
+    </ul>
+              
+	    </div>
+	  </div>
+	</div>
+        
+
+	<div class="row-fluid">
+      <div class="spc-rightsidebar span3">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Typing (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.typing</span></code>)</a><ul>
+<li><a class="reference internal" href="#differences-from-the-runtime-numpy-api">Differences from the runtime NumPy API</a><ul>
+<li><a class="reference internal" href="#arraylike">ArrayLike</a></li>
+<li><a class="reference internal" href="#ndarray">ndarray</a></li>
+<li><a class="reference internal" href="#dtype">dtype</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="generated/numpy.kaiser.html"
+                        title="previous chapter">numpy.kaiser</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="global_state.html"
+                        title="next chapter">Global State</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h4>Quick search</h4>
+    <div>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" style="width: inherit;" name="q" />
+      <input type="submit" value="search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+          <div class="span9">
+            
+        <div class="bodywrapper">
+          <div class="body" id="spc-section-body">
+            
+  <span class="target" id="module-numpy.typing"><span id="typing"></span></span><div class="section" id="typing-numpy-typing">
+<h1>Typing (<a class="reference internal" href="#module-numpy.typing" title="numpy.typing"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.typing</span></code></a>)<a class="headerlink" href="#typing-numpy-typing" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Some of the types in this module rely on features only present in
+the standard library in Python 3.8 and greater. If you want to use
+these types in earlier versions of Python, you should install the
+<a class="reference external" href="https://pypi.org/project/typing-extensions/">typing-extensions</a> package.</p>
+</div>
+<p>Large parts of the NumPy API have PEP-484-style type annotations. In
+addition, the following type aliases are available for users.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">typing.ArrayLike</span></code>: objects that can be converted to arrays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">typing.DtypeLike</span></code>: objects that can be converted to dtypes</p></li>
+</ul>
+<p>Roughly speaking, <code class="docutils literal notranslate"><span class="pre">typing.ArrayLike</span></code> is “objects that can be used as
+inputs to <code class="docutils literal notranslate"><span class="pre">np.array</span></code>” and <code class="docutils literal notranslate"><span class="pre">typing.DtypeLike</span></code> is “objects that can
+be used as inputs to <code class="docutils literal notranslate"><span class="pre">np.dtype</span></code>”.</p>
+<div class="section" id="differences-from-the-runtime-numpy-api">
+<h2>Differences from the runtime NumPy API<a class="headerlink" href="#differences-from-the-runtime-numpy-api" title="Permalink to this headline">¶</a></h2>
+<p>NumPy is very flexible. Trying to describe the full range of
+possibilities statically would result in types that are not very
+helpful. For that reason, the typed NumPy API is often stricter than
+the runtime NumPy API. This section describes some notable
+differences.</p>
+<div class="section" id="arraylike">
+<h3>ArrayLike<a class="headerlink" href="#arraylike" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">ArrayLike</span></code> type tries to avoid creating object arrays. For
+example,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="go">array(&lt;generator object &lt;genexpr&gt; at 0x10c004cd0&gt;, dtype=object)</span>
+</pre></div>
+</div>
+<p>is valid NumPy code which will create a 0-dimensional object
+array. Type checkers will complain about the above example when using
+the NumPy types however. If you really intended to do the above, then
+you can either use a <code class="docutils literal notranslate"><span class="pre">#</span> <span class="pre">type:</span> <span class="pre">ignore</span></code> comment:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># type: ignore</span>
+</pre></div>
+</div>
+<p>or explicitly type the array like object as <code class="docutils literal notranslate"><span class="pre">Any</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">array_like</span><span class="p">:</span> <span class="n">Any</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">array_like</span><span class="p">)</span>
+<span class="go">array(&lt;generator object &lt;genexpr&gt; at 0x1192741d0&gt;, dtype=object)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="ndarray">
+<h3>ndarray<a class="headerlink" href="#ndarray" title="Permalink to this headline">¶</a></h3>
+<p>It’s possible to mutate the dtype of an array at runtime. For example,
+the following code is valid:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">x</span><span class="o">.</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">bool_</span>
+</pre></div>
+</div>
+<p>This sort of mutation is not allowed by the types. Users who want to
+write statically typed code should insted use the <a class="reference internal" href="generated/numpy.ndarray.view.html#numpy.ndarray.view" title="numpy.ndarray.view"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ndarray.view</span></code></a>
+method to create a view of the array with a different dtype.</p>
+</div>
+<div class="section" id="dtype">
+<h3>dtype<a class="headerlink" href="#dtype" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">DTypeLike</span></code> type tries to avoid creation of dtype objects using
+dictionary of fields like below:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dtype</span><span class="p">({</span><span class="s2">&quot;field1&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">float</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;field2&quot;</span><span class="p">:</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="mi">3</span><span class="p">)})</span>
+</pre></div>
+</div>
+<p>Although this is valid Numpy code, the type checker will complain about it,
+since its usage is discouraged.
+Please see : <a class="reference external" href="https://numpy.org/devdocs/reference/arrays.dtypes.html">https://numpy.org/devdocs/reference/arrays.dtypes.html</a></p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-navbar-bottom">
+      <div class="spc-navbar">
+        
+      </div>
+    </div>
+    <div class="container">
+    <div class="footer">
+    <div class="row-fluid">
+    <ul class="inline pull-left">
+      <li>
+        &copy; Copyright 2008-2020, The SciPy community.
+      </li>
+      <li>
+      Last updated on Aug 19, 2020.
+      </li>
+      <li>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
+      </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

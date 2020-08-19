@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.info &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.info &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy-specific help functions" href="../routines.help.html" >
     <link rel="next" title="numpy.source" href="numpy.source.html" >
-    <link rel="prev" title="numpy.lookfor" href="numpy.lookfor.html" > 
+    <link rel="prev" title="numpy.lookfor" href="numpy.lookfor.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,29 +138,31 @@
 <h1>numpy.info<a class="headerlink" href="#numpy-info" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.info">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><em class="sig-param">object=None</em>, <em class="sig-param">maxwidth=76</em>, <em class="sig-param">output=&lt;_io.TextIOWrapper name='&lt;stdout&gt;' mode='w' encoding='utf-8'&gt;</em>, <em class="sig-param">toplevel='numpy'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/utils.py#L461-L629"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.info" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><em class="sig-param">object=None</em>, <em class="sig-param">maxwidth=76</em>, <em class="sig-param">output=&lt;_io.TextIOWrapper name='&lt;stdout&gt;' mode='w' encoding='utf-8'&gt;</em>, <em class="sig-param">toplevel='numpy'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/utils.py#L460-L603"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get help information for a function, class, or module.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>object</strong><span class="classifier">object or str, optional</span></dt><dd><p>Input object or name to get information about. If <a class="reference external" href="https://docs.python.org/dev/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code></a> is a
+<dd class="field-odd"><dl>
+<dt><strong>object</strong><span class="classifier">object or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Input object or name to get information about. If <a class="reference external" href="https://docs.python.org/dev/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code></a> is a
 numpy object, its docstring is given. If it is a string, available
 modules are searched for matching objects.  If None, information
 about <a class="reference internal" href="#numpy.info" title="numpy.info"><code class="xref py py-obj docutils literal notranslate"><span class="pre">info</span></code></a> itself is returned.</p>
 </dd>
-<dt><strong>maxwidth</strong><span class="classifier">int, optional</span></dt><dd><p>Printing width.</p>
+<dt><strong>maxwidth</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Printing width.</p>
 </dd>
 <dt><strong>output</strong><span class="classifier">file like object, optional</span></dt><dd><p>File like object that the output is written to, default is
 <code class="docutils literal notranslate"><span class="pre">stdout</span></code>.  The object has to be opened in ‘w’ or ‘a’ mode.</p>
 </dd>
-<dt><strong>toplevel</strong><span class="classifier">str, optional</span></dt><dd><p>Start search at this level.</p>
+<dt><strong>toplevel</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Start search at this level.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.source.html#numpy.source" title="numpy.source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code></a>, <a class="reference internal" href="numpy.lookfor.html#numpy.lookfor" title="numpy.lookfor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lookfor</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.source.html#numpy.source" title="numpy.source"><code class="xref py py-obj docutils literal notranslate"><span class="pre">source</span></code></a>, <a class="reference internal" href="numpy.lookfor.html#numpy.lookfor" title="numpy.lookfor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lookfor</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>When used interactively with an object, <code class="docutils literal notranslate"><span class="pre">np.info(obj)</span></code> is equivalent
@@ -151,7 +175,7 @@ prompt.</p>
 <span class="go">     ...</span>
 </pre></div>
 </div>
-<p>When using a string for <a class="reference external" href="https://docs.python.org/dev/library/functions.html#object" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code></a> it is possible to get multiple results.</p>
+<p>When using a string for <a class="reference external" href="https://docs.python.org/dev/library/functions.html#object" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">object</span></code></a> it is possible to get multiple results.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;fft&#39;</span><span class="p">)</span> 
 <span class="go">     *** Found in numpy ***</span>
 <span class="go">Core FFT routines</span>
@@ -188,10 +212,10 @@ prompt.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

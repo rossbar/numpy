@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.cov &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.cov &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Statistics" href="../routines.statistics.html" >
     <link rel="next" title="numpy.histogram" href="numpy.histogram.html" >
-    <link rel="prev" title="numpy.correlate" href="numpy.correlate.html" > 
+    <link rel="prev" title="numpy.correlate" href="numpy.correlate.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.cov<a class="headerlink" href="#numpy-cov" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.cov">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param">m</em>, <em class="sig-param">y=None</em>, <em class="sig-param">rowvar=True</em>, <em class="sig-param">bias=False</em>, <em class="sig-param">ddof=None</em>, <em class="sig-param">fweights=None</em>, <em class="sig-param">aweights=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L2238-L2449"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.cov" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">cov</code><span class="sig-paren">(</span><em class="sig-param">m</em>, <em class="sig-param">y=None</em>, <em class="sig-param">rowvar=True</em>, <em class="sig-param">bias=False</em>, <em class="sig-param">ddof=None</em>, <em class="sig-param">fweights=None</em>, <em class="sig-param">aweights=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L2331-L2542"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.cov" title="Permalink to this definition">¶</a></dt>
 <dd><p>Estimate a covariance matrix, given data and weights.</p>
 <p>Covariance indicates the level to which two variables vary together.
 If we examine N-dimensional samples, <img class="math" src="../../_images/math/07a703312fc8ba5a79fb6bd6dcea46ee788f996c.svg" alt="X = [x_1, x_2, ... x_N]^T"/>,
@@ -127,24 +149,24 @@ of <img class="math" src="../../_images/math/c67734af70861b2bd4dedf5c41c9aad2314
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>m</strong><span class="classifier">array_like</span></dt><dd><p>A 1-D or 2-D array containing multiple variables and observations.
+<dt><strong>m</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>A 1-D or 2-D array containing multiple variables and observations.
 Each row of <em class="xref py py-obj">m</em> represents a variable, and each column a single
 observation of all those variables. Also see <em class="xref py py-obj">rowvar</em> below.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">array_like, optional</span></dt><dd><p>An additional set of variables and observations. <em class="xref py py-obj">y</em> has the same form
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, optional</span></dt><dd><p>An additional set of variables and observations. <em class="xref py py-obj">y</em> has the same form
 as that of <em class="xref py py-obj">m</em>.</p>
 </dd>
-<dt><strong>rowvar</strong><span class="classifier">bool, optional</span></dt><dd><p>If <em class="xref py py-obj">rowvar</em> is True (default), then each row represents a
+<dt><strong>rowvar</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If <em class="xref py py-obj">rowvar</em> is True (default), then each row represents a
 variable, with observations in the columns. Otherwise, the relationship
 is transposed: each column represents a variable, while the rows
 contain observations.</p>
 </dd>
-<dt><strong>bias</strong><span class="classifier">bool, optional</span></dt><dd><p>Default normalization (False) is by <code class="docutils literal notranslate"><span class="pre">(N</span> <span class="pre">-</span> <span class="pre">1)</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the
+<dt><strong>bias</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Default normalization (False) is by <code class="docutils literal notranslate"><span class="pre">(N</span> <span class="pre">-</span> <span class="pre">1)</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span></code> is the
 number of observations given (unbiased estimate). If <em class="xref py py-obj">bias</em> is True,
 then normalization is by <code class="docutils literal notranslate"><span class="pre">N</span></code>. These values can be overridden by using
 the keyword <code class="docutils literal notranslate"><span class="pre">ddof</span></code> in numpy versions &gt;= 1.5.</p>
 </dd>
-<dt><strong>ddof</strong><span class="classifier">int, optional</span></dt><dd><p>If not <code class="docutils literal notranslate"><span class="pre">None</span></code> the default value implied by <em class="xref py py-obj">bias</em> is overridden.
+<dt><strong>ddof</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>If not <code class="docutils literal notranslate"><span class="pre">None</span></code> the default value implied by <em class="xref py py-obj">bias</em> is overridden.
 Note that <code class="docutils literal notranslate"><span class="pre">ddof=1</span></code> will return the unbiased estimate, even if both
 <em class="xref py py-obj">fweights</em> and <em class="xref py py-obj">aweights</em> are specified, and <code class="docutils literal notranslate"><span class="pre">ddof=0</span></code> will return
 the simple average. See the notes for the details. The default value
@@ -153,13 +175,13 @@ is <code class="docutils literal notranslate"><span class="pre">None</span></cod
 <p><span class="versionmodified added">New in version 1.5.</span></p>
 </div>
 </dd>
-<dt><strong>fweights</strong><span class="classifier">array_like, int, optional</span></dt><dd><p>1-D array of integer frequency weights; the number of times each
+<dt><strong>fweights</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>1-D array of integer frequency weights; the number of times each
 observation vector should be repeated.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.10.</span></p>
 </div>
 </dd>
-<dt><strong>aweights</strong><span class="classifier">array_like, optional</span></dt><dd><p>1-D array of observation vector weights. These relative weights are
+<dt><strong>aweights</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, optional</span></dt><dd><p>1-D array of observation vector weights. These relative weights are
 typically large for observations considered “important” and smaller for
 observations considered less “important”. If <code class="docutils literal notranslate"><span class="pre">ddof=0</span></code> the array of
 weights can be used to assign probabilities to observation vectors.</p>
@@ -170,8 +192,8 @@ weights can be used to assign probabilities to observation vectors.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>The covariance matrix of the variables.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The covariance matrix of the variables.</p>
 </dd>
 </dl>
 </dd>
@@ -258,10 +280,10 @@ matrix shows this clearly:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

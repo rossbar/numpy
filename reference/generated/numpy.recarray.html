@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.recarray &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.recarray &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Standard array subclasses" href="../arrays.classes.html" >
     <link rel="next" title="numpy.recarray.all" href="numpy.recarray.all.html" >
-    <link rel="prev" title="numpy.core.defchararray.array" href="numpy.core.defchararray.array.html" > 
+    <link rel="prev" title="numpy.core.defchararray.array" href="numpy.core.defchararray.array.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -124,22 +146,22 @@ where each entry in the array is a pair of <code class="docutils literal notrans
 these attributes are accessed using dictionary lookups such as <code class="docutils literal notranslate"><span class="pre">arr['x']</span></code>
 and <code class="docutils literal notranslate"><span class="pre">arr['y']</span></code>.  Record arrays allow the fields to be accessed as members
 of the array, using <code class="docutils literal notranslate"><span class="pre">arr.x</span></code> and <code class="docutils literal notranslate"><span class="pre">arr.y</span></code>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>shape</strong><span class="classifier">tuple</span></dt><dd><p>Shape of output array.</p>
+<dd class="field-odd"><dl>
+<dt><strong>shape</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a></span></dt><dd><p>Shape of output array.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">data-type, optional</span></dt><dd><p>The desired data-type.  By default, the data-type is determined
 from <em class="xref py py-obj">formats</em>, <em class="xref py py-obj">names</em>, <em class="xref py py-obj">titles</em>, <em class="xref py py-obj">aligned</em> and <em class="xref py py-obj">byteorder</em>.</p>
 </dd>
-<dt><strong>formats</strong><span class="classifier">list of data-types, optional</span></dt><dd><p>A list containing the data-types for the different columns, e.g.
+<dt><strong>formats</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of data-types, optional</span></dt><dd><p>A list containing the data-types for the different columns, e.g.
 <code class="docutils literal notranslate"><span class="pre">['i4',</span> <span class="pre">'f8',</span> <span class="pre">'i4']</span></code>.  <em class="xref py py-obj">formats</em> does <em>not</em> support the new
 convention of using types directly, i.e. <code class="docutils literal notranslate"><span class="pre">(int,</span> <span class="pre">float,</span> <span class="pre">int)</span></code>.
 Note that <em class="xref py py-obj">formats</em> must be a list, not a tuple.
 Given that <em class="xref py py-obj">formats</em> is somewhat limited, we recommend specifying
 <a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a> instead.</p>
 </dd>
-<dt><strong>names</strong><span class="classifier">tuple of str, optional</span></dt><dd><p>The name of each column, e.g. <code class="docutils literal notranslate"><span class="pre">('x',</span> <span class="pre">'y',</span> <span class="pre">'z')</span></code>.</p>
+<dt><strong>names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>The name of each column, e.g. <code class="docutils literal notranslate"><span class="pre">('x',</span> <span class="pre">'y',</span> <span class="pre">'z')</span></code>.</p>
 </dd>
 <dt><strong>buf</strong><span class="classifier">buffer, optional</span></dt><dd><p>By default, a new array is created of the given shape and data-type.
 If <em class="xref py py-obj">buf</em> is specified and is an object exposing the buffer interface,
@@ -155,21 +177,21 @@ the <em class="xref py py-obj">offset</em> and <a class="reference internal" hre
 </dl>
 </dd>
 <dt class="field-odd">Other Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>titles</strong><span class="classifier">tuple of str, optional</span></dt><dd><p>Aliases for column names.  For example, if <em class="xref py py-obj">names</em> were
+<dd class="field-odd"><dl>
+<dt><strong>titles</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Aliases for column names.  For example, if <em class="xref py py-obj">names</em> were
 <code class="docutils literal notranslate"><span class="pre">('x',</span> <span class="pre">'y',</span> <span class="pre">'z')</span></code> and <em class="xref py py-obj">titles</em> is
 <code class="docutils literal notranslate"><span class="pre">('x_coordinate',</span> <span class="pre">'y_coordinate',</span> <span class="pre">'z_coordinate')</span></code>, then
 <code class="docutils literal notranslate"><span class="pre">arr['x']</span></code> is equivalent to both <code class="docutils literal notranslate"><span class="pre">arr.x</span></code> and <code class="docutils literal notranslate"><span class="pre">arr.x_coordinate</span></code>.</p>
 </dd>
 <dt><strong>byteorder</strong><span class="classifier">{‘&lt;’, ‘&gt;’, ‘=’}, optional</span></dt><dd><p>Byte-order for all fields.</p>
 </dd>
-<dt><strong>aligned</strong><span class="classifier">bool, optional</span></dt><dd><p>Align the fields in memory as the C-compiler would.</p>
+<dt><strong>aligned</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Align the fields in memory as the C-compiler would.</p>
 </dd>
-<dt><strong>strides</strong><span class="classifier">tuple of ints, optional</span></dt><dd><p>Buffer (<em class="xref py py-obj">buf</em>) is interpreted according to these strides (strides
+<dt><strong>strides</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints, optional</span></dt><dd><p>Buffer (<em class="xref py py-obj">buf</em>) is interpreted according to these strides (strides
 define how many bytes each array element, row, column, etc.
 occupy in memory).</p>
 </dd>
-<dt><strong>offset</strong><span class="classifier">int, optional</span></dt><dd><p>Start reading buffer (<em class="xref py py-obj">buf</em>) from this offset onwards.</p>
+<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Start reading buffer (<em class="xref py py-obj">buf</em>) from this offset onwards.</p>
 </dd>
 <dt><strong>order</strong><span class="classifier">{‘C’, ‘F’}, optional</span></dt><dd><p>Row-major (C-style) or column-major (Fortran-style) order.</p>
 </dd>
@@ -401,7 +423,7 @@ using <code class="docutils literal notranslate"><span class="pre">arr.view(np.r
 <td><p>Sort an array in-place.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="numpy.recarray.squeeze.html#numpy.recarray.squeeze" title="numpy.recarray.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze</span></code></a>([axis])</p></td>
-<td><p>Remove single-dimensional entries from the shape of <em class="xref py py-obj">a</em>.</p></td>
+<td><p>Remove axes of length one from <em class="xref py py-obj">a</em>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="numpy.recarray.std.html#numpy.recarray.std" title="numpy.recarray.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>([axis, dtype, out, ddof, keepdims])</p></td>
 <td><p>Returns the standard deviation of the array elements along given axis.</p></td>
@@ -477,10 +499,10 @@ using <code class="docutils literal notranslate"><span class="pre">arr.view(np.r
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

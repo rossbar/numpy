@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.choose &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.choose &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Indexing routines" href="../routines.indexing.html" >
     <link rel="next" title="numpy.compress" href="numpy.compress.html" >
-    <link rel="prev" title="numpy.take_along_axis" href="numpy.take_along_axis.html" > 
+    <link rel="prev" title="numpy.take_along_axis" href="numpy.take_along_axis.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -147,16 +169,16 @@ are mapped to <em class="xref py py-obj">n-1</em>; and then the new array is con
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">int array</span></dt><dd><p>This array must contain integers in <em class="xref py py-obj">[0, n-1]</em>, where <em class="xref py py-obj">n</em> is the number
+<dt><strong>a</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>This array must contain integers in <em class="xref py py-obj">[0, n-1]</em>, where <em class="xref py py-obj">n</em> is the number
 of choices, unless <code class="docutils literal notranslate"><span class="pre">mode=wrap</span></code> or <code class="docutils literal notranslate"><span class="pre">mode=clip</span></code>, in which cases any
 integers are permissible.</p>
 </dd>
-<dt><strong>choices</strong><span class="classifier">sequence of arrays</span></dt><dd><p>Choice arrays. <em class="xref py py-obj">a</em> and all of the choices must be broadcastable to the
+<dt><strong>choices</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of arrays</span></dt><dd><p>Choice arrays. <em class="xref py py-obj">a</em> and all of the choices must be broadcastable to the
 same shape.  If <em class="xref py py-obj">choices</em> is itself an array (not recommended), then
 its outermost dimension (i.e., the one corresponding to
 <code class="docutils literal notranslate"><span class="pre">choices.shape[0]</span></code>) is taken as defining the “sequence”.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">array, optional</span></dt><dd><p>If provided, the result will be inserted into this array. It should
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>, optional</span></dt><dd><p>If provided, the result will be inserted into this array. It should
 be of the appropriate shape and dtype. Note that <em class="xref py py-obj">out</em> is always
 buffered if <em class="xref py py-obj">mode=’raise’</em>; use other modes for better performance.</p>
 </dd>
@@ -172,14 +194,14 @@ buffered if <em class="xref py py-obj">mode=’raise’</em>; use other modes fo
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>merged_array</strong><span class="classifier">array</span></dt><dd><p>The merged result.</p>
+<dd class="field-even"><dl>
+<dt><strong>merged_array</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>The merged result.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ValueError: shape mismatch</strong></dt><dd><p>If <em class="xref py py-obj">a</em> and each choice array are not all broadcastable to the same
+<dt>ValueError: shape mismatch</dt><dd><p>If <em class="xref py py-obj">a</em> and each choice array are not all broadcastable to the same
 shape.</p>
 </dd>
 </dl>
@@ -264,10 +286,10 @@ should be either a list or a tuple.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

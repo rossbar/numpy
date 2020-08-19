@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Data Type API &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Data Type API &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy C-API" href="index.html" >
     <link rel="next" title="Array API" href="array.html" >
-    <link rel="prev" title="System configuration" href="config.html" > 
+    <link rel="prev" title="System configuration" href="config.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -163,7 +185,7 @@ clarity.</p>
 <p>There is a list of enumerated types defined providing the basic 24
 data types plus some useful generic names. Whenever the code requires
 a type number, one of these enumerated types is requested. The types
-are all called <code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_{NAME}</span></code>:</p>
+are all called <code class="docutils literal notranslate"><span class="pre">NPY_{NAME}</span></code>:</p>
 <dl class="var">
 <dt id="c.NPY_BOOL">
 <code class="sig-name descname">NPY_BOOL</code><a class="headerlink" href="#c.NPY_BOOL" title="Permalink to this definition">¶</a></dt>
@@ -421,20 +443,20 @@ example when calling np.zero(shape). This is equivalent to
 </dd></dl>
 
 <p>Other useful related constants are</p>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_NTYPES">
 <code class="sig-name descname">NPY_NTYPES</code><a class="headerlink" href="#c.NPY_NTYPES" title="Permalink to this definition">¶</a></dt>
 <dd><p>The total number of built-in NumPy types. The enumeration covers
 the range from 0 to NPY_NTYPES-1.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_NOTYPE">
 <code class="sig-name descname">NPY_NOTYPE</code><a class="headerlink" href="#c.NPY_NOTYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>A signal value guaranteed not to be a valid type enumeration number.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_USERDEF">
 <code class="sig-name descname">NPY_USERDEF</code><a class="headerlink" href="#c.NPY_USERDEF" title="Permalink to this definition">¶</a></dt>
 <dd><p>The start of type numbers used for Custom Data types.</p>
@@ -443,7 +465,7 @@ the range from 0 to NPY_NTYPES-1.</p>
 <p>The various character codes indicating certain types are also part of
 an enumerated list. References to type characters (should they be
 needed at all) should always use these enumerations. The form of them
-is <code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_{NAME}LTR</span></code> where <code class="docutils literal notranslate"><span class="pre">{NAME}</span></code> can be</p>
+is <code class="docutils literal notranslate"><span class="pre">NPY_{NAME}LTR</span></code> where <code class="docutils literal notranslate"><span class="pre">{NAME}</span></code> can be</p>
 <blockquote>
 <div><p><strong>BOOL</strong>, <strong>BYTE</strong>, <strong>UBYTE</strong>, <strong>SHORT</strong>, <strong>USHORT</strong>, <strong>INT</strong>,
 <strong>UINT</strong>, <strong>LONG</strong>, <strong>ULONG</strong>, <strong>LONGLONG</strong>, <strong>ULONGLONG</strong>,
@@ -497,8 +519,8 @@ platforms (i.e. 128-bit and 256-bit integers are rare).</p>
 </div>
 <div class="section" id="number-of-bits-in-data-types">
 <h3>Number of bits in data types<a class="headerlink" href="#number-of-bits-in-data-types" title="Permalink to this headline">¶</a></h3>
-<p>All <code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_SIZEOF_{CTYPE}</span></code> constants have corresponding
-<code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_BITSOF_{CTYPE}</span></code> constants defined. The <code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_BITSOF_{CTYPE}</span></code>
+<p>All <code class="docutils literal notranslate"><span class="pre">NPY_SIZEOF_{CTYPE}</span></code> constants have corresponding
+<code class="docutils literal notranslate"><span class="pre">NPY_BITSOF_{CTYPE}</span></code> constants defined. The <code class="docutils literal notranslate"><span class="pre">NPY_BITSOF_{CTYPE}</span></code>
 constants provide the number of bits in the data type.  Specifically,
 the available <code class="docutils literal notranslate"><span class="pre">{CTYPE}s</span></code> are</p>
 <blockquote>
@@ -512,7 +534,7 @@ the available <code class="docutils literal notranslate"><span class="pre">{CTYP
 have constants that are defined to be a specific enumerated type
 number. Exactly which enumerated type a bit-width type refers to is
 platform dependent. In particular, the constants available are
-<code class="xref c c-data docutils literal notranslate"><span class="pre">PyArray_{NAME}{BITS}</span></code> where <code class="docutils literal notranslate"><span class="pre">{NAME}</span></code> is <strong>INT</strong>, <strong>UINT</strong>,
+<code class="docutils literal notranslate"><span class="pre">PyArray_{NAME}{BITS}</span></code> where <code class="docutils literal notranslate"><span class="pre">{NAME}</span></code> is <strong>INT</strong>, <strong>UINT</strong>,
 <strong>FLOAT</strong>, <strong>COMPLEX</strong> and <code class="docutils literal notranslate"><span class="pre">{BITS}</span></code> can be 8, 16, 32, 64, 80, 96, 128,
 160, 192, 256, and 512.  Obviously not all bit-widths are available on
 all platforms for all the kinds of numeric types. Commonly 8-, 16-,
@@ -675,8 +697,8 @@ that order).</p>
 floating point, and complex floating point types of specific bit-
 widths. The available type names are</p>
 <blockquote>
-<div><p><code class="xref c c-type docutils literal notranslate"><span class="pre">npy_int{bits}</span></code>, <code class="xref c c-type docutils literal notranslate"><span class="pre">npy_uint{bits}</span></code>, <code class="xref c c-type docutils literal notranslate"><span class="pre">npy_float{bits}</span></code>,
-and <code class="xref c c-type docutils literal notranslate"><span class="pre">npy_complex{bits}</span></code></p>
+<div><p><code class="docutils literal notranslate"><span class="pre">npy_int{bits}</span></code>, <code class="docutils literal notranslate"><span class="pre">npy_uint{bits}</span></code>, <code class="docutils literal notranslate"><span class="pre">npy_float{bits}</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">npy_complex{bits}</span></code></p>
 </div></blockquote>
 <p>where <code class="docutils literal notranslate"><span class="pre">{bits}</span></code> is the number of bits in the type and can be <strong>8</strong>,
 <strong>16</strong>, <strong>32</strong>, <strong>64</strong>, 128, and 256 for integer types; 16, <strong>32</strong>
@@ -719,10 +741,10 @@ format specifier in printf and related commands.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

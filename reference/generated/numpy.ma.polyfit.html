@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.polyfit &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.polyfit &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Masked array operations" href="../routines.ma.html" >
     <link rel="next" title="numpy.ma.around" href="numpy.ma.around.html" >
-    <link rel="prev" title="numpy.ma.vander" href="numpy.ma.vander.html" > 
+    <link rel="prev" title="numpy.ma.vander" href="numpy.ma.vander.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -117,8 +139,15 @@
 <h1>numpy.ma.polyfit<a class="headerlink" href="#numpy-ma-polyfit" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.ma.polyfit">
-<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">polyfit</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">deg</em>, <em class="sig-param">rcond=None</em>, <em class="sig-param">full=False</em>, <em class="sig-param">w=None</em>, <em class="sig-param">cov=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/ma/extras.py#L1894-L1926"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.polyfit" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">polyfit</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">deg</em>, <em class="sig-param">rcond=None</em>, <em class="sig-param">full=False</em>, <em class="sig-param">w=None</em>, <em class="sig-param">cov=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/ma/extras.py#L1889-L1921"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.polyfit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Least squares polynomial fit.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This forms part of the old polynomial API. Since version 1.4, the
+new polynomial API defined in <a class="reference internal" href="../routines.polynomials.package.html#module-numpy.polynomial" title="numpy.polynomial"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.polynomial</span></code></a> is preferred.
+A summary of the differences can be found in the
+<a class="reference internal" href="../routines.polynomials.html"><span class="doc">transition guide</span></a>.</p>
+</div>
 <p>Fit a polynomial <code class="docutils literal notranslate"><span class="pre">p(x)</span> <span class="pre">=</span> <span class="pre">p[0]</span> <span class="pre">*</span> <span class="pre">x**deg</span> <span class="pre">+</span> <span class="pre">...</span> <span class="pre">+</span> <span class="pre">p[deg]</span></code> of degree <em class="xref py py-obj">deg</em>
 to points <em class="xref py py-obj">(x, y)</em>. Returns a vector of coefficients <em class="xref py py-obj">p</em> that minimises
 the squared error in the order <em class="xref py py-obj">deg</em>, <em class="xref py py-obj">deg-1</em>, … <em class="xref py py-obj">0</em>.</p>
@@ -127,48 +156,49 @@ method is recommended for new code as it is more stable numerically. See
 the documentation of the method for more information.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">array_like, shape (M,)</span></dt><dd><p>x-coordinates of the M sample points <code class="docutils literal notranslate"><span class="pre">(x[i],</span> <span class="pre">y[i])</span></code>.</p>
+<dd class="field-odd"><dl>
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (M,)</span></dt><dd><p>x-coordinates of the M sample points <code class="docutils literal notranslate"><span class="pre">(x[i],</span> <span class="pre">y[i])</span></code>.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">array_like, shape (M,) or (M, K)</span></dt><dd><p>y-coordinates of the sample points. Several data sets of sample
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (M,) or (M, K)</span></dt><dd><p>y-coordinates of the sample points. Several data sets of sample
 points sharing the same x-coordinates can be fitted at once by
 passing in a 2D-array that contains one dataset per column.</p>
 </dd>
-<dt><strong>deg</strong><span class="classifier">int</span></dt><dd><p>Degree of the fitting polynomial</p>
+<dt><strong>deg</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Degree of the fitting polynomial</p>
 </dd>
-<dt><strong>rcond</strong><span class="classifier">float, optional</span></dt><dd><p>Relative condition number of the fit. Singular values smaller than
+<dt><strong>rcond</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Relative condition number of the fit. Singular values smaller than
 this relative to the largest singular value will be ignored. The
 default value is len(x)*eps, where eps is the relative precision of
 the float type, about 2e-16 in most cases.</p>
 </dd>
-<dt><strong>full</strong><span class="classifier">bool, optional</span></dt><dd><p>Switch determining nature of return value. When it is False (the
+<dt><strong>full</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Switch determining nature of return value. When it is False (the
 default) just the coefficients are returned, when True diagnostic
 information from the singular value decomposition is also returned.</p>
 </dd>
-<dt><strong>w</strong><span class="classifier">array_like, shape (M,), optional</span></dt><dd><p>Weights to apply to the y-coordinates of the sample points. For
+<dt><strong>w</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (M,), optional</span></dt><dd><p>Weights to apply to the y-coordinates of the sample points. For
 gaussian uncertainties, use 1/sigma (not 1/sigma**2).</p>
 </dd>
-<dt><strong>cov</strong><span class="classifier">bool or str, optional</span></dt><dd><p>If given and not <em class="xref py py-obj">False</em>, return not just the estimate but also its
+<dt><strong>cov</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>If given and not <em class="xref py py-obj">False</em>, return not just the estimate but also its
 covariance matrix. By default, the covariance are scaled by
-chi2/sqrt(N-dof), i.e., the weights are presumed to be unreliable
-except in a relative sense and everything is scaled such that the
-reduced chi2 is unity. This scaling is omitted if <code class="docutils literal notranslate"><span class="pre">cov='unscaled'</span></code>,
-as is relevant for the case that the weights are 1/sigma**2, with
-sigma known to be a reliable estimate of the uncertainty.</p>
+chi2/dof, where dof = M - (deg + 1), i.e., the weights are presumed 
+to be unreliable except in a relative sense and everything is scaled 
+such that the reduced chi2 is unity. This scaling is omitted if 
+<code class="docutils literal notranslate"><span class="pre">cov='unscaled'</span></code>, as is relevant for the case that the weights are 
+1/sigma**2, with sigma known to be a reliable estimate of the 
+uncertainty.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>p</strong><span class="classifier">ndarray, shape (deg + 1,) or (deg + 1, K)</span></dt><dd><p>Polynomial coefficients, highest power first.  If <em class="xref py py-obj">y</em> was 2-D, the
+<dd class="field-even"><dl>
+<dt><strong>p</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape (deg + 1,) or (deg + 1, K)</span></dt><dd><p>Polynomial coefficients, highest power first.  If <em class="xref py py-obj">y</em> was 2-D, the
 coefficients for <em class="xref py py-obj">k</em>-th data set are in <code class="docutils literal notranslate"><span class="pre">p[:,k]</span></code>.</p>
 </dd>
-<dt><strong>residuals, rank, singular_values, rcond</strong></dt><dd><p>Present only if <em class="xref py py-obj">full</em> = True.  Residuals is sum of squared residuals
+<dt>residuals, rank, singular_values, rcond</dt><dd><p>Present only if <em class="xref py py-obj">full</em> = True.  Residuals is sum of squared residuals
 of the least-squares fit, the effective rank of the scaled Vandermonde
 coefficient matrix, its singular values, and the specified value of
 <em class="xref py py-obj">rcond</em>. For more details, see <em class="xref py py-obj">linalg.lstsq</em>.</p>
 </dd>
-<dt><strong>V</strong><span class="classifier">ndarray, shape (M,M) or (M,M,K)</span></dt><dd><p>Present only if <em class="xref py py-obj">full</em> = False and <em class="xref py py-obj">cov`=True.  The covariance
+<dt><strong>V</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape (M,M) or (M,M,K)</span></dt><dd><p>Present only if <em class="xref py py-obj">full</em> = False and <em class="xref py py-obj">cov`=True.  The covariance
 matrix of the polynomial coefficient estimates.  The diagonal of
 this matrix are the variance estimates for each coefficient.  If y
 is a 2-D array, then the covariance matrix for the `k</em>-th data set
@@ -178,7 +208,7 @@ are in <code class="docutils literal notranslate"><span class="pre">V[:,:,k]</sp
 </dd>
 <dt class="field-odd">Warns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>RankWarning</strong></dt><dd><p>The rank of the coefficient matrix in the least-squares fit is
+<dt>RankWarning</dt><dd><p>The rank of the coefficient matrix in the least-squares fit is
 deficient. The warning is only raised if <em class="xref py py-obj">full</em> = False.</p>
 <p>The warnings can be turned off by</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">warnings</span>
@@ -196,7 +226,7 @@ deficient. The warning is only raised if <em class="xref py py-obj">full</em> = 
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">linalg.lstsq</span></code></dt><dd><p>Computes a least-squares fit.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.UnivariateSpline.html#scipy.interpolate.UnivariateSpline" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.interpolate.UnivariateSpline</span></code></a></dt><dd><p>Computes spline fits.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.UnivariateSpline.html#scipy.interpolate.UnivariateSpline" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.interpolate.UnivariateSpline</span></code></a></dt><dd><p>Computes spline fits.</p>
 </dd>
 </dl>
 </div>
@@ -305,10 +335,10 @@ alternative.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

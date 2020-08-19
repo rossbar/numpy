@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.save &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.save &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Input and output" href="../routines.io.html" >
     <link rel="next" title="numpy.savez" href="numpy.savez.html" >
-    <link rel="prev" title="numpy.load" href="numpy.load.html" > 
+    <link rel="prev" title="numpy.load" href="numpy.load.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,19 +138,19 @@
 <h1>numpy.save<a class="headerlink" href="#numpy-save" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.save">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">arr</em>, <em class="sig-param">allow_pickle=True</em>, <em class="sig-param">fix_imports=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L457-L529"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.save" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">arr</em>, <em class="sig-param">allow_pickle=True</em>, <em class="sig-param">fix_imports=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L458-L530"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.save" title="Permalink to this definition">¶</a></dt>
 <dd><p>Save an array to a binary file in NumPy <code class="docutils literal notranslate"><span class="pre">.npy</span></code> format.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>file</strong><span class="classifier">file, str, or pathlib.Path</span></dt><dd><p>File or filename to which the data is saved.  If file is a file-object,
+<dd class="field-odd"><dl>
+<dt><strong>file</strong><span class="classifier">file, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, or pathlib.Path</span></dt><dd><p>File or filename to which the data is saved.  If file is a file-object,
 then the filename is unchanged.  If file is a string or Path, a <code class="docutils literal notranslate"><span class="pre">.npy</span></code>
 extension will be appended to the filename if it does not already
 have one.</p>
 </dd>
-<dt><strong>arr</strong><span class="classifier">array_like</span></dt><dd><p>Array data to be saved.</p>
+<dt><strong>arr</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Array data to be saved.</p>
 </dd>
-<dt><strong>allow_pickle</strong><span class="classifier">bool, optional</span></dt><dd><p>Allow saving object arrays using Python pickles. Reasons for disallowing
+<dt><strong>allow_pickle</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Allow saving object arrays using Python pickles. Reasons for disallowing
 pickles include security (loading pickled data can execute arbitrary
 code) and portability (pickled objects may not be loadable on different
 Python installations, for example if the stored objects require libraries
@@ -136,7 +158,7 @@ that are not available, and not all pickled data is compatible between
 Python 2 and Python 3).
 Default: True</p>
 </dd>
-<dt><strong>fix_imports</strong><span class="classifier">bool, optional</span></dt><dd><p>Only useful in forcing objects in object arrays on Python 3 to be
+<dt><strong>fix_imports</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Only useful in forcing objects in object arrays on Python 3 to be
 pickled in a Python 2 compatible way. If <em class="xref py py-obj">fix_imports</em> is True, pickle
 will try to map the new Python 3 names to the old module names used in
 Python 2, so that the pickle data stream is readable with Python 2.</p>
@@ -149,8 +171,8 @@ Python 2, so that the pickle data stream is readable with Python 2.</p>
 <dl class="simple">
 <dt><a class="reference internal" href="numpy.savez.html#numpy.savez" title="numpy.savez"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savez</span></code></a></dt><dd><p>Save several arrays into a <code class="docutils literal notranslate"><span class="pre">.npz</span></code> archive</p>
 </dd>
+<dt><a class="reference internal" href="numpy.savetxt.html#numpy.savetxt" title="numpy.savetxt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savetxt</span></code></a>, <a class="reference internal" href="numpy.load.html#numpy.load" title="numpy.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a></dt><dd></dd>
 </dl>
-<p><a class="reference internal" href="numpy.savetxt.html#numpy.savetxt" title="numpy.savetxt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">savetxt</span></code></a>, <a class="reference internal" href="numpy.load.html#numpy.load" title="numpy.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>For a description of the <code class="docutils literal notranslate"><span class="pre">.npy</span></code> format, see <a class="reference internal" href="numpy.lib.format.html#module-numpy.lib.format" title="numpy.lib.format"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.lib.format</span></code></a>.</p>
@@ -204,10 +226,10 @@ Python 2, so that the pickle data stream is readable with Python 2.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

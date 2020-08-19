@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.legendre.legfit &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.polynomial.legendre.legfit &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Legendre Series (numpy.polynomial.legendre)" href="../routines.polynomials.legendre.html" >
     <link rel="next" title="numpy.polynomial.legendre.legtrim" href="numpy.polynomial.legendre.legtrim.html" >
-    <link rel="prev" title="numpy.polynomial.legendre.legcompanion" href="numpy.polynomial.legendre.legcompanion.html" > 
+    <link rel="prev" title="numpy.polynomial.legendre.legcompanion" href="numpy.polynomial.legendre.legcompanion.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -131,27 +153,27 @@ The fitted polynomial(s) are in the form</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>x</strong><span class="classifier">array_like, shape (M,)</span></dt><dd><p>x-coordinates of the M sample points <code class="docutils literal notranslate"><span class="pre">(x[i],</span> <span class="pre">y[i])</span></code>.</p>
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (M,)</span></dt><dd><p>x-coordinates of the M sample points <code class="docutils literal notranslate"><span class="pre">(x[i],</span> <span class="pre">y[i])</span></code>.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">array_like, shape (M,) or (M, K)</span></dt><dd><p>y-coordinates of the sample points. Several data sets of sample
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (M,) or (M, K)</span></dt><dd><p>y-coordinates of the sample points. Several data sets of sample
 points sharing the same x-coordinates can be fitted at once by
 passing in a 2D-array that contains one dataset per column.</p>
 </dd>
-<dt><strong>deg</strong><span class="classifier">int or 1-D array_like</span></dt><dd><p>Degree(s) of the fitting polynomials. If <em class="xref py py-obj">deg</em> is a single integer
+<dt><strong>deg</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or 1-D <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Degree(s) of the fitting polynomials. If <em class="xref py py-obj">deg</em> is a single integer
 all terms up to and including the <em class="xref py py-obj">deg</em>’th term are included in the
 fit. For NumPy versions &gt;= 1.11.0 a list of integers specifying the
 degrees of the terms to include may be used instead.</p>
 </dd>
-<dt><strong>rcond</strong><span class="classifier">float, optional</span></dt><dd><p>Relative condition number of the fit. Singular values smaller than
+<dt><strong>rcond</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>Relative condition number of the fit. Singular values smaller than
 this relative to the largest singular value will be ignored. The
 default value is len(x)*eps, where eps is the relative precision of
 the float type, about 2e-16 in most cases.</p>
 </dd>
-<dt><strong>full</strong><span class="classifier">bool, optional</span></dt><dd><p>Switch determining nature of return value. When it is False (the
+<dt><strong>full</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Switch determining nature of return value. When it is False (the
 default) just the coefficients are returned, when True diagnostic
 information from the singular value decomposition is also returned.</p>
 </dd>
-<dt><strong>w</strong><span class="classifier">array_like, shape (<em class="xref py py-obj">M</em>,), optional</span></dt><dd><p>Weights. If not None, the contribution of each point
+<dt><strong>w</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (<em class="xref py py-obj">M</em>,), optional</span></dt><dd><p>Weights. If not None, the contribution of each point
 <code class="docutils literal notranslate"><span class="pre">(x[i],y[i])</span></code> to the fit is weighted by <em class="xref py py-obj">w[i]</em>. Ideally the
 weights are chosen so that the errors of the products <code class="docutils literal notranslate"><span class="pre">w[i]*y[i]</span></code>
 all have the same variance.  The default value is None.</p>
@@ -163,13 +185,13 @@ all have the same variance.  The default value is None.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>coef</strong><span class="classifier">ndarray, shape (M,) or (M, K)</span></dt><dd><p>Legendre coefficients ordered from low to high. If <em class="xref py py-obj">y</em> was
+<dt><strong>coef</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape (M,) or (M, K)</span></dt><dd><p>Legendre coefficients ordered from low to high. If <em class="xref py py-obj">y</em> was
 2-D, the coefficients for the data in column k of <em class="xref py py-obj">y</em> are in
 column <em class="xref py py-obj">k</em>. If <em class="xref py py-obj">deg</em> is specified as a list, coefficients for
 terms not included in the fit are set equal to zero in the
 returned <em class="xref py py-obj">coef</em>.</p>
 </dd>
-<dt><strong>[residuals, rank, singular_values, rcond]</strong><span class="classifier">list</span></dt><dd><p>These values are only returned if <em class="xref py py-obj">full</em> = True</p>
+<dt><strong>[residuals, rank, singular_values, rcond]</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>These values are only returned if <em class="xref py py-obj">full</em> = True</p>
 <p>resid – sum of squared residuals of the least squares fit
 rank – the numerical rank of the scaled Vandermonde matrix
 sv – singular values of the scaled Vandermonde matrix
@@ -180,7 +202,7 @@ rcond – value of <em class="xref py py-obj">rcond</em>.</p>
 </dd>
 <dt class="field-odd">Warns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>RankWarning</strong></dt><dd><p>The rank of the coefficient matrix in the least-squares fit is
+<dt>RankWarning</dt><dd><p>The rank of the coefficient matrix in the least-squares fit is
 deficient. The warning is only raised if <em class="xref py py-obj">full</em> = False.  The
 warnings can be turned off by</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">warnings</span>
@@ -193,8 +215,8 @@ warnings can be turned off by</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">polyfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">lagfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermefit</span></code></p>
 <dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">chebfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">polyfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">lagfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermfit</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">hermefit</span></code></dt><dd></dd>
 <dt><a class="reference internal" href="numpy.polynomial.legendre.legval.html#numpy.polynomial.legendre.legval" title="numpy.polynomial.legendre.legval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legval</span></code></a></dt><dd><p>Evaluates a Legendre series.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.polynomial.legendre.legvander.html#numpy.polynomial.legendre.legvander" title="numpy.polynomial.legendre.legvander"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legvander</span></code></a></dt><dd><p>Vandermonde matrix of Legendre series.</p>
@@ -203,7 +225,7 @@ warnings can be turned off by</p>
 </dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">linalg.lstsq</span></code></dt><dd><p>Computes a least-squares fit from the matrix.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.UnivariateSpline.html#scipy.interpolate.UnivariateSpline" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.interpolate.UnivariateSpline</span></code></a></dt><dd><p>Computes spline fits.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.UnivariateSpline.html#scipy.interpolate.UnivariateSpline" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.interpolate.UnivariateSpline</span></code></a></dt><dd><p>Computes spline fits.</p>
 </dd>
 </dl>
 </div>
@@ -262,10 +284,10 @@ is inadequate splines may be a good alternative.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

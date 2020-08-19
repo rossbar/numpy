@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.random.RandomState.hypergeometric &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.random.RandomState.hypergeometric &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../../about.html" >
     <link rel="index" title="Index" href="../../../genindex.html" >
     <link rel="search" title="Search" href="../../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../../index.html" >
     <link rel="up" title="Legacy Random Generation" href="../legacy.html" >
     <link rel="next" title="numpy.random.RandomState.laplace" href="numpy.random.RandomState.laplace.html" >
-    <link rel="prev" title="numpy.random.RandomState.gumbel" href="numpy.random.RandomState.gumbel.html" > 
+    <link rel="prev" title="numpy.random.RandomState.gumbel" href="numpy.random.RandomState.gumbel.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../../index.html">
-      <img border=0 alt="NumPy" src="../../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../../index.html" >NumPy Reference</a></li>
@@ -129,17 +151,17 @@ than or equal to the sum <code class="docutils literal notranslate"><span class=
 <p>New code should use the <code class="docutils literal notranslate"><span class="pre">hypergeometric</span></code> method of a <code class="docutils literal notranslate"><span class="pre">default_rng()</span></code>
 instance instead; see <em class="xref py py-obj">random-quick-start</em>.</p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ngood</strong><span class="classifier">int or array_like of ints</span></dt><dd><p>Number of ways to make a good selection.  Must be nonnegative.</p>
+<dd class="field-odd"><dl>
+<dt><strong>ngood</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of ints</span></dt><dd><p>Number of ways to make a good selection.  Must be nonnegative.</p>
 </dd>
-<dt><strong>nbad</strong><span class="classifier">int or array_like of ints</span></dt><dd><p>Number of ways to make a bad selection.  Must be nonnegative.</p>
+<dt><strong>nbad</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of ints</span></dt><dd><p>Number of ways to make a bad selection.  Must be nonnegative.</p>
 </dd>
-<dt><strong>nsample</strong><span class="classifier">int or array_like of ints</span></dt><dd><p>Number of items sampled.  Must be at least 1 and at most
+<dt><strong>nsample</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of ints</span></dt><dd><p>Number of items sampled.  Must be at least 1 and at most
 <code class="docutils literal notranslate"><span class="pre">ngood</span> <span class="pre">+</span> <span class="pre">nbad</span></code>.</p>
 </dd>
-<dt><strong>size</strong><span class="classifier">int or tuple of ints, optional</span></dt><dd><p>Output shape.  If the given shape is, e.g., <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n,</span> <span class="pre">k)</span></code>, then
+<dt><strong>size</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints, optional</span></dt><dd><p>Output shape.  If the given shape is, e.g., <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n,</span> <span class="pre">k)</span></code>, then
 <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">k</span></code> samples are drawn.  If size is <code class="docutils literal notranslate"><span class="pre">None</span></code> (default),
 a single value is returned if <em class="xref py py-obj">ngood</em>, <em class="xref py py-obj">nbad</em>, and <em class="xref py py-obj">nsample</em>
 are all scalars.  Otherwise, <code class="docutils literal notranslate"><span class="pre">np.broadcast(ngood,</span> <span class="pre">nbad,</span> <span class="pre">nsample).size</span></code>
@@ -148,8 +170,8 @@ samples are drawn.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray or scalar</span></dt><dd><p>Drawn samples from the parameterized hypergeometric distribution. Each
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="../../generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <span class="xref std std-ref">scalar</span></span></dt><dd><p>Drawn samples from the parameterized hypergeometric distribution. Each
 sample is the number of good items within a randomly selected subset of
 size <em class="xref py py-obj">nsample</em> taken from a set of <em class="xref py py-obj">ngood</em> good items and <em class="xref py py-obj">nbad</em> bad items.</p>
 </dd>
@@ -159,7 +181,7 @@ size <em class="xref py py-obj">nsample</em> taken from a set of <em class="xref
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html#scipy.stats.hypergeom" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.hypergeom</span></code></a></dt><dd><p>probability density function, distribution or cumulative density function, etc.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.hypergeom.html#scipy.stats.hypergeom" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.stats.hypergeom</span></code></a></dt><dd><p>probability density function, distribution or cumulative density function, etc.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.random.Generator.hypergeometric.html#numpy.random.Generator.hypergeometric" title="numpy.random.Generator.hypergeometric"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.hypergeometric</span></code></a></dt><dd><p>which should be used for new code.</p>
 </dd>
@@ -240,10 +262,10 @@ If you pull 15 marbles at random, how likely is it that
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

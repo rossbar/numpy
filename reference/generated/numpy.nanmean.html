@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.nanmean &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.nanmean &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Statistics" href="../routines.statistics.html" >
     <link rel="next" title="numpy.nanstd" href="numpy.nanstd.html" >
-    <link rel="prev" title="numpy.nanmedian" href="numpy.nanmedian.html" > 
+    <link rel="prev" title="numpy.nanmedian" href="numpy.nanmedian.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -128,22 +150,22 @@ the flattened array by default, otherwise over the specified axis.
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Array containing numbers whose mean is desired. If <em class="xref py py-obj">a</em> is not an
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Array containing numbers whose mean is desired. If <em class="xref py py-obj">a</em> is not an
 array, a conversion is attempted.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">{int, tuple of int, None}, optional</span></dt><dd><p>Axis or axes along which the means are computed. The default is to compute
+<dt><strong>axis</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>}, optional</span></dt><dd><p>Axis or axes along which the means are computed. The default is to compute
 the mean of the flattened array.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">data-type, optional</span></dt><dd><p>Type to use in computing the mean.  For integer inputs, the default
 is <code class="xref py py-obj docutils literal notranslate"><span class="pre">float64</span></code>; for inexact inputs, it is the same as the input
 dtype.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>Alternate output array in which to place the result.  The default
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>Alternate output array in which to place the result.  The default
 is <code class="docutils literal notranslate"><span class="pre">None</span></code>; if provided, it must have the same shape as the
 expected output, but the type will be cast if necessary. See
 <em class="xref py py-obj">ufuncs-output-type</em> for more details.</p>
 </dd>
-<dt><strong>keepdims</strong><span class="classifier">bool, optional</span></dt><dd><p>If this is set to True, the axes which are reduced are left
+<dt><strong>keepdims</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If this is set to True, the axes which are reduced are left
 in the result as dimensions with size one. With this option,
 the result will broadcast correctly against the original <em class="xref py py-obj">a</em>.</p>
 <p>If the value is anything but the default, then
@@ -154,8 +176,8 @@ does not implement <em class="xref py py-obj">keepdims</em> any exceptions will 
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>m</strong><span class="classifier">ndarray, see dtype parameter above</span></dt><dd><p>If <em class="xref py py-obj">out=None</em>, returns a new array containing the mean values,
+<dd class="field-even"><dl>
+<dt><strong>m</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, see dtype parameter above</span></dt><dd><p>If <em class="xref py py-obj">out=None</em>, returns a new array containing the mean values,
 otherwise a reference to the output array is returned. Nan is
 returned for slices that contain only NaNs.</p>
 </dd>
@@ -169,8 +191,8 @@ returned for slices that contain only NaNs.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.mean.html#numpy.mean" title="numpy.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a></dt><dd><p>Arithmetic mean taken while not ignoring NaNs</p>
 </dd>
+<dt><a class="reference internal" href="numpy.var.html#numpy.var" title="numpy.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>, <a class="reference internal" href="numpy.nanvar.html#numpy.nanvar" title="numpy.nanvar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanvar</span></code></a></dt><dd></dd>
 </dl>
-<p><a class="reference internal" href="numpy.var.html#numpy.var" title="numpy.var"><code class="xref py py-obj docutils literal notranslate"><span class="pre">var</span></code></a>, <a class="reference internal" href="numpy.nanvar.html#numpy.nanvar" title="numpy.nanvar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanvar</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>The arithmetic mean is the sum of the non-NaN elements along the axis
@@ -215,10 +237,10 @@ this issue.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

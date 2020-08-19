@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.linalg.svd &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.linalg.svd &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.linalg.eig" href="numpy.linalg.eig.html" >
-    <link rel="prev" title="numpy.linalg.qr" href="numpy.linalg.qr.html" > 
+    <link rel="prev" title="numpy.linalg.qr" href="numpy.linalg.qr.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.linalg.svd<a class="headerlink" href="#numpy-linalg-svd" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.svd">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">svd</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">full_matrices=True</em>, <em class="sig-param">compute_uv=True</em>, <em class="sig-param">hermitian=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L1483-L1675"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.svd" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">svd</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">full_matrices=True</em>, <em class="sig-param">compute_uv=True</em>, <em class="sig-param">hermitian=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L1482-L1674"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.svd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Singular Value Decomposition.</p>
 <p>When <em class="xref py py-obj">a</em> is a 2D array, it is factorized as <code class="docutils literal notranslate"><span class="pre">u</span> <span class="pre">&#64;</span> <span class="pre">np.diag(s)</span> <span class="pre">&#64;</span> <span class="pre">vh</span>
 <span class="pre">=</span> <span class="pre">(u</span> <span class="pre">*</span> <span class="pre">s)</span> <span class="pre">&#64;</span> <span class="pre">vh</span></code>, where <em class="xref py py-obj">u</em> and <em class="xref py py-obj">vh</em> are 2D unitary arrays and <em class="xref py py-obj">s</em> is a 1D
@@ -125,17 +147,17 @@ applied in stacked mode as explained below.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">(…, M, N) array_like</span></dt><dd><p>A real or complex array with <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">&gt;=</span> <span class="pre">2</span></code>.</p>
+<dt><strong>a</strong><span class="classifier">(…, M, N) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>A real or complex array with <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">&gt;=</span> <span class="pre">2</span></code>.</p>
 </dd>
-<dt><strong>full_matrices</strong><span class="classifier">bool, optional</span></dt><dd><p>If True (default), <em class="xref py py-obj">u</em> and <em class="xref py py-obj">vh</em> have the shapes <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M,</span> <span class="pre">M)</span></code> and
+<dt><strong>full_matrices</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True (default), <em class="xref py py-obj">u</em> and <em class="xref py py-obj">vh</em> have the shapes <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M,</span> <span class="pre">M)</span></code> and
 <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">N,</span> <span class="pre">N)</span></code>, respectively.  Otherwise, the shapes are
 <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">M,</span> <span class="pre">K)</span></code> and <code class="docutils literal notranslate"><span class="pre">(...,</span> <span class="pre">K,</span> <span class="pre">N)</span></code>, respectively, where
 <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">min(M,</span> <span class="pre">N)</span></code>.</p>
 </dd>
-<dt><strong>compute_uv</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether or not to compute <em class="xref py py-obj">u</em> and <em class="xref py py-obj">vh</em> in addition to <em class="xref py py-obj">s</em>.  True
+<dt><strong>compute_uv</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Whether or not to compute <em class="xref py py-obj">u</em> and <em class="xref py py-obj">vh</em> in addition to <em class="xref py py-obj">s</em>.  True
 by default.</p>
 </dd>
-<dt><strong>hermitian</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, <em class="xref py py-obj">a</em> is assumed to be Hermitian (symmetric if real-valued),
+<dt><strong>hermitian</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, <em class="xref py py-obj">a</em> is assumed to be Hermitian (symmetric if real-valued),
 enabling a more efficient method for finding singular values.
 Defaults to False.</p>
 <div class="versionadded">
@@ -145,17 +167,17 @@ Defaults to False.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>u</strong><span class="classifier">{ (…, M, M), (…, M, K) } array</span></dt><dd><p>Unitary array(s). The first <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">-</span> <span class="pre">2</span></code> dimensions have the same
+<dd class="field-even"><dl>
+<dt><strong>u</strong><span class="classifier">{ (…, M, M), (…, M, K) } <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Unitary array(s). The first <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">-</span> <span class="pre">2</span></code> dimensions have the same
 size as those of the input <em class="xref py py-obj">a</em>. The size of the last two dimensions
 depends on the value of <em class="xref py py-obj">full_matrices</em>. Only returned when
 <em class="xref py py-obj">compute_uv</em> is True.</p>
 </dd>
-<dt><strong>s</strong><span class="classifier">(…, K) array</span></dt><dd><p>Vector(s) with the singular values, within each vector sorted in
+<dt><strong>s</strong><span class="classifier">(…, K) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Vector(s) with the singular values, within each vector sorted in
 descending order. The first <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">-</span> <span class="pre">2</span></code> dimensions have the same
 size as those of the input <em class="xref py py-obj">a</em>.</p>
 </dd>
-<dt><strong>vh</strong><span class="classifier">{ (…, N, N), (…, K, N) } array</span></dt><dd><p>Unitary array(s). The first <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">-</span> <span class="pre">2</span></code> dimensions have the same
+<dt><strong>vh</strong><span class="classifier">{ (…, N, N), (…, K, N) } <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Unitary array(s). The first <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">-</span> <span class="pre">2</span></code> dimensions have the same
 size as those of the input <em class="xref py py-obj">a</em>. The size of the last two dimensions
 depends on the value of <em class="xref py py-obj">full_matrices</em>. Only returned when
 <em class="xref py py-obj">compute_uv</em> is True.</p>
@@ -164,7 +186,7 @@ depends on the value of <em class="xref py py-obj">full_matrices</em>. Only retu
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>LinAlgError</strong></dt><dd><p>If SVD computation does not converge.</p>
+<dt>LinAlgError</dt><dd><p>If SVD computation does not converge.</p>
 </dd>
 </dl>
 </dd>
@@ -172,9 +194,9 @@ depends on the value of <em class="xref py py-obj">full_matrices</em>. Only retu
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.svd.html#scipy.linalg.svd" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.svd</span></code></a></dt><dd><p>Similar function in SciPy.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.svd.html#scipy.linalg.svd" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.svd</span></code></a></dt><dd><p>Similar function in SciPy.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.svdvals.html#scipy.linalg.svdvals" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.svdvals</span></code></a></dt><dd><p>Compute singular values of a matrix.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.svdvals.html#scipy.linalg.svdvals" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.svdvals</span></code></a></dt><dd><p>Compute singular values of a matrix.</p>
 </dd>
 </dl>
 </div>
@@ -275,10 +297,10 @@ all the return values.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

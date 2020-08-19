@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Current steering council and institutional partners &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Current steering council and institutional partners &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy governance" href="index.html" >
-    <link rel="next" title="Under-the-hood Documentation for developers" href="../underthehood.html" >
-    <link rel="prev" title="NumPy project governance and decision-making" href="governance.html" > 
+    <link rel="next" title="How to contribute to the NumPy documentation" href="../howto-docs.html" >
+    <link rel="prev" title="NumPy project governance and decision-making" href="governance.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >Contributing to NumPy</a></li>
@@ -69,7 +91,7 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="../underthehood.html" title="Under-the-hood Documentation for developers"
+        <a href="../howto-docs.html" title="How to contribute to the NumPy documentation"
            accesskey="N">next</a>
       </li>
       <li class="active">
@@ -101,8 +123,8 @@
   <p class="topless"><a href="governance.html"
                         title="previous chapter">NumPy project governance and decision-making</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../underthehood.html"
-                        title="next chapter">Under-the-hood Documentation for developers</a></p>
+  <p class="topless"><a href="../howto-docs.html"
+                        title="next chapter">How to contribute to the NumPy documentation</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -130,22 +152,23 @@
 <li><p>Sebastian Berg</p></li>
 <li><p>Jaime Fernández del Río</p></li>
 <li><p>Ralf Gommers</p></li>
+<li><p>Allan Haldane</p></li>
 <li><p>Charles Harris</p></li>
+<li><p>Stephan Hoyer</p></li>
+<li><p>Matti Picus</p></li>
 <li><p>Nathaniel Smith</p></li>
 <li><p>Julian Taylor</p></li>
 <li><p>Pauli Virtanen</p></li>
+<li><p>Stéfan van der Walt</p></li>
 <li><p>Eric Wieser</p></li>
-<li><p>Marten van Kerkwijk</p></li>
-<li><p>Stephan Hoyer</p></li>
-<li><p>Allan Haldane</p></li>
-<li><p>Stefan van der Walt</p></li>
 </ul>
 </div>
 <div class="section" id="emeritus-members">
 <h2>Emeritus members<a class="headerlink" href="#emeritus-members" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Travis Oliphant - Project Founder / Emeritus Leader (served: 2005-2012)</p></li>
-<li><p>Alex Griffing (served: 2015-2017)</p></li>
+<li><p>Travis Oliphant – project founder / emeritus leader (2005-2012)</p></li>
+<li><p>Alex Griffing (2015-2017)</p></li>
+<li><p>Marten van Kerkwijk (2017-2019)</p></li>
 </ul>
 </div>
 <div class="section" id="numfocus-subcommittee">
@@ -161,8 +184,8 @@
 <div class="section" id="institutional-partners">
 <h2>Institutional Partners<a class="headerlink" href="#institutional-partners" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>UC Berkeley (Stefan van der Walt, Matti Picus, Tyler Reddy, Sebastian Berg)</p></li>
-<li><p>Quansight (Ralf Gommers, Hameer Abbasi)</p></li>
+<li><p>UC Berkeley (Stéfan van der Walt, Sebastian Berg, Warren Weckesser, Ross Barnowski)</p></li>
+<li><p>Quansight (Ralf Gommers, Hameer Abbasi, Melissa Weber Mendonça, Mars Lee, Matti Picus)</p></li>
 </ul>
 </div>
 </div>
@@ -188,10 +211,10 @@
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

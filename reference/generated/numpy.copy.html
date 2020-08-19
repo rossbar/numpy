@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.copy &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.copy &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Array creation routines" href="../routines.array-creation.html" >
     <link rel="next" title="numpy.frombuffer" href="numpy.frombuffer.html" >
-    <link rel="prev" title="numpy.ascontiguousarray" href="numpy.ascontiguousarray.html" > 
+    <link rel="prev" title="numpy.ascontiguousarray" href="numpy.ascontiguousarray.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,12 +138,12 @@
 <h1>numpy.copy<a class="headerlink" href="#numpy-copy" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.copy">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">order='K'</em>, <em class="sig-param">subok=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L714-L768"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.copy" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">copy</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">order='K'</em>, <em class="sig-param">subok=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L715-L793"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.copy" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an array copy of the given object.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Input data.</p>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input data.</p>
 </dd>
 <dt><strong>order</strong><span class="classifier">{‘C’, ‘F’, ‘A’, ‘K’}, optional</span></dt><dd><p>Controls the memory layout of the copy. ‘C’ means C-order,
 ‘F’ means F-order, ‘A’ means ‘F’ if <em class="xref py py-obj">a</em> is Fortran contiguous,
@@ -130,7 +152,7 @@ as possible. (Note that this function and <a class="reference internal" href="nu
 similar, but have different default values for their order=
 arguments.)</p>
 </dd>
-<dt><strong>subok</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then sub-classes will be passed-through, otherwise the
+<dt><strong>subok</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, then sub-classes will be passed-through, otherwise the
 returned array will be forced to be a base-class array (defaults to False).</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.19.0.</span></p>
@@ -139,8 +161,8 @@ returned array will be forced to be a base-class array (defaults to False).</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>arr</strong><span class="classifier">ndarray</span></dt><dd><p>Array interpretation of <em class="xref py py-obj">a</em>.</p>
+<dd class="field-even"><dl>
+<dt><strong>arr</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Array interpretation of <em class="xref py py-obj">a</em>.</p>
 </dd>
 </dl>
 </dd>
@@ -172,6 +194,30 @@ returned array will be forced to be a base-class array (defaults to False).</p>
 <span class="go">False</span>
 </pre></div>
 </div>
+<p>Note that np.copy is a shallow copy and will not copy object
+elements within arrays. This is mainly important for arrays
+containing Python objects. The new array will contain the
+same object which may lead to surprises if that object can
+be modified (is mutable):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">copy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([1, &#39;m&#39;, list([10, 3, 4])], dtype=object)</span>
+</pre></div>
+</div>
+<p>To ensure all elements within an <code class="docutils literal notranslate"><span class="pre">object</span></code> array are copied,
+use <a class="reference external" href="https://docs.python.org/dev/library/copy.html#copy.deepcopy" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy.deepcopy</span></code></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">copy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">object</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="n">copy</span><span class="o">.</span><span class="n">deepcopy</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span>
+<span class="go">array([1, &#39;m&#39;, list([10, 3, 4])], dtype=object)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>
+<span class="go">array([1, &#39;m&#39;, list([2, 3, 4])], dtype=object)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </div>
@@ -197,10 +243,10 @@ returned array will be forced to be a base-class array (defaults to False).</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

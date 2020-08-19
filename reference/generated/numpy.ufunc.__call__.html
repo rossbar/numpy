@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.hermite_e.HermiteE.nickname &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ufunc.__call__ &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,14 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
+    <link rel="up" title="numpy.ufunc" href="numpy.ufunc.html" >
+    <link rel="next" title="numpy.ufunc.accumulate" href="numpy.ufunc.accumulate.html" >
+    <link rel="prev" title="numpy.ufunc" href="numpy.ufunc.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -52,9 +77,12 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
- 
+
+          <li class="active"><a href="../index.html" >NumPy Reference</a></li>
+          <li class="active"><a href="../ufuncs.html" >Universal functions (<code class="xref py py-class docutils literal notranslate"><span class="pre">ufunc</span></code>)</a></li>
+          <li class="active"><a href="numpy.ufunc.html" accesskey="U">numpy.ufunc</a></li> 
     </ul>
               
               
@@ -62,6 +90,14 @@
       <li class="active">
         <a href="../../genindex.html" title="General Index"
            accesskey="I">index</a>
+      </li>
+      <li class="active">
+        <a href="numpy.ufunc.accumulate.html" title="numpy.ufunc.accumulate"
+           accesskey="N">next</a>
+      </li>
+      <li class="active">
+        <a href="numpy.ufunc.html" title="numpy.ufunc"
+           accesskey="P">previous</a>
       </li>
     </ul>
               
@@ -73,6 +109,12 @@
 	<div class="row-fluid">
       <div class="spc-rightsidebar span3">
         <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="numpy.ufunc.html"
+                        title="previous chapter">numpy.ufunc</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="numpy.ufunc.accumulate.html"
+                        title="next chapter">numpy.ufunc.accumulate</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -92,13 +134,14 @@
         <div class="bodywrapper">
           <div class="body" id="spc-section-body">
             
-  <div class="section" id="numpy-polynomial-hermite-e-hermitee-nickname">
-<h1>numpy.polynomial.hermite_e.HermiteE.nickname<a class="headerlink" href="#numpy-polynomial-hermite-e-hermitee-nickname" title="Permalink to this headline">¶</a></h1>
-<p>attribute</p>
-<dl class="attribute">
-<dt id="numpy.polynomial.hermite_e.HermiteE.nickname">
-<code class="sig-prename descclassname">HermiteE.</code><code class="sig-name descname">nickname</code><em class="property"> = 'herme'</em><a class="headerlink" href="#numpy.polynomial.hermite_e.HermiteE.nickname" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+  <div class="section" id="numpy-ufunc-call">
+<h1>numpy.ufunc.__call__<a class="headerlink" href="#numpy-ufunc-call" title="Permalink to this headline">¶</a></h1>
+<p>method</p>
+<dl class="method">
+<dt id="numpy.ufunc.__call__">
+<code class="sig-prename descclassname">ufunc.</code><code class="sig-name descname">__call__</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#numpy.ufunc.__call__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call self as a function.</p>
+</dd></dl>
 
 </div>
 
@@ -123,10 +166,10 @@
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

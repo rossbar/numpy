@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.legendre.legval2d &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.polynomial.legendre.legval2d &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Legendre Series (numpy.polynomial.legendre)" href="../routines.polynomials.legendre.html" >
     <link rel="next" title="numpy.polynomial.legendre.legval3d" href="numpy.polynomial.legendre.legval3d.html" >
-    <link rel="prev" title="numpy.polynomial.legendre.legval" href="numpy.polynomial.legendre.legval.html" > 
+    <link rel="prev" title="numpy.polynomial.legendre.legval" href="numpy.polynomial.legendre.legval.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -129,15 +151,15 @@ and <em class="xref py py-obj">y</em> or their elements must support multiplicat
 with themselves and with the elements of <em class="xref py py-obj">c</em>.</p>
 <p>If <em class="xref py py-obj">c</em> is a 1-D array a one is implicitly appended to its shape to make
 it 2-D. The shape of the result will be c.shape[2:] + x.shape.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x, y</strong><span class="classifier">array_like, compatible objects</span></dt><dd><p>The two dimensional series is evaluated at the points <em class="xref py py-obj">(x, y)</em>,
+<dd class="field-odd"><dl>
+<dt><strong>x, y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, compatible objects</span></dt><dd><p>The two dimensional series is evaluated at the points <em class="xref py py-obj">(x, y)</em>,
 where <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em> must have the same shape. If <em class="xref py py-obj">x</em> or <em class="xref py py-obj">y</em> is a list
 or tuple, it is first converted to an ndarray, otherwise it is left
 unchanged and if it isn’t an ndarray it is treated as a scalar.</p>
 </dd>
-<dt><strong>c</strong><span class="classifier">array_like</span></dt><dd><p>Array of coefficients ordered so that the coefficient of the term
+<dt><strong>c</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Array of coefficients ordered so that the coefficient of the term
 of multi-degree i,j is contained in <code class="docutils literal notranslate"><span class="pre">c[i,j]</span></code>. If <em class="xref py py-obj">c</em> has
 dimension greater than two the remaining indices enumerate multiple
 sets of coefficients.</p>
@@ -145,8 +167,8 @@ sets of coefficients.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">ndarray, compatible object</span></dt><dd><p>The values of the two dimensional Legendre series at points formed
+<dd class="field-even"><dl>
+<dt><strong>values</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, compatible object</span></dt><dd><p>The values of the two dimensional Legendre series at points formed
 from pairs of corresponding values from <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em>.</p>
 </dd>
 </dl>
@@ -154,7 +176,9 @@ from pairs of corresponding values from <em class="xref py py-obj">x</em> and <e
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.polynomial.legendre.legval.html#numpy.polynomial.legendre.legval" title="numpy.polynomial.legendre.legval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legval</span></code></a>, <a class="reference internal" href="numpy.polynomial.legendre.leggrid2d.html#numpy.polynomial.legendre.leggrid2d" title="numpy.polynomial.legendre.leggrid2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leggrid2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.legendre.legval3d.html#numpy.polynomial.legendre.legval3d" title="numpy.polynomial.legendre.legval3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legval3d</span></code></a>, <a class="reference internal" href="numpy.polynomial.legendre.leggrid3d.html#numpy.polynomial.legendre.leggrid3d" title="numpy.polynomial.legendre.leggrid3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leggrid3d</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.polynomial.legendre.legval.html#numpy.polynomial.legendre.legval" title="numpy.polynomial.legendre.legval"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legval</span></code></a>, <a class="reference internal" href="numpy.polynomial.legendre.leggrid2d.html#numpy.polynomial.legendre.leggrid2d" title="numpy.polynomial.legendre.leggrid2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leggrid2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.legendre.legval3d.html#numpy.polynomial.legendre.legval3d" title="numpy.polynomial.legendre.legval3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">legval3d</span></code></a>, <a class="reference internal" href="numpy.polynomial.legendre.leggrid3d.html#numpy.polynomial.legendre.leggrid3d" title="numpy.polynomial.legendre.leggrid3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">leggrid3d</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -185,10 +209,10 @@ from pairs of corresponding values from <em class="xref py py-obj">x</em> and <e
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

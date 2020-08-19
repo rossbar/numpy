@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Development workflow &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Development workflow &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="Contributing to NumPy" href="index.html" >
     <link rel="next" title="NumPy benchmarks" href="../benchmarking.html" >
-    <link rel="prev" title="Setting up and using your development environment" href="development_environment.html" > 
+    <link rel="prev" title="Setting up and using your development environment" href="development_environment.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" accesskey="U">Contributing to NumPy</a></li> 
@@ -142,9 +164,9 @@
   <div class="section" id="development-workflow">
 <span id="id1"></span><h1>Development workflow<a class="headerlink" href="#development-workflow" title="Permalink to this headline">¶</a></h1>
 <p>You already have your own forked copy of the <a class="reference external" href="https://www.numpy.org">NumPy</a> repository, by
-following <a class="reference internal" href="gitwash/development_setup.html#forking"><span class="std std-ref">Making your own copy (fork) of NumPy</span></a>, <a class="reference internal" href="gitwash/development_setup.html#set-up-fork"><span class="std std-ref">Set up your fork</span></a>, you have configured <a class="reference external" href="https://git-scm.com/">git</a>
+following <a class="reference internal" href="gitwash/development_setup.html#forking"><span class="std std-ref">Create a NumPy fork</span></a>, <a class="reference internal" href="gitwash/development_setup.html#set-up-fork"><span class="std std-ref">Make the local copy</span></a>, you have configured <a class="reference external" href="https://git-scm.com/">git</a>
 by following <a class="reference internal" href="gitwash/configure_git.html#configure-git"><span class="std std-ref">Git configuration</span></a>, and have linked the upstream
-repository as explained in <a class="reference internal" href="gitwash/development_setup.html#linking-to-upstream"><span class="std std-ref">Linking your repository to the upstream repo</span></a>.</p>
+repository as explained in <a class="reference external" href="https://scikit-image.org/docs/stable/gitwash/set_up_fork.html#linking-to-upstream" title="(in skimage v0.17.2)"><span>Linking your repository to the upstream repo</span></a>.</p>
 <p>What is described below is a recommended workflow with Git.</p>
 <div class="section" id="basic-workflow">
 <h2>Basic workflow<a class="headerlink" href="#basic-workflow" title="Permalink to this headline">¶</a></h2>
@@ -157,7 +179,7 @@ See <a class="reference internal" href="#making-a-new-feature-branch"><span clas
 <ul class="simple">
 <li><p><em>Contributors</em>: push your feature branch to your own Github repo, and
 <a class="reference internal" href="#asking-for-merging"><span class="std std-ref">create a pull request</span></a>.</p></li>
-<li><p><em>Core developers</em> If you want to push changes without
+<li><p><em>Core developers</em>: If you want to push changes without
 further review, see the notes <a class="reference internal" href="#pushing-to-main"><span class="std std-ref">below</span></a>.</p></li>
 </ul>
 </li>
@@ -166,9 +188,9 @@ further review, see the notes <a class="reference internal" href="#pushing-to-ma
 as clear as possible.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p>There are many online tutorials to help you <a class="reference external" href="https://www.atlassian.com/git/tutorials/">learn git</a>. For discussions
+<p>There are many online tutorials to help you <a class="reference external" href="https://try.github.io/">learn git</a>. For discussions
 of specific git workflows, see these discussions on <a class="reference external" href="https://www.mail-archive.com/dri-devel&#64;lists.sourceforge.net/msg39091.html">linux git workflow</a>,
-and <a class="reference external" href="http://mail.python.org/pipermail/ipython-dev/2010-October/006746.html">ipython git workflow</a>.</p>
+and <a class="reference external" href="https://mail.python.org/pipermail/ipython-dev/2010-October/005632.html">ipython git workflow</a>.</p>
 </div>
 <div class="section" id="making-a-new-feature-branch">
 <span id="id2"></span><h3>Making a new feature branch<a class="headerlink" href="#making-a-new-feature-branch" title="Permalink to this headline">¶</a></h3>
@@ -472,18 +494,18 @@ message. After revising it, we get the output:</p>
 <span class="c1"># delete branch locally</span>
 <span class="n">git</span> <span class="n">branch</span> <span class="o">-</span><span class="n">D</span> <span class="n">my</span><span class="o">-</span><span class="n">unwanted</span><span class="o">-</span><span class="n">branch</span>
 <span class="c1"># delete branch on github</span>
-<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="p">:</span><span class="n">my</span><span class="o">-</span><span class="n">unwanted</span><span class="o">-</span><span class="n">branch</span>
+<span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="o">--</span><span class="n">delete</span> <span class="n">my</span><span class="o">-</span><span class="n">unwanted</span><span class="o">-</span><span class="n">branch</span>
 </pre></div>
 </div>
-<p>(Note the colon <code class="docutils literal notranslate"><span class="pre">:</span></code> before <code class="docutils literal notranslate"><span class="pre">test-branch</span></code>.  See also:
-<a class="reference external" href="https://github.com/guides/remove-a-remote-branch">https://github.com/guides/remove-a-remote-branch</a></p>
+<p>See also:
+<a class="reference external" href="https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely">https://stackoverflow.com/questions/2003505/how-do-i-delete-a-git-branch-locally-and-remotely</a></p>
 </div>
 <div class="section" id="several-people-sharing-a-single-repository">
 <h3>Several people sharing a single repository<a class="headerlink" href="#several-people-sharing-a-single-repository" title="Permalink to this headline">¶</a></h3>
 <p>If you want to work on some stuff with other people, where you are all
 committing into the same repository, or even the same branch, then just
 share it via <a class="reference external" href="https://github.com/numpy/numpy">github</a>.</p>
-<p>First fork NumPy into your account, as from <a class="reference internal" href="gitwash/development_setup.html#forking"><span class="std std-ref">Making your own copy (fork) of NumPy</span></a>.</p>
+<p>First fork NumPy into your account, as from <a class="reference internal" href="gitwash/development_setup.html#forking"><span class="std std-ref">Create a NumPy fork</span></a>.</p>
 <p>Then, go to your forked repository github page, say
 <code class="docutils literal notranslate"><span class="pre">https://github.com/your-user-name/numpy</span></code></p>
 <p>Click on the ‘Admin’ button, and add anyone else to the repo as a
@@ -515,7 +537,7 @@ commits:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">log</span>
 </pre></div>
 </div>
-<p>You can also look at the <a class="reference external" href="https://github.com/blog/39-say-hello-to-the-network-graph-visualizer">network graph visualizer</a> for your <a class="reference external" href="https://github.com/numpy/numpy">github</a>
+<p>You can also look at the <a class="reference external" href="https://github.blog/2008-04-10-say-hello-to-the-network-graph-visualizer/">network graph visualizer</a> for your <a class="reference external" href="https://github.com/numpy/numpy">github</a>
 repo.</p>
 </div>
 <div class="section" id="backporting">
@@ -566,7 +588,7 @@ make the pull request against master.</p></li>
 </div>
 <div class="section" id="pushing-changes-to-the-main-repo">
 <span id="pushing-to-main"></span><h3>Pushing changes to the main repo<a class="headerlink" href="#pushing-changes-to-the-main-repo" title="Permalink to this headline">¶</a></h3>
-<p><em>This is only relevant if you have commit rights to the main NumPy repo.</em></p>
+<p><em>Requires commit rights to the main NumPy repo.</em></p>
 <p>When you have a set of “ready” changes in a feature branch ready for
 NumPy’s <code class="docutils literal notranslate"><span class="pre">master</span></code> or <code class="docutils literal notranslate"><span class="pre">maintenance</span></code> branches, you can push
 them to <code class="docutils literal notranslate"><span class="pre">upstream</span></code> as follows:</p>
@@ -631,10 +653,10 @@ want.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

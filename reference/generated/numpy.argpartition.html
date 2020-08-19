@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.argpartition &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.argpartition &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Sorting, searching, and counting" href="../routines.sort.html" >
     <link rel="next" title="numpy.argmax" href="numpy.argmax.html" >
-    <link rel="prev" title="numpy.partition" href="numpy.partition.html" > 
+    <link rel="prev" title="numpy.partition" href="numpy.partition.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.argpartition<a class="headerlink" href="#numpy-argpartition" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.argpartition">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">argpartition</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">kth</em>, <em class="sig-param">axis=-1</em>, <em class="sig-param">kind='introselect'</em>, <em class="sig-param">order=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/fromnumeric.py#L756-L832"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.argpartition" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">argpartition</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">kth</em>, <em class="sig-param">axis=-1</em>, <em class="sig-param">kind='introselect'</em>, <em class="sig-param">order=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/fromnumeric.py#L761-L837"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.argpartition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Perform an indirect partition along the given axis using the
 algorithm specified by the <em class="xref py py-obj">kind</em> keyword. It returns an array of
 indices of the same shape as <em class="xref py py-obj">a</em> that index data along the given
@@ -124,24 +146,24 @@ axis in partitioned order.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.8.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Array to sort.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Array to sort.</p>
 </dd>
-<dt><strong>kth</strong><span class="classifier">int or sequence of ints</span></dt><dd><p>Element index to partition by. The k-th element will be in its
+<dt><strong>kth</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ints</span></dt><dd><p>Element index to partition by. The k-th element will be in its
 final sorted position and all smaller elements will be moved
 before it and all larger elements behind it. The order all
 elements in the partitions is undefined. If provided with a
 sequence of k-th it will partition all of them into their sorted
 position at once.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int or None, optional</span></dt><dd><p>Axis along which to sort. The default is -1 (the last axis). If
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, optional</span></dt><dd><p>Axis along which to sort. The default is -1 (the last axis). If
 None, the flattened array is used.</p>
 </dd>
 <dt><strong>kind</strong><span class="classifier">{‘introselect’}, optional</span></dt><dd><p>Selection algorithm. Default is ‘introselect’</p>
 </dd>
-<dt><strong>order</strong><span class="classifier">str or list of str, optional</span></dt><dd><p>When <em class="xref py py-obj">a</em> is an array with fields defined, this argument
+<dt><strong>order</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>When <em class="xref py py-obj">a</em> is an array with fields defined, this argument
 specifies which fields to compare first, second, etc. A single
 field can be specified as a string, and not all fields need be
 specified, but unspecified fields will still be used, in the
@@ -150,8 +172,8 @@ order in which they come up in the dtype, to break ties.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>index_array</strong><span class="classifier">ndarray, int</span></dt><dd><p>Array of indices that partition <em class="xref py py-obj">a</em> along the specified axis.
+<dd class="field-even"><dl>
+<dt><strong>index_array</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Array of indices that partition <em class="xref py py-obj">a</em> along the specified axis.
 If <em class="xref py py-obj">a</em> is one-dimensional, <code class="docutils literal notranslate"><span class="pre">a[index_array]</span></code> yields a partitioned <em class="xref py py-obj">a</em>.
 More generally, <code class="docutils literal notranslate"><span class="pre">np.take_along_axis(a,</span> <span class="pre">index_array,</span> <span class="pre">axis=a)</span></code> always
 yields the partitioned <em class="xref py py-obj">a</em>, irrespective of dimensionality.</p>
@@ -221,10 +243,10 @@ yields the partitioned <em class="xref py py-obj">a</em>, irrespective of dimens
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

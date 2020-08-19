@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.random.Generator.shuffle &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.random.Generator.shuffle &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../../about.html" >
     <link rel="index" title="Index" href="../../../genindex.html" >
     <link rel="search" title="Search" href="../../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../../index.html" >
     <link rel="up" title="Random Generator" href="../generator.html" >
     <link rel="next" title="numpy.random.Generator.permutation" href="numpy.random.Generator.permutation.html" >
-    <link rel="prev" title="numpy.random.Generator.bytes" href="numpy.random.Generator.bytes.html" > 
+    <link rel="prev" title="numpy.random.Generator.bytes" href="numpy.random.Generator.bytes.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../../index.html">
-      <img border=0 alt="NumPy" src="../../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../../index.html" >NumPy Reference</a></li>
@@ -121,19 +143,19 @@
 <code class="sig-prename descclassname">Generator.</code><code class="sig-name descname">shuffle</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">axis=0</em><span class="sig-paren">)</span><a class="headerlink" href="#numpy.random.Generator.shuffle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modify a sequence in-place by shuffling its contents.</p>
 <p>The order of sub-arrays is changed but their contents remains the same.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">array_like</span></dt><dd><p>The array or list to be shuffled.</p>
+<dd class="field-odd"><dl>
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>The array or list to be shuffled.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>The axis which <em class="xref py py-obj">x</em> is shuffled along. Default is 0.
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The axis which <em class="xref py py-obj">x</em> is shuffled along. Default is 0.
 It is only supported on <em class="xref py py-obj">ndarray</em> objects.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>None</strong></dt><dd></dd>
+<dt><a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -186,10 +208,10 @@ It is only supported on <em class="xref py py-obj">ndarray</em> objects.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

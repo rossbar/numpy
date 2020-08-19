@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.outerproduct &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.outerproduct &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Masked array operations" href="../routines.ma.html" >
     <link rel="next" title="numpy.ma.trace" href="numpy.ma.trace.html" >
-    <link rel="prev" title="numpy.ma.outer" href="numpy.ma.outer.html" > 
+    <link rel="prev" title="numpy.ma.outer" href="numpy.ma.outer.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -117,7 +139,7 @@
 <h1>numpy.ma.outerproduct<a class="headerlink" href="#numpy-ma-outerproduct" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.ma.outerproduct">
-<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">outerproduct</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/ma/core.py#L7597-L7609"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.outerproduct" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">outerproduct</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/ma/core.py#L7643-L7655"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.outerproduct" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the outer product of two vectors.</p>
 <p>Given two vectors, <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[a0,</span> <span class="pre">a1,</span> <span class="pre">...,</span> <span class="pre">aM]</span></code> and
 <code class="docutils literal notranslate"><span class="pre">b</span> <span class="pre">=</span> <span class="pre">[b0,</span> <span class="pre">b1,</span> <span class="pre">...,</span> <span class="pre">bN]</span></code>,
@@ -131,13 +153,13 @@ the outer product <a class="reference internal" href="#rf0d57dd5badd-1" id="id1"
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">(M,) array_like</span></dt><dd><p>First input vector.  Input is flattened if
+<dt><strong>a</strong><span class="classifier">(M,) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>First input vector.  Input is flattened if
 not already 1-dimensional.</p>
 </dd>
-<dt><strong>b</strong><span class="classifier">(N,) array_like</span></dt><dd><p>Second input vector.  Input is flattened if
+<dt><strong>b</strong><span class="classifier">(N,) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Second input vector.  Input is flattened if
 not already 1-dimensional.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">(M, N) ndarray, optional</span></dt><dd><p>A location where the result is stored</p>
+<dt><strong>out</strong><span class="classifier">(M, N) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>A location where the result is stored</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.9.0.</span></p>
 </div>
@@ -145,19 +167,21 @@ not already 1-dimensional.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">(M, N) ndarray</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">out[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">a[i]</span> <span class="pre">*</span> <span class="pre">b[j]</span></code></p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier">(M, N) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">out[i,</span> <span class="pre">j]</span> <span class="pre">=</span> <span class="pre">a[i]</span> <span class="pre">*</span> <span class="pre">b[j]</span></code></p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.ma.inner.html#numpy.ma.inner" title="numpy.ma.inner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner</span></code></a></p>
 <dl class="simple">
+<dt><a class="reference internal" href="numpy.ma.inner.html#numpy.ma.inner" title="numpy.ma.inner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner</span></code></a></dt><dd></dd>
 <dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">einsum</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">einsum('i,j-&gt;ij',</span> <span class="pre">a.ravel(),</span> <span class="pre">b.ravel())</span></code> is the equivalent.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">ufunc.outer</span></code></dt><dd><p>A generalization to N dimensions and other operations. <code class="docutils literal notranslate"><span class="pre">np.multiply.outer(a.ravel(),</span> <span class="pre">b.ravel())</span></code> is the equivalent.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">ufunc.outer</span></code></dt><dd><p>A generalization to dimensions other than 1D and other operations. <code class="docutils literal notranslate"><span class="pre">np.multiply.outer(a.ravel(),</span> <span class="pre">b.ravel())</span></code> is the equivalent.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensordot</span></code></dt><dd><p><code class="docutils literal notranslate"><span class="pre">np.tensordot(a.ravel(),</span> <span class="pre">b.ravel(),</span> <span class="pre">axes=((),</span> <span class="pre">()))</span></code> is the equivalent.</p>
 </dd>
 </dl>
 </div>
@@ -229,10 +253,10 @@ pg. 8.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

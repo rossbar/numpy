@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.nanmedian &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.nanmedian &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Statistics" href="../routines.statistics.html" >
     <link rel="next" title="numpy.nanmean" href="numpy.nanmean.html" >
-    <link rel="prev" title="numpy.var" href="numpy.var.html" > 
+    <link rel="prev" title="numpy.var" href="numpy.var.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -125,17 +147,17 @@
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Input array or object that can be converted to an array.</p>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input array or object that can be converted to an array.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">{int, sequence of int, None}, optional</span></dt><dd><p>Axis or axes along which the medians are computed. The default
+<dt><strong>axis</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>}, optional</span></dt><dd><p>Axis or axes along which the medians are computed. The default
 is to compute the median along a flattened version of the array.
 A sequence of axes is supported since version 1.9.0.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>Alternative output array in which to place the result. It must
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>Alternative output array in which to place the result. It must
 have the same shape and buffer length as the expected output,
 but the type (of the output) will be cast if necessary.</p>
 </dd>
-<dt><strong>overwrite_input</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then allow use of memory of input array <em class="xref py py-obj">a</em> for
+<dt><strong>overwrite_input</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, then allow use of memory of input array <em class="xref py py-obj">a</em> for
 calculations. The input array will be modified by the call to
 <a class="reference internal" href="numpy.median.html#numpy.median" title="numpy.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>. This will save memory when you do not need to preserve
 the contents of the input array. Treat the input as undefined,
@@ -143,7 +165,7 @@ but it will probably be fully or partially sorted. Default is
 False. If <em class="xref py py-obj">overwrite_input</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and <em class="xref py py-obj">a</em> is not already an
 <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, an error will be raised.</p>
 </dd>
-<dt><strong>keepdims</strong><span class="classifier">bool, optional</span></dt><dd><p>If this is set to True, the axes which are reduced are left
+<dt><strong>keepdims</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If this is set to True, the axes which are reduced are left
 in the result as dimensions with size one. With this option,
 the result will broadcast correctly against the original <em class="xref py py-obj">a</em>.</p>
 <p>If this is anything but the default value it will be passed
@@ -155,8 +177,8 @@ will raise a RuntimeError.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>median</strong><span class="classifier">ndarray</span></dt><dd><p>A new array holding the result. If the input contains integers
+<dd class="field-even"><dl>
+<dt><strong>median</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>A new array holding the result. If the input contains integers
 or floats smaller than <code class="docutils literal notranslate"><span class="pre">float64</span></code>, then the output data-type is
 <code class="docutils literal notranslate"><span class="pre">np.float64</span></code>.  Otherwise, the data-type of the output is the
 same as that of the input. If <em class="xref py py-obj">out</em> is specified, that array is
@@ -167,7 +189,9 @@ returned instead.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.mean.html#numpy.mean" title="numpy.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>, <a class="reference internal" href="numpy.median.html#numpy.median" title="numpy.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>, <a class="reference internal" href="numpy.percentile.html#numpy.percentile" title="numpy.percentile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">percentile</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.mean.html#numpy.mean" title="numpy.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>, <a class="reference internal" href="numpy.median.html#numpy.median" title="numpy.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>, <a class="reference internal" href="numpy.percentile.html#numpy.percentile" title="numpy.percentile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">percentile</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>Given a vector <code class="docutils literal notranslate"><span class="pre">V</span></code> of length <code class="docutils literal notranslate"><span class="pre">N</span></code>, the median of <code class="docutils literal notranslate"><span class="pre">V</span></code> is the
@@ -223,10 +247,10 @@ middle values of <code class="docutils literal notranslate"><span class="pre">V_
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

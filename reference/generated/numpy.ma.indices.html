@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.indices &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.indices &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Masked array operations" href="../routines.ma.html" >
     <link rel="next" title="numpy.ma.where" href="numpy.ma.where.html" >
-    <link rel="prev" title="numpy.ma.ediff1d" href="numpy.ma.ediff1d.html" > 
+    <link rel="prev" title="numpy.ma.ediff1d" href="numpy.ma.ediff1d.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -117,18 +139,18 @@
 <h1>numpy.ma.indices<a class="headerlink" href="#numpy-ma-indices" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.ma.indices">
-<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">indices</code><span class="sig-paren">(</span><em class="sig-param">dimensions</em>, <em class="sig-param">dtype=&lt;class 'int'&gt;</em>, <em class="sig-param">sparse=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py#L1622-L1722"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.indices" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">indices</code><span class="sig-paren">(</span><em class="sig-param">dimensions</em>, <em class="sig-param">dtype=&lt;class 'int'&gt;</em>, <em class="sig-param">sparse=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py#L1654-L1754"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.indices" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an array representing the indices of a grid.</p>
 <p>Compute an array where the subarrays contain index values 0, 1, …
 varying only along the corresponding axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>dimensions</strong><span class="classifier">sequence of ints</span></dt><dd><p>The shape of the grid.</p>
+<dt><strong>dimensions</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ints</span></dt><dd><p>The shape of the grid.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">dtype, optional</span></dt><dd><p>Data type of the result.</p>
 </dd>
-<dt><strong>sparse</strong><span class="classifier">boolean, optional</span></dt><dd><p>Return a sparse representation of the grid instead of a dense
+<dt><strong>sparse</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Return a sparse representation of the grid instead of a dense
 representation. Default is False.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.17.</span></p>
@@ -137,8 +159,8 @@ representation. Default is False.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>grid</strong><span class="classifier">one ndarray or tuple of ndarrays</span></dt><dd><dl class="simple">
+<dd class="field-even"><dl>
+<dt><strong>grid</strong><span class="classifier">one <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ndarrays</span></dt><dd><dl class="simple">
 <dt>If sparse is False:</dt><dd><p>Returns one array of grid indices,
 <code class="docutils literal notranslate"><span class="pre">grid.shape</span> <span class="pre">=</span> <span class="pre">(len(dimensions),)</span> <span class="pre">+</span> <span class="pre">tuple(dimensions)</span></code>.</p>
 </dd>
@@ -153,7 +175,9 @@ dimensions[i] in the ith place</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">mgrid</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">ogrid</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">meshgrid</span></code></p>
+<dl class="simple">
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">mgrid</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">ogrid</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">meshgrid</span></code></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>The output shape in the dense case is obtained by prepending the number
@@ -226,10 +250,10 @@ representation.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

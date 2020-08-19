@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.MachAr &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.MachAr &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Data type routines" href="../routines.dtype.html" >
     <link rel="next" title="numpy.issctype" href="numpy.issctype.html" >
-    <link rel="prev" title="numpy.iinfo" href="numpy.iinfo.html" > 
+    <link rel="prev" title="numpy.iinfo" href="numpy.iinfo.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -118,23 +140,23 @@
 <dt id="numpy.MachAr">
 <em class="property">class </em><code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">MachAr</code><span class="sig-paren">(</span><em class="sig-param">float_conv=&lt;class 'float'&gt;</em>, <em class="sig-param">int_conv=&lt;class 'int'&gt;</em>, <em class="sig-param">float_to_float=&lt;class 'float'&gt;</em>, <em class="sig-param">float_to_str=&lt;function MachAr.&lt;lambda&gt;&gt;</em>, <em class="sig-param">title='Python floating point number'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/__init__.py"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.MachAr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Diagnosing machine parameters.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>float_conv</strong><span class="classifier">function, optional</span></dt><dd><p>Function that converts an integer or integer array to a float
-or float array. Default is <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>.</p>
+or float array. Default is <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>.</p>
 </dd>
 <dt><strong>int_conv</strong><span class="classifier">function, optional</span></dt><dd><p>Function that converts a float or float array to an integer or
-integer array. Default is <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p>
+integer array. Default is <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a>.</p>
 </dd>
-<dt><strong>float_to_float</strong><span class="classifier">function, optional</span></dt><dd><p>Function that converts a float array to float. Default is <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>.
+<dt><strong>float_to_float</strong><span class="classifier">function, optional</span></dt><dd><p>Function that converts a float array to float. Default is <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">float</span></code></a>.
 Note that this does not seem to do anything useful in the current
 implementation.</p>
 </dd>
 <dt><strong>float_to_str</strong><span class="classifier">function, optional</span></dt><dd><p>Function that converts a single float to a string. Default is
 <code class="docutils literal notranslate"><span class="pre">lambda</span> <span class="pre">v:'%24.16e'</span> <span class="pre">%v</span></code>.</p>
 </dd>
-<dt><strong>title</strong><span class="classifier">str, optional</span></dt><dd><p>Title that is printed in the string representation of <a class="reference internal" href="#numpy.MachAr" title="numpy.MachAr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MachAr</span></code></a>.</p>
+<dt><strong>title</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Title that is printed in the string representation of <a class="reference internal" href="#numpy.MachAr" title="numpy.MachAr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MachAr</span></code></a>.</p>
 </dd>
 </dl>
 </dd>
@@ -150,57 +172,57 @@ implementation.</p>
 </div>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="re860718f5533-1"><span class="brackets">Re860718f5533-1</span></dt>
+<dt class="label" id="re860718f5533-1"><span class="brackets">1</span></dt>
 <dd><p>Press, Teukolsky, Vetterling and Flannery,
 “Numerical Recipes in C++,” 2nd ed,
 Cambridge University Press, 2002, p. 31.</p>
 </dd>
 </dl>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>ibeta</strong><span class="classifier">int</span></dt><dd><p>Radix in which numbers are represented.</p>
+<dd class="field-odd"><dl>
+<dt><strong>ibeta</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Radix in which numbers are represented.</p>
 </dd>
-<dt><strong>it</strong><span class="classifier">int</span></dt><dd><p>Number of base-<em class="xref py py-obj">ibeta</em> digits in the floating point mantissa M.</p>
+<dt><strong>it</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of base-<em class="xref py py-obj">ibeta</em> digits in the floating point mantissa M.</p>
 </dd>
-<dt><strong>machep</strong><span class="classifier">int</span></dt><dd><p>Exponent of the smallest (most negative) power of <em class="xref py py-obj">ibeta</em> that,
+<dt><strong>machep</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Exponent of the smallest (most negative) power of <em class="xref py py-obj">ibeta</em> that,
 added to 1.0, gives something different from 1.0</p>
 </dd>
-<dt><strong>eps</strong><span class="classifier">float</span></dt><dd><p>Floating-point number <code class="docutils literal notranslate"><span class="pre">beta**machep</span></code> (floating point precision)</p>
+<dt><strong>eps</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Floating-point number <code class="docutils literal notranslate"><span class="pre">beta**machep</span></code> (floating point precision)</p>
 </dd>
-<dt><strong>negep</strong><span class="classifier">int</span></dt><dd><p>Exponent of the smallest power of <em class="xref py py-obj">ibeta</em> that, subtracted
+<dt><strong>negep</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Exponent of the smallest power of <em class="xref py py-obj">ibeta</em> that, subtracted
 from 1.0, gives something different from 1.0.</p>
 </dd>
-<dt><strong>epsneg</strong><span class="classifier">float</span></dt><dd><p>Floating-point number <code class="docutils literal notranslate"><span class="pre">beta**negep</span></code>.</p>
+<dt><strong>epsneg</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Floating-point number <code class="docutils literal notranslate"><span class="pre">beta**negep</span></code>.</p>
 </dd>
-<dt><strong>iexp</strong><span class="classifier">int</span></dt><dd><p>Number of bits in the exponent (including its sign and bias).</p>
+<dt><strong>iexp</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of bits in the exponent (including its sign and bias).</p>
 </dd>
-<dt><strong>minexp</strong><span class="classifier">int</span></dt><dd><p>Smallest (most negative) power of <em class="xref py py-obj">ibeta</em> consistent with there
+<dt><strong>minexp</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Smallest (most negative) power of <em class="xref py py-obj">ibeta</em> consistent with there
 being no leading zeros in the mantissa.</p>
 </dd>
-<dt><strong>xmin</strong><span class="classifier">float</span></dt><dd><p>Floating point number <code class="docutils literal notranslate"><span class="pre">beta**minexp</span></code> (the smallest [in
-magnitude] usable floating value).</p>
+<dt><strong>xmin</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Floating-point number <code class="docutils literal notranslate"><span class="pre">beta**minexp</span></code> (the smallest [in
+magnitude] positive floating point number with full precision).</p>
 </dd>
-<dt><strong>maxexp</strong><span class="classifier">int</span></dt><dd><p>Smallest (positive) power of <em class="xref py py-obj">ibeta</em> that causes overflow.</p>
+<dt><strong>maxexp</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Smallest (positive) power of <em class="xref py py-obj">ibeta</em> that causes overflow.</p>
 </dd>
-<dt><strong>xmax</strong><span class="classifier">float</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(1-epsneg)</span> <span class="pre">*</span> <span class="pre">beta**maxexp</span></code> (the largest [in magnitude]
+<dt><strong>xmax</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">(1-epsneg)</span> <span class="pre">*</span> <span class="pre">beta**maxexp</span></code> (the largest [in magnitude]
 usable floating value).</p>
 </dd>
-<dt><strong>irnd</strong><span class="classifier">int</span></dt><dd><p>In <code class="docutils literal notranslate"><span class="pre">range(6)</span></code>, information on what kind of rounding is done
+<dt><strong>irnd</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>In <code class="docutils literal notranslate"><span class="pre">range(6)</span></code>, information on what kind of rounding is done
 in addition, and on how underflow is handled.</p>
 </dd>
-<dt><strong>ngrd</strong><span class="classifier">int</span></dt><dd><p>Number of ‘guard digits’ used when truncating the product
+<dt><strong>ngrd</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of ‘guard digits’ used when truncating the product
 of two mantissas to fit the representation.</p>
 </dd>
-<dt><strong>epsilon</strong><span class="classifier">float</span></dt><dd><p>Same as <em class="xref py py-obj">eps</em>.</p>
+<dt><strong>epsilon</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Same as <em class="xref py py-obj">eps</em>.</p>
 </dd>
-<dt><strong>tiny</strong><span class="classifier">float</span></dt><dd><p>Same as <em class="xref py py-obj">xmin</em>.</p>
+<dt><strong>tiny</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Same as <em class="xref py py-obj">xmin</em>.</p>
 </dd>
-<dt><strong>huge</strong><span class="classifier">float</span></dt><dd><p>Same as <em class="xref py py-obj">xmax</em>.</p>
+<dt><strong>huge</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Same as <em class="xref py py-obj">xmax</em>.</p>
 </dd>
-<dt><strong>precision</strong><span class="classifier">float</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">int(-log10(eps))</span></code></p>
+<dt><strong>precision</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">int(-log10(eps))</span></code></p>
 </dd>
-<dt><strong>resolution</strong><span class="classifier">float</span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">10**(-precision)</span></code></p>
+<dt><strong>resolution</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p><code class="docutils literal notranslate"><span class="pre">-</span> <span class="pre">10**(-precision)</span></code></p>
 </dd>
 </dl>
 </dd>
@@ -230,10 +252,10 @@ of two mantissas to fit the representation.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

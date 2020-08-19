@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.issctype &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.issctype &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Data type routines" href="../routines.dtype.html" >
     <link rel="next" title="numpy.issubdtype" href="numpy.issubdtype.html" >
-    <link rel="prev" title="numpy.MachAr" href="numpy.MachAr.html" > 
+    <link rel="prev" title="numpy.MachAr" href="numpy.MachAr.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,9 +138,9 @@
 <h1>numpy.issctype<a class="headerlink" href="#numpy-issctype" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.issctype">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">issctype</code><span class="sig-paren">(</span><em class="sig-param">rep</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numerictypes.py#L186-L229"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.issctype" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">issctype</code><span class="sig-paren">(</span><em class="sig-param">rep</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numerictypes.py#L185-L228"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.issctype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Determines whether the given object represents a scalar data-type.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl class="simple">
 <dt><strong>rep</strong><span class="classifier">any</span></dt><dd><p>If <em class="xref py py-obj">rep</em> is an instance of a scalar dtype, True is returned. If not,
@@ -127,15 +149,17 @@ False is returned.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">bool</span></dt><dd><p>Boolean result of check whether <em class="xref py py-obj">rep</em> is a scalar dtype.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Boolean result of check whether <em class="xref py py-obj">rep</em> is a scalar dtype.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.issubsctype.html#numpy.issubsctype" title="numpy.issubsctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubsctype</span></code></a>, <a class="reference internal" href="numpy.issubdtype.html#numpy.issubdtype" title="numpy.issubdtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubdtype</span></code></a>, <a class="reference internal" href="numpy.obj2sctype.html#numpy.obj2sctype" title="numpy.obj2sctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj2sctype</span></code></a>, <a class="reference internal" href="numpy.sctype2char.html#numpy.sctype2char" title="numpy.sctype2char"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sctype2char</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.issubsctype.html#numpy.issubsctype" title="numpy.issubsctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubsctype</span></code></a>, <a class="reference internal" href="numpy.issubdtype.html#numpy.issubdtype" title="numpy.issubdtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">issubdtype</span></code></a>, <a class="reference internal" href="numpy.obj2sctype.html#numpy.obj2sctype" title="numpy.obj2sctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj2sctype</span></code></a>, <a class="reference internal" href="numpy.sctype2char.html#numpy.sctype2char" title="numpy.sctype2char"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sctype2char</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">issctype</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
@@ -176,10 +200,10 @@ False is returned.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

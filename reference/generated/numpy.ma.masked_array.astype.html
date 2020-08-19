@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.masked_array.astype &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.masked_array.astype &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,14 +29,36 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -52,7 +74,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
  
     </ul>
@@ -102,7 +124,7 @@
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>dtype</strong><span class="classifier">str or dtype</span></dt><dd><p>Typecode or data-type to which the array is cast.</p>
+<dt><strong>dtype</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or dtype</span></dt><dd><p>Typecode or data-type to which the array is cast.</p>
 </dd>
 <dt><strong>order</strong><span class="classifier">{‘C’, ‘F’, ‘A’, ‘K’}, optional</span></dt><dd><p>Controls the memory layout order of the result.
 ‘C’ means C order, ‘F’ means Fortran order, ‘A’
@@ -124,10 +146,10 @@ like float64 to float32, are allowed.</p></li>
 </ul>
 </div></blockquote>
 </dd>
-<dt><strong>subok</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then sub-classes will be passed-through (default), otherwise
+<dt><strong>subok</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, then sub-classes will be passed-through (default), otherwise
 the returned array will be forced to be a base-class array.</p>
 </dd>
-<dt><strong>copy</strong><span class="classifier">bool, optional</span></dt><dd><p>By default, astype always returns a newly allocated array. If this
+<dt><strong>copy</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>By default, astype always returns a newly allocated array. If this
 is set to false, and the <a class="reference internal" href="numpy.ma.masked_array.dtype.html#numpy.ma.masked_array.dtype" title="numpy.ma.masked_array.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a>, <em class="xref py py-obj">order</em>, and <em class="xref py py-obj">subok</em>
 requirements are satisfied, the input array is returned instead
 of a copy.</p>
@@ -135,8 +157,8 @@ of a copy.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>arr_t</strong><span class="classifier">ndarray</span></dt><dd><p>Unless <a class="reference internal" href="numpy.ma.copy.html#numpy.ma.copy" title="numpy.ma.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> is False and the other conditions for returning the input
+<dd class="field-even"><dl>
+<dt><strong>arr_t</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Unless <a class="reference internal" href="numpy.ma.copy.html#numpy.ma.copy" title="numpy.ma.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> is False and the other conditions for returning the input
 array are satisfied (see description for <a class="reference internal" href="numpy.ma.copy.html#numpy.ma.copy" title="numpy.ma.copy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">copy</span></code></a> input parameter), <em class="xref py py-obj">arr_t</em>
 is a new array of the same shape as the input array, with dtype, order
 given by <a class="reference internal" href="numpy.ma.masked_array.dtype.html#numpy.ma.masked_array.dtype" title="numpy.ma.masked_array.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a>, <em class="xref py py-obj">order</em>.</p>
@@ -145,7 +167,7 @@ given by <a class="reference internal" href="numpy.ma.masked_array.dtype.html#nu
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ComplexWarning</strong></dt><dd><p>When casting from complex to float or int. To avoid this,
+<dt>ComplexWarning</dt><dd><p>When casting from complex to float or int. To avoid this,
 one should use <code class="docutils literal notranslate"><span class="pre">a.real.astype(t)</span></code>.</p>
 </dd>
 </dl>
@@ -197,10 +219,10 @@ integer/float value converted.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

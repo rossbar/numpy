@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.fft.irfft &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.fft.irfft &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Discrete Fourier Transform (numpy.fft)" href="../routines.fft.html" >
     <link rel="next" title="numpy.fft.rfft2" href="numpy.fft.rfft2.html" >
-    <link rel="prev" title="numpy.fft.rfft" href="numpy.fft.rfft.html" > 
+    <link rel="prev" title="numpy.fft.rfft" href="numpy.fft.rfft.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,8 +138,8 @@
 <h1>numpy.fft.irfft<a class="headerlink" href="#numpy-fft-irfft" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.fft.irfft">
-<code class="sig-prename descclassname">numpy.fft.</code><code class="sig-name descname">irfft</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">n=None</em>, <em class="sig-param">axis=-1</em>, <em class="sig-param">norm=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/fft/_pocketfft.py#L375-L472"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fft.irfft" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute the inverse of the n-point DFT for real input.</p>
+<code class="sig-prename descclassname">numpy.fft.</code><code class="sig-name descname">irfft</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">n=None</em>, <em class="sig-param">axis=-1</em>, <em class="sig-param">norm=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/fft/_pocketfft.py#L411-L512"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fft.irfft" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the inverse of <a class="reference internal" href="numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfft</span></code></a>.</p>
 <p>This function computes the inverse of the one-dimensional <em>n</em>-point
 discrete Fourier Transform of real input computed by <a class="reference internal" href="numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfft</span></code></a>.
 In other words, <code class="docutils literal notranslate"><span class="pre">irfft(rfft(a),</span> <span class="pre">len(a))</span> <span class="pre">==</span> <span class="pre">a</span></code> to within numerical
@@ -130,28 +152,33 @@ to be the complex conjugates of the corresponding positive frequency terms.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>The input array.</p>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>The input array.</p>
 </dd>
-<dt><strong>n</strong><span class="classifier">int, optional</span></dt><dd><p>Length of the transformed axis of the output.
+<dt><strong>n</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Length of the transformed axis of the output.
 For <em class="xref py py-obj">n</em> output points, <code class="docutils literal notranslate"><span class="pre">n//2+1</span></code> input points are necessary.  If the
 input is longer than this, it is cropped.  If it is shorter than this,
 it is padded with zeros.  If <em class="xref py py-obj">n</em> is not given, it is taken to be
 <code class="docutils literal notranslate"><span class="pre">2*(m-1)</span></code> where <code class="docutils literal notranslate"><span class="pre">m</span></code> is the length of the input along the axis
 specified by <em class="xref py py-obj">axis</em>.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>Axis over which to compute the inverse FFT. If not given, the last
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Axis over which to compute the inverse FFT. If not given, the last
 axis is used.</p>
 </dd>
-<dt><strong>norm</strong><span class="classifier">{None, “ortho”}, optional</span></dt><dd><div class="versionadded">
+<dt><strong>norm</strong><span class="classifier">{“backward”, “ortho”, “forward”}, optional</span></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">New in version 1.10.0.</span></p>
 </div>
-<p>Normalization mode (see <a class="reference internal" href="../routines.fft.html#module-numpy.fft" title="numpy.fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.fft</span></code></a>). Default is None.</p>
+<p>Normalization mode (see <a class="reference internal" href="../routines.fft.html#module-numpy.fft" title="numpy.fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.fft</span></code></a>). Default is “backward”.
+Indicates which direction of the forward/backward pair of transforms
+is scaled and with what normalization factor.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.20.0: </span>The “backward”, “forward” values were added.</p>
+</div>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>The truncated or zero-padded input, transformed along the axis
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The truncated or zero-padded input, transformed along the axis
 indicated by <em class="xref py py-obj">axis</em>, or the last one if <em class="xref py py-obj">axis</em> is not specified.
 The length of the transformed axis is <em class="xref py py-obj">n</em>, or, if <em class="xref py py-obj">n</em> is not given,
 <code class="docutils literal notranslate"><span class="pre">2*(m-1)</span></code> where <code class="docutils literal notranslate"><span class="pre">m</span></code> is the length of the transformed axis of the
@@ -161,7 +188,7 @@ input. To get an odd number of output points, <em class="xref py py-obj">n</em> 
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>IndexError</strong></dt><dd><p>If <em class="xref py py-obj">axis</em> is larger than the last axis of <em class="xref py py-obj">a</em>.</p>
+<dt>IndexError</dt><dd><p>If <em class="xref py py-obj">axis</em> is larger than the last axis of <em class="xref py py-obj">a</em>.</p>
 </dd>
 </dl>
 </dd>
@@ -233,10 +260,10 @@ specified, and the output array is purely real.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

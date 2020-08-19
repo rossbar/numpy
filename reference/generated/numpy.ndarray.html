@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ndarray &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ndarray &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="The N-dimensional array (ndarray)" href="../arrays.ndarray.html" >
     <link rel="next" title="numpy.ndarray.all" href="numpy.ndarray.all.html" >
-    <link rel="prev" title="The N-dimensional array (ndarray)" href="../arrays.ndarray.html" > 
+    <link rel="prev" title="The N-dimensional array (ndarray)" href="../arrays.ndarray.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -127,19 +149,19 @@ to the See Also section below).  The parameters given here refer to
 a low-level method (<em class="xref py py-obj">ndarray(…)</em>) for instantiating an array.</p>
 <p>For more information, refer to the <a class="reference internal" href="../index.html#module-numpy" title="numpy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy</span></code></a> module and examine the
 methods and attributes of an array.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>(for the __new__ method; see Notes below)</strong></dt><dd></dd>
-<dt><strong>shape</strong><span class="classifier">tuple of ints</span></dt><dd><p>Shape of created array.</p>
+<dt><strong>shape</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints</span></dt><dd><p>Shape of created array.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">data-type, optional</span></dt><dd><p>Any object that can be interpreted as a numpy data type.</p>
 </dd>
 <dt><strong>buffer</strong><span class="classifier">object exposing buffer interface, optional</span></dt><dd><p>Used to fill the array with data.</p>
 </dd>
-<dt><strong>offset</strong><span class="classifier">int, optional</span></dt><dd><p>Offset of array data in buffer.</p>
+<dt><strong>offset</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Offset of array data in buffer.</p>
 </dd>
-<dt><strong>strides</strong><span class="classifier">tuple of ints, optional</span></dt><dd><p>Strides of data in memory.</p>
+<dt><strong>strides</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints, optional</span></dt><dd><p>Strides of data in memory.</p>
 </dd>
 <dt><strong>order</strong><span class="classifier">{‘C’, ‘F’}, optional</span></dt><dd><p>Row-major (C-style) or column-major (Fortran-style) order.</p>
 </dd>
@@ -186,38 +208,38 @@ ndarray.</p>
 <span class="go">array([2, 3])</span>
 </pre></div>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Attributes</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><a class="reference internal" href="numpy.ndarray.T.html#numpy.ndarray.T" title="numpy.ndarray.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a><span class="classifier">ndarray</span></dt><dd><p>The transposed array.</p>
+<dd class="field-odd"><dl>
+<dt><a class="reference internal" href="numpy.ndarray.T.html#numpy.ndarray.T" title="numpy.ndarray.T"><code class="xref py py-obj docutils literal notranslate"><span class="pre">T</span></code></a><span class="classifier"><a class="reference internal" href="#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The transposed array.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.ndarray.data.html#numpy.ndarray.data" title="numpy.ndarray.data"><code class="xref py py-obj docutils literal notranslate"><span class="pre">data</span></code></a><span class="classifier">buffer</span></dt><dd><p>Python buffer object pointing to the start of the array’s data.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a><span class="classifier">dtype object</span></dt><dd><p>Data-type of the array’s elements.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.flags.html#numpy.ndarray.flags" title="numpy.ndarray.flags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flags</span></code></a><span class="classifier">dict</span></dt><dd><p>Information about the memory layout of the array.</p>
+<dt><a class="reference internal" href="numpy.ndarray.flags.html#numpy.ndarray.flags" title="numpy.ndarray.flags"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flags</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></span></dt><dd><p>Information about the memory layout of the array.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.ndarray.flat.html#numpy.ndarray.flat" title="numpy.ndarray.flat"><code class="xref py py-obj docutils literal notranslate"><span class="pre">flat</span></code></a><span class="classifier">numpy.flatiter object</span></dt><dd><p>A 1-D iterator over the array.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.imag.html#numpy.imag" title="numpy.imag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imag</span></code></a><span class="classifier">ndarray</span></dt><dd><p>The imaginary part of the array.</p>
+<dt><a class="reference internal" href="numpy.imag.html#numpy.imag" title="numpy.imag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">imag</span></code></a><span class="classifier"><a class="reference internal" href="#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The imaginary part of the array.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.real.html#numpy.real" title="numpy.real"><code class="xref py py-obj docutils literal notranslate"><span class="pre">real</span></code></a><span class="classifier">ndarray</span></dt><dd><p>The real part of the array.</p>
+<dt><a class="reference internal" href="numpy.real.html#numpy.real" title="numpy.real"><code class="xref py py-obj docutils literal notranslate"><span class="pre">real</span></code></a><span class="classifier"><a class="reference internal" href="#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The real part of the array.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.size.html#numpy.ndarray.size" title="numpy.ndarray.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a><span class="classifier">int</span></dt><dd><p>Number of elements in the array.</p>
+<dt><a class="reference internal" href="numpy.ndarray.size.html#numpy.ndarray.size" title="numpy.ndarray.size"><code class="xref py py-obj docutils literal notranslate"><span class="pre">size</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of elements in the array.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.itemsize.html#numpy.ndarray.itemsize" title="numpy.ndarray.itemsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">itemsize</span></code></a><span class="classifier">int</span></dt><dd><p>Length of one array element in bytes.</p>
+<dt><a class="reference internal" href="numpy.ndarray.itemsize.html#numpy.ndarray.itemsize" title="numpy.ndarray.itemsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">itemsize</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Length of one array element in bytes.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="numpy.ndarray.nbytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nbytes</span></code></a><span class="classifier">int</span></dt><dd><p>Total bytes consumed by the elements of the array.</p>
+<dt><a class="reference internal" href="numpy.ndarray.nbytes.html#numpy.ndarray.nbytes" title="numpy.ndarray.nbytes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nbytes</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Total bytes consumed by the elements of the array.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.ndim.html#numpy.ndarray.ndim" title="numpy.ndarray.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a><span class="classifier">int</span></dt><dd><p>Number of array dimensions.</p>
+<dt><a class="reference internal" href="numpy.ndarray.ndim.html#numpy.ndarray.ndim" title="numpy.ndarray.ndim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndim</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Number of array dimensions.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.shape.html#numpy.shape" title="numpy.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a><span class="classifier">tuple of ints</span></dt><dd><p>Tuple of array dimensions.</p>
+<dt><a class="reference internal" href="numpy.shape.html#numpy.shape" title="numpy.shape"><code class="xref py py-obj docutils literal notranslate"><span class="pre">shape</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints</span></dt><dd><p>Tuple of array dimensions.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.strides.html#numpy.ndarray.strides" title="numpy.ndarray.strides"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strides</span></code></a><span class="classifier">tuple of ints</span></dt><dd><p>Tuple of bytes to step in each dimension when traversing an array.</p>
+<dt><a class="reference internal" href="numpy.ndarray.strides.html#numpy.ndarray.strides" title="numpy.ndarray.strides"><code class="xref py py-obj docutils literal notranslate"><span class="pre">strides</span></code></a><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints</span></dt><dd><p>Tuple of bytes to step in each dimension when traversing an array.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.ndarray.ctypes.html#numpy.ndarray.ctypes" title="numpy.ndarray.ctypes"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ctypes</span></code></a><span class="classifier">ctypes object</span></dt><dd><p>An object to simplify the interaction of the array with the ctypes module.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ndarray.base.html#numpy.ndarray.base" title="numpy.ndarray.base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code></a><span class="classifier">ndarray</span></dt><dd><p>Base object if memory is from some other object.</p>
+<dt><a class="reference internal" href="numpy.ndarray.base.html#numpy.ndarray.base" title="numpy.ndarray.base"><code class="xref py py-obj docutils literal notranslate"><span class="pre">base</span></code></a><span class="classifier"><a class="reference internal" href="#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Base object if memory is from some other object.</p>
 </dd>
 </dl>
 </dd>
@@ -359,7 +381,7 @@ ndarray.</p>
 <td><p>Sort an array in-place.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="numpy.ndarray.squeeze.html#numpy.ndarray.squeeze" title="numpy.ndarray.squeeze"><code class="xref py py-obj docutils literal notranslate"><span class="pre">squeeze</span></code></a>([axis])</p></td>
-<td><p>Remove single-dimensional entries from the shape of <em class="xref py py-obj">a</em>.</p></td>
+<td><p>Remove axes of length one from <em class="xref py py-obj">a</em>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="numpy.ndarray.std.html#numpy.ndarray.std" title="numpy.ndarray.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>([axis, dtype, out, ddof, keepdims])</p></td>
 <td><p>Returns the standard deviation of the array elements along given axis.</p></td>
@@ -424,10 +446,10 @@ ndarray.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

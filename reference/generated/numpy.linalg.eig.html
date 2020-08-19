@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.linalg.eig &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.linalg.eig &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.linalg.eigh" href="numpy.linalg.eigh.html" >
-    <link rel="prev" title="numpy.linalg.svd" href="numpy.linalg.svd.html" > 
+    <link rel="prev" title="numpy.linalg.svd" href="numpy.linalg.svd.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,26 +138,26 @@
 <h1>numpy.linalg.eig<a class="headerlink" href="#numpy-linalg-eig" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.eig">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">eig</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L1188-L1334"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.eig" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">eig</code><span class="sig-paren">(</span><em class="sig-param">a</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L1187-L1333"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.eig" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the eigenvalues and right eigenvectors of a square array.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">(…, M, M) array</span></dt><dd><p>Matrices for which the eigenvalues and right eigenvectors will
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier">(…, M, M) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Matrices for which the eigenvalues and right eigenvectors will
 be computed</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>w</strong><span class="classifier">(…, M) array</span></dt><dd><p>The eigenvalues, each repeated according to its multiplicity.
+<dd class="field-even"><dl>
+<dt><strong>w</strong><span class="classifier">(…, M) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>The eigenvalues, each repeated according to its multiplicity.
 The eigenvalues are not necessarily ordered. The resulting
 array will be of complex type, unless the imaginary part is
 zero in which case it will be cast to a real type. When <em class="xref py py-obj">a</em>
 is real the resulting eigenvalues will be real (0 imaginary
 part) or occur in conjugate pairs</p>
 </dd>
-<dt><strong>v</strong><span class="classifier">(…, M, M) array</span></dt><dd><p>The normalized (unit “length”) eigenvectors, such that the
+<dt><strong>v</strong><span class="classifier">(…, M, M) <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>The normalized (unit “length”) eigenvectors, such that the
 column <code class="docutils literal notranslate"><span class="pre">v[:,i]</span></code> is the eigenvector corresponding to the
 eigenvalue <code class="docutils literal notranslate"><span class="pre">w[i]</span></code>.</p>
 </dd>
@@ -143,7 +165,7 @@ eigenvalue <code class="docutils literal notranslate"><span class="pre">w[i]</sp
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>LinAlgError</strong></dt><dd><p>If the eigenvalue computation does not converge.</p>
+<dt>LinAlgError</dt><dd><p>If the eigenvalue computation does not converge.</p>
 </dd>
 </dl>
 </dd>
@@ -157,9 +179,9 @@ eigenvalue <code class="docutils literal notranslate"><span class="pre">w[i]</sp
 </dd>
 <dt><a class="reference internal" href="numpy.linalg.eigvalsh.html#numpy.linalg.eigvalsh" title="numpy.linalg.eigvalsh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eigvalsh</span></code></a></dt><dd><p>eigenvalues of a real symmetric or complex Hermitian (conjugate symmetric) array.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eig.html#scipy.linalg.eig" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.eig</span></code></a></dt><dd><p>Similar function in SciPy that also solves the generalized eigenvalue problem.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.eig.html#scipy.linalg.eig" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.eig</span></code></a></dt><dd><p>Similar function in SciPy that also solves the generalized eigenvalue problem.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.schur.html#scipy.linalg.schur" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.schur</span></code></a></dt><dd><p>Best choice for unitary and other non-Hermitian normal matrices.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.schur.html#scipy.linalg.schur" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.schur</span></code></a></dt><dd><p>Best choice for unitary and other non-Hermitian normal matrices.</p>
 </dd>
 </dl>
 </div>
@@ -180,7 +202,7 @@ of the columns may be linearly dependent, although round-off error may
 obscure that fact. If the eigenvalues are all different, then theoretically
 the eigenvectors are linearly independent and <em class="xref py py-obj">a</em> can be diagonalized by
 a similarity transformation using <em class="xref py py-obj">v</em>, i.e, <code class="docutils literal notranslate"><span class="pre">inv(v)</span> <span class="pre">&#64;</span> <span class="pre">a</span> <span class="pre">&#64;</span> <span class="pre">v</span></code> is diagonal.</p>
-<p>For non-Hermitian normal matrices the SciPy function <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.schur.html#scipy.linalg.schur" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.schur</span></code></a>
+<p>For non-Hermitian normal matrices the SciPy function <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.schur.html#scipy.linalg.schur" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.schur</span></code></a>
 is preferred because the matrix <em class="xref py py-obj">v</em> is guaranteed to be unitary, which is
 not the case when using <a class="reference internal" href="#numpy.linalg.eig" title="numpy.linalg.eig"><code class="xref py py-obj docutils literal notranslate"><span class="pre">eig</span></code></a>. The Schur factorization produces an
 upper triangular matrix rather than a diagonal matrix, but for normal
@@ -262,10 +284,10 @@ note that <code class="docutils literal notranslate"><span class="pre">a.conj().
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

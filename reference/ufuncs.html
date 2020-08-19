@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Universal functions (ufunc) &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Universal functions (ufunc) &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="NumPy Reference" href="index.html" >
     <link rel="next" title="numpy.setbufsize" href="generated/numpy.setbufsize.html" >
-    <link rel="prev" title="Constants" href="constants.html" > 
+    <link rel="prev" title="Constants" href="constants.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" accesskey="U">NumPy Reference</a></li> 
@@ -147,11 +169,11 @@ is, a ufunc is a “<a class="reference internal" href="../glossary.html#term-ve
 takes a fixed number of specific inputs and produces a fixed number of
 specific outputs.</p>
 <p>In NumPy, universal functions are instances of the
-<code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ufunc</span></code> class. Many of the built-in functions are
+<a class="reference internal" href="generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ufunc</span></code></a> class. Many of the built-in functions are
 implemented in compiled C code. The basic ufuncs operate on scalars, but
 there is also a generalized kind for which the basic elements are sub-arrays
 (vectors, matrices, etc.), and broadcasting is done over other dimensions.
-One can also produce custom <code class="xref py py-class docutils literal notranslate"><span class="pre">ufunc</span></code> instances using the
+One can also produce custom <a class="reference internal" href="generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ufunc</span></code></a> instances using the
 <a class="reference internal" href="generated/numpy.frompyfunc.html#numpy.frompyfunc" title="numpy.frompyfunc"><code class="xref py py-func docutils literal notranslate"><span class="pre">frompyfunc</span></code></a> factory function.</p>
 <div class="section" id="broadcasting">
 <span id="ufuncs-broadcasting"></span><h2>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h2>
@@ -213,7 +235,7 @@ where <code class="docutils literal notranslate"><span class="pre">c[:]</span></
 <a class="reference internal" href="generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarray</span></code></a>, if all input arguments are not <a class="reference internal" href="generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-class docutils literal notranslate"><span class="pre">ndarrays</span></code></a>.
 Indeed, if any input defines an <a class="reference internal" href="arrays.classes.html#numpy.class.__array_ufunc__" title="numpy.class.__array_ufunc__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array_ufunc__</span></code></a> method,
 control will be passed completely to that function, i.e., the ufunc is
-<a class="reference external" href="ufuncs.overrides">overridden</a>.</p>
+<a class="reference internal" href="#ufuncs-overrides"><span class="std std-ref">overridden</span></a>.</p>
 <p>If none of the inputs overrides the ufunc, then
 all output arrays will be passed to the <a class="reference internal" href="arrays.classes.html#numpy.class.__array_prepare__" title="numpy.class.__array_prepare__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array_prepare__</span></code></a> and
 <a class="reference internal" href="arrays.classes.html#numpy.class.__array_wrap__" title="numpy.class.__array_wrap__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__array_wrap__</span></code></a> methods of the input (besides
@@ -389,7 +411,18 @@ them by defining certain special methods.  For details, see
 <a class="reference internal" href="arrays.classes.html#arrays-classes"><span class="std std-ref">Standard array subclasses</span></a>.</p>
 </div>
 <div class="section" id="ufunc">
-<h2><code class="xref py py-class docutils literal notranslate"><span class="pre">ufunc</span></code><a class="headerlink" href="#ufunc" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference internal" href="generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ufunc</span></code></a><a class="headerlink" href="#ufunc" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.ufunc.html#numpy.ufunc" title="numpy.ufunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.ufunc</span></code></a></p></td>
+<td><p>Functions that operate element by element on whole arrays.</p></td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="optional-keyword-arguments">
 <span id="ufuncs-kwargs"></span><h3>Optional keyword arguments<a class="headerlink" href="#optional-keyword-arguments" title="Permalink to this headline">¶</a></h3>
 <p>All ufuncs take optional keyword arguments. Most of these represent
@@ -418,6 +451,19 @@ that the broadcast ‘where’ is True. If ‘where’ is the scalar True (the
 default), then this corresponds to the entire output being filled.
 Note that outputs not explicitly filled are left with their
 uninitialized values.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.13.</span></p>
+</div>
+<p>Operations where ufunc input and output operands have memory overlap are
+defined to be the same as for equivalent operations where there
+is no memory overlap.  Operations affected make temporary copies
+as needed to eliminate data dependency.  As detecting these cases
+is computationally expensive, a heuristic is used, which may in rare
+cases result in needless temporary copies.  For operations where the
+data dependency is simple enough for the heuristic to analyze,
+temporary copies will not be made even if the arrays overlap, if it
+can be deduced copies are not necessary.  As an example,
+<code class="docutils literal notranslate"><span class="pre">np.add(a,</span> <span class="pre">b,</span> <span class="pre">out=a)</span></code> will not involve copies.</p>
 </div></blockquote>
 <p><em>where</em></p>
 <blockquote>
@@ -467,7 +513,7 @@ for a signature <code class="docutils literal notranslate"><span class="pre">(i)
 result as a dimension with size one, so that the result will broadcast
 correctly against the inputs. This option can only be used for generalized
 ufuncs that operate on inputs that all have the same number of core
-dimensions and with outputs that have no core dimensions , i.e., with
+dimensions and with outputs that have no core dimensions, i.e., with
 signatures like <code class="docutils literal notranslate"><span class="pre">(i),(i)-&gt;()</span></code> or <code class="docutils literal notranslate"><span class="pre">(m,m)-&gt;()</span></code>. If used, the location of
 the dimensions in the output can be controlled with <code class="docutils literal notranslate"><span class="pre">axes</span></code> and <code class="docutils literal notranslate"><span class="pre">axis</span></code>.</p>
 </div></blockquote>
@@ -596,11 +642,11 @@ provided at creation time and stored with the ufunc.</p></td>
 <p>All ufuncs have four methods. However, these methods only make sense on scalar
 ufuncs that take two input arguments and return one output argument.
 Attempting to call these methods on other ufuncs will cause a
-<a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#ValueError" title="(in Python v3.9)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>. The reduce-like methods all take an <em>axis</em> keyword, a <em>dtype</em>
+<a class="reference external" href="https://docs.python.org/dev/library/exceptions.html#ValueError" title="(in Python v3.10)"><code class="xref py py-exc docutils literal notranslate"><span class="pre">ValueError</span></code></a>. The reduce-like methods all take an <em>axis</em> keyword, a <em>dtype</em>
 keyword, and an <em>out</em> keyword, and the arrays must all have dimension &gt;= 1.
 The <em>axis</em> keyword specifies the axis of the array over which the reduction
 will take place (with negative values counting backwards). Generally, it is an
-integer, though for <a class="reference internal" href="generated/numpy.ufunc.reduce.html#numpy.ufunc.reduce" title="numpy.ufunc.reduce"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ufunc.reduce</span></code></a>, it can also be a tuple of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a> to
+integer, though for <a class="reference internal" href="generated/numpy.ufunc.reduce.html#numpy.ufunc.reduce" title="numpy.ufunc.reduce"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ufunc.reduce</span></code></a>, it can also be a tuple of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">int</span></code></a> to
 reduce over several axes at once, or None, to reduce over all axes.
 The <em>dtype</em> keyword allows you to manage a very common problem that arises
 when naively using <a class="reference internal" href="generated/numpy.ufunc.reduce.html#numpy.ufunc.reduce" title="numpy.ufunc.reduce"><code class="xref py py-meth docutils literal notranslate"><span class="pre">ufunc.reduce</span></code></a>. Sometimes you may
@@ -1110,10 +1156,10 @@ single operation.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

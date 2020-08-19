@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.row_stack &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.row_stack &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Masked array operations" href="../routines.ma.html" >
     <link rel="next" title="numpy.ma.vstack" href="numpy.ma.vstack.html" >
-    <link rel="prev" title="numpy.ma.mr_" href="numpy.ma.mr_.html" > 
+    <link rel="prev" title="numpy.ma.mr_" href="numpy.ma.mr_.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -118,8 +140,7 @@
 <dl class="data">
 <dt id="numpy.ma.row_stack">
 <code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">row_stack</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><em class="property"> = &lt;numpy.ma.extras._fromnxfunction_seq object&gt;</em><a class="headerlink" href="#numpy.ma.row_stack" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Stack arrays in sequence vertically (row wise).</p>
+<dd><p>Stack arrays in sequence vertically (row wise).</p>
 <p>This is equivalent to concatenation along the first axis after 1-D arrays
 of shape <em class="xref py py-obj">(N,)</em> have been reshaped to <em class="xref py py-obj">(1,N)</em>. Rebuilds arrays divided by
 <em class="xref py py-obj">vsplit</em>.</p>
@@ -127,18 +148,17 @@ of shape <em class="xref py py-obj">(N,)</em> have been reshaped to <em class="x
 instance, for pixel-data with a height (first axis), width (second axis),
 and r/g/b channels (third axis). The functions <a class="reference internal" href="numpy.ma.concatenate.html#numpy.ma.concatenate" title="numpy.ma.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>, <a class="reference internal" href="numpy.ma.stack.html#numpy.ma.stack" title="numpy.ma.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a> and
 <em class="xref py py-obj">block</em> provide more general stacking and concatenation operations.</p>
-</div></blockquote>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>tup</strong><span class="classifier">sequence of ndarrays</span></dt><dd><p>The arrays must have the same shape along all but the first axis.
+<dd class="field-odd"><dl>
+<dt><strong>tup</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ndarrays</span></dt><dd><p>The arrays must have the same shape along all but the first axis.
 1-D arrays must have the same length.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>stacked</strong><span class="classifier">ndarray</span></dt><dd><p>The array formed by stacking the given arrays, will be at least 2-D.</p>
+<dd class="field-even"><dl>
+<dt><strong>stacked</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The array formed by stacking the given arrays, will be at least 2-D.</p>
 </dd>
 </dl>
 </dd>
@@ -146,17 +166,19 @@ and r/g/b channels (third axis). The functions <a class="reference internal" hre
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
+<dt><a class="reference internal" href="numpy.ma.concatenate.html#numpy.ma.concatenate" title="numpy.ma.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a></dt><dd><p>Join a sequence of arrays along an existing axis.</p>
+</dd>
 <dt><a class="reference internal" href="numpy.ma.stack.html#numpy.ma.stack" title="numpy.ma.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a></dt><dd><p>Join a sequence of arrays along a new axis.</p>
+</dd>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">block</span></code></dt><dd><p>Assemble an nd-array from nested lists of blocks.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.ma.hstack.html#numpy.ma.hstack" title="numpy.ma.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a></dt><dd><p>Stack arrays in sequence horizontally (column wise).</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ma.dstack.html#numpy.ma.dstack" title="numpy.ma.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstack</span></code></a></dt><dd><p>Stack arrays in sequence depth wise (along third dimension).</p>
+<dt><a class="reference internal" href="numpy.ma.dstack.html#numpy.ma.dstack" title="numpy.ma.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstack</span></code></a></dt><dd><p>Stack arrays in sequence depth wise (along third axis).</p>
 </dd>
-<dt><a class="reference internal" href="numpy.ma.concatenate.html#numpy.ma.concatenate" title="numpy.ma.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a></dt><dd><p>Join a sequence of arrays along an existing axis.</p>
+<dt><a class="reference internal" href="numpy.ma.column_stack.html#numpy.ma.column_stack" title="numpy.ma.column_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">column_stack</span></code></a></dt><dd><p>Stack 1-D arrays as columns into a 2-D array.</p>
 </dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsplit</span></code></dt><dd><p>Split array into a list of multiple sub-arrays vertically.</p>
-</dd>
-<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">block</span></code></dt><dd><p>Assemble arrays from blocks.</p>
+<dt><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsplit</span></code></dt><dd><p>Split an array into multiple sub-arrays vertically (row-wise).</p>
 </dd>
 </dl>
 </div>
@@ -206,10 +228,10 @@ and r/g/b channels (third axis). The functions <a class="reference internal" hre
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

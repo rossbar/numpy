@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Array creation &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Array creation &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,36 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
-    <link rel="up" title="NumPy basics" href="basics.html" >
-    <link rel="next" title="I/O with NumPy" href="basics.io.html" >
-    <link rel="prev" title="Data types" href="basics.types.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,11 +74,9 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
-
-          <li class="active"><a href="tutorials_index.html" >NumPy Tutorials</a></li>
-          <li class="active"><a href="basics.html" accesskey="U">NumPy basics</a></li> 
+ 
     </ul>
               
               
@@ -67,14 +84,6 @@
       <li class="active">
         <a href="../genindex.html" title="General Index"
            accesskey="I">index</a>
-      </li>
-      <li class="active">
-        <a href="basics.io.html" title="I/O with NumPy"
-           accesskey="N">next</a>
-      </li>
-      <li class="active">
-        <a href="basics.types.html" title="Data types"
-           accesskey="P">previous</a>
       </li>
     </ul>
               
@@ -103,12 +112,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="basics.types.html"
-                        title="previous chapter">Data types</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="basics.io.html"
-                        title="next chapter">I/O with NumPy</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -280,10 +283,10 @@ diagonal).</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

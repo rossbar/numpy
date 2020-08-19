@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.random.RandomState.noncentral_f &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.random.RandomState.noncentral_f &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../../about.html" >
     <link rel="index" title="Index" href="../../../genindex.html" >
     <link rel="search" title="Search" href="../../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../../index.html" >
     <link rel="up" title="Legacy Random Generation" href="../legacy.html" >
     <link rel="next" title="numpy.random.RandomState.normal" href="numpy.random.RandomState.normal.html" >
-    <link rel="prev" title="numpy.random.RandomState.noncentral_chisquare" href="numpy.random.RandomState.noncentral_chisquare.html" > 
+    <link rel="prev" title="numpy.random.RandomState.noncentral_chisquare" href="numpy.random.RandomState.noncentral_chisquare.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../../index.html">
-      <img border=0 alt="NumPy" src="../../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../../index.html" >NumPy Reference</a></li>
@@ -132,17 +154,17 @@ instance instead; see <em class="xref py py-obj">random-quick-start</em>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>dfnum</strong><span class="classifier">float or array_like of floats</span></dt><dd><p>Numerator degrees of freedom, must be &gt; 0.</p>
+<dt><strong>dfnum</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of floats</span></dt><dd><p>Numerator degrees of freedom, must be &gt; 0.</p>
 <div class="versionchanged">
 <p><span class="versionmodified changed">Changed in version 1.14.0: </span>Earlier NumPy versions required dfnum &gt; 1.</p>
 </div>
 </dd>
-<dt><strong>dfden</strong><span class="classifier">float or array_like of floats</span></dt><dd><p>Denominator degrees of freedom, must be &gt; 0.</p>
+<dt><strong>dfden</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of floats</span></dt><dd><p>Denominator degrees of freedom, must be &gt; 0.</p>
 </dd>
-<dt><strong>nonc</strong><span class="classifier">float or array_like of floats</span></dt><dd><p>Non-centrality parameter, the sum of the squares of the numerator
+<dt><strong>nonc</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or <a class="reference internal" href="../../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of floats</span></dt><dd><p>Non-centrality parameter, the sum of the squares of the numerator
 means, must be &gt;= 0.</p>
 </dd>
-<dt><strong>size</strong><span class="classifier">int or tuple of ints, optional</span></dt><dd><p>Output shape.  If the given shape is, e.g., <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n,</span> <span class="pre">k)</span></code>, then
+<dt><strong>size</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of ints, optional</span></dt><dd><p>Output shape.  If the given shape is, e.g., <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">n,</span> <span class="pre">k)</span></code>, then
 <code class="docutils literal notranslate"><span class="pre">m</span> <span class="pre">*</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">k</span></code> samples are drawn.  If size is <code class="docutils literal notranslate"><span class="pre">None</span></code> (default),
 a single value is returned if <code class="docutils literal notranslate"><span class="pre">dfnum</span></code>, <code class="docutils literal notranslate"><span class="pre">dfden</span></code>, and <code class="docutils literal notranslate"><span class="pre">nonc</span></code>
 are all scalars.  Otherwise, <code class="docutils literal notranslate"><span class="pre">np.broadcast(dfnum,</span> <span class="pre">dfden,</span> <span class="pre">nonc).size</span></code>
@@ -151,8 +173,8 @@ samples are drawn.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray or scalar</span></dt><dd><p>Drawn samples from the parameterized noncentral Fisher distribution.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="../../generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <span class="xref std std-ref">scalar</span></span></dt><dd><p>Drawn samples from the parameterized noncentral Fisher distribution.</p>
 </dd>
 </dl>
 </dd>
@@ -229,10 +251,10 @@ distributions for comparison.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

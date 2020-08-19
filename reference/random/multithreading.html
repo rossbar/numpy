@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Multithreaded Generation &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Multithreaded Generation &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Random sampling (numpy.random)" href="index.html" >
     <link rel="next" title="What’s New or Different" href="new-or-different.html" >
-    <link rel="prev" title="Parallel Random Number Generation" href="parallel.html" > 
+    <link rel="prev" title="Parallel Random Number Generation" href="parallel.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -121,7 +143,7 @@ using the <code class="docutils literal notranslate"><span class="pre">out</span
 well-behaved (writable and aligned). Under normal circumstances, arrays
 created using the common constructors such as <a class="reference internal" href="../generated/numpy.empty.html#numpy.empty" title="numpy.empty"><code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.empty</span></code></a> will satisfy
 these requirements.</p>
-<p>This example makes use of Python 3 <a class="reference external" href="https://docs.python.org/dev/library/concurrent.futures.html#module-concurrent.futures" title="(in Python v3.9)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">concurrent.futures</span></code></a> to fill an array
+<p>This example makes use of Python 3 <a class="reference external" href="https://docs.python.org/dev/library/concurrent.futures.html#module-concurrent.futures" title="(in Python v3.10)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">concurrent.futures</span></code></a> to fill an array
 using multiple threads.  Threads are long-lived so that repeated calls do not
 require any additional overheads from thread creation.</p>
 <p>The random numbers generated are reproducible in the sense that the same
@@ -234,10 +256,10 @@ that does not use an existing array due to array creation overhead.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

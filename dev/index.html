@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Contributing to NumPy &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Contributing to NumPy &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,16 +29,38 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="next" title="NumPy Code of Conduct" href="conduct/code_of_conduct.html" >
-    <link rel="prev" title="Glossary" href="../glossary.html" > 
+    <link rel="prev" title="Glossary" href="../glossary.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -54,7 +76,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
  
     </ul>
@@ -129,7 +151,7 @@
           <div class="body" id="spc-section-body">
             
   <div class="section" id="contributing-to-numpy">
-<h1>Contributing to NumPy<a class="headerlink" href="#contributing-to-numpy" title="Permalink to this headline">¶</a></h1>
+<span id="devindex"></span><h1>Contributing to NumPy<a class="headerlink" href="#contributing-to-numpy" title="Permalink to this headline">¶</a></h1>
 <p>Not a coder? Not a problem! NumPy is multi-faceted, and we can use a lot of help.
 These are all activities we’d like to get help with (they’re all important, so
 we list them in alphabetical order):</p>
@@ -223,7 +245,7 @@ users can remove this step by connecting to GitHub with
 button. Make sure the title and message are clear, concise, and self-
 explanatory. Then click the button to submit it.</p></li>
 <li><p>If your commit introduces a new feature or changes functionality, post on
-the <a class="reference external" href="https://mail.python.org/mailman/listinfo/numpy-devel">mailing list</a> to explain your changes. For bug fixes, documentation
+the <a class="reference external" href="https://mail.python.org/mailman/listinfo/numpy-discussion">mailing list</a> to explain your changes. For bug fixes, documentation
 updates, etc., this is generally not necessary, though if you do not get
 any reaction, do feel free to ask for review.</p></li>
 </ul>
@@ -267,7 +289,7 @@ The file <code class="docutils literal notranslate"><span class="pre">doc/releas
 filename conventions.</p>
 <p>If your change introduces a deprecation, make sure to discuss this first on
 GitHub or the mailing list first. If agreement on the deprecation is
-reached, follow <a class="reference external" href="http://www.numpy.org/neps/nep-0023-backwards-compatibility.html">NEP 23 deprecation policy</a>  to add the deprecation.</p>
+reached, follow <a class="reference external" href="https://numpy.org/neps/nep-0023-backwards-compatibility.html#nep23" title="(in NumPy Enhancement Proposals)"><span class="xref std std-ref">NEP 23 deprecation policy</span></a>  to add the deprecation.</p>
 </li>
 <li><p>Cross referencing issues</p>
 <p>If the PR relates to any issues, you can add the text <code class="docutils literal notranslate"><span class="pre">xref</span> <span class="pre">gh-xxxx</span></code> where
@@ -293,7 +315,7 @@ since you started into your branch. Our recommended way to do this is to
 <li><p>All code should have tests (see <a class="reference internal" href="#test-coverage">test coverage</a> below for more details).</p></li>
 <li><p>All code should be <a class="reference external" href="https://numpydoc.readthedocs.io/en/latest/format.html#docstring-standard">documented</a>.</p></li>
 <li><p>No changes are ever committed without review and approval by a core
-team member.Please ask politely on the PR or on the <a class="reference external" href="https://mail.python.org/mailman/listinfo/numpy-devel">mailing list</a> if you
+team member.Please ask politely on the PR or on the <a class="reference external" href="https://mail.python.org/mailman/listinfo/numpy-discussion">mailing list</a> if you
 get no response to your pull request within a week.</p></li>
 </ul>
 </div>
@@ -309,7 +331,7 @@ pyflakes / flake8.</p></li>
 </pre></div>
 </div>
 </li>
-<li><p>For C code, see the <a class="reference internal" href="style_guide.html#style-guide"><span class="std std-ref">numpy-c-style-guide</span></a></p></li>
+<li><p>For C code, see <a class="reference external" href="https://numpy.org/neps/nep-0045-c_style_guide.html#nep45" title="(in NumPy Enhancement Proposals)"><span class="xref std std-ref">NEP 45</span></a>.</p></li>
 </ul>
 </div>
 <div class="section" id="test-coverage">
@@ -399,7 +421,7 @@ method to find the source file: $ cd doc/build; grep -rin R####</p></li>
 <li class="toctree-l2"><a class="reference internal" href="gitwash/git_intro.html">Install git</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitwash/following_latest.html">Get the local copy of the code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitwash/following_latest.html#updating-the-code">Updating the code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="gitwash/development_setup.html">Getting started with Git development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gitwash/development_setup.html">Setting up git for NumPy development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitwash/configure_git.html">Git configuration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitwash/dot2_dot3.html">Two and three dots in difference specs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gitwash/git_resources.html">Additional Git Resources</a></li>
@@ -427,14 +449,7 @@ method to find the source file: $ cd doc/build; grep -rin R####</p></li>
 <li class="toctree-l2"><a class="reference internal" href="../benchmarking.html#writing-benchmarks">Writing benchmarks</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="style_guide.html">NumPy C Style Guide</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="style_guide.html#introduction">Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="style_guide.html#c-dialect">C dialect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="style_guide.html#code-lay-out">Code lay-out</a></li>
-<li class="toctree-l2"><a class="reference internal" href="style_guide.html#naming-conventions">Naming conventions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="style_guide.html#function-documentation">Function documentation</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="style_guide.html">NumPy C Style Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="releasing.html">Releasing a Version</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="releasing.html#how-to-prepare-a-release">How to Prepare a Release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="releasing.html#step-by-step-directions">Step-by-Step Directions</a></li>
@@ -443,6 +458,15 @@ method to find the source file: $ cd doc/build; grep -rin R####</p></li>
 <li class="toctree-l1"><a class="reference internal" href="governance/index.html">NumPy governance</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="governance/governance.html">NumPy project governance and decision-making</a></li>
 <li class="toctree-l2"><a class="reference internal" href="governance/people.html">Current steering council and institutional partners</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howto-docs.html">How to contribute to the NumPy documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="howto-docs.html#documentation-team-meetings">Documentation team meetings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto-docs.html#what-s-needed">What’s needed</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto-docs.html#contributing-fixes">Contributing fixes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto-docs.html#contributing-new-pages">Contributing new pages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto-docs.html#contributing-indirectly">Contributing indirectly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howto-docs.html#documentation-reading">Documentation reading</a></li>
 </ul>
 </li>
 </ul>
@@ -472,10 +496,10 @@ method to find the source file: $ cd doc/build; grep -rin R####</p></li>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

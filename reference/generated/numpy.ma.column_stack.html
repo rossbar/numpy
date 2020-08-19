@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.column_stack &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.column_stack &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Masked array operations" href="../routines.ma.html" >
     <link rel="next" title="numpy.ma.concatenate" href="numpy.ma.concatenate.html" >
-    <link rel="prev" title="numpy.ma.stack" href="numpy.ma.stack.html" > 
+    <link rel="prev" title="numpy.ma.stack" href="numpy.ma.stack.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -118,27 +140,31 @@
 <dl class="data">
 <dt id="numpy.ma.column_stack">
 <code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">column_stack</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><em class="property"> = &lt;numpy.ma.extras._fromnxfunction_seq object&gt;</em><a class="headerlink" href="#numpy.ma.column_stack" title="Permalink to this definition">¶</a></dt>
-<dd><blockquote>
-<div><p>Stack 1-D arrays as columns into a 2-D array.</p>
+<dd><p>Stack 1-D arrays as columns into a 2-D array.</p>
 <p>Take a sequence of 1-D arrays and stack them as columns
 to make a single 2-D array. 2-D arrays are stacked as-is,
 just like with <a class="reference internal" href="numpy.ma.hstack.html#numpy.ma.hstack" title="numpy.ma.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a>.  1-D arrays are turned into 2-D columns
 first.</p>
-</div></blockquote>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>tup</strong><span class="classifier">sequence of 1-D or 2-D arrays.</span></dt><dd><p>Arrays to stack. All of them must have the same first dimension.</p>
+<dd class="field-odd"><dl>
+<dt><strong>tup</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of 1-D or 2-D arrays.</span></dt><dd><p>Arrays to stack. All of them must have the same first dimension.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>stacked</strong><span class="classifier">2-D array</span></dt><dd><p>The array formed by stacking the given arrays.</p>
+<dd class="field-even"><dl>
+<dt><strong>stacked</strong><span class="classifier">2-D <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>The array formed by stacking the given arrays.</p>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.ma.stack.html#numpy.ma.stack" title="numpy.ma.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a>, <a class="reference internal" href="numpy.ma.hstack.html#numpy.ma.hstack" title="numpy.ma.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a>, <a class="reference internal" href="numpy.ma.vstack.html#numpy.ma.vstack" title="numpy.ma.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vstack</span></code></a>, <a class="reference internal" href="numpy.ma.concatenate.html#numpy.ma.concatenate" title="numpy.ma.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a></dt><dd></dd>
+</dl>
+</div>
 <p class="rubric">Notes</p>
 <p>The function is applied to both the _data and the _mask, if any.</p>
 <p class="rubric">Examples</p>
@@ -175,10 +201,10 @@ first.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

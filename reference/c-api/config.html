@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>System configuration &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>System configuration &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy C-API" href="index.html" >
     <link rel="next" title="Data Type API" href="dtype.html" >
-    <link rel="prev" title="Python Types and C-Structures" href="types-and-structures.html" > 
+    <link rel="prev" title="Python Types and C-Structures" href="types-and-structures.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -136,57 +158,57 @@ extension which use the numpy C API will not see those symbols), to
 avoid namespace pollution.</p>
 <div class="section" id="data-type-sizes">
 <h2>Data type sizes<a class="headerlink" href="#data-type-sizes" title="Permalink to this headline">¶</a></h2>
-<p>The <code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_SIZEOF_{CTYPE}</span></code> constants are defined so that sizeof
+<p>The <code class="docutils literal notranslate"><span class="pre">NPY_SIZEOF_{CTYPE}</span></code> constants are defined so that sizeof
 information is available to the pre-processor.</p>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_SHORT">
 <code class="sig-name descname">NPY_SIZEOF_SHORT</code><a class="headerlink" href="#c.NPY_SIZEOF_SHORT" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(short)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_INT">
 <code class="sig-name descname">NPY_SIZEOF_INT</code><a class="headerlink" href="#c.NPY_SIZEOF_INT" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(int)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_LONG">
 <code class="sig-name descname">NPY_SIZEOF_LONG</code><a class="headerlink" href="#c.NPY_SIZEOF_LONG" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(long)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_LONGLONG">
 <code class="sig-name descname">NPY_SIZEOF_LONGLONG</code><a class="headerlink" href="#c.NPY_SIZEOF_LONGLONG" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(longlong) where longlong is defined appropriately on the
 platform.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_PY_LONG_LONG">
 <code class="sig-name descname">NPY_SIZEOF_PY_LONG_LONG</code><a class="headerlink" href="#c.NPY_SIZEOF_PY_LONG_LONG" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_FLOAT">
 <code class="sig-name descname">NPY_SIZEOF_FLOAT</code><a class="headerlink" href="#c.NPY_SIZEOF_FLOAT" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(float)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_DOUBLE">
 <code class="sig-name descname">NPY_SIZEOF_DOUBLE</code><a class="headerlink" href="#c.NPY_SIZEOF_DOUBLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(double)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_LONG_DOUBLE">
 <code class="sig-name descname">NPY_SIZEOF_LONG_DOUBLE</code><a class="headerlink" href="#c.NPY_SIZEOF_LONG_DOUBLE" title="Permalink to this definition">¶</a></dt>
 <dd><p>sizeof(longdouble) (A macro defines <strong>NPY_SIZEOF_LONGDOUBLE</strong> as well.)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIZEOF_PY_INTPTR_T">
 <code class="sig-name descname">NPY_SIZEOF_PY_INTPTR_T</code><a class="headerlink" href="#c.NPY_SIZEOF_PY_INTPTR_T" title="Permalink to this definition">¶</a></dt>
 <dd><p>Size of a pointer on this platform (sizeof(void *)) (A macro defines
@@ -196,47 +218,47 @@ NPY_SIZEOF_INTP as well.)</p>
 </div>
 <div class="section" id="platform-information">
 <h2>Platform information<a class="headerlink" href="#platform-information" title="Permalink to this headline">¶</a></h2>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_X86">
 <code class="sig-name descname">NPY_CPU_X86</code><a class="headerlink" href="#c.NPY_CPU_X86" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_AMD64">
 <code class="sig-name descname">NPY_CPU_AMD64</code><a class="headerlink" href="#c.NPY_CPU_AMD64" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_IA64">
 <code class="sig-name descname">NPY_CPU_IA64</code><a class="headerlink" href="#c.NPY_CPU_IA64" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_PPC">
 <code class="sig-name descname">NPY_CPU_PPC</code><a class="headerlink" href="#c.NPY_CPU_PPC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_PPC64">
 <code class="sig-name descname">NPY_CPU_PPC64</code><a class="headerlink" href="#c.NPY_CPU_PPC64" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_SPARC">
 <code class="sig-name descname">NPY_CPU_SPARC</code><a class="headerlink" href="#c.NPY_CPU_SPARC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_SPARC64">
 <code class="sig-name descname">NPY_CPU_SPARC64</code><a class="headerlink" href="#c.NPY_CPU_SPARC64" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_S390">
 <code class="sig-name descname">NPY_CPU_S390</code><a class="headerlink" href="#c.NPY_CPU_S390" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_CPU_PARISC">
 <code class="sig-name descname">NPY_CPU_PARISC</code><a class="headerlink" href="#c.NPY_CPU_PARISC" title="Permalink to this definition">¶</a></dt>
 <dd><div class="versionadded">
@@ -247,17 +269,17 @@ defined.</p>
 <p>Defined in <code class="docutils literal notranslate"><span class="pre">numpy/npy_cpu.h</span></code></p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_LITTLE_ENDIAN">
 <code class="sig-name descname">NPY_LITTLE_ENDIAN</code><a class="headerlink" href="#c.NPY_LITTLE_ENDIAN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_BIG_ENDIAN">
 <code class="sig-name descname">NPY_BIG_ENDIAN</code><a class="headerlink" href="#c.NPY_BIG_ENDIAN" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_BYTE_ORDER">
 <code class="sig-name descname">NPY_BYTE_ORDER</code><a class="headerlink" href="#c.NPY_BYTE_ORDER" title="Permalink to this definition">¶</a></dt>
 <dd><div class="versionadded">
@@ -283,17 +305,17 @@ or <code class="xref c c-data docutils literal notranslate"><span class="pre">NP
 </div>
 <div class="section" id="compiler-directives">
 <h2>Compiler directives<a class="headerlink" href="#compiler-directives" title="Permalink to this headline">¶</a></h2>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_LIKELY">
 <code class="sig-name descname">NPY_LIKELY</code><a class="headerlink" href="#c.NPY_LIKELY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_UNLIKELY">
 <code class="sig-name descname">NPY_UNLIKELY</code><a class="headerlink" href="#c.NPY_UNLIKELY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_UNUSED">
 <code class="sig-name descname">NPY_UNUSED</code><a class="headerlink" href="#c.NPY_UNUSED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -301,32 +323,32 @@ or <code class="xref c c-data docutils literal notranslate"><span class="pre">NP
 </div>
 <div class="section" id="interrupt-handling">
 <h2>Interrupt Handling<a class="headerlink" href="#interrupt-handling" title="Permalink to this headline">¶</a></h2>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_INTERRUPT_H">
 <code class="sig-name descname">NPY_INTERRUPT_H</code><a class="headerlink" href="#c.NPY_INTERRUPT_H" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIGSETJMP">
 <code class="sig-name descname">NPY_SIGSETJMP</code><a class="headerlink" href="#c.NPY_SIGSETJMP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIGLONGJMP">
 <code class="sig-name descname">NPY_SIGLONGJMP</code><a class="headerlink" href="#c.NPY_SIGLONGJMP" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIGJMP_BUF">
 <code class="sig-name descname">NPY_SIGJMP_BUF</code><a class="headerlink" href="#c.NPY_SIGJMP_BUF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIGINT_ON">
 <code class="sig-name descname">NPY_SIGINT_ON</code><a class="headerlink" href="#c.NPY_SIGINT_ON" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_SIGINT_OFF">
 <code class="sig-name descname">NPY_SIGINT_OFF</code><a class="headerlink" href="#c.NPY_SIGINT_OFF" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -355,10 +377,10 @@ or <code class="xref c c-data docutils literal notranslate"><span class="pre">NP
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

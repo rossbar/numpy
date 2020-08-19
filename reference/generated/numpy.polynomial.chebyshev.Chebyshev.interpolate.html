@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.chebyshev.Chebyshev.interpolate &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.polynomial.chebyshev.Chebyshev.interpolate &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="numpy.polynomial.chebyshev.Chebyshev" href="numpy.polynomial.chebyshev.Chebyshev.html" >
     <link rel="next" title="numpy.polynomial.chebyshev.Chebyshev.linspace" href="numpy.polynomial.chebyshev.Chebyshev.linspace.html" >
-    <link rel="prev" title="numpy.polynomial.chebyshev.Chebyshev.integ" href="numpy.polynomial.chebyshev.Chebyshev.integ.html" > 
+    <link rel="prev" title="numpy.polynomial.chebyshev.Chebyshev.integ" href="numpy.polynomial.chebyshev.Chebyshev.integ.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -128,19 +150,19 @@ continuous in the domain.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.14.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>func</strong><span class="classifier">function</span></dt><dd><p>The function to be interpolated. It must be a function of a single
 variable of the form <code class="docutils literal notranslate"><span class="pre">f(x,</span> <span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c...)</span></code>, where <code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c...</span></code> are
 extra arguments passed in the <em class="xref py py-obj">args</em> parameter.</p>
 </dd>
-<dt><strong>deg</strong><span class="classifier">int</span></dt><dd><p>Degree of the interpolating polynomial.</p>
+<dt><strong>deg</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd><p>Degree of the interpolating polynomial.</p>
 </dd>
-<dt><strong>domain</strong><span class="classifier">{None, [beg, end]}, optional</span></dt><dd><p>Domain over which <em class="xref py py-obj">func</em> is interpolated. The default is None, in
+<dt><strong>domain</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, [beg, end]}, optional</span></dt><dd><p>Domain over which <em class="xref py py-obj">func</em> is interpolated. The default is None, in
 which case the domain is [-1, 1].</p>
 </dd>
-<dt><strong>args</strong><span class="classifier">tuple, optional</span></dt><dd><p>Extra arguments to be used in the function call. Default is no
+<dt><strong>args</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a>, optional</span></dt><dd><p>Extra arguments to be used in the function call. Default is no
 extra arguments.</p>
 </dd>
 </dl>
@@ -179,10 +201,10 @@ extra arguments.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Quickstart tutorial &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Quickstart tutorial &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,16 +29,38 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="next" title="NumPy: the absolute basics for beginners" href="absolute_beginners.html" >
-    <link rel="prev" title="Installing NumPy" href="install.html" > 
+    <link rel="prev" title="Troubleshooting ImportError" href="troubleshooting-importerror.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -54,7 +76,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
  
     </ul>
@@ -70,7 +92,7 @@
            accesskey="N">next</a>
       </li>
       <li class="active">
-        <a href="install.html" title="Installing NumPy"
+        <a href="troubleshooting-importerror.html" title="Troubleshooting ImportError"
            accesskey="P">previous</a>
       </li>
     </ul>
@@ -136,8 +158,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="install.html"
-                        title="previous chapter">Installing NumPy</a></p>
+  <p class="topless"><a href="troubleshooting-importerror.html"
+                        title="previous chapter">Troubleshooting ImportError</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="absolute_beginners.html"
                         title="next chapter">NumPy: the absolute basics for beginners</a></p>
@@ -577,17 +599,17 @@ operate elementwise on an array, producing an array as output.</p>
 <a class="reference internal" href="../reference/generated/numpy.inner.html#numpy.inner" title="numpy.inner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.invert.html#numpy.invert" title="numpy.invert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">invert</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.lexsort.html#numpy.lexsort" title="numpy.lexsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lexsort</span></code></a>,
-<a class="reference external" href="https://docs.python.org/dev/library/functions.html#max" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>,
+<a class="reference external" href="https://docs.python.org/dev/library/functions.html#max" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.maximum.html#numpy.maximum" title="numpy.maximum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">maximum</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.mean.html#numpy.mean" title="numpy.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.median.html#numpy.median" title="numpy.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>,
-<a class="reference external" href="https://docs.python.org/dev/library/functions.html#min" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>,
+<a class="reference external" href="https://docs.python.org/dev/library/functions.html#min" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.minimum.html#numpy.minimum" title="numpy.minimum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">minimum</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.nonzero.html#numpy.nonzero" title="numpy.nonzero"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nonzero</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.outer.html#numpy.outer" title="numpy.outer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outer</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.prod.html#numpy.prod" title="numpy.prod"><code class="xref py py-obj docutils literal notranslate"><span class="pre">prod</span></code></a>,
-<a class="reference external" href="https://docs.python.org/dev/library/re.html#module-re" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">re</span></code></a>,
-<a class="reference external" href="https://docs.python.org/dev/library/functions.html#round" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>,
+<a class="reference external" href="https://docs.python.org/dev/library/re.html#module-re" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">re</span></code></a>,
+<a class="reference external" href="https://docs.python.org/dev/library/functions.html#round" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.sort.html#numpy.sort" title="numpy.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.std.html#numpy.std" title="numpy.std"><code class="xref py py-obj docutils literal notranslate"><span class="pre">std</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.sum.html#numpy.sum" title="numpy.sum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sum</span></code></a>,
@@ -852,7 +874,7 @@ stacks 1D arrays as columns into a 2D array. It is equivalent to
 <span class="go">       [2., 8.]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">))</span>           <span class="c1"># the result is different</span>
 <span class="go">array([4., 2., 3., 8.])</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:,</span><span class="n">newaxis</span><span class="p">]</span>               <span class="c1"># this allows to have a 2D columns vector</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[:,</span><span class="n">newaxis</span><span class="p">]</span>               <span class="c1"># view `a` as a 2D column vector</span>
 <span class="go">array([[4.],</span>
 <span class="go">       [2.]])</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">a</span><span class="p">[:,</span><span class="n">newaxis</span><span class="p">],</span><span class="n">b</span><span class="p">[:,</span><span class="n">newaxis</span><span class="p">]))</span>
@@ -1077,8 +1099,8 @@ ordered in categories. See <a class="reference internal" href="../reference/rout
 <dt>Ordering</dt><dd><p><a class="reference internal" href="../reference/generated/numpy.argmax.html#numpy.argmax" title="numpy.argmax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmax</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.argmin.html#numpy.argmin" title="numpy.argmin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argmin</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.argsort.html#numpy.argsort" title="numpy.argsort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">argsort</span></code></a>,
-<a class="reference external" href="https://docs.python.org/dev/library/functions.html#max" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>,
-<a class="reference external" href="https://docs.python.org/dev/library/functions.html#min" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>,
+<a class="reference external" href="https://docs.python.org/dev/library/functions.html#max" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">max</span></code></a>,
+<a class="reference external" href="https://docs.python.org/dev/library/functions.html#min" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">min</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.ptp.html#numpy.ptp" title="numpy.ptp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ptp</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.searchsorted.html#numpy.searchsorted" title="numpy.searchsorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">searchsorted</span></code></a>,
 <a class="reference internal" href="../reference/generated/numpy.sort.html#numpy.sort" title="numpy.sort"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sort</span></code></a></p>
@@ -1113,7 +1135,7 @@ ordered in categories. See <a class="reference internal" href="../reference/rout
 <div class="section" id="less-basic">
 <h2>Less Basic<a class="headerlink" href="#less-basic" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="broadcasting-rules">
-<h3>Broadcasting rules<a class="headerlink" href="#broadcasting-rules" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Broadcasting rules<a class="headerlink" href="#broadcasting-rules" title="Permalink to this headline">¶</a></h3>
 <p>Broadcasting allows universal functions to deal in a meaningful way with
 inputs that do not have exactly the same shape.</p>
 <p>The first rule of broadcasting is that if all input arrays do not have
@@ -1126,7 +1148,7 @@ with the largest shape along that dimension. The value of the array
 element is assumed to be the same along that dimension for the
 “broadcast” array.</p>
 <p>After application of the broadcasting rules, the sizes of all arrays
-must match. More details can be found in <a class="reference internal" href="basics.broadcasting.html"><span class="doc">Broadcasting</span></a>.</p>
+must match. More details can be found in <a class="reference internal" href="basics.broadcasting.html#basics-broadcasting"><span class="std std-ref">Broadcasting</span></a>.</p>
 </div>
 </div>
 <div class="section" id="advanced-indexing-and-index-tricks">
@@ -1449,8 +1471,8 @@ and c:</p>
 </pre></div>
 </div>
 <p>The advantage of this version of reduce compared to the normal
-ufunc.reduce is that it makes use of the <a class="reference external" href="Tentative_NumPy_Tutorial.html#head-c43f3f81719d84f09ae2b33a22eaf50b26333db8">Broadcasting
-Rules</a>
+ufunc.reduce is that it makes use of the
+<a class="reference internal" href="#broadcasting-rules"><span class="std std-ref">broadcasting rules</span></a>
 in order to avoid creating an argument array the size of the output
 times the number of vectors.</p>
 </div>
@@ -1624,10 +1646,10 @@ that <code class="docutils literal notranslate"><span class="pre">pylab.hist</sp
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

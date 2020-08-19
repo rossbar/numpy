@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.fft.rfft2 &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.fft.rfft2 &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Discrete Fourier Transform (numpy.fft)" href="../routines.fft.html" >
     <link rel="next" title="numpy.fft.irfft2" href="numpy.fft.irfft2.html" >
-    <link rel="prev" title="numpy.fft.irfft" href="numpy.fft.irfft.html" > 
+    <link rel="prev" title="numpy.fft.irfft" href="numpy.fft.irfft.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,27 +138,32 @@
 <h1>numpy.fft.rfft2<a class="headerlink" href="#numpy-fft-rfft2" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.fft.rfft2">
-<code class="sig-prename descclassname">numpy.fft.</code><code class="sig-name descname">rfft2</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">s=None</em>, <em class="sig-param">axes=(-2</em>, <em class="sig-param">-1)</em>, <em class="sig-param">norm=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/fft/_pocketfft.py#L1127-L1162"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fft.rfft2" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.fft.</code><code class="sig-name descname">rfft2</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">s=None</em>, <em class="sig-param">axes=(-2</em>, <em class="sig-param">-1)</em>, <em class="sig-param">norm=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/fft/_pocketfft.py#L1206-L1246"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fft.rfft2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the 2-dimensional FFT of a real array.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array</span></dt><dd><p>Input array, taken to be real.</p>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Input array, taken to be real.</p>
 </dd>
-<dt><strong>s</strong><span class="classifier">sequence of ints, optional</span></dt><dd><p>Shape of the FFT.</p>
+<dt><strong>s</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ints, optional</span></dt><dd><p>Shape of the FFT.</p>
 </dd>
-<dt><strong>axes</strong><span class="classifier">sequence of ints, optional</span></dt><dd><p>Axes over which to compute the FFT.</p>
+<dt><strong>axes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ints, optional</span></dt><dd><p>Axes over which to compute the FFT.</p>
 </dd>
-<dt><strong>norm</strong><span class="classifier">{None, “ortho”}, optional</span></dt><dd><div class="versionadded">
+<dt><strong>norm</strong><span class="classifier">{“backward”, “ortho”, “forward”}, optional</span></dt><dd><div class="versionadded">
 <p><span class="versionmodified added">New in version 1.10.0.</span></p>
 </div>
-<p>Normalization mode (see <a class="reference internal" href="../routines.fft.html#module-numpy.fft" title="numpy.fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.fft</span></code></a>). Default is None.</p>
+<p>Normalization mode (see <a class="reference internal" href="../routines.fft.html#module-numpy.fft" title="numpy.fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.fft</span></code></a>). Default is “backward”.
+Indicates which direction of the forward/backward pair of transforms
+is scaled and with what normalization factor.</p>
+<div class="versionadded">
+<p><span class="versionmodified added">New in version 1.20.0: </span>The “backward”, “forward” values were added.</p>
+</div>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>The result of the real 2-D FFT.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The result of the real 2-D FFT.</p>
 </dd>
 </dl>
 </dd>
@@ -176,10 +203,10 @@ For more details see <a class="reference internal" href="numpy.fft.rfftn.html#nu
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

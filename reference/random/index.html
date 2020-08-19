@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Random sampling (numpy.random) &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Random sampling (numpy.random) &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Routines" href="../routines.html" >
     <link rel="next" title="Random Generator" href="generator.html" >
-    <link rel="prev" title="numpy.RankWarning" href="../generated/numpy.RankWarning.html" > 
+    <link rel="prev" title="numpy.RankWarning" href="../generated/numpy.RankWarning.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -146,7 +168,9 @@ interval.</p></li>
 number of different BitGenerators. It exposes many different probability
 distributions. See <a class="reference external" href="https://www.numpy.org/neps/nep-0019-rng-policy.html">NEP 19</a> for context on the updated random Numpy number
 routines. The legacy <a class="reference internal" href="legacy.html#numpy.random.RandomState" title="numpy.random.RandomState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a> random number routines are still
-available, but limited to a single BitGenerator.</p>
+available, but limited to a single BitGenerator. See <a class="reference internal" href="new-or-different.html#new-or-different"><span class="std std-ref">What’s New or Different</span></a>
+for a complete list of improvements and differences from the legacy
+<code class="docutils literal notranslate"><span class="pre">Randomstate</span></code>.</p>
 <p>For convenience and backward compatibility, a single <a class="reference internal" href="legacy.html#numpy.random.RandomState" title="numpy.random.RandomState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>
 instance’s methods are imported into the numpy.random namespace, see
 <a class="reference internal" href="legacy.html#legacy"><span class="std std-ref">Legacy Random Generation</span></a> for the complete list.</p>
@@ -156,13 +180,13 @@ instance’s methods are imported into the numpy.random namespace, see
 methods to obtain samples from different distributions.  By default,
 <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> uses bits provided by <a class="reference internal" href="bit_generators/pcg64.html#numpy.random.PCG64" title="numpy.random.PCG64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PCG64</span></code></a> which has better statistical
 properties than the legacy <a class="reference internal" href="bit_generators/mt19937.html#numpy.random.MT19937" title="numpy.random.MT19937"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MT19937</span></code></a> used in <a class="reference internal" href="legacy.html#numpy.random.RandomState" title="numpy.random.RandomState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do this</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Do this (new version)</span>
 <span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
 <span class="n">rng</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">()</span>
 <span class="n">vals</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">more_vals</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="c1"># instead of this</span>
+<span class="c1"># instead of this (legacy version)</span>
 <span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">random</span>
 <span class="n">vals</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">more_vals</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -186,7 +210,7 @@ cleanup means that legacy and compatibility methods have been removed from
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">random_sample</span></code>,</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">random</span></code></p></td>
-<td><p>Compatible with <a class="reference external" href="https://docs.python.org/dev/library/random.html#random.random" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random.random</span></code></a></p></td>
+<td><p>Compatible with <a class="reference external" href="https://docs.python.org/dev/library/random.html#random.random" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random.random</span></code></a></p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rand</span></code></p></td>
 <td></td>
@@ -211,7 +235,7 @@ cleanup means that legacy and compatibility methods have been removed from
 </tr>
 </tbody>
 </table>
-<p>See <a class="reference internal" href="new-or-different.html#new-or-different"><span class="std std-ref">What’s New or Different</span></a> for more information</p>
+<p>See <a class="reference internal" href="new-or-different.html#new-or-different"><span class="std std-ref">What’s New or Different</span></a> for more information.</p>
 <p>Something like the following code can be used to support both <code class="docutils literal notranslate"><span class="pre">RandomState</span></code>
 and <code class="docutils literal notranslate"><span class="pre">Generator</span></code>, with the understanding that the interfaces are slightly
 different</p>
@@ -231,6 +255,30 @@ is wrapped with a <a class="reference internal" href="generator.html#numpy.rando
 <span class="n">rg</span><span class="o">.</span><span class="n">standard_normal</span><span class="p">()</span>
 </pre></div>
 </div>
+<p>Here we use <a class="reference internal" href="generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_rng</span></code></a> to create an instance of <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> to generate a
+random float:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rng</span><span class="p">)</span>
+<span class="go">Generator(PCG64)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rfloat</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rfloat</span>
+<span class="go">0.22733602246716966</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">rfloat</span><span class="p">)</span>
+<span class="go">&lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+<p>Here we use <a class="reference internal" href="generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_rng</span></code></a> to create an instance of <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> to generate 3
+random integers between 0 (inclusive) and 10 (exclusive):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rints</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="n">low</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rints</span>
+<span class="go">array([6, 2, 7])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">type</span><span class="p">(</span><span class="n">rints</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">&lt;class &#39;numpy.int64&#39;&gt;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h2>
@@ -244,20 +292,34 @@ and provides functions to produce random doubles and random unsigned 32- and
 bit generator-provided stream and transforms them into more useful
 distributions, e.g., simulated normal random values. This structure allows
 alternative bit generators to be used with little code duplication.</p>
-<p>The <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> is the user-facing object that is nearly identical to
-<a class="reference internal" href="legacy.html#numpy.random.RandomState" title="numpy.random.RandomState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>. The canonical method to initialize a generator passes a
-<a class="reference internal" href="bit_generators/pcg64.html#numpy.random.PCG64" title="numpy.random.PCG64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PCG64</span></code></a> bit generator as the sole argument.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
-<span class="n">rg</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
-<span class="n">rg</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<p>The <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> is the user-facing object that is nearly identical to the
+legacy <a class="reference internal" href="legacy.html#numpy.random.RandomState" title="numpy.random.RandomState"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState</span></code></a>. It accepts a bit generator instance as an argument.
+The default is currently <a class="reference internal" href="bit_generators/pcg64.html#numpy.random.PCG64" title="numpy.random.PCG64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PCG64</span></code></a> but this may change in future versions.
+As a convenience NumPy  provides the <a class="reference internal" href="generator.html#numpy.random.default_rng" title="numpy.random.default_rng"><code class="xref py py-obj docutils literal notranslate"><span class="pre">default_rng</span></code></a> function to hide these
+details:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">default_rng</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">default_rng</span><span class="p">(</span><span class="mi">12345</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span>
+<span class="go">Generator(PCG64)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rg</span><span class="o">.</span><span class="n">random</span><span class="p">())</span>
+<span class="go">0.22733602246716966</span>
 </pre></div>
 </div>
-<p>One can also instantiate <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> directly with a <a class="reference internal" href="bit_generators/generated/numpy.random.BitGenerator.html#numpy.random.BitGenerator" title="numpy.random.BitGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitGenerator</span></code></a> instance.
-To use the older <a class="reference internal" href="bit_generators/mt19937.html#numpy.random.MT19937" title="numpy.random.MT19937"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MT19937</span></code></a> algorithm, one can instantiate it directly
-and pass it to <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">MT19937</span>
-<span class="n">rg</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">MT19937</span><span class="p">(</span><span class="mi">12345</span><span class="p">))</span>
-<span class="n">rg</span><span class="o">.</span><span class="n">random</span><span class="p">()</span>
+<p>One can also instantiate <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> directly with a <a class="reference internal" href="bit_generators/generated/numpy.random.BitGenerator.html#numpy.random.BitGenerator" title="numpy.random.BitGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitGenerator</span></code></a> instance.</p>
+<p>To use the default <a class="reference internal" href="bit_generators/pcg64.html#numpy.random.PCG64" title="numpy.random.PCG64"><code class="xref py py-obj docutils literal notranslate"><span class="pre">PCG64</span></code></a> bit generator, one can instantiate it directly and
+pass it to <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">PCG64</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">PCG64</span><span class="p">(</span><span class="mi">12345</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span>
+<span class="go">Generator(PCG64)</span>
+</pre></div>
+</div>
+<p>Similarly to use the older <a class="reference internal" href="bit_generators/mt19937.html#numpy.random.MT19937" title="numpy.random.MT19937"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MT19937</span></code></a> bit generator (not recommended), one can
+instantiate it directly and pass it to <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy.random</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">MT19937</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rg</span> <span class="o">=</span> <span class="n">Generator</span><span class="p">(</span><span class="n">MT19937</span><span class="p">(</span><span class="mi">12345</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">rg</span><span class="p">)</span>
+<span class="go">Generator(MT19937)</span>
 </pre></div>
 </div>
 <div class="section" id="what-s-new-or-different">
@@ -293,9 +355,12 @@ This replaces both <code class="docutils literal notranslate"><span class="pre">
 <li><p><a class="reference internal" href="generated/numpy.random.Generator.random.html#numpy.random.Generator.random" title="numpy.random.Generator.random"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.random</span></code></a> is now the canonical way to generate floating-point
 random numbers, which replaces <a class="reference internal" href="generated/numpy.random.RandomState.random_sample.html#numpy.random.RandomState.random_sample" title="numpy.random.RandomState.random_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">RandomState.random_sample</span></code></a>,
 <em class="xref py py-obj">RandomState.sample</em>, and <em class="xref py py-obj">RandomState.ranf</em>. This is consistent with
-Python’s <a class="reference external" href="https://docs.python.org/dev/library/random.html#random.random" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random.random</span></code></a>.</p></li>
+Python’s <a class="reference external" href="https://docs.python.org/dev/library/random.html#random.random" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random.random</span></code></a>.</p></li>
 <li><p>All BitGenerators in numpy use <a class="reference internal" href="bit_generators/generated/numpy.random.SeedSequence.html#numpy.random.SeedSequence" title="numpy.random.SeedSequence"><code class="xref py py-obj docutils literal notranslate"><span class="pre">SeedSequence</span></code></a> to convert seeds into
 initialized states.</p></li>
+<li><p>The addition of an <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument to methods such as
+<a class="reference internal" href="generated/numpy.random.Generator.choice.html#numpy.random.Generator.choice" title="numpy.random.Generator.choice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.choice</span></code></a>, <a class="reference internal" href="generated/numpy.random.Generator.permutation.html#numpy.random.Generator.permutation" title="numpy.random.Generator.permutation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.permutation</span></code></a>,  and <a class="reference internal" href="generated/numpy.random.Generator.shuffle.html#numpy.random.Generator.shuffle" title="numpy.random.Generator.shuffle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator.shuffle</span></code></a>
+improves support for sampling from and shuffling multi-dimensional arrays.</p></li>
 </ul>
 <p>See <a class="reference internal" href="new-or-different.html#new-or-different"><span class="std std-ref">What’s New or Different</span></a> for a complete list of improvements and
 differences from the traditional <code class="docutils literal notranslate"><span class="pre">Randomstate</span></code>.</p>
@@ -340,8 +405,7 @@ one of three ways:</p>
 <li class="toctree-l2"><a class="reference internal" href="performance.html#performance-on-different-operating-systems">Performance on different Operating Systems</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="c-api.html">Cython API for random</a></li>
-<li class="toctree-l1"><a class="reference internal" href="c-api.html#c-api-for-random">C API for random</a></li>
+<li class="toctree-l1"><a class="reference internal" href="c-api.html">C API for random</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extending.html">Examples of using Numba, Cython, CFFI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="extending.html#numba">Numba</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extending.html#cython">Cython</a></li>
@@ -381,10 +445,10 @@ one of three ways:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

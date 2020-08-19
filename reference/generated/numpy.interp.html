@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.interp &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.interp &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Mathematical functions" href="../routines.math.html" >
     <link rel="next" title="Matrix library (numpy.matlib)" href="../routines.matlib.html" >
-    <link rel="prev" title="numpy.real_if_close" href="numpy.real_if_close.html" > 
+    <link rel="prev" title="numpy.real_if_close" href="numpy.real_if_close.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,26 +138,26 @@
 <h1>numpy.interp<a class="headerlink" href="#numpy-interp" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.interp">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">interp</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">xp</em>, <em class="sig-param">fp</em>, <em class="sig-param">left=None</em>, <em class="sig-param">right=None</em>, <em class="sig-param">period=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L1265-L1399"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.interp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">interp</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">xp</em>, <em class="sig-param">fp</em>, <em class="sig-param">left=None</em>, <em class="sig-param">right=None</em>, <em class="sig-param">period=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L1290-L1428"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.interp" title="Permalink to this definition">¶</a></dt>
 <dd><p>One-dimensional linear interpolation.</p>
 <p>Returns the one-dimensional piecewise linear interpolant to a function
 with given discrete data points (<em class="xref py py-obj">xp</em>, <em class="xref py py-obj">fp</em>), evaluated at <em class="xref py py-obj">x</em>.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>x</strong><span class="classifier">array_like</span></dt><dd><p>The x-coordinates at which to evaluate the interpolated values.</p>
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>The x-coordinates at which to evaluate the interpolated values.</p>
 </dd>
-<dt><strong>xp</strong><span class="classifier">1-D sequence of floats</span></dt><dd><p>The x-coordinates of the data points, must be increasing if argument
+<dt><strong>xp</strong><span class="classifier">1-D <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of floats</span></dt><dd><p>The x-coordinates of the data points, must be increasing if argument
 <em class="xref py py-obj">period</em> is not specified. Otherwise, <em class="xref py py-obj">xp</em> is internally sorted after
 normalizing the periodic boundaries with <code class="docutils literal notranslate"><span class="pre">xp</span> <span class="pre">=</span> <span class="pre">xp</span> <span class="pre">%</span> <span class="pre">period</span></code>.</p>
 </dd>
-<dt><strong>fp</strong><span class="classifier">1-D sequence of float or complex</span></dt><dd><p>The y-coordinates of the data points, same length as <em class="xref py py-obj">xp</em>.</p>
+<dt><strong>fp</strong><span class="classifier">1-D <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or complex</span></dt><dd><p>The y-coordinates of the data points, same length as <em class="xref py py-obj">xp</em>.</p>
 </dd>
-<dt><strong>left</strong><span class="classifier">optional float or complex corresponding to fp</span></dt><dd><p>Value to return for <em class="xref py py-obj">x &lt; xp[0]</em>, default is <em class="xref py py-obj">fp[0]</em>.</p>
+<dt><strong>left</strong><span class="classifier">optional <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or complex corresponding to fp</span></dt><dd><p>Value to return for <em class="xref py py-obj">x &lt; xp[0]</em>, default is <em class="xref py py-obj">fp[0]</em>.</p>
 </dd>
-<dt><strong>right</strong><span class="classifier">optional float or complex corresponding to fp</span></dt><dd><p>Value to return for <em class="xref py py-obj">x &gt; xp[-1]</em>, default is <em class="xref py py-obj">fp[-1]</em>.</p>
+<dt><strong>right</strong><span class="classifier">optional <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or complex corresponding to fp</span></dt><dd><p>Value to return for <em class="xref py py-obj">x &gt; xp[-1]</em>, default is <em class="xref py py-obj">fp[-1]</em>.</p>
 </dd>
-<dt><strong>period</strong><span class="classifier">None or float, optional</span></dt><dd><p>A period for the x-coordinates. This parameter allows the proper
+<dt><strong>period</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, optional</span></dt><dd><p>A period for the x-coordinates. This parameter allows the proper
 interpolation of angular x-coordinates. Parameters <em class="xref py py-obj">left</em> and <em class="xref py py-obj">right</em>
 are ignored if <em class="xref py py-obj">period</em> is specified.</p>
 <div class="versionadded">
@@ -145,20 +167,26 @@ are ignored if <em class="xref py py-obj">period</em> is specified.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">float or complex (corresponding to fp) or ndarray</span></dt><dd><p>The interpolated values, same shape as <em class="xref py py-obj">x</em>.</p>
+<dd class="field-even"><dl>
+<dt><strong>y</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or complex (corresponding to fp) or <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The interpolated values, same shape as <em class="xref py py-obj">x</em>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ValueError</strong></dt><dd><p>If <em class="xref py py-obj">xp</em> and <em class="xref py py-obj">fp</em> have different length
+<dt>ValueError</dt><dd><p>If <em class="xref py py-obj">xp</em> and <em class="xref py py-obj">fp</em> have different length
 If <em class="xref py py-obj">xp</em> or <em class="xref py py-obj">fp</em> are not 1-D sequences
 If <em class="xref py py-obj">period == 0</em></p>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></a></dt><dd></dd>
+</dl>
+</div>
 <p class="rubric">Notes</p>
 <p>The x-coordinate sequence is expected to be increasing, but this is not
 explicitly enforced.  However, if the sequence <em class="xref py py-obj">xp</em> is non-increasing,
@@ -237,10 +265,10 @@ interpolation results are meaningless.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

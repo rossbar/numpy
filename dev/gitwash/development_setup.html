@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Getting started with Git development &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Setting up git for NumPy development &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Git for development" href="index.html" >
     <link rel="next" title="Git configuration" href="configure_git.html" >
-    <link rel="prev" title="Get the local copy of the code" href="following_latest.html" > 
+    <link rel="prev" title="Get the local copy of the code" href="following_latest.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >Contributing to NumPy</a></li>
@@ -88,22 +110,16 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../../contents.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Getting started with Git development</a><ul>
-<li><a class="reference internal" href="#basic-git-setup">Basic Git setup</a></li>
-<li><a class="reference internal" href="#making-your-own-copy-fork-of-numpy">Making your own copy (fork) of NumPy</a><ul>
-<li><a class="reference internal" href="#set-up-and-configure-a-github-account">Set up and configure a github account</a></li>
-<li><a class="reference internal" href="#create-your-own-forked-copy-of-numpy">Create your own forked copy of NumPy</a></li>
+<li><a class="reference internal" href="#">Setting up git for NumPy development</a><ul>
+<li><a class="reference internal" href="#install-git">Install git</a></li>
+<li><a class="reference internal" href="#create-a-github-account">Create a GitHub account</a></li>
+<li><a class="reference internal" href="#create-a-numpy-fork">Create a NumPy fork</a><ul>
+<li><a class="reference internal" href="#create-the-fork-repo">Create the fork repo</a></li>
+<li><a class="reference internal" href="#make-the-local-copy">Make the local copy</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#set-up-your-fork">Set up your fork</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#in-detail">In detail</a><ul>
-<li><a class="reference internal" href="#clone-your-fork">Clone your fork</a></li>
-<li><a class="reference internal" href="#linking-your-repository-to-the-upstream-repo">Linking your repository to the upstream repo</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#look-it-over">Look it over</a></li>
+<li><a class="reference internal" href="#optional-set-up-ssh-keys-to-avoid-passwords">Optional: set up SSH keys to avoid passwords</a></li>
 </ul>
 </li>
 </ul>
@@ -133,132 +149,159 @@
         <div class="bodywrapper">
           <div class="body" id="spc-section-body">
             
-  <div class="section" id="getting-started-with-git-development">
-<h1>Getting started with Git development<a class="headerlink" href="#getting-started-with-git-development" title="Permalink to this headline">¶</a></h1>
-<p>This section and the next describe in detail how to set up git for working
-with the NumPy source code.  If you have git already set up, skip to
-<a class="reference internal" href="../development_workflow.html#development-workflow"><span class="std std-ref">Development workflow</span></a>.</p>
-<div class="section" id="basic-git-setup">
-<h2>Basic Git setup<a class="headerlink" href="#basic-git-setup" title="Permalink to this headline">¶</a></h2>
-<ul>
-<li><p><a class="reference external" href="https://scikit-image.org/docs/stable/gitwash/git_install.html#install-git" title="(in skimage v0.16.1)"><span>Install git</span></a>.</p></li>
-<li><p>Introduce yourself to Git:</p>
+  <div class="section" id="setting-up-git-for-numpy-development">
+<span id="development-setup"></span><h1>Setting up git for NumPy development<a class="headerlink" href="#setting-up-git-for-numpy-development" title="Permalink to this headline">¶</a></h1>
+<p>To contribute code or documentation, you first need</p>
+<ol class="arabic simple">
+<li><p>git installed on your machine</p></li>
+<li><p>a GitHub account</p></li>
+<li><p>a fork of NumPy</p></li>
+</ol>
+<div class="section" id="install-git">
+<h2>Install git<a class="headerlink" href="#install-git" title="Permalink to this headline">¶</a></h2>
+<p>You may already have git; check by typing <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code>. If it’s
+installed you’ll see some variation of <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">version</span> <span class="pre">2.11.0</span></code>.
+If instead you see <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">recognized</span></code>, <code class="docutils literal notranslate"><span class="pre">command</span> <span class="pre">not</span>
+<span class="pre">found</span></code>, etc.,
+<a class="reference external" href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">install git</a>.</p>
+<p>Then set your name and email:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">email</span> <span class="n">you</span><span class="nd">@yourdomain</span><span class="o">.</span><span class="n">example</span><span class="o">.</span><span class="n">com</span>
-<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;Your Name Comes Here&quot;</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="k">global</span> <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="s2">&quot;Your Name&quot;</span>
 </pre></div>
 </div>
-</li>
-</ul>
 </div>
-<div class="section" id="making-your-own-copy-fork-of-numpy">
-<span id="forking"></span><h2>Making your own copy (fork) of NumPy<a class="headerlink" href="#making-your-own-copy-fork-of-numpy" title="Permalink to this headline">¶</a></h2>
-<p>You need to do this only once.  The instructions here are very similar
-to the instructions at <a class="reference external" href="http://help.github.com/forking/">http://help.github.com/forking/</a> - please see that
-page for more detail.  We’re repeating some of it here just to give the
-specifics for the <a class="reference external" href="https://www.numpy.org">NumPy</a> project, and to suggest some default names.</p>
-<div class="section" id="set-up-and-configure-a-github-account">
-<span id="id1"></span><h3>Set up and configure a <a class="reference external" href="https://github.com/numpy/numpy">github</a> account<a class="headerlink" href="#set-up-and-configure-a-github-account" title="Permalink to this headline">¶</a></h3>
-<p>If you don’t have a <a class="reference external" href="https://github.com/numpy/numpy">github</a> account, go to the <a class="reference external" href="https://github.com/numpy/numpy">github</a> page, and make one.</p>
-<p>You then need to configure your account to allow write access - see the
-<code class="docutils literal notranslate"><span class="pre">Generating</span> <span class="pre">SSH</span> <span class="pre">keys</span></code> help on <a class="reference external" href="https://help.github.com">github help</a>.</p>
+<div class="section" id="create-a-github-account">
+<span id="set-up-and-configure-a-github-account"></span><h2>Create a GitHub account<a class="headerlink" href="#create-a-github-account" title="Permalink to this headline">¶</a></h2>
+<p>If you don’t have a GitHub account, visit <a class="reference external" href="https://github.com/join">https://github.com/join</a> to create
+one.</p>
 </div>
-<div class="section" id="create-your-own-forked-copy-of-numpy">
-<h3>Create your own forked copy of <a class="reference external" href="https://www.numpy.org">NumPy</a><a class="headerlink" href="#create-your-own-forked-copy-of-numpy" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="create-a-numpy-fork">
+<span id="forking"></span><h2>Create a NumPy fork<a class="headerlink" href="#create-a-numpy-fork" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Forking</span></code> has two steps – visit GitHub to create a fork repo in your
+account, then make a copy of it on your own machine.</p>
+<div class="section" id="create-the-fork-repo">
+<h3>Create the fork repo<a class="headerlink" href="#create-the-fork-repo" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p>Log into your <a class="reference external" href="https://github.com/numpy/numpy">github</a> account.</p></li>
-<li><p>Go to the <a class="reference external" href="https://www.numpy.org">NumPy</a> github home at <a class="reference external" href="https://github.com/numpy/numpy">NumPy github</a>.</p></li>
-<li><p>Click on the <em>fork</em> button:</p>
+<li><p>Log into your GitHub account.</p></li>
+<li><p>Go to the <a class="reference external" href="https://github.com/numpy/numpy">NumPy GitHub home</a>.</p></li>
+<li><p>At the upper right of the page, click <code class="docutils literal notranslate"><span class="pre">Fork</span></code>:</p>
 <img alt="../../_images/forking_button.png" src="../../_images/forking_button.png" />
-<p>After a short pause, you should find yourself at the home page for
-your own forked copy of <a class="reference external" href="https://www.numpy.org">NumPy</a>.</p>
+<p>You’ll see</p>
+<img alt="../../_images/forking_message.png" src="../../_images/forking_message.png" />
+<p>and then you’ll be taken to the home page of your forked copy:</p>
+<img alt="../../_images/forked_page.png" src="../../_images/forked_page.png" />
 </li>
 </ol>
 </div>
-</div>
-<div class="section" id="set-up-your-fork">
-<span id="set-up-fork"></span><h2>Set up your fork<a class="headerlink" href="#set-up-your-fork" title="Permalink to this headline">¶</a></h2>
-<p>First you follow the instructions for <a class="reference internal" href="#forking"><span class="std std-ref">Making your own copy (fork) of NumPy</span></a>.</p>
-<div class="section" id="overview">
-<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">numpy</span>
-<span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="in-detail">
-<h3>In detail<a class="headerlink" href="#in-detail" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="clone-your-fork">
-<h4>Clone your fork<a class="headerlink" href="#clone-your-fork" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="make-the-local-copy">
+<span id="set-up-fork"></span><h3>Make the local copy<a class="headerlink" href="#make-the-local-copy" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic">
-<li><p>Clone your fork to the local computer with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span>
-<span class="pre">https://github.com/your-user-name/numpy.git</span></code></p></li>
-<li><p>Investigate.  Change directory to your new repo: <code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">numpy</span></code>. Then
-<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> to show you all branches.  You’ll get something
-like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">master</span>
-<span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/</span><span class="n">master</span>
+<li><p>In the directory where you want the copy created, run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p>This tells you that you are currently on the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch, and
-that you also have a <code class="docutils literal notranslate"><span class="pre">remote</span></code> connection to <code class="docutils literal notranslate"><span class="pre">origin/master</span></code>.
-What remote repository is <code class="docutils literal notranslate"><span class="pre">remote/origin</span></code>? Try <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> to
-see the URLs for the remote.  They will point to your <a class="reference external" href="https://github.com/numpy/numpy">github</a> fork.</p>
-<p>Now you want to connect to the upstream <a class="reference external" href="https://github.com/numpy/numpy">NumPy github</a> repository, so
-you can merge in changes from trunk.</p>
+<p>You’ll see something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/your-user-name/numpy.git
+Cloning into &#39;numpy&#39;...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 175837 (delta 0), reused 0 (delta 0), pack-reused 175825
+Receiving objects: 100% (175837/175837), 78.16 MiB | 9.87 MiB/s, done.
+Resolving deltas: 100% (139317/139317), done.
+</pre></div>
+</div>
+<p>A directory <code class="docutils literal notranslate"><span class="pre">numpy</span></code> is created on your machine. (If you already have
+a numpy directory, GitHub will choose a different name like <code class="docutils literal notranslate"><span class="pre">numpy-1</span></code>.)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ls -l
+total 0
+drwxrwxrwx 1 bjn bjn 4096 Jun 20 07:20 numpy
+</pre></div>
+</div>
 </li>
 </ol>
-</div>
-<div class="section" id="linking-your-repository-to-the-upstream-repo">
-<span id="linking-to-upstream"></span><h4>Linking your repository to the upstream repo<a class="headerlink" href="#linking-your-repository-to-the-upstream-repo" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic" id="linking-to-upstream">
+<li><p>Give the name <code class="docutils literal notranslate"><span class="pre">upstream</span></code> to the main NumPy repo:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">numpy</span>
 <span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">upstream</span></code> here is just the arbitrary name we’re using to refer to the
-main <a class="reference external" href="https://www.numpy.org">NumPy</a> repository at <a class="reference external" href="https://github.com/numpy/numpy">NumPy github</a>.</p>
-<p>Just for your own satisfaction, show yourself that you now have a new
-‘remote’, with <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span> <span class="pre">show</span></code>, giving you something like:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">upstream</span>     <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-<span class="n">upstream</span>     <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-<span class="n">origin</span>       <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
-<span class="n">origin</span>       <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>To keep in sync with changes in NumPy, you want to set up your repository
-so it pulls from <code class="docutils literal notranslate"><span class="pre">upstream</span></code> by default.  This can be done with:</p>
+</li>
+<li><p>Set up your repository so <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code> pulls from <code class="docutils literal notranslate"><span class="pre">upstream</span></code> by
+default:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="n">branch</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">remote</span> <span class="n">upstream</span>
 <span class="n">git</span> <span class="n">config</span> <span class="n">branch</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">merge</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span>
 </pre></div>
 </div>
-<p>You may also want to have easy access to all pull requests sent to the
-NumPy repository:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">remote</span><span class="o">.</span><span class="n">upstream</span><span class="o">.</span><span class="n">fetch</span> <span class="s1">&#39;+refs/pull/*/head:refs/remotes/upstream/pr/*&#39;</span>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="look-it-over">
+<h2>Look it over<a class="headerlink" href="#look-it-over" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>The branches shown by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">branch</span> <span class="pre">-a</span></code> will include</p>
+<ul class="simple">
+<li><p>the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch you just cloned on your own machine</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch from your fork on GitHub, which git named
+<code class="docutils literal notranslate"><span class="pre">origin</span></code> by default</p></li>
+<li><p>the <code class="docutils literal notranslate"><span class="pre">master</span></code> branch on the the main NumPy repo, which you named
+<code class="docutils literal notranslate"><span class="pre">upstream</span></code>.</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">master</span>
+<span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/</span><span class="n">master</span>
+<span class="n">remotes</span><span class="o">/</span><span class="n">upstream</span><span class="o">/</span><span class="n">master</span>
 </pre></div>
 </div>
-<p>Your config file should now look something like (from
-<code class="docutils literal notranslate"><span class="pre">$</span> <span class="pre">cat</span> <span class="pre">.git/config</span></code>):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">core</span><span class="p">]</span>
-        <span class="n">repositoryformatversion</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">filemode</span> <span class="o">=</span> <span class="n">true</span>
-        <span class="n">bare</span> <span class="o">=</span> <span class="n">false</span>
-        <span class="n">logallrefupdates</span> <span class="o">=</span> <span class="n">true</span>
-        <span class="n">ignorecase</span> <span class="o">=</span> <span class="n">true</span>
-        <span class="n">precomposeunicode</span> <span class="o">=</span> <span class="n">false</span>
-<span class="p">[</span><span class="n">remote</span> <span class="s2">&quot;origin&quot;</span><span class="p">]</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
-        <span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
-<span class="p">[</span><span class="n">remote</span> <span class="s2">&quot;upstream&quot;</span><span class="p">]</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
-        <span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">upstream</span><span class="o">/*</span>
-        <span class="n">fetch</span> <span class="o">=</span> <span class="o">+</span><span class="n">refs</span><span class="o">/</span><span class="n">pull</span><span class="o">/*/</span><span class="n">head</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">upstream</span><span class="o">/</span><span class="n">pr</span><span class="o">/*</span>
-<span class="p">[</span><span class="n">branch</span> <span class="s2">&quot;master&quot;</span><span class="p">]</span>
-        <span class="n">remote</span> <span class="o">=</span> <span class="n">upstream</span>
-        <span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span>
+<p>If <code class="docutils literal notranslate"><span class="pre">upstream</span></code> isn’t there, it will be added after you access the
+NumPy repo with a command like <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">fetch</span></code> or <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p>
+</li>
+<li><p>The repos shown by <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span> <span class="pre">show</span></code> will include your fork on GitHub
+and the main repo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">upstream</span>    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">upstream</span>    <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+<span class="n">origin</span>      <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>      <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
 </pre></div>
 </div>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--list</span></code> will include</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="o">=</span><span class="n">your_email</span><span class="nd">@example</span><span class="o">.</span><span class="n">com</span>
+<span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="o">=</span><span class="n">Your</span> <span class="n">Name</span>
+<span class="n">remote</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">url</span><span class="o">=</span><span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">github</span><span class="o">-</span><span class="nb">id</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
+<span class="n">remote</span><span class="o">.</span><span class="n">origin</span><span class="o">.</span><span class="n">fetch</span><span class="o">=+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">origin</span><span class="o">/*</span>
+<span class="n">branch</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">remote</span><span class="o">=</span><span class="n">upstream</span>
+<span class="n">branch</span><span class="o">.</span><span class="n">master</span><span class="o">.</span><span class="n">merge</span><span class="o">=</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">master</span>
+<span class="n">remote</span><span class="o">.</span><span class="n">upstream</span><span class="o">.</span><span class="n">url</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
+<span class="n">remote</span><span class="o">.</span><span class="n">upstream</span><span class="o">.</span><span class="n">fetch</span><span class="o">=+</span><span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/*</span><span class="p">:</span><span class="n">refs</span><span class="o">/</span><span class="n">remotes</span><span class="o">/</span><span class="n">upstream</span><span class="o">/*</span>
+</pre></div>
 </div>
+</li>
+</ol>
 </div>
+<div class="section" id="optional-set-up-ssh-keys-to-avoid-passwords">
+<h2>Optional: set up SSH keys to avoid passwords<a class="headerlink" href="#optional-set-up-ssh-keys-to-avoid-passwords" title="Permalink to this headline">¶</a></h2>
+<p>Cloning your NumPy fork repo required no password, because it read the remote
+repo without changing it. Later, though, submitting your pull requests will
+write to it, and GitHub will ask for your username and password – even though
+it’s your own repo. You can eliminate this authentication without compromising
+security by <a class="reference external" href="https://help.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh">setting up SSH keys </a>.</p>
+<p><strong>If you set up the keys before cloning</strong>, the instructions above change
+slightly. Instead of</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>run</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">numpy</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>and instead of showing an <code class="docutils literal notranslate"><span class="pre">https</span></code> URL,  <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">remote</span> <span class="pre">-v</span></code> will show</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">origin</span>  <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">fetch</span><span class="p">)</span>
+<span class="n">origin</span>  <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">your</span><span class="o">-</span><span class="n">user</span><span class="o">-</span><span class="n">name</span><span class="o">/</span><span class="n">numpy</span><span class="o">.</span><span class="n">git</span> <span class="p">(</span><span class="n">push</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>If you have cloned already</strong> and want to start using SSH, see
+<a class="reference external" href="https://help.github.com/en/github/using-git/changing-a-remotes-url#switching-remote-urls-from-https-to-ssh">Switching remote URLs from HTTPS to SSH </a>.</p>
 </div>
 </div>
 
@@ -283,10 +326,10 @@ NumPy repository:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

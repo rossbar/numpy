@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Index &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Index &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="_static/css/spc-extend.css">
@@ -16,7 +16,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -30,14 +30,36 @@
     <link rel="author" title="About these documents" href="about.html" >
     <link rel="index" title="Index" href="#" >
     <link rel="search" title="Search" href="search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="index.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="index.html">
-      <img border=0 alt="NumPy" src="_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -53,7 +75,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="index.html">NumPy v1.20.dev0 Manual</a></li>
         
  
     </ul>
@@ -224,6 +246,8 @@
         <li><a href="reference/generated/numpy.polynomial.polynomial.Polynomial.__call__.html#numpy.polynomial.polynomial.Polynomial.__call__">(numpy.polynomial.polynomial.Polynomial method)</a>
 </li>
         <li><a href="reference/generated/numpy.testing.suppress_warnings.__call__.html#numpy.testing.suppress_warnings.__call__">(numpy.testing.suppress_warnings method)</a>
+</li>
+        <li><a href="reference/generated/numpy.ufunc.__call__.html#numpy.ufunc.__call__">(numpy.ufunc method)</a>
 </li>
         <li><a href="reference/generated/numpy.vectorize.__call__.html#numpy.vectorize.__call__">(numpy.vectorize method)</a>
 </li>
@@ -2581,8 +2605,6 @@
 </li>
       <li><a href="reference/generated/numpy.full_like.html#numpy.full_like">full_like() (in module numpy)</a>
 </li>
-      <li><a href="reference/generated/numpy.fv.html#numpy.fv">fv() (in module numpy)</a>
-</li>
   </ul></td>
 </tr></table>
 
@@ -3008,7 +3030,7 @@
 </li>
       <li><a href="reference/generated/numpy.busdaycalendar.holidays.html#numpy.busdaycalendar.holidays">holidays (numpy.busdaycalendar attribute)</a>
 </li>
-      <li><a href="glossary.html#term-homogenous"><strong>homogenous</strong></a>
+      <li><a href="glossary.html#term-homogeneous"><strong>homogeneous</strong></a>
 </li>
       <li><a href="reference/generated/numpy.ma.hsplit.html#numpy.ma.hsplit">hsplit (in module numpy.ma)</a>
 </li>
@@ -3197,15 +3219,11 @@
 </li>
       <li><a href="reference/generated/numpy.invert.html#numpy.invert">invert (in module numpy)</a>
 </li>
-      <li><a href="reference/generated/numpy.ipmt.html#numpy.ipmt">ipmt() (in module numpy)</a>
-</li>
       <li><a href="reference/generated/numpy.fft.irfft.html#numpy.fft.irfft">irfft() (in module numpy.fft)</a>
 </li>
       <li><a href="reference/generated/numpy.fft.irfft2.html#numpy.fft.irfft2">irfft2() (in module numpy.fft)</a>
 </li>
       <li><a href="reference/generated/numpy.fft.irfftn.html#numpy.fft.irfftn">irfftn() (in module numpy.fft)</a>
-</li>
-      <li><a href="reference/generated/numpy.irr.html#numpy.irr">irr() (in module numpy)</a>
 </li>
       <li><a href="reference/generated/numpy.is_busday.html#numpy.is_busday">is_busday() (in module numpy)</a>
 </li>
@@ -3237,10 +3255,10 @@
         <li><a href="reference/generated/numpy.chararray.isalpha.html#numpy.chararray.isalpha">(numpy.chararray method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.dtype.isbuiltin.html#numpy.dtype.isbuiltin">isbuiltin (numpy.dtype attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.isclose.html#numpy.isclose">isclose() (in module numpy)</a>
 </li>
       <li><a href="reference/generated/numpy.iscomplex.html#numpy.iscomplex">iscomplex() (in module numpy)</a>
@@ -4015,8 +4033,6 @@
 </li>
       <li><a href="reference/generated/numpy.mintypecode.html#numpy.mintypecode">mintypecode() (in module numpy)</a>
 </li>
-      <li><a href="reference/generated/numpy.mirr.html#numpy.mirr">mirr() (in module numpy)</a>
-</li>
       <li><a href="reference/generated/numpy.mod.html#numpy.mod">mod (in module numpy)</a>
 </li>
       <li><a href="reference/generated/numpy.char.mod.html#numpy.char.mod">mod() (in module numpy.char)</a>
@@ -4241,20 +4257,6 @@
       </ul></li>
       <li><a href="reference/generated/numpy.nextafter.html#numpy.nextafter">nextafter (in module numpy)</a>
 </li>
-      <li><a href="reference/generated/numpy.polynomial.chebyshev.Chebyshev.nickname.html#numpy.polynomial.chebyshev.Chebyshev.nickname">nickname (numpy.polynomial.chebyshev.Chebyshev attribute)</a>
-
-      <ul>
-        <li><a href="reference/generated/numpy.polynomial.hermite.Hermite.nickname.html#numpy.polynomial.hermite.Hermite.nickname">(numpy.polynomial.hermite.Hermite attribute)</a>
-</li>
-        <li><a href="reference/generated/numpy.polynomial.hermite_e.HermiteE.nickname.html#numpy.polynomial.hermite_e.HermiteE.nickname">(numpy.polynomial.hermite_e.HermiteE attribute)</a>
-</li>
-        <li><a href="reference/generated/numpy.polynomial.laguerre.Laguerre.nickname.html#numpy.polynomial.laguerre.Laguerre.nickname">(numpy.polynomial.laguerre.Laguerre attribute)</a>
-</li>
-        <li><a href="reference/generated/numpy.polynomial.legendre.Legendre.nickname.html#numpy.polynomial.legendre.Legendre.nickname">(numpy.polynomial.legendre.Legendre attribute)</a>
-</li>
-        <li><a href="reference/generated/numpy.polynomial.polynomial.Polynomial.nickname.html#numpy.polynomial.polynomial.Polynomial.nickname">(numpy.polynomial.polynomial.Polynomial attribute)</a>
-</li>
-      </ul></li>
       <li><a href="reference/generated/numpy.ufunc.nin.html#numpy.ufunc.nin">nin (numpy.ufunc attribute)</a>
 </li>
       <li><a href="reference/constants.html#numpy.NINF">NINF (in module numpy)</a>
@@ -4263,7 +4265,7 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NO_IMPORT_ARRAY">NO_IMPORT_ARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.NO_IMPORT_UFUNC">NO_IMPORT_UFUNC (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.NO_IMPORT_UFUNC">NO_IMPORT_UFUNC (C macro)</a>
 </li>
       <li><a href="reference/maskedarray.baseclass.html#numpy.ma.nomask">nomask (in module numpy.ma)</a>
 </li>
@@ -4335,13 +4337,9 @@
 </li>
       <li><a href="reference/generated/numpy.ufunc.nout.html#numpy.ufunc.nout">nout (numpy.ufunc attribute)</a>
 </li>
-      <li><a href="reference/generated/numpy.nper.html#numpy.nper">nper() (in module numpy)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_1_PI">NPY_1_PI (C macro)</a>
 </li>
-      <li><a href="reference/generated/numpy.npv.html#numpy.npv">npv() (in module numpy)</a>
-</li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_1_PI">NPY_1_PI (C variable)</a>
-</li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_2_PI">NPY_2_PI (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_2_PI">NPY_2_PI (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_ALLOW_C_API">NPY_ALLOW_C_API (C macro)</a>
 </li>
@@ -4349,57 +4347,57 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_ANYORDER">NPY_ANYORDER (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ALIGNED">NPY_ARRAY_ALIGNED (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_ALIGNED">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ALIGNED">NPY_ARRAY_ALIGNED (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_ALIGNED">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED">NPY_ARRAY_BEHAVED (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED">NPY_ARRAY_BEHAVED (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED_NS">NPY_ARRAY_BEHAVED_NS (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED_NS">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_BEHAVED_NS">NPY_ARRAY_BEHAVED_NS (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_C_CONTIGUOUS">NPY_ARRAY_C_CONTIGUOUS (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_C_CONTIGUOUS">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_C_CONTIGUOUS">NPY_ARRAY_C_CONTIGUOUS (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_C_CONTIGUOUS">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY">NPY_ARRAY_CARRAY (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY">NPY_ARRAY_CARRAY (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY_RO">NPY_ARRAY_CARRAY_RO (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY_RO">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY_RO">NPY_ARRAY_CARRAY_RO (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_CARRAY_RO">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_DEFAULT">NPY_ARRAY_DEFAULT (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_DEFAULT">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_DEFAULT">NPY_ARRAY_DEFAULT (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_DEFAULT">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ELEMENTSTRIDES">NPY_ARRAY_ELEMENTSTRIDES (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ELEMENTSTRIDES">NPY_ARRAY_ELEMENTSTRIDES (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ENSUREARRAY">NPY_ARRAY_ENSUREARRAY (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_ENSUREARRAY">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ENSUREARRAY">NPY_ARRAY_ENSUREARRAY (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_ENSUREARRAY">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ENSURECOPY">NPY_ARRAY_ENSURECOPY (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_ENSURECOPY">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_ENSURECOPY">NPY_ARRAY_ENSURECOPY (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_ENSURECOPY">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_F_CONTIGUOUS">NPY_ARRAY_F_CONTIGUOUS (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_F_CONTIGUOUS">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_F_CONTIGUOUS">NPY_ARRAY_F_CONTIGUOUS (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_F_CONTIGUOUS">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY">NPY_ARRAY_FARRAY (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY">NPY_ARRAY_FARRAY (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY_RO">NPY_ARRAY_FARRAY_RO (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY_RO">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY_RO">NPY_ARRAY_FARRAY_RO (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_FARRAY_RO">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_FORCECAST">NPY_ARRAY_FORCECAST (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_FORCECAST">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_FORCECAST">NPY_ARRAY_FORCECAST (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_FORCECAST">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_IN_ARRAY">NPY_ARRAY_IN_ARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_IN_ARRAY">NPY_ARRAY_IN_ARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_IN_FARRAY">NPY_ARRAY_IN_FARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_IN_FARRAY">NPY_ARRAY_IN_FARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_INOUT_ARRAY">NPY_ARRAY_INOUT_ARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_INOUT_ARRAY">NPY_ARRAY_INOUT_ARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_INOUT_FARRAY">NPY_ARRAY_INOUT_FARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_INOUT_FARRAY">NPY_ARRAY_INOUT_FARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_NOTSWAPPED">NPY_ARRAY_NOTSWAPPED (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_NOTSWAPPED">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_NOTSWAPPED">NPY_ARRAY_NOTSWAPPED (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_OUT_ARRAY">NPY_ARRAY_OUT_ARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_OUT_ARRAY">NPY_ARRAY_OUT_ARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_OUT_FARRAY">NPY_ARRAY_OUT_FARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_OUT_FARRAY">NPY_ARRAY_OUT_FARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_OWNDATA">NPY_ARRAY_OWNDATA (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_OWNDATA">NPY_ARRAY_OWNDATA (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_UPDATE_ALL">NPY_ARRAY_UPDATE_ALL (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_UPDATE_ALL">NPY_ARRAY_UPDATE_ALL (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_UPDATEIFCOPY">NPY_ARRAY_UPDATEIFCOPY (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_UPDATEIFCOPY">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_UPDATEIFCOPY">NPY_ARRAY_UPDATEIFCOPY (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_UPDATEIFCOPY">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEABLE">NPY_ARRAY_WRITEABLE (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEABLE">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEABLE">NPY_ARRAY_WRITEABLE (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEABLE">[1]</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEBACKIFCOPY">NPY_ARRAY_WRITEBACKIFCOPY (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEBACKIFCOPY">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEBACKIFCOPY">NPY_ARRAY_WRITEBACKIFCOPY (C macro)</a>, <a href="reference/c-api/array.html#c.NPY_ARRAY_WRITEBACKIFCOPY">[1]</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_AUXDATA_CLONE">NPY_AUXDATA_CLONE (C function)</a>
 </li>
@@ -4415,7 +4413,7 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_BEGIN_THREADS_THRESHOLDED">NPY_BEGIN_THREADS_THRESHOLDED (C function)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_BIG_ENDIAN">NPY_BIG_ENDIAN (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_BIG_ENDIAN">NPY_BIG_ENDIAN (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.npy_bool">npy_bool (C type)</a>
 </li>
@@ -4423,11 +4421,11 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_BOOL_SCALAR">NPY_BOOL_SCALAR (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_BUFSIZE">NPY_BUFSIZE (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_BUFSIZE">NPY_BUFSIZE (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_BYTE">NPY_BYTE (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_BYTE_ORDER">NPY_BYTE_ORDER (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_BYTE_ORDER">NPY_BYTE_ORDER (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_CASTING">NPY_CASTING (C type)</a>
 </li>
@@ -4439,8 +4437,12 @@
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_clear_floatstatus_barrier">npy_clear_floatstatus_barrier (C function)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_CLIP">NPY_CLIP (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_CLIP">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_CLIP">NPY_CLIP (C macro)</a>
+
+      <ul>
+        <li><a href="reference/c-api/array.html#c.NPY_CLIP">(C variable)</a>
 </li>
+      </ul></li>
       <li><a href="reference/c-api/array.html#c.NPY_CLIPMODE">NPY_CLIPMODE (C type)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_CLONGDOUBLE">NPY_CLONGDOUBLE (C variable)</a>
@@ -4455,23 +4457,23 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_CORDER">NPY_CORDER (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_AMD64">NPY_CPU_AMD64 (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_AMD64">NPY_CPU_AMD64 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_IA64">NPY_CPU_IA64 (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_IA64">NPY_CPU_IA64 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_PARISC">NPY_CPU_PARISC (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_PARISC">NPY_CPU_PARISC (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_PPC">NPY_CPU_PPC (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_PPC">NPY_CPU_PPC (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_PPC64">NPY_CPU_PPC64 (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_PPC64">NPY_CPU_PPC64 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_S390">NPY_CPU_S390 (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_S390">NPY_CPU_S390 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_SPARC">NPY_CPU_SPARC (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_SPARC">NPY_CPU_SPARC (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_SPARC64">NPY_CPU_SPARC64 (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_SPARC64">NPY_CPU_SPARC64 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_CPU_X86">NPY_CPU_X86 (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_CPU_X86">NPY_CPU_X86 (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_DATETIME">NPY_DATETIME (C variable)</a>
 </li>
@@ -4485,7 +4487,7 @@
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_doublebits_to_halfbits">npy_doublebits_to_halfbits (C function)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_E">NPY_E (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_E">NPY_E (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_END_ALLOW_THREADS">NPY_END_ALLOW_THREADS (C macro)</a>
 </li>
@@ -4495,11 +4497,11 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_EQUIV_CASTING">NPY_EQUIV_CASTING (C variable)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_EULER">NPY_EULER (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_EULER">NPY_EULER (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_FAIL">NPY_FAIL (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_FAIL">NPY_FAIL (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_FALSE">NPY_FALSE (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_FALSE">NPY_FALSE (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_FLOAT">NPY_FLOAT (C variable)</a>
 </li>
@@ -4517,7 +4519,7 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_FORTRANORDER">NPY_FORTRANORDER (C variable)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_FROM_FIELDS">NPY_FROM_FIELDS (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_FROM_FIELDS">NPY_FROM_FIELDS (C macro)</a>
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_get_floatstatus">npy_get_floatstatus (C function)</a>
 </li>
@@ -4553,23 +4555,23 @@
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_half_lt_nonan">npy_half_lt_nonan (C function)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NAN">NPY_HALF_NAN (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NAN">NPY_HALF_NAN (C macro)</a>
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_half_ne">npy_half_ne (C function)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NEGONE">NPY_HALF_NEGONE (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NEGONE">NPY_HALF_NEGONE (C macro)</a>
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_half_nextafter">npy_half_nextafter (C function)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NINF">NPY_HALF_NINF (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NINF">NPY_HALF_NINF (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NZERO">NPY_HALF_NZERO (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_NZERO">NPY_HALF_NZERO (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_ONE">NPY_HALF_ONE (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_ONE">NPY_HALF_ONE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_PINF">NPY_HALF_PINF (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_PINF">NPY_HALF_PINF (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_PZERO">NPY_HALF_PZERO (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_PZERO">NPY_HALF_PZERO (C macro)</a>
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_half_signbit">npy_half_signbit (C function)</a>
 </li>
@@ -4579,7 +4581,7 @@
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_half_to_float">npy_half_to_float (C function)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_ZERO">NPY_HALF_ZERO (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_HALF_ZERO">NPY_HALF_ZERO (C macro)</a>
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_halfbits_to_doublebits">npy_halfbits_to_doublebits (C function)</a>
 </li>
@@ -4587,9 +4589,7 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_HEAPSORT">NPY_HEAPSORT (C variable)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/c-api/coremath.html#c.NPY_INFINITY">NPY_INFINITY (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_INFINITY">NPY_INFINITY (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.npy_int">npy_int (C type)</a>
 </li>
@@ -4601,6 +4601,8 @@
 </li>
       <li><a href="reference/c-api/dtype.html#c.npy_int32">npy_int32 (C type)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/c-api/dtype.html#c.NPY_INT32">NPY_INT32 (C variable)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.npy_int64">npy_int64 (C type)</a>
@@ -4609,7 +4611,7 @@
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_INT8">NPY_INT8 (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_INTERRUPT_H">NPY_INTERRUPT_H (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_INTERRUPT_H">NPY_INTERRUPT_H (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_INTNEG_SCALAR">NPY_INTNEG_SCALAR (C variable)</a>
 </li>
@@ -4625,83 +4627,83 @@
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_isnan">npy_isnan (C function)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_ITEM_HASOBJECT">NPY_ITEM_HASOBJECT (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_ITEM_HASOBJECT">NPY_ITEM_HASOBJECT (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_ITEM_IS_POINTER">NPY_ITEM_IS_POINTER (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_ITEM_IS_POINTER">NPY_ITEM_IS_POINTER (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_ITEM_REFCOUNT">NPY_ITEM_REFCOUNT (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_ITEM_REFCOUNT">NPY_ITEM_REFCOUNT (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ALIGNED">NPY_ITER_ALIGNED (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ALIGNED">NPY_ITER_ALIGNED (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ALLOCATE">NPY_ITER_ALLOCATE (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ALLOCATE">NPY_ITER_ALLOCATE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ARRAYMASK">NPY_ITER_ARRAYMASK (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ARRAYMASK">NPY_ITER_ARRAYMASK (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_BUFFERED">NPY_ITER_BUFFERED (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_BUFFERED">NPY_ITER_BUFFERED (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_C_INDEX">NPY_ITER_C_INDEX (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_C_INDEX">NPY_ITER_C_INDEX (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_COMMON_DTYPE">NPY_ITER_COMMON_DTYPE (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_COMMON_DTYPE">NPY_ITER_COMMON_DTYPE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_CONTIG">NPY_ITER_CONTIG (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_CONTIG">NPY_ITER_CONTIG (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_COPY">NPY_ITER_COPY (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_COPY">NPY_ITER_COPY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_COPY_IF_OVERLAP">NPY_ITER_COPY_IF_OVERLAP (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_COPY_IF_OVERLAP">NPY_ITER_COPY_IF_OVERLAP (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_DELAY_BUFALLOC">NPY_ITER_DELAY_BUFALLOC (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_DELAY_BUFALLOC">NPY_ITER_DELAY_BUFALLOC (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_DONT_NEGATE_STRIDES">NPY_ITER_DONT_NEGATE_STRIDES (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_DONT_NEGATE_STRIDES">NPY_ITER_DONT_NEGATE_STRIDES (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_EXTERNAL_LOOP">NPY_ITER_EXTERNAL_LOOP (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_EXTERNAL_LOOP">NPY_ITER_EXTERNAL_LOOP (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_F_INDEX">NPY_ITER_F_INDEX (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_F_INDEX">NPY_ITER_F_INDEX (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_GROWINNER">NPY_ITER_GROWINNER (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_GROWINNER">NPY_ITER_GROWINNER (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_MULTI_INDEX">NPY_ITER_MULTI_INDEX (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_MULTI_INDEX">NPY_ITER_MULTI_INDEX (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_NBO">NPY_ITER_NBO (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_NBO">NPY_ITER_NBO (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_NO_BROADCAST">NPY_ITER_NO_BROADCAST (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_NO_BROADCAST">NPY_ITER_NO_BROADCAST (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_NO_SUBTYPE">NPY_ITER_NO_SUBTYPE (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_NO_SUBTYPE">NPY_ITER_NO_SUBTYPE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE">NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE">NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_RANGED">NPY_ITER_RANGED (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_RANGED">NPY_ITER_RANGED (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_READONLY">NPY_ITER_READONLY (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_READONLY">NPY_ITER_READONLY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_READWRITE">NPY_ITER_READWRITE (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_READWRITE">NPY_ITER_READWRITE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_REDUCE_OK">NPY_ITER_REDUCE_OK (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_REDUCE_OK">NPY_ITER_REDUCE_OK (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_REFS_OK">NPY_ITER_REFS_OK (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_REFS_OK">NPY_ITER_REFS_OK (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_UPDATEIFCOPY">NPY_ITER_UPDATEIFCOPY (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_UPDATEIFCOPY">NPY_ITER_UPDATEIFCOPY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_WRITEMASKED">NPY_ITER_WRITEMASKED (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_WRITEMASKED">NPY_ITER_WRITEMASKED (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_WRITEONLY">NPY_ITER_WRITEONLY (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_WRITEONLY">NPY_ITER_WRITEONLY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ZEROSIZE_OK">NPY_ITER_ZEROSIZE_OK (C variable)</a>
+      <li><a href="reference/c-api/iterator.html#c.NPY_ITER_ZEROSIZE_OK">NPY_ITER_ZEROSIZE_OK (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_KEEPORDER">NPY_KEEPORDER (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_LIKELY">NPY_LIKELY (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_LIKELY">NPY_LIKELY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_LIST_PICKLE">NPY_LIST_PICKLE (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_LIST_PICKLE">NPY_LIST_PICKLE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_LITTLE_ENDIAN">NPY_LITTLE_ENDIAN (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_LITTLE_ENDIAN">NPY_LITTLE_ENDIAN (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_LOG10E">NPY_LOG10E (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_LOG10E">NPY_LOG10E (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_LOG2E">NPY_LOG2E (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_LOG2E">NPY_LOG2E (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_LOGE10">NPY_LOGE10 (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_LOGE10">NPY_LOGE10 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_LOGE2">NPY_LOGE2 (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_LOGE2">NPY_LOGE2 (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_LONG">NPY_LONG (C variable)</a>
 </li>
@@ -4715,21 +4717,21 @@
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_MASK">NPY_MASK (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_MAX_BUFSIZE">NPY_MAX_BUFSIZE (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_MAX_BUFSIZE">NPY_MAX_BUFSIZE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_MAXARGS">NPY_MAXARGS (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_MAXARGS">NPY_MAXARGS (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_MAXDIMS">NPY_MAXDIMS (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_MAXDIMS">NPY_MAXDIMS (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_MERGESORT">NPY_MERGESORT (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_MIN_BUFSIZE">NPY_MIN_BUFSIZE (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_MIN_BUFSIZE">NPY_MIN_BUFSIZE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_NAN">NPY_NAN (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_NAN">NPY_NAN (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_NEEDS_INIT">NPY_NEEDS_INIT (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_NEEDS_INIT">NPY_NEEDS_INIT (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_NEEDS_PYAPI">NPY_NEEDS_PYAPI (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_NEEDS_PYAPI">NPY_NEEDS_PYAPI (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_NEIGHBORHOOD_ITER_CIRCULAR_PADDING">NPY_NEIGHBORHOOD_ITER_CIRCULAR_PADDING (C macro)</a>
 </li>
@@ -4747,47 +4749,51 @@
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_NOSCALAR">NPY_NOSCALAR (C variable)</a>
 </li>
-      <li><a href="reference/c-api/dtype.html#c.NPY_NOTYPE">NPY_NOTYPE (C variable)</a>
+      <li><a href="reference/c-api/dtype.html#c.NPY_NOTYPE">NPY_NOTYPE (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_NSCALARKINDS">NPY_NSCALARKINDS (C variable)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_NSORTS">NPY_NSORTS (C variable)</a>
 </li>
-      <li><a href="reference/c-api/dtype.html#c.NPY_NTYPES">NPY_NTYPES (C variable)</a>
+      <li><a href="reference/c-api/dtype.html#c.NPY_NTYPES">NPY_NTYPES (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_NUM_FLOATTYPE">NPY_NUM_FLOATTYPE (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_NUM_FLOATTYPE">NPY_NUM_FLOATTYPE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_NZERO">NPY_NZERO (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_NZERO">NPY_NZERO (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_OBJECT">NPY_OBJECT (C variable)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_OBJECT_DTYPE_FLAGS">NPY_OBJECT_DTYPE_FLAGS (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_OBJECT_DTYPE_FLAGS">NPY_OBJECT_DTYPE_FLAGS (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_OBJECT_SCALAR">NPY_OBJECT_SCALAR (C variable)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_ORDER">NPY_ORDER (C type)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_OUT_ARRAY">NPY_OUT_ARRAY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_OUT_ARRAY">NPY_OUT_ARRAY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_PI">NPY_PI (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_PI">NPY_PI (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_PI_2">NPY_PI_2 (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_PI_2">NPY_PI_2 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_PI_4">NPY_PI_4 (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_PI_4">NPY_PI_4 (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_PRIORITY">NPY_PRIORITY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_PRIORITY">NPY_PRIORITY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/coremath.html#c.NPY_PZERO">NPY_PZERO (C variable)</a>
+      <li><a href="reference/c-api/coremath.html#c.NPY_PZERO">NPY_PZERO (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_QUICKSORT">NPY_QUICKSORT (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_RAISE">NPY_RAISE (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_RAISE">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_RAISE">NPY_RAISE (C macro)</a>
+
+      <ul>
+        <li><a href="reference/c-api/array.html#c.NPY_RAISE">(C variable)</a>
 </li>
+      </ul></li>
       <li><a href="reference/c-api/array.html#c.NPY_SAFE_CASTING">NPY_SAFE_CASTING (C variable)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_SAME_KIND_CASTING">NPY_SAME_KIND_CASTING (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_SCALAR_PRIORITY">NPY_SCALAR_PRIORITY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_SCALAR_PRIORITY">NPY_SCALAR_PRIORITY (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_SCALARKIND">NPY_SCALARKIND (C type)</a>
 </li>
@@ -4803,35 +4809,35 @@
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_SHORT">NPY_SHORT (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIGINT_OFF">NPY_SIGINT_OFF (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIGINT_OFF">NPY_SIGINT_OFF (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIGINT_ON">NPY_SIGINT_ON (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIGINT_ON">NPY_SIGINT_ON (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIGJMP_BUF">NPY_SIGJMP_BUF (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIGJMP_BUF">NPY_SIGJMP_BUF (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIGLONGJMP">NPY_SIGLONGJMP (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIGLONGJMP">NPY_SIGLONGJMP (C macro)</a>
 </li>
       <li><a href="reference/c-api/coremath.html#c.npy_signbit">npy_signbit (C function)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIGSETJMP">NPY_SIGSETJMP (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIGSETJMP">NPY_SIGSETJMP (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_DOUBLE">NPY_SIZEOF_DOUBLE (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_DOUBLE">NPY_SIZEOF_DOUBLE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_FLOAT">NPY_SIZEOF_FLOAT (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_FLOAT">NPY_SIZEOF_FLOAT (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_INT">NPY_SIZEOF_INT (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_INT">NPY_SIZEOF_INT (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_LONG">NPY_SIZEOF_LONG (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_LONG">NPY_SIZEOF_LONG (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_LONG_DOUBLE">NPY_SIZEOF_LONG_DOUBLE (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_LONG_DOUBLE">NPY_SIZEOF_LONG_DOUBLE (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_LONGLONG">NPY_SIZEOF_LONGLONG (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_LONGLONG">NPY_SIZEOF_LONGLONG (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_PY_INTPTR_T">NPY_SIZEOF_PY_INTPTR_T (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_PY_INTPTR_T">NPY_SIZEOF_PY_INTPTR_T (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_PY_LONG_LONG">NPY_SIZEOF_PY_LONG_LONG (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_PY_LONG_LONG">NPY_SIZEOF_PY_LONG_LONG (C macro)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_SHORT">NPY_SIZEOF_SHORT (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_SIZEOF_SHORT">NPY_SIZEOF_SHORT (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_SORTKIND">NPY_SORTKIND (C type)</a>
 </li>
@@ -4841,13 +4847,13 @@
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_STRING">NPY_STRING (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_SUBTYPE_PRIORITY">NPY_SUBTYPE_PRIORITY (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_SUBTYPE_PRIORITY">NPY_SUBTYPE_PRIORITY (C macro)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_SUCCEED">NPY_SUCCEED (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_SUCCEED">NPY_SUCCEED (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_TIMEDELTA">NPY_TIMEDELTA (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_TRUE">NPY_TRUE (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_TRUE">NPY_TRUE (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_TYPES">NPY_TYPES (C variable)</a>
 </li>
@@ -4881,28 +4887,32 @@
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_UNICODE">NPY_UNICODE (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_UNLIKELY">NPY_UNLIKELY (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_UNLIKELY">NPY_UNLIKELY (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NPY_UNSAFE_CASTING">NPY_UNSAFE_CASTING (C variable)</a>
 </li>
-      <li><a href="reference/c-api/config.html#c.NPY_UNUSED">NPY_UNUSED (C variable)</a>
+      <li><a href="reference/c-api/config.html#c.NPY_UNUSED">NPY_UNUSED (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_USE_GETITEM">NPY_USE_GETITEM (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_USE_GETITEM">NPY_USE_GETITEM (C macro)</a>
 </li>
-      <li><a href="reference/c-api/types-and-structures.html#c.NPY_USE_SETITEM">NPY_USE_SETITEM (C variable)</a>
+      <li><a href="reference/c-api/types-and-structures.html#c.NPY_USE_SETITEM">NPY_USE_SETITEM (C macro)</a>
 </li>
-      <li><a href="reference/c-api/dtype.html#c.NPY_USERDEF">NPY_USERDEF (C variable)</a>
+      <li><a href="reference/c-api/dtype.html#c.NPY_USERDEF">NPY_USERDEF (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.npy_ushort">npy_ushort (C type)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_USHORT">NPY_USHORT (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_VERSION">NPY_VERSION (C variable)</a>
+      <li><a href="reference/c-api/array.html#c.NPY_VERSION">NPY_VERSION (C macro)</a>
 </li>
       <li><a href="reference/c-api/dtype.html#c.NPY_VOID">NPY_VOID (C variable)</a>
 </li>
-      <li><a href="reference/c-api/array.html#c.NPY_WRAP">NPY_WRAP (C variable)</a>, <a href="reference/c-api/array.html#c.NPY_WRAP">[1]</a>
+      <li><a href="reference/c-api/array.html#c.NPY_WRAP">NPY_WRAP (C macro)</a>
+
+      <ul>
+        <li><a href="reference/c-api/array.html#c.NPY_WRAP">(C variable)</a>
 </li>
+      </ul></li>
       <li><a href="reference/c-api/array.html#c.NpyAuxData">NpyAuxData (C type)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.NpyAuxData_CloneFunc">NpyAuxData_CloneFunc (C type)</a>
@@ -4991,6 +5001,8 @@
 </li>
       <li><a href="reference/c-api/iterator.html#c.NpyIter_New">NpyIter_New (C function)</a>
 </li>
+      <li><a href="reference/c-api/iterator.html#c.NpyIter_RemoveAxis">NpyIter_RemoveAxis (C function)</a>
+</li>
       <li><a href="reference/c-api/iterator.html#c.NpyIter_RemoveMultiIndex">NpyIter_RemoveMultiIndex (C function)</a>
 </li>
       <li><a href="reference/c-api/iterator.html#c.NpyIter_RequiresBuffering">NpyIter_RequiresBuffering (C function)</a>
@@ -5018,6 +5030,8 @@
       <li><a href="reference/distutils.html#module-numpy.distutils">numpy.distutils (module)</a>
 </li>
       <li><a href="reference/generated/numpy.distutils.ccompiler.html#module-numpy.distutils.ccompiler">numpy.distutils.ccompiler (module)</a>
+</li>
+      <li><a href="reference/generated/numpy.distutils.ccompiler_opt.html#module-numpy.distutils.ccompiler_opt">numpy.distutils.ccompiler_opt (module)</a>
 </li>
       <li><a href="reference/generated/numpy.distutils.exec_command.html#module-numpy.distutils.exec_command">numpy.distutils.exec_command (module)</a>
 </li>
@@ -5085,6 +5099,8 @@
 </li>
       <li><a href="reference/routines.testing.html#module-numpy.testing">numpy.testing (module)</a>
 </li>
+      <li><a href="reference/typing.html#module-numpy.typing">numpy.typing (module)</a>
+</li>
       <li><a href="reference/generated/numpy.lib.NumpyVersion.html#numpy.lib.NumpyVersion">NumpyVersion (class in numpy.lib)</a>
 </li>
       <li><a href="reference/constants.html#numpy.NZERO">NZERO (in module numpy)</a>
@@ -5113,9 +5129,11 @@
       </ul></li>
       <li><a href="reference/generated/numpy.ones_like.html#numpy.ones_like">ones_like() (in module numpy)</a>
 </li>
+      <li><a href="reference/generated/numpy.DataSource.open.html#numpy.DataSource.open">open() (numpy.DataSource method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="reference/generated/numpy.DataSource.open.html#numpy.DataSource.open">open() (numpy.DataSource method)</a>
+      <li><a href="reference/generated/numpy.lib.format.open_memmap.html#numpy.lib.format.open_memmap">open_memmap() (in module numpy.lib.format)</a>
 </li>
       <li><a href="reference/generated/numpy.nditer.operands.html#numpy.nditer.operands">operands (numpy.nditer attribute)</a>
 </li>
@@ -5198,8 +5216,6 @@
       <li><a href="reference/generated/numpy.linalg.pinv.html#numpy.linalg.pinv">pinv() (in module numpy.linalg)</a>
 </li>
       <li><a href="reference/generated/numpy.place.html#numpy.place">place() (in module numpy)</a>
-</li>
-      <li><a href="reference/generated/numpy.pmt.html#numpy.pmt">pmt() (in module numpy)</a>
 </li>
       <li><a href="reference/random/generated/numpy.random.poisson.html#numpy.random.poisson">poisson() (in module numpy.random)</a>
 
@@ -5337,8 +5353,6 @@
         <li><a href="reference/random/generated/numpy.random.RandomState.power.html#numpy.random.RandomState.power">(numpy.random.RandomState method)</a>
 </li>
       </ul></li>
-      <li><a href="reference/generated/numpy.ppmt.html#numpy.ppmt">ppmt() (in module numpy)</a>
-</li>
       <li><a href="reference/generated/numpy.record.pprint.html#numpy.record.pprint">pprint() (numpy.record method)</a>
 </li>
       <li><a href="reference/generated/numpy.testing.Tester.prepare_test_args.html#numpy.testing.Tester.prepare_test_args">prepare_test_args() (numpy.testing.Tester method)</a>
@@ -5446,11 +5460,9 @@
 </li>
       <li><a href="reference/generated/numpy.putmask.html#numpy.putmask">putmask() (in module numpy)</a>
 </li>
-      <li><a href="reference/generated/numpy.pv.html#numpy.pv">pv() (in module numpy)</a>
-</li>
       <li><a href="reference/c-api/array.html#c.PY_ARRAY_UNIQUE_SYMBOL">PY_ARRAY_UNIQUE_SYMBOL (C macro)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PY_UFUNC_UNIQUE_SYMBOL">PY_UFUNC_UNIQUE_SYMBOL (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PY_UFUNC_UNIQUE_SYMBOL">PY_UFUNC_UNIQUE_SYMBOL (C macro)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.PyArray_All">PyArray_All (C function)</a>
 </li>
@@ -5617,6 +5629,8 @@
       <li><a href="reference/c-api/array.html#c.PyArray_Conjugate">PyArray_Conjugate (C function)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.PyArray_ContiguousFromAny">PyArray_ContiguousFromAny (C function)</a>
+</li>
+      <li><a href="reference/c-api/array.html#c.PyArray_ContiguousFromObject">PyArray_ContiguousFromObject (C function)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.PyArray_ConvertClipmodeSequence">PyArray_ConvertClipmodeSequence (C function)</a>
 </li>
@@ -5816,10 +5830,10 @@
 </li>
       <li><a href="reference/c-api/array.html#c.PyArray_HASFIELDS">PyArray_HASFIELDS (C function)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/c-api/array.html#c.PyArray_INCREF">PyArray_INCREF (C function)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/c-api/array.html#c.PyArray_InitArrFuncs">PyArray_InitArrFuncs (C function)</a>
 </li>
       <li><a href="reference/c-api/array.html#c.PyArray_InnerProduct">PyArray_InnerProduct (C function)</a>
@@ -6361,13 +6375,13 @@
 </li>
       <li><a href="reference/c-api/ufunc.html#c.PyUFunc_gg_g">PyUFunc_gg_g (C function)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_IdentityValue">PyUFunc_IdentityValue (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_IdentityValue">PyUFunc_IdentityValue (C macro)</a>
 </li>
       <li><a href="reference/c-api/types-and-structures.html#c.PyUFunc_Loop1d">PyUFunc_Loop1d (C type)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_MinusOne">PyUFunc_MinusOne (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_MinusOne">PyUFunc_MinusOne (C macro)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_None">PyUFunc_None (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_None">PyUFunc_None (C macro)</a>
 </li>
       <li><a href="reference/c-api/ufunc.html#c.PyUFunc_O_O">PyUFunc_O_O (C function)</a>
 </li>
@@ -6375,7 +6389,7 @@
 </li>
       <li><a href="reference/c-api/ufunc.html#c.PyUFunc_On_Om">PyUFunc_On_Om (C function)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_One">PyUFunc_One (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_One">PyUFunc_One (C macro)</a>
 </li>
       <li><a href="reference/c-api/ufunc.html#c.PyUFunc_OO_O">PyUFunc_OO_O (C function)</a>
 </li>
@@ -6387,13 +6401,13 @@
 </li>
       <li><a href="reference/c-api/ufunc.html#c.PyUFunc_RegisterLoopForType">PyUFunc_RegisterLoopForType (C function)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_ReorderableNone">PyUFunc_ReorderableNone (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_ReorderableNone">PyUFunc_ReorderableNone (C macro)</a>
 </li>
       <li><a href="reference/c-api/ufunc.html#c.PyUFunc_ReplaceLoopBySignature">PyUFunc_ReplaceLoopBySignature (C function)</a>
 </li>
       <li><a href="reference/c-api/types-and-structures.html#c.PyUFunc_Type">PyUFunc_Type (C variable)</a>
 </li>
-      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_Zero">PyUFunc_Zero (C variable)</a>
+      <li><a href="reference/c-api/ufunc.html#c.PyUFunc_Zero">PyUFunc_Zero (C macro)</a>
 </li>
       <li><a href="reference/c-api/types-and-structures.html#c.PyUFuncLoopObject">PyUFuncLoopObject (C type)</a>
 </li>
@@ -6645,8 +6659,6 @@
 </li>
       <li><a href="reference/generated/numpy.RankWarning.html#numpy.RankWarning">RankWarning</a>, <a href="reference/generated/numpy.polynomial.polyutils.RankWarning.html#numpy.polynomial.polyutils.RankWarning">[1]</a>
 </li>
-      <li><a href="reference/generated/numpy.rate.html#numpy.rate">rate() (in module numpy)</a>
-</li>
       <li><a href="reference/generated/numpy.ma.ravel.html#numpy.ma.ravel">ravel (in module numpy.ma)</a>
 </li>
       <li><a href="reference/generated/numpy.ravel.html#numpy.ravel">ravel() (in module numpy)</a>
@@ -6731,10 +6743,10 @@
 </li>
       <li><a href="reference/generated/numpy.testing.suppress_warnings.record.html#numpy.testing.suppress_warnings.record">record() (numpy.testing.suppress_warnings method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/maskedarray.baseclass.html#numpy.ma.MaskedArray.recordmask">recordmask (numpy.ma.MaskedArray attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="reference/generated/numpy.ma.masked_array.recordmask.html#numpy.ma.masked_array.recordmask">recordmask() (numpy.ma.masked_array property)</a>
 </li>
       <li><a href="user/basics.rec.html#numpy.lib.recfunctions.recursive_fill_fields">recursive_fill_fields() (in module numpy.lib.recfunctions)</a>
@@ -7063,6 +7075,8 @@
       <li><a href="reference/generated/numpy.select.html#numpy.select">select() (in module numpy)</a>
 </li>
       <li><a href="glossary.html#term-self"><strong>self</strong></a>
+</li>
+      <li><a href="reference/generated/numpy.polynomial.set_default_printstyle.html#numpy.polynomial.set_default_printstyle">set_default_printstyle() (in module numpy.polynomial)</a>
 </li>
       <li><a href="reference/generated/numpy.ma.set_fill_value.html#numpy.ma.set_fill_value">set_fill_value() (in module numpy.ma)</a>
 
@@ -7676,8 +7690,12 @@
 </li>
       <li><a href="reference/distutils/misc_util.html#numpy.distutils.misc_util.terminal_has_colors">terminal_has_colors() (in module numpy.distutils.misc_util)</a>
 </li>
-      <li><a href="reference/generated/numpy.testing.Tester.test.html#numpy.testing.Tester.test">test() (numpy.testing.Tester method)</a>
+      <li><a href="reference/testing.html#numpy.test">test() (in module numpy)</a>
+
+      <ul>
+        <li><a href="reference/generated/numpy.testing.Tester.test.html#numpy.testing.Tester.test">(numpy.testing.Tester method)</a>
 </li>
+      </ul></li>
       <li><a href="reference/generated/numpy.testing.Tester.html#numpy.testing.Tester">Tester (in module numpy.testing)</a>
 </li>
       <li><a href="reference/generated/numpy.tile.html#numpy.tile">tile() (in module numpy)</a>
@@ -7970,6 +7988,8 @@
         <li><a href="reference/internals.code-explanations.html#index-9">methods reduceat</a>
 </li>
       </ul></li>
+      <li><a href="reference/generated/numpy.ufunc.html#numpy.ufunc">ufunc (class in numpy)</a>
+</li>
       <li><a href="reference/random/generated/numpy.random.uniform.html#numpy.random.uniform">uniform() (in module numpy.random)</a>
 
       <ul>
@@ -8221,10 +8241,10 @@
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

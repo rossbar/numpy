@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Array Iterator API &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Array Iterator API &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy C-API" href="index.html" >
     <link rel="next" title="UFunc API" href="ufunc.html" >
-    <link rel="prev" title="Array API" href="array.html" > 
+    <link rel="prev" title="Array API" href="array.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -417,21 +439,21 @@ iterator.</p>
 <p>Flags that may be passed in <code class="docutils literal notranslate"><span class="pre">flags</span></code>, applying to the whole
 iterator, are:</p>
 <blockquote>
-<div><dl class="var">
+<div><dl class="macro">
 <dt id="c.NPY_ITER_C_INDEX">
 <code class="sig-name descname">NPY_ITER_C_INDEX</code><a class="headerlink" href="#c.NPY_ITER_C_INDEX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to track a raveled flat index matching C
 order. This option cannot be used with <a class="reference internal" href="#c.NPY_ITER_F_INDEX" title="NPY_ITER_F_INDEX"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_F_INDEX</span></code></a>.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_F_INDEX">
 <code class="sig-name descname">NPY_ITER_F_INDEX</code><a class="headerlink" href="#c.NPY_ITER_F_INDEX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to track a raveled flat index matching Fortran
 order. This option cannot be used with <a class="reference internal" href="#c.NPY_ITER_C_INDEX" title="NPY_ITER_C_INDEX"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_C_INDEX</span></code></a>.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_MULTI_INDEX">
 <code class="sig-name descname">NPY_ITER_MULTI_INDEX</code><a class="headerlink" href="#c.NPY_ITER_MULTI_INDEX" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to track a multi-index.
@@ -446,7 +468,7 @@ However, it is possible to remove axes again and use the iterator
 normally if the size is small enough after removal.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_EXTERNAL_LOOP">
 <code class="sig-name descname">NPY_ITER_EXTERNAL_LOOP</code><a class="headerlink" href="#c.NPY_ITER_EXTERNAL_LOOP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to skip iteration of the innermost
@@ -455,7 +477,7 @@ loop, requiring the user of the iterator to handle it.</p>
 <a class="reference internal" href="#c.NPY_ITER_F_INDEX" title="NPY_ITER_F_INDEX"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_F_INDEX</span></code></a>, and <a class="reference internal" href="#c.NPY_ITER_MULTI_INDEX" title="NPY_ITER_MULTI_INDEX"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_MULTI_INDEX</span></code></a>.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_DONT_NEGATE_STRIDES">
 <code class="sig-name descname">NPY_ITER_DONT_NEGATE_STRIDES</code><a class="headerlink" href="#c.NPY_ITER_DONT_NEGATE_STRIDES" title="Permalink to this definition">¶</a></dt>
 <dd><p>This only affects the iterator when <a class="reference internal" href="array.html#c.NPY_KEEPORDER" title="NPY_KEEPORDER"><code class="xref c c-type docutils literal notranslate"><span class="pre">NPY_KEEPORDER</span></code></a> is
@@ -468,7 +490,7 @@ but don’t want an axis reversed. This is the behavior of
 <code class="docutils literal notranslate"><span class="pre">numpy.ravel(a,</span> <span class="pre">order='K')</span></code>, for instance.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_COMMON_DTYPE">
 <code class="sig-name descname">NPY_ITER_COMMON_DTYPE</code><a class="headerlink" href="#c.NPY_ITER_COMMON_DTYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to convert all the operands to a common
@@ -478,7 +500,7 @@ Copying or buffering must be enabled.</p>
 flag.  Instead, set the requested dtype for all the operands.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_REFS_OK">
 <code class="sig-name descname">NPY_ITER_REFS_OK</code><a class="headerlink" href="#c.NPY_ITER_REFS_OK" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates that arrays with reference types (object
@@ -489,7 +511,7 @@ is enabled, the caller must be sure to check whether
 it may not release the GIL during iteration.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_ZEROSIZE_OK">
 <code class="sig-name descname">NPY_ITER_ZEROSIZE_OK</code><a class="headerlink" href="#c.NPY_ITER_ZEROSIZE_OK" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicates that arrays with a size of zero should be permitted.
@@ -499,7 +521,7 @@ than zero before entering the iteration loop.
 Currently only the operands are checked, not a forced shape.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_REDUCE_OK">
 <code class="sig-name descname">NPY_ITER_REDUCE_OK</code><a class="headerlink" href="#c.NPY_ITER_REDUCE_OK" title="Permalink to this definition">¶</a></dt>
 <dd><p>Permits writeable operands with a dimension with zero
@@ -518,7 +540,7 @@ after initializing the allocated operand to prepare the
 buffers.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_RANGED">
 <code class="sig-name descname">NPY_ITER_RANGED</code><a class="headerlink" href="#c.NPY_ITER_RANGED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Enables support for iteration of sub-ranges of the full
@@ -533,7 +555,7 @@ would require special handling, effectively making it more
 like the buffered version.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_BUFFERED">
 <code class="sig-name descname">NPY_ITER_BUFFERED</code><a class="headerlink" href="#c.NPY_ITER_BUFFERED" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to store buffering data, and use buffering
@@ -559,7 +581,7 @@ the inner loops may become smaller depending
 on the structure of the reduction.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_GROWINNER">
 <code class="sig-name descname">NPY_ITER_GROWINNER</code><a class="headerlink" href="#c.NPY_ITER_GROWINNER" title="Permalink to this definition">¶</a></dt>
 <dd><p>When buffering is enabled, this allows the size of the inner
@@ -569,7 +591,7 @@ data, rather than anything with small cache-friendly arrays
 of temporary values for each inner loop.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_DELAY_BUFALLOC">
 <code class="sig-name descname">NPY_ITER_DELAY_BUFALLOC</code><a class="headerlink" href="#c.NPY_ITER_DELAY_BUFALLOC" title="Permalink to this definition">¶</a></dt>
 <dd><p>When buffering is enabled, this delays allocation of the
@@ -586,7 +608,7 @@ Then, call <a class="reference internal" href="#c.NpyIter_Reset" title="NpyIter_
 with their initial values.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_COPY_IF_OVERLAP">
 <code class="sig-name descname">NPY_ITER_COPY_IF_OVERLAP</code><a class="headerlink" href="#c.NPY_ITER_COPY_IF_OVERLAP" title="Permalink to this definition">¶</a></dt>
 <dd><p>If any write operand has overlap with any read operand, eliminate all
@@ -606,17 +628,17 @@ computation may be undefined without this flag!</strong></p>
 </div></blockquote>
 <p>Flags that may be passed in <code class="docutils literal notranslate"><span class="pre">op_flags[i]</span></code>, where <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">nop</span></code>:</p>
 <blockquote>
-<div><dl class="var">
+<div><dl class="macro">
 <dt id="c.NPY_ITER_READWRITE">
 <code class="sig-name descname">NPY_ITER_READWRITE</code><a class="headerlink" href="#c.NPY_ITER_READWRITE" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_READONLY">
 <code class="sig-name descname">NPY_ITER_READONLY</code><a class="headerlink" href="#c.NPY_ITER_READONLY" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_WRITEONLY">
 <code class="sig-name descname">NPY_ITER_WRITEONLY</code><a class="headerlink" href="#c.NPY_ITER_WRITEONLY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Indicate how the user of the iterator will read or write
@@ -627,7 +649,7 @@ semantics. The data will be written back to the original array
 when <code class="docutils literal notranslate"><span class="pre">NpyIter_Deallocate</span></code> is called.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_COPY">
 <code class="sig-name descname">NPY_ITER_COPY</code><a class="headerlink" href="#c.NPY_ITER_COPY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allow a copy of <code class="docutils literal notranslate"><span class="pre">op[i]</span></code> to be made if it does not
@@ -635,7 +657,7 @@ meet the data type or alignment requirements as specified
 by the constructor flags and parameters.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_UPDATEIFCOPY">
 <code class="sig-name descname">NPY_ITER_UPDATEIFCOPY</code><a class="headerlink" href="#c.NPY_ITER_UPDATEIFCOPY" title="Permalink to this definition">¶</a></dt>
 <dd><p>Triggers <a class="reference internal" href="#c.NPY_ITER_COPY" title="NPY_ITER_COPY"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_COPY</span></code></a>, and when an array operand
@@ -648,17 +670,17 @@ to back to <code class="docutils literal notranslate"><span class="pre">op[i]</s
 doing the unnecessary copy operation.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_NBO">
 <code class="sig-name descname">NPY_ITER_NBO</code><a class="headerlink" href="#c.NPY_ITER_NBO" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_ALIGNED">
 <code class="sig-name descname">NPY_ITER_ALIGNED</code><a class="headerlink" href="#c.NPY_ITER_ALIGNED" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_CONTIG">
 <code class="sig-name descname">NPY_ITER_CONTIG</code><a class="headerlink" href="#c.NPY_ITER_CONTIG" title="Permalink to this definition">¶</a></dt>
 <dd><p>Causes the iterator to provide data for <code class="docutils literal notranslate"><span class="pre">op[i]</span></code>
@@ -676,7 +698,7 @@ the NBO flag overrides it and the requested data type is
 converted to be in native byte order.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_ALLOCATE">
 <code class="sig-name descname">NPY_ITER_ALLOCATE</code><a class="headerlink" href="#c.NPY_ITER_ALLOCATE" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is for output arrays, and requires that the flag
@@ -699,7 +721,7 @@ getting the i-th object in the returned C array.  The caller
 must call Py_INCREF on it to claim a reference to the array.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_NO_SUBTYPE">
 <code class="sig-name descname">NPY_ITER_NO_SUBTYPE</code><a class="headerlink" href="#c.NPY_ITER_NO_SUBTYPE" title="Permalink to this definition">¶</a></dt>
 <dd><p>For use with <a class="reference internal" href="#c.NPY_ITER_ALLOCATE" title="NPY_ITER_ALLOCATE"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_ALLOCATE</span></code></a>, this flag disables
@@ -709,14 +731,14 @@ it to be a straight ndarray.</p>
 <code class="docutils literal notranslate"><span class="pre">NpyIter_GetWrappedOutput</span></code> and remove this flag?</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_NO_BROADCAST">
 <code class="sig-name descname">NPY_ITER_NO_BROADCAST</code><a class="headerlink" href="#c.NPY_ITER_NO_BROADCAST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Ensures that the input or output matches the iteration
 dimensions exactly.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_ARRAYMASK">
 <code class="sig-name descname">NPY_ITER_ARRAYMASK</code><a class="headerlink" href="#c.NPY_ITER_ARRAYMASK" title="Permalink to this definition">¶</a></dt>
 <dd><div class="versionadded">
@@ -741,7 +763,7 @@ modified. This is useful when the mask should be a combination
 of input masks.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_WRITEMASKED">
 <code class="sig-name descname">NPY_ITER_WRITEMASKED</code><a class="headerlink" href="#c.NPY_ITER_WRITEMASKED" title="Permalink to this definition">¶</a></dt>
 <dd><div class="versionadded">
@@ -761,7 +783,7 @@ returns true from the corresponding element in the ARRAYMASK
 operand.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE">
 <code class="sig-name descname">NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE</code><a class="headerlink" href="#c.NPY_ITER_OVERLAP_ASSUME_ELEMENTWISE" title="Permalink to this definition">¶</a></dt>
 <dd><p>In memory overlap checks, assume that operands with
@@ -849,8 +871,8 @@ a Python exception.</p>
 </dd></dl>
 
 <dl class="function">
-<dt>
-<code class="sig-name descname">int NpyIter_RemoveAxis(NpyIter* iter, int axis)``</code></dt>
+<dt id="c.NpyIter_RemoveAxis">
+int <code class="sig-name descname">NpyIter_RemoveAxis</code><span class="sig-paren">(</span><a class="reference internal" href="#c.NpyIter" title="NpyIter">NpyIter</a>*<em> iter</em>, int<em> axis</em><span class="sig-paren">)</span><a class="headerlink" href="#c.NpyIter_RemoveAxis" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes an axis from iteration.  This requires that
 <a class="reference internal" href="#c.NPY_ITER_MULTI_INDEX" title="NPY_ITER_MULTI_INDEX"><code class="xref c c-data docutils literal notranslate"><span class="pre">NPY_ITER_MULTI_INDEX</span></code></a> was set for iterator creation, and does
 not work if buffering is enabled or an index is being tracked. This
@@ -1139,7 +1161,7 @@ int <code class="sig-name descname">NpyIter_GetNOp</code><span class="sig-paren"
 the iterator be tracking a multi-index, and that buffering not
 be enabled.</p>
 <p>This may be used when you want to match up operand axes in
-some fashion, then remove them with <code class="xref c c-func docutils literal notranslate"><span class="pre">NpyIter_RemoveAxis</span></code> to
+some fashion, then remove them with <a class="reference internal" href="#c.NpyIter_RemoveAxis" title="NpyIter_RemoveAxis"><code class="xref c c-func docutils literal notranslate"><span class="pre">NpyIter_RemoveAxis</span></code></a> to
 handle their processing manually.  By calling this function
 before removing the axes, you can get the strides for the
 manual processing.</p>
@@ -1166,7 +1188,7 @@ so the caller does not gain any references to the Descrs.</p>
 
 <dl class="function">
 <dt id="c.NpyIter_GetOperandArray">
-<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>** <code class="sig-name descname">NpyIter_GetOperandArray</code><span class="sig-paren">(</span><a class="reference internal" href="#c.NpyIter" title="NpyIter">NpyIter</a>*<em> iter</em><span class="sig-paren">)</span><a class="headerlink" href="#c.NpyIter_GetOperandArray" title="Permalink to this definition">¶</a></dt>
+<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>** <code class="sig-name descname">NpyIter_GetOperandArray</code><span class="sig-paren">(</span><a class="reference internal" href="#c.NpyIter" title="NpyIter">NpyIter</a>*<em> iter</em><span class="sig-paren">)</span><a class="headerlink" href="#c.NpyIter_GetOperandArray" title="Permalink to this definition">¶</a></dt>
 <dd><p>This gives back a pointer to the <code class="docutils literal notranslate"><span class="pre">nop</span></code> operand PyObjects
 that are being iterated.  The result points into <code class="docutils literal notranslate"><span class="pre">iter</span></code>,
 so the caller does not gain any references to the PyObjects.</p>
@@ -1174,7 +1196,7 @@ so the caller does not gain any references to the PyObjects.</p>
 
 <dl class="function">
 <dt id="c.NpyIter_GetIterView">
-<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>* <code class="sig-name descname">NpyIter_GetIterView</code><span class="sig-paren">(</span><a class="reference internal" href="#c.NpyIter" title="NpyIter">NpyIter</a>*<em> iter</em>, <a class="reference internal" href="dtype.html#c.npy_intp" title="npy_intp">npy_intp</a><em> i</em><span class="sig-paren">)</span><a class="headerlink" href="#c.NpyIter_GetIterView" title="Permalink to this definition">¶</a></dt>
+<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>* <code class="sig-name descname">NpyIter_GetIterView</code><span class="sig-paren">(</span><a class="reference internal" href="#c.NpyIter" title="NpyIter">NpyIter</a>*<em> iter</em>, <a class="reference internal" href="dtype.html#c.npy_intp" title="npy_intp">npy_intp</a><em> i</em><span class="sig-paren">)</span><a class="headerlink" href="#c.NpyIter_GetIterView" title="Permalink to this definition">¶</a></dt>
 <dd><p>This gives back a reference to a new ndarray view, which is a view
 into the i-th object in the array <a class="reference internal" href="#c.NpyIter_GetOperandArray" title="NpyIter_GetOperandArray"><code class="xref c c-func docutils literal notranslate"><span class="pre">NpyIter_GetOperandArray</span></code></a>,
 whose dimensions and strides match the internal optimized
@@ -1554,10 +1576,10 @@ multiple operands instead.)</p></td>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

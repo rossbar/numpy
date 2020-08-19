@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.linalg.qr &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.linalg.qr &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.linalg.svd" href="numpy.linalg.svd.html" >
-    <link rel="prev" title="numpy.linalg.cholesky" href="numpy.linalg.cholesky.html" > 
+    <link rel="prev" title="numpy.linalg.cholesky" href="numpy.linalg.cholesky.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,14 +138,14 @@
 <h1>numpy.linalg.qr<a class="headerlink" href="#numpy-linalg-qr" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.qr">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">qr</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">mode='reduced'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L774-L983"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.qr" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">qr</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">mode='reduced'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L773-L982"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.qr" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the qr factorization of a matrix.</p>
 <p>Factor the matrix <em class="xref py py-obj">a</em> as <em>qr</em>, where <em class="xref py py-obj">q</em> is orthonormal and <em class="xref py py-obj">r</em> is
 upper-triangular.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like, shape (M, N)</span></dt><dd><p>Matrix to be factored.</p>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (M, N)</span></dt><dd><p>Matrix to be factored.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">{‘reduced’, ‘complete’, ‘r’, ‘raw’}, optional</span></dt><dd><p>If K = min(M, N), then</p>
 <ul class="simple">
@@ -145,13 +167,13 @@ explanation.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>q</strong><span class="classifier">ndarray of float or complex, optional</span></dt><dd><p>A matrix with orthonormal columns. When mode = ‘complete’ the
+<dd class="field-even"><dl>
+<dt><strong>q</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or complex, optional</span></dt><dd><p>A matrix with orthonormal columns. When mode = ‘complete’ the
 result is an orthogonal/unitary matrix depending on whether or not
 a is real/complex. The determinant may be either +/- 1 in that
 case.</p>
 </dd>
-<dt><strong>r</strong><span class="classifier">ndarray of float or complex, optional</span></dt><dd><p>The upper-triangular matrix.</p>
+<dt><strong>r</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a> or complex, optional</span></dt><dd><p>The upper-triangular matrix.</p>
 </dd>
 <dt><strong>(h, tau)</strong><span class="classifier">ndarrays of np.double or np.cdouble, optional</span></dt><dd><p>The array h contains the Householder reflectors that generate q
 along with r. The tau array contains scaling factors for the
@@ -161,7 +183,7 @@ reflectors. In the deprecated  ‘economic’ mode only h is returned.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>LinAlgError</strong></dt><dd><p>If factoring fails.</p>
+<dt>LinAlgError</dt><dd><p>If factoring fails.</p>
 </dd>
 </dl>
 </dd>
@@ -169,9 +191,9 @@ reflectors. In the deprecated  ‘economic’ mode only h is returned.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.qr.html#scipy.linalg.qr" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.qr</span></code></a></dt><dd><p>Similar function in SciPy.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.qr.html#scipy.linalg.qr" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.qr</span></code></a></dt><dd><p>Similar function in SciPy.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.rq.html#scipy.linalg.rq" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.rq</span></code></a></dt><dd><p>Compute RQ decomposition of a matrix.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.rq.html#scipy.linalg.rq" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.rq</span></code></a></dt><dd><p>Compute RQ decomposition of a matrix.</p>
 </dd>
 </dl>
 </div>
@@ -255,10 +277,10 @@ however, we simply use <a class="reference internal" href="numpy.linalg.lstsq.ht
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

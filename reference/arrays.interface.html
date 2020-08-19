@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>The Array Interface &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>The Array Interface &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="Array objects" href="arrays.html" >
     <link rel="next" title="Datetimes and Timedeltas" href="arrays.datetime.html" >
-    <link rel="prev" title="numpy.ma.where" href="generated/numpy.ma.where.html" > 
+    <link rel="prev" title="numpy.ma.where" href="generated/numpy.ma.where.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" >NumPy Reference</a></li>
@@ -128,7 +150,7 @@
 <p class="admonition-title">Note</p>
 <p>This page describes the numpy-specific API for accessing the contents of
 a numpy array from other C extensions. <span class="target" id="index-1"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3118"><strong>PEP 3118</strong></a> –
-<a class="reference external" href="https://docs.python.org/dev/c-api/buffer.html#c.PyObject_GetBuffer" title="(in Python v3.9)"><code class="xref c c-func docutils literal notranslate"><span class="pre">The</span> <span class="pre">Revised</span> <span class="pre">Buffer</span> <span class="pre">Protocol</span></code></a> introduces
+<a class="reference external" href="https://docs.python.org/dev/c-api/buffer.html#c.PyObject_GetBuffer" title="(in Python v3.10)"><code class="xref c c-func docutils literal notranslate"><span class="pre">The</span> <span class="pre">Revised</span> <span class="pre">Buffer</span> <span class="pre">Protocol</span></code></a> introduces
 similar, standardized API to Python 2.6 and 3.0 for any extension
 module to use. <a class="reference external" href="http://cython.org/">Cython</a>’s buffer array support
 uses the <span class="target" id="index-2"></span><a class="pep reference external" href="https://www.python.org/dev/peps/pep-3118"><strong>PEP 3118</strong></a> API; see the <a class="reference external" href="https://github.com/cython/cython/wiki/tutorials-numpy">Cython numpy
@@ -181,7 +203,7 @@ raising an error when overflow is possible, or by using
 </div></blockquote>
 <p><strong>typestr</strong> (required)</p>
 <blockquote>
-<div><p>A string providing the basic type of the homogenous array The
+<div><p>A string providing the basic type of the homogeneous array The
 basic string format consists of 3 parts: a character describing
 the byteorder of the data (<code class="docutils literal notranslate"><span class="pre">&lt;</span></code>: little-endian, <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>:
 big-endian, <code class="docutils literal notranslate"><span class="pre">|</span></code>: not-relevant), a character code giving the
@@ -220,13 +242,13 @@ bits in the bit field).</p></td>
 <td><p>Datetime</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">O</span></code></p></td>
-<td><p>Object (i.e. the memory contains a pointer to <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyObject</span></code></a>)</p></td>
+<td><p>Object (i.e. the memory contains a pointer to <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyObject</span></code></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">S</span></code></p></td>
 <td><p>String (fixed-length sequence of char)</p></td>
 </tr>
 <tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">U</span></code></p></td>
-<td><p>Unicode (fixed-length sequence of <a class="reference external" href="https://docs.python.org/dev/c-api/unicode.html#c.Py_UNICODE" title="(in Python v3.9)"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_UNICODE</span></code></a>)</p></td>
+<td><p>Unicode (fixed-length sequence of <a class="reference external" href="https://docs.python.org/dev/c-api/unicode.html#c.Py_UNICODE" title="(in Python v3.10)"><code class="xref c c-type docutils literal notranslate"><span class="pre">Py_UNICODE</span></code></a>)</p></td>
 </tr>
 <tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">V</span></code></p></td>
 <td><p>Other (void * – each item is a fixed-size chunk of memory)</p></td>
@@ -271,7 +293,7 @@ data (in other words any offset is always ignored in this
 case). The second entry in the tuple is a read-only flag (true
 means the data area is read-only).</p>
 <p>This attribute can also be an object exposing the
-<a class="reference external" href="https://docs.python.org/dev/c-api/objbuffer.html#c.PyObject_AsCharBuffer" title="(in Python v3.9)"><code class="xref c c-func docutils literal notranslate"><span class="pre">buffer</span> <span class="pre">interface</span></code></a> which
+<code class="xref c c-func docutils literal notranslate"><span class="pre">buffer</span> <span class="pre">interface</span></code> which
 will be used to share the data. If this key is not present (or
 returns None), then memory sharing will be done
 through the buffer interface of the object itself.  In this
@@ -334,7 +356,7 @@ array using only one attribute lookup and a well-defined C-structure.</p>
 pointer to a filled <a class="reference internal" href="c-api/types-and-structures.html#c.PyArrayInterface" title="PyArrayInterface"><code class="xref c c-type docutils literal notranslate"><span class="pre">PyArrayInterface</span></code></a> structure.  Memory
 for the structure is dynamically created and the <code class="xref c c-type docutils literal notranslate"><span class="pre">PyCObject</span></code>
 is also created with an appropriate destructor so the retriever of
-this attribute simply has to apply <a class="reference external" href="https://docs.python.org/dev/c-api/refcounting.html#c.Py_DECREF" title="(in Python v3.9)"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_DECREF</span></code></a> to the
+this attribute simply has to apply <a class="reference external" href="https://docs.python.org/dev/c-api/refcounting.html#c.Py_DECREF" title="(in Python v3.10)"><code class="xref c c-func docutils literal notranslate"><span class="pre">Py_DECREF</span></code></a> to the
 object returned by this attribute when it is finished.  Also,
 either the data needs to be copied out, or a reference to the
 object exposing this attribute must be held to ensure the data is
@@ -489,10 +511,10 @@ had to access separately the attributes:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

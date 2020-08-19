@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.i0 &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.i0 &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Mathematical functions" href="../routines.math.html" >
     <link rel="next" title="numpy.sinc" href="numpy.sinc.html" >
-    <link rel="prev" title="numpy.logaddexp2" href="numpy.logaddexp2.html" > 
+    <link rel="prev" title="numpy.logaddexp2" href="numpy.logaddexp2.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,34 +138,28 @@
 <h1>numpy.i0<a class="headerlink" href="#numpy-i0" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.i0">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">i0</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L3041-L3101"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.i0" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">i0</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L3197-L3254"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.i0" title="Permalink to this definition">¶</a></dt>
 <dd><p>Modified Bessel function of the first kind, order 0.</p>
-<p>Usually denoted <img class="math" src="../../_images/math/adcd782280d325715f28dea464d7791b13dfe769.svg" alt="I_0"/>.  This function does broadcast, but will <em>not</em>
-“up-cast” int dtype arguments unless accompanied by at least one float or
-complex dtype argument (see Raises below).</p>
-<dl class="field-list simple">
+<p>Usually denoted <img class="math" src="../../_images/math/adcd782280d325715f28dea464d7791b13dfe769.svg" alt="I_0"/>.</p>
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">array_like, dtype float or complex</span></dt><dd><p>Argument of the Bessel function.</p>
+<dd class="field-odd"><dl>
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Argument of the Bessel function.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray, shape = x.shape, dtype = x.dtype</span></dt><dd><p>The modified Bessel function evaluated at each of the elements of <em class="xref py py-obj">x</em>.</p>
-</dd>
-</dl>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>TypeError: array cannot be safely cast to required type</strong></dt><dd><p>If argument consists exclusively of int dtypes.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape = x.shape, dtype = <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The modified Bessel function evaluated at each of the elements of <em class="xref py py-obj">x</em>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.i0.html#scipy.special.i0" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.special.i0</span></code></a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.iv.html#scipy.special.iv" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.special.iv</span></code></a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.ive.html#scipy.special.ive" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.special.ive</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.i0.html#scipy.special.i0" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.special.i0</span></code></a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.iv.html#scipy.special.iv" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.special.iv</span></code></a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.ive.html#scipy.special.ive" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.special.ive</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>The scipy implementation is recommended over this function: it is a
@@ -167,14 +183,14 @@ Functions</em>, 10th printing, New York: Dover, 1964, pp. 379.
 <a class="reference external" href="http://www.math.sfu.ca/~cbm/aands/page_379.htm">http://www.math.sfu.ca/~cbm/aands/page_379.htm</a></p>
 </dd>
 <dt class="label" id="rfd38a370b188-3"><span class="brackets"><a class="fn-backref" href="#id3">3</a></span></dt>
-<dd><p><a class="reference external" href="http://kobesearch.cpan.org/htdocs/Math-Cephes/Math/Cephes.html">http://kobesearch.cpan.org/htdocs/Math-Cephes/Math/Cephes.html</a></p>
+<dd><p><a class="reference external" href="https://metacpan.org/pod/distribution/Math-Cephes/lib/Math/Cephes.pod#i0:-Modified-Bessel-function-of-order-zero">https://metacpan.org/pod/distribution/Math-Cephes/lib/Math/Cephes.pod#i0:-Modified-Bessel-function-of-order-zero</a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">i0</span><span class="p">(</span><span class="mf">0.</span><span class="p">)</span>
-<span class="go">array(1.0)  # may vary</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">i0</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">])</span>
-<span class="go">array([ 1.00000000+0.j        ,  0.18785373+0.64616944j])  # may vary</span>
+<span class="go">array(1.0)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">i0</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">array([1.        , 1.26606588, 2.2795853 , 4.88079259])</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -202,10 +218,10 @@ Functions</em>, 10th printing, New York: Dover, 1964, pp. 379.
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

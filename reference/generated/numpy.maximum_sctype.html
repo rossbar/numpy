@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.maximum_sctype &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.maximum_sctype &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Data type routines" href="../routines.dtype.html" >
-    <link rel="next" title="Optionally Scipy-accelerated routines (numpy.dual)" href="../routines.dual.html" >
-    <link rel="prev" title="numpy.mintypecode" href="numpy.mintypecode.html" > 
+    <link rel="next" title="Optionally SciPy-accelerated routines (numpy.dual)" href="../routines.dual.html" >
+    <link rel="prev" title="numpy.mintypecode" href="numpy.mintypecode.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -70,7 +92,7 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="../routines.dual.html" title="Optionally Scipy-accelerated routines (numpy.dual)"
+        <a href="../routines.dual.html" title="Optionally SciPy-accelerated routines (numpy.dual)"
            accesskey="N">next</a>
       </li>
       <li class="active">
@@ -92,7 +114,7 @@
                         title="previous chapter">numpy.mintypecode</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="../routines.dual.html"
-                        title="next chapter">Optionally Scipy-accelerated routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.dual</span></code>)</a></p>
+                        title="next chapter">Optionally SciPy-accelerated routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.dual</span></code>)</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -116,7 +138,7 @@
 <h1>numpy.maximum_sctype<a class="headerlink" href="#numpy-maximum-sctype" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.maximum_sctype">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">maximum_sctype</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numerictypes.py#L136-L183"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.maximum_sctype" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">maximum_sctype</code><span class="sig-paren">(</span><em class="sig-param">t</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numerictypes.py#L135-L182"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.maximum_sctype" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the scalar type of highest precision of the same kind as the input.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -135,7 +157,10 @@ is convertible to a <a class="reference internal" href="numpy.dtype.html#numpy.d
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.obj2sctype.html#numpy.obj2sctype" title="numpy.obj2sctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj2sctype</span></code></a>, <a class="reference internal" href="numpy.mintypecode.html#numpy.mintypecode" title="numpy.mintypecode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mintypecode</span></code></a>, <a class="reference internal" href="numpy.sctype2char.html#numpy.sctype2char" title="numpy.sctype2char"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sctype2char</span></code></a>, <a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.obj2sctype.html#numpy.obj2sctype" title="numpy.obj2sctype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">obj2sctype</span></code></a>, <a class="reference internal" href="numpy.mintypecode.html#numpy.mintypecode" title="numpy.mintypecode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mintypecode</span></code></a>, <a class="reference internal" href="numpy.sctype2char.html#numpy.sctype2char" title="numpy.sctype2char"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sctype2char</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">maximum_sctype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
@@ -181,10 +206,10 @@ is convertible to a <a class="reference internal" href="numpy.dtype.html#numpy.d
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

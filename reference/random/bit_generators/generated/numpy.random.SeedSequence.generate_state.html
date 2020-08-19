@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.random.SeedSequence.generate_state &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.random.SeedSequence.generate_state &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../../../about.html" >
     <link rel="index" title="Index" href="../../../../genindex.html" >
     <link rel="search" title="Search" href="../../../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../../../index.html" >
     <link rel="up" title="numpy.random.SeedSequence" href="numpy.random.SeedSequence.html" >
     <link rel="next" title="numpy.random.SeedSequence.spawn" href="numpy.random.SeedSequence.spawn.html" >
-    <link rel="prev" title="numpy.random.SeedSequence" href="numpy.random.SeedSequence.html" > 
+    <link rel="prev" title="numpy.random.SeedSequence" href="numpy.random.SeedSequence.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../../../index.html">
-      <img border=0 alt="NumPy" src="../../../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../../../index.html" >NumPy Reference</a></li>
@@ -123,10 +145,10 @@
 <dd><p>Return the requested number of words for PRNG seeding.</p>
 <p>A BitGenerator should call this method in its constructor with
 an appropriate <em class="xref py py-obj">n_words</em> parameter to properly seed itself.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>n_words</strong><span class="classifier">int</span></dt><dd></dd>
+<dd class="field-odd"><dl>
+<dt><strong>n_words</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a></span></dt><dd></dd>
 <dt><strong>dtype</strong><span class="classifier">np.uint32 or np.uint64, optional</span></dt><dd><p>The size of each word. This should only be either <em class="xref py py-obj">uint32</em> or
 <em class="xref py py-obj">uint64</em>. Strings (<em class="xref py py-obj">‘uint32’</em>, <em class="xref py py-obj">‘uint64’</em>) are fine. Note that
 requesting <em class="xref py py-obj">uint64</em> will draw twice as many bits as <em class="xref py py-obj">uint32</em> for
@@ -136,8 +158,8 @@ express their states as `uint64</em> arrays.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>state</strong><span class="classifier">uint32 or uint64 array, shape=(n_words,)</span></dt><dd></dd>
+<dd class="field-even"><dl>
+<dt><strong>state</strong><span class="classifier">uint32 or uint64 <a class="reference internal" href="../../../generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>, shape=(n_words,)</span></dt><dd></dd>
 </dl>
 </dd>
 </dl>
@@ -166,10 +188,10 @@ express their states as `uint64</em> arrays.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

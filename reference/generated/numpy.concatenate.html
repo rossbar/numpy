@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.concatenate &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.concatenate &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Array manipulation routines" href="../routines.array-manipulation.html" >
     <link rel="next" title="numpy.stack" href="numpy.stack.html" >
-    <link rel="prev" title="numpy.require" href="numpy.require.html" > 
+    <link rel="prev" title="numpy.require" href="numpy.require.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -118,24 +140,24 @@
 <dt id="numpy.concatenate">
 <code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">concatenate</code><span class="sig-paren">(</span><em class="sig-param">(a1</em>, <em class="sig-param">a2</em>, <em class="sig-param">...)</em>, <em class="sig-param">axis=0</em>, <em class="sig-param">out=None</em><span class="sig-paren">)</span><a class="headerlink" href="#numpy.concatenate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Join a sequence of arrays along an existing axis.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a1, a2, …</strong><span class="classifier">sequence of array_like</span></dt><dd><p>The arrays must have the same shape, except in the dimension
+<dd class="field-odd"><dl>
+<dt><strong>a1, a2, …</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>The arrays must have the same shape, except in the dimension
 corresponding to <em class="xref py py-obj">axis</em> (the first, by default).</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>The axis along which the arrays will be joined.  If axis is None,
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The axis along which the arrays will be joined.  If axis is None,
 arrays are flattened before use.  Default is 0.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>If provided, the destination to place the result. The shape must be
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>If provided, the destination to place the result. The shape must be
 correct, matching that of what concatenate would have returned if no
 out argument were specified.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>res</strong><span class="classifier">ndarray</span></dt><dd><p>The concatenated array.</p>
+<dd class="field-even"><dl>
+<dt><strong>res</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The concatenated array.</p>
 </dd>
 </dl>
 </dd>
@@ -149,21 +171,23 @@ out argument were specified.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.split.html#numpy.split" title="numpy.split"><code class="xref py py-obj docutils literal notranslate"><span class="pre">split</span></code></a></dt><dd><p>Split array into a list of multiple sub-arrays of equal size.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.hsplit.html#numpy.hsplit" title="numpy.hsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hsplit</span></code></a></dt><dd><p>Split array into multiple sub-arrays horizontally (column wise)</p>
+<dt><a class="reference internal" href="numpy.hsplit.html#numpy.hsplit" title="numpy.hsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hsplit</span></code></a></dt><dd><p>Split array into multiple sub-arrays horizontally (column wise).</p>
 </dd>
-<dt><a class="reference internal" href="numpy.vsplit.html#numpy.vsplit" title="numpy.vsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsplit</span></code></a></dt><dd><p>Split array into multiple sub-arrays vertically (row wise)</p>
+<dt><a class="reference internal" href="numpy.vsplit.html#numpy.vsplit" title="numpy.vsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsplit</span></code></a></dt><dd><p>Split array into multiple sub-arrays vertically (row wise).</p>
 </dd>
 <dt><a class="reference internal" href="numpy.dsplit.html#numpy.dsplit" title="numpy.dsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dsplit</span></code></a></dt><dd><p>Split array into multiple sub-arrays along the 3rd axis (depth).</p>
 </dd>
 <dt><a class="reference internal" href="numpy.stack.html#numpy.stack" title="numpy.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a></dt><dd><p>Stack a sequence of arrays along a new axis.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.hstack.html#numpy.hstack" title="numpy.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a></dt><dd><p>Stack arrays in sequence horizontally (column wise)</p>
-</dd>
-<dt><a class="reference internal" href="numpy.vstack.html#numpy.vstack" title="numpy.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vstack</span></code></a></dt><dd><p>Stack arrays in sequence vertically (row wise)</p>
-</dd>
-<dt><a class="reference internal" href="numpy.dstack.html#numpy.dstack" title="numpy.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstack</span></code></a></dt><dd><p>Stack arrays in sequence depth wise (along third dimension)</p>
-</dd>
 <dt><a class="reference internal" href="numpy.block.html#numpy.block" title="numpy.block"><code class="xref py py-obj docutils literal notranslate"><span class="pre">block</span></code></a></dt><dd><p>Assemble arrays from blocks.</p>
+</dd>
+<dt><a class="reference internal" href="numpy.hstack.html#numpy.hstack" title="numpy.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a></dt><dd><p>Stack arrays in sequence horizontally (column wise).</p>
+</dd>
+<dt><a class="reference internal" href="numpy.vstack.html#numpy.vstack" title="numpy.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vstack</span></code></a></dt><dd><p>Stack arrays in sequence vertically (row wise).</p>
+</dd>
+<dt><a class="reference internal" href="numpy.dstack.html#numpy.dstack" title="numpy.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstack</span></code></a></dt><dd><p>Stack arrays in sequence depth wise (along third dimension).</p>
+</dd>
+<dt><a class="reference internal" href="numpy.column_stack.html#numpy.column_stack" title="numpy.column_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">column_stack</span></code></a></dt><dd><p>Stack 1-D arrays as columns into a 2-D array.</p>
 </dd>
 </dl>
 </div>
@@ -232,10 +256,10 @@ array module instead.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

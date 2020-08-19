@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.histogram2d &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.histogram2d &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Statistics" href="../routines.statistics.html" >
     <link rel="next" title="numpy.histogramdd" href="numpy.histogramdd.html" >
-    <link rel="prev" title="numpy.histogram" href="numpy.histogram.html" > 
+    <link rel="prev" title="numpy.histogram" href="numpy.histogram.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -121,13 +143,13 @@
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>x</strong><span class="classifier">array_like, shape (N,)</span></dt><dd><p>An array containing the x coordinates of the points to be
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (N,)</span></dt><dd><p>An array containing the x coordinates of the points to be
 histogrammed.</p>
 </dd>
-<dt><strong>y</strong><span class="classifier">array_like, shape (N,)</span></dt><dd><p>An array containing the y coordinates of the points to be
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape (N,)</span></dt><dd><p>An array containing the y coordinates of the points to be
 histogrammed.</p>
 </dd>
-<dt><strong>bins</strong><span class="classifier">int or array_like or [int, int] or [array, array], optional</span></dt><dd><p>The bin specification:</p>
+<dt><strong>bins</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> or [<a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>] or [<a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>, <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>], optional</span></dt><dd><p>The bin specification:</p>
 <blockquote>
 <div><ul class="simple">
 <li><p>If int, the number of bins for the two dimensions (nx=ny=bins).</p></li>
@@ -142,20 +164,20 @@ is the number of bins and array is the bin edges.</p></li>
 </ul>
 </div></blockquote>
 </dd>
-<dt><strong>range</strong><span class="classifier">array_like, shape(2,2), optional</span></dt><dd><p>The leftmost and rightmost edges of the bins along each dimension
+<dt><strong>range</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape(2,2), optional</span></dt><dd><p>The leftmost and rightmost edges of the bins along each dimension
 (if not specified explicitly in the <em class="xref py py-obj">bins</em> parameters):
 <code class="docutils literal notranslate"><span class="pre">[[xmin,</span> <span class="pre">xmax],</span> <span class="pre">[ymin,</span> <span class="pre">ymax]]</span></code>. All values outside of this range
 will be considered outliers and not tallied in the histogram.</p>
 </dd>
-<dt><strong>density</strong><span class="classifier">bool, optional</span></dt><dd><p>If False, the default, returns the number of samples in each bin.
+<dt><strong>density</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If False, the default, returns the number of samples in each bin.
 If True, returns the probability <em>density</em> function at the bin,
 <code class="docutils literal notranslate"><span class="pre">bin_count</span> <span class="pre">/</span> <span class="pre">sample_count</span> <span class="pre">/</span> <span class="pre">bin_area</span></code>.</p>
 </dd>
-<dt><strong>normed</strong><span class="classifier">bool, optional</span></dt><dd><p>An alias for the density argument that behaves identically. To avoid
+<dt><strong>normed</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>An alias for the density argument that behaves identically. To avoid
 confusion with the broken normed argument to <a class="reference internal" href="numpy.histogram.html#numpy.histogram" title="numpy.histogram"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram</span></code></a>, <em class="xref py py-obj">density</em>
 should be preferred.</p>
 </dd>
-<dt><strong>weights</strong><span class="classifier">array_like, shape(N,), optional</span></dt><dd><p>An array of values <code class="docutils literal notranslate"><span class="pre">w_i</span></code> weighing each sample <code class="docutils literal notranslate"><span class="pre">(x_i,</span> <span class="pre">y_i)</span></code>.
+<dt><strong>weights</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, shape(N,), optional</span></dt><dd><p>An array of values <code class="docutils literal notranslate"><span class="pre">w_i</span></code> weighing each sample <code class="docutils literal notranslate"><span class="pre">(x_i,</span> <span class="pre">y_i)</span></code>.
 Weights are normalized to 1 if <em class="xref py py-obj">normed</em> is True. If <em class="xref py py-obj">normed</em> is
 False, the values of the returned histogram are equal to the sum of
 the weights belonging to the samples falling into each bin.</p>
@@ -163,14 +185,14 @@ the weights belonging to the samples falling into each bin.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>H</strong><span class="classifier">ndarray, shape(nx, ny)</span></dt><dd><p>The bi-dimensional histogram of samples <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em>. Values in <em class="xref py py-obj">x</em>
+<dd class="field-even"><dl>
+<dt><strong>H</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape(nx, ny)</span></dt><dd><p>The bi-dimensional histogram of samples <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em>. Values in <em class="xref py py-obj">x</em>
 are histogrammed along the first dimension and values in <em class="xref py py-obj">y</em> are
 histogrammed along the second dimension.</p>
 </dd>
-<dt><strong>xedges</strong><span class="classifier">ndarray, shape(nx+1,)</span></dt><dd><p>The bin edges along the first dimension.</p>
+<dt><strong>xedges</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape(nx+1,)</span></dt><dd><p>The bin edges along the first dimension.</p>
 </dd>
-<dt><strong>yedges</strong><span class="classifier">ndarray, shape(ny+1,)</span></dt><dd><p>The bin edges along the second dimension.</p>
+<dt><strong>yedges</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, shape(ny+1,)</span></dt><dd><p>The bin edges along the second dimension.</p>
 </dd>
 </dl>
 </dd>
@@ -211,15 +233,15 @@ edges:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">H</span> <span class="o">=</span> <span class="n">H</span><span class="o">.</span><span class="n">T</span>  <span class="c1"># Let each row list bins with common y range.</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">imshow</span></code></a> can only display square bins:</p>
+<p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.3.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">imshow</span></code></a> can only display square bins:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;imshow: square bins&#39;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;low&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">,</span> <span class="n">origin</span><span class="o">=</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span>
 <span class="gp">... </span>        <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="n">xedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">xedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">yedges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
 <span class="go">&lt;matplotlib.image.AxesImage object at 0x...&gt;</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh" title="(in Matplotlib v3.2.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pcolormesh</span></code></a> can display actual edges:</p>
+<p><a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.pcolormesh.html#matplotlib.pyplot.pcolormesh" title="(in Matplotlib v3.3.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">pcolormesh</span></code></a> can display actual edges:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;pcolormesh: actual edges&#39;</span><span class="p">,</span>
 <span class="gp">... </span>        <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xedges</span><span class="p">,</span> <span class="n">yedges</span><span class="p">)</span>
@@ -227,7 +249,7 @@ edges:</p>
 <span class="go">&lt;matplotlib.collections.QuadMesh object at 0x...&gt;</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://matplotlib.org/api/image_api.html#matplotlib.image.NonUniformImage" title="(in Matplotlib v3.2.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonUniformImage</span></code></a> can be used to
+<p><a class="reference external" href="https://matplotlib.org/api/image_api.html#matplotlib.image.NonUniformImage" title="(in Matplotlib v3.3.1)"><code class="xref py py-class docutils literal notranslate"><span class="pre">NonUniformImage</span></code></a> can be used to
 display actual bin edges with interpolation:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;NonUniformImage: interpolated&#39;</span><span class="p">,</span>
 <span class="gp">... </span>        <span class="n">aspect</span><span class="o">=</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="n">xedges</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]],</span> <span class="n">ylim</span><span class="o">=</span><span class="n">yedges</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]])</span>
@@ -267,10 +289,10 @@ display actual bin edges with interpolation:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

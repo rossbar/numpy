@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.disp &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.disp &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Miscellaneous routines" href="../routines.other.html" >
     <link rel="next" title="Padding Arrays" href="../routines.padding.html" >
-    <link rel="prev" title="numpy.who" href="numpy.who.html" > 
+    <link rel="prev" title="numpy.who" href="numpy.who.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,24 +138,24 @@
 <h1>numpy.disp<a class="headerlink" href="#numpy-disp" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.disp">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">disp</code><span class="sig-paren">(</span><em class="sig-param">mesg</em>, <em class="sig-param">device=None</em>, <em class="sig-param">linefeed=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L1721-L1760"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.disp" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">disp</code><span class="sig-paren">(</span><em class="sig-param">mesg</em>, <em class="sig-param">device=None</em>, <em class="sig-param">linefeed=True</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L1807-L1846"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.disp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display a message on a device.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>mesg</strong><span class="classifier">str</span></dt><dd><p>Message to display.</p>
+<dd class="field-odd"><dl>
+<dt><strong>mesg</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Message to display.</p>
 </dd>
 <dt><strong>device</strong><span class="classifier">object</span></dt><dd><p>Device to write message. If None, defaults to <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code> which is
 very similar to <code class="docutils literal notranslate"><span class="pre">print</span></code>. <em class="xref py py-obj">device</em> needs to have <code class="docutils literal notranslate"><span class="pre">write()</span></code> and
 <code class="docutils literal notranslate"><span class="pre">flush()</span></code> methods.</p>
 </dd>
-<dt><strong>linefeed</strong><span class="classifier">bool, optional</span></dt><dd><p>Option whether to print a line feed or not. Defaults to True.</p>
+<dt><strong>linefeed</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Option whether to print a line feed or not. Defaults to True.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><dl class="simple">
-<dt><strong>AttributeError</strong></dt><dd><p>If <em class="xref py py-obj">device</em> does not have a <code class="docutils literal notranslate"><span class="pre">write()</span></code> or <code class="docutils literal notranslate"><span class="pre">flush()</span></code> method.</p>
+<dt>AttributeError</dt><dd><p>If <em class="xref py py-obj">device</em> does not have a <code class="docutils literal notranslate"><span class="pre">write()</span></code> or <code class="docutils literal notranslate"><span class="pre">flush()</span></code> method.</p>
 </dd>
 </dl>
 </dd>
@@ -173,10 +195,10 @@ both required methods:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

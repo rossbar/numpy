@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Writing custom array containers &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Writing custom array containers &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,36 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
-    <link rel="up" title="NumPy basics" href="basics.html" >
-    <link rel="next" title="Subclassing ndarray" href="basics.subclassing.html" >
-    <link rel="prev" title="Structured arrays" href="basics.rec.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,11 +74,9 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
-
-          <li class="active"><a href="tutorials_index.html" >NumPy Tutorials</a></li>
-          <li class="active"><a href="basics.html" accesskey="U">NumPy basics</a></li> 
+ 
     </ul>
               
               
@@ -67,14 +84,6 @@
       <li class="active">
         <a href="../genindex.html" title="General Index"
            accesskey="I">index</a>
-      </li>
-      <li class="active">
-        <a href="basics.subclassing.html" title="Subclassing ndarray"
-           accesskey="N">next</a>
-      </li>
-      <li class="active">
-        <a href="basics.rec.html" title="Structured arrays"
-           accesskey="P">previous</a>
       </li>
     </ul>
               
@@ -86,12 +95,6 @@
 	<div class="row-fluid">
       <div class="spc-rightsidebar span3">
         <div class="sphinxsidebarwrapper">
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="basics.rec.html"
-                        title="previous chapter">Structured arrays</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="basics.subclassing.html"
-                        title="next chapter">Subclassing ndarray</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -127,7 +130,7 @@ example that has rather narrow utility but illustrates the concepts involved.</p
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">=</span> <span class="n">value</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{self.__class__.__name__}</span><span class="s2">(N=</span><span class="si">{self._N}</span><span class="s2">, value=</span><span class="si">{self._i}</span><span class="s2">)&quot;</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(N=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="si">}</span><span class="s2">, value=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_i</span><span class="si">}</span><span class="s2">)&quot;</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="p">)</span>
 <span class="gp">...</span>
@@ -188,7 +191,7 @@ on.  For the common case, <code class="docutils literal notranslate"><span class
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">=</span> <span class="n">value</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{self.__class__.__name__}</span><span class="s2">(N=</span><span class="si">{self._N}</span><span class="s2">, value=</span><span class="si">{self._i}</span><span class="s2">)&quot;</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(N=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="si">}</span><span class="s2">, value=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_i</span><span class="si">}</span><span class="s2">)&quot;</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array_ufunc__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -238,7 +241,7 @@ conveniently by inheriting from the mixin
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">=</span> <span class="n">value</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{self.__class__.__name__}</span><span class="s2">(N=</span><span class="si">{self._N}</span><span class="s2">, value=</span><span class="si">{self._i}</span><span class="s2">)&quot;</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(N=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="si">}</span><span class="s2">, value=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_i</span><span class="si">}</span><span class="s2">)&quot;</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array_ufunc__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -278,7 +281,7 @@ functions to our custom variants.</p>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_N</span> <span class="o">=</span> <span class="n">N</span>
 <span class="gp">... </span>        <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">=</span> <span class="n">value</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{self.__class__.__name__}</span><span class="s2">(N=</span><span class="si">{self._N}</span><span class="s2">, value=</span><span class="si">{self._i}</span><span class="s2">)&quot;</span>
+<span class="gp">... </span>        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">(N=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="si">}</span><span class="s2">, value=</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">_i</span><span class="si">}</span><span class="s2">)&quot;</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 <span class="gp">... </span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_i</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_N</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="k">def</span> <span class="nf">__array_ufunc__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ufunc</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="o">*</span><span class="n">inputs</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -376,7 +379,7 @@ optional arguments that numpy’s implementation does.</p>
 <p>Refer to the <a class="reference external" href="https://github.com/dask/dask">dask source code</a> and
 <a class="reference external" href="https://github.com/cupy/cupy">cupy source code</a>  for more fully-worked
 examples of custom array containers.</p>
-<p>See also <a class="reference external" href="http://www.numpy.org/neps/nep-0018-array-function-protocol.html">NEP 18</a>.</p>
+<p>See also <a class="reference external" href="https://numpy.org/neps/nep-0018-array-function-protocol.html" title="(in NumPy Enhancement Proposals)"><span class="xref std std-doc">NEP 18</span></a>.</p>
 </div>
 
 
@@ -400,10 +403,10 @@ examples of custom array containers.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

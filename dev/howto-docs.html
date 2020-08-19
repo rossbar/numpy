@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>How to contribute to the NumPy documentation &mdash; NumPy v1.20.dev0 Manual</title>
+    
+    <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
+    <link rel="stylesheet" href="../_static/scipy.css" type="text/css" >
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" >
+    <link rel="stylesheet" href="../_static/graphviz.css" type="text/css" >
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.20.0.dev0+64619c5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script type="text/javascript" src="../_static/js/copybutton.js"></script>
+    <link rel="author" title="About these documents" href="../about.html" >
+    <link rel="index" title="Index" href="../genindex.html" >
+    <link rel="search" title="Search" href="../search.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+    <link rel="up" title="Contributing to NumPy" href="index.html" >
+    <link rel="next" title="Under-the-hood Documentation for developers" href="underthehood.html" >
+    <link rel="prev" title="Current steering council and institutional partners" href="governance/people.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
+  </head>
+  <body>
+<div class="container">
+  <div class="top-scipy-org-logo-header">
+    <a href="../index.html">
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="main">
+        
+	<div class="row-fluid">
+	  <div class="span12">
+	    <div class="spc-navbar">
+              
+    <ul class="nav nav-pills pull-left">
+        <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
+        <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
+        
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
+        
+
+          <li class="active"><a href="index.html" accesskey="U">Contributing to NumPy</a></li> 
+    </ul>
+              
+              
+    <ul class="nav nav-pills pull-right">
+      <li class="active">
+        <a href="../genindex.html" title="General Index"
+           accesskey="I">index</a>
+      </li>
+      <li class="active">
+        <a href="underthehood.html" title="Under-the-hood Documentation for developers"
+           accesskey="N">next</a>
+      </li>
+      <li class="active">
+        <a href="governance/people.html" title="Current steering council and institutional partners"
+           accesskey="P">previous</a>
+      </li>
+    </ul>
+              
+	    </div>
+	  </div>
+	</div>
+        
+
+	<div class="row-fluid">
+      <div class="spc-rightsidebar span3">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">How to contribute to the NumPy documentation</a><ul>
+<li><a class="reference internal" href="#documentation-team-meetings">Documentation team meetings</a></li>
+<li><a class="reference internal" href="#what-s-needed">What’s needed</a></li>
+<li><a class="reference internal" href="#contributing-fixes">Contributing fixes</a></li>
+<li><a class="reference internal" href="#contributing-new-pages">Contributing new pages</a><ul>
+<li><a class="reference internal" href="#formula-writing">Formula writing</a></li>
+<li><a class="reference internal" href="#more-on-contributing">More on contributing</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributing-indirectly">Contributing indirectly</a></li>
+<li><a class="reference internal" href="#documentation-reading">Documentation reading</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="governance/people.html"
+                        title="previous chapter">Current steering council and institutional partners</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="underthehood.html"
+                        title="next chapter">Under-the-hood Documentation for developers</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h4>Quick search</h4>
+    <div>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" style="width: inherit;" name="q" />
+      <input type="submit" value="search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+          <div class="span9">
+            
+        <div class="bodywrapper">
+          <div class="body" id="spc-section-body">
+            
+  <div class="section" id="how-to-contribute-to-the-numpy-documentation">
+<span id="howto-docs"></span><h1>How to contribute to the NumPy documentation<a class="headerlink" href="#how-to-contribute-to-the-numpy-documentation" title="Permalink to this headline">¶</a></h1>
+<p>This guide will help you decide what to contribute and how to submit it to the
+official NumPy documentation.</p>
+<div class="section" id="documentation-team-meetings">
+<h2>Documentation team meetings<a class="headerlink" href="#documentation-team-meetings" title="Permalink to this headline">¶</a></h2>
+<p>The NumPy community has set a firm goal of improving its documentation. We
+hold regular documentation meetings on Zoom (dates are announced on the
+<a class="reference external" href="https://mail.python.org/mailman/listinfo/numpy-discussion">numpy-discussion mailing list</a>), and everyone
+is welcome. Reach out if you have questions or need
+someone to guide you through your first steps – we’re happy to help.
+Minutes are taken <a class="reference external" href="https://hackmd.io/oB_boakvRqKR-_2jRV-Qjg">on hackmd.io</a>
+and stored in the <a class="reference external" href="https://github.com/numpy/archive">NumPy Archive repository</a>.</p>
+</div>
+<div class="section" id="what-s-needed">
+<h2>What’s needed<a class="headerlink" href="#what-s-needed" title="Permalink to this headline">¶</a></h2>
+<p>NumPy docs have the details covered. API reference
+documentation is generated directly from
+<a class="reference external" href="https://www.python.org/dev/peps/pep-0257/">docstrings</a> in the code
+when the documentation is <a class="reference internal" href="../docs/howto_build_docs.html#howto-build-docs"><span class="std std-ref">built</span></a>.</p>
+<p>What we lack are docs with broader scope – tutorials, how-tos, and explanations.
+Reporting defects is another way to contribute. We discuss both.</p>
+</div>
+<div class="section" id="contributing-fixes">
+<h2>Contributing fixes<a class="headerlink" href="#contributing-fixes" title="Permalink to this headline">¶</a></h2>
+<p>We’re eager to hear about and fix doc defects. But to attack the biggest
+problems we end up having to defer or overlook some bug reports. Here are the
+best defects to go after.</p>
+<p>Top priority goes to <strong>technical inaccuracies</strong> – a docstring missing a
+parameter, a faulty description of a function/parameter/method, and so on.
+Other “structural” defects like broken links also get priority. All these fixes
+are easy to confirm and put in place. You can submit
+a <a class="reference external" href="https://numpy.org/devdocs/dev/index.html#devindex">pull request (PR)</a>
+with the fix, if you know how to do that; otherwise please <a class="reference external" href="https://github.com/numpy/numpy/issues">open an issue</a>.</p>
+<p><strong>Typos and misspellings</strong> fall on a lower rung; we welcome hearing about them but
+may not be able to fix them promptly. These too can be handled as pull
+requests or issues.</p>
+<p>Obvious <strong>wording</strong> mistakes (like leaving out a “not”) fall into the typo
+category, but other rewordings – even for grammar – require a judgment call,
+which raises the bar. Test the waters by first presenting the fix as an issue.</p>
+</div>
+<div class="section" id="contributing-new-pages">
+<h2>Contributing new pages<a class="headerlink" href="#contributing-new-pages" title="Permalink to this headline">¶</a></h2>
+<p>Your frustrations using our documents are our best guide to what needs fixing.</p>
+<p>If you write a missing doc you join the front line of open source, but it’s
+a meaningful contribution just to let us know what’s missing. If you want to
+compose a doc, run your thoughts by the <a class="reference external" href="https://mail.python.org/mailman/listinfo/numpy-discussion">mailing list</a> for futher
+ideas and feedback. If you want to alert us to a gap,
+<a class="reference external" href="https://github.com/numpy/numpy/issues">open an issue</a>. See
+<a class="reference external" href="https://github.com/numpy/numpy/issues/15760">this issue</a> for an example.</p>
+<p>If you’re looking for subjects, our formal roadmap for documentation is a
+<em>NumPy Enhancement Proposal (NEP)</em>,
+<a class="reference external" href="https://www.numpy.org/neps/nep-0044-restructuring-numpy-docs">NEP 44 - Restructuring the NumPy Documentation</a>.
+It identifies areas where our docs need help and lists several
+additions we’d like to see, including Jupyter notebooks.</p>
+<p>You can find larger planned and in-progress ideas <a class="reference external" href="https://github.com/orgs/numpy/projects/2">at
+our GitHub project</a>.</p>
+<div class="section" id="formula-writing">
+<span id="tutorials-howtos-explanations"></span><h3>Formula writing<a class="headerlink" href="#formula-writing" title="Permalink to this headline">¶</a></h3>
+<p>There are formulas for writing useful documents, and four formulas
+cover nearly everything. There are four formulas because there are four
+categories of document – <code class="docutils literal notranslate"><span class="pre">tutorial</span></code>, <code class="docutils literal notranslate"><span class="pre">how-to</span> <span class="pre">guide</span></code>, <code class="docutils literal notranslate"><span class="pre">explanation</span></code>,
+and <code class="docutils literal notranslate"><span class="pre">reference</span></code>. The insight that docs divide up this way belongs to
+Daniele Procida, who goes on
+<a class="reference external" href="https://documentation.divio.com/">in this short article</a> to explain
+the differences and reveal the formulas. When you begin a document or
+propose one, have in mind which of these types it will be.</p>
+</div>
+<div class="section" id="more-on-contributing">
+<span id="contributing"></span><h3>More on contributing<a class="headerlink" href="#more-on-contributing" title="Permalink to this headline">¶</a></h3>
+<p>Don’t worry if English is not your first language, or if you can only come up
+with a rough draft. Open source is a community effort. Do your best – we’ll
+help fix issues.</p>
+<p>Images and real-life data make text more engaging and powerful, but be sure
+what you use is appropriately licensed and available. Here again, even a rough
+idea for artwork can be polished by others.</p>
+<p>For now, the only data formats accepted by NumPy are those also used by other
+Python scientific libraries like pandas, SciPy, or Matplotlib. We’re
+developing a package to accept more formats; contact us for details.</p>
+<p>NumPy documentation is kept in the source code tree. To get your document
+into the docbase you must download the tree, <a class="reference internal" href="../docs/howto_build_docs.html#howto-build-docs"><span class="std std-ref">build it</span></a>, and submit a pull request. If GitHub and pull requests
+are new to you, check our <a class="reference internal" href="index.html#devindex"><span class="std std-ref">Contributor Guide</span></a>.</p>
+<p>Our markup language is reStructuredText (rST), which is more elaborate than
+Markdown. Sphinx, the tool many Python projects use to build and link project
+documentation, converts the rST into HTML and other formats. For more on
+rST, see the <a class="reference external" href="https://docutils.sourceforge.io/docs/user/rst/quickref.html">Quick reStructuredText Guide</a> or the
+<a class="reference external" href="http://www.sphinx-doc.org/en/stable/usage/restructuredtext/basics.html">reStructuredText Primer</a></p>
+</div>
+</div>
+<div class="section" id="contributing-indirectly">
+<h2>Contributing indirectly<a class="headerlink" href="#contributing-indirectly" title="Permalink to this headline">¶</a></h2>
+<p>If you run across outside material that would be a useful addition to the
+NumPy docs, let us know by <a class="reference external" href="https://github.com/numpy/numpy/issues">opening an issue</a>.</p>
+<p>You don’t have to contribute here to contribute to NumPy. You’ve contributed
+if you write a tutorial on your blog, create a YouTube video, or answer questions
+on Stack Overflow and other sites.</p>
+</div>
+<div class="section" id="documentation-reading">
+<h2>Documentation reading<a class="headerlink" href="#documentation-reading" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>The leading organization of technical writers,
+<a class="reference external" href="https://www.writethedocs.org/">Write the Docs</a>,
+holds conferences, hosts learning resources, and runs a Slack channel.</p></li>
+<li><p>“Every engineer is also a writer,” says Google’s
+<a class="reference external" href="https://developers.google.com/tech-writing">collection of technical writing resources</a>,
+which includes free online courses for developers in planning and writing
+documents.</p></li>
+<li><p><a class="reference external" href="https://software-carpentry.org/lessons">Software Carpentry’s</a> mission is
+teaching software to researchers. In addition to hosting the curriculum, the
+website explains how to present ideas effectively.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-navbar-bottom">
+      <div class="spc-navbar">
+        
+      </div>
+    </div>
+    <div class="container">
+    <div class="footer">
+    <div class="row-fluid">
+    <ul class="inline pull-left">
+      <li>
+        &copy; Copyright 2008-2020, The SciPy community.
+      </li>
+      <li>
+      Last updated on Aug 19, 2020.
+      </li>
+      <li>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
+      </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

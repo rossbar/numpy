@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Discrete Fourier Transform (numpy.fft) &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Discrete Fourier Transform (numpy.fft) &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="Routines" href="routines.html" >
     <link rel="next" title="numpy.fft.fft" href="generated/numpy.fft.fft.html" >
-    <link rel="prev" title="numpy.geterrobj" href="generated/numpy.geterrobj.html" > 
+    <link rel="prev" title="numpy.geterrobj" href="generated/numpy.geterrobj.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" >NumPy Reference</a></li>
@@ -132,6 +154,8 @@
             
   <span class="target" id="module-numpy.fft"><span id="routines-fft"></span></span><div class="section" id="discrete-fourier-transform-numpy-fft">
 <h1>Discrete Fourier Transform (<a class="reference internal" href="#module-numpy.fft" title="numpy.fft"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.fft</span></code></a>)<a class="headerlink" href="#discrete-fourier-transform-numpy-fft" title="Permalink to this headline">¶</a></h1>
+<p>The SciPy module <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html#module-scipy.fft" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.fft</span></code></a> is a more comprehensive superset
+of <code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code>, which includes only a basic set of routines.</p>
 <div class="section" id="standard-ffts">
 <h2>Standard FFTs<a class="headerlink" href="#standard-ffts" title="Permalink to this headline">¶</a></h2>
 <table class="longtable docutils align-default">
@@ -147,7 +171,7 @@
 <td><p>Compute the one-dimensional inverse discrete Fourier Transform.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.fft.fft2.html#numpy.fft.fft2" title="numpy.fft.fft2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fft2</span></code></a>(a[, s, axes, norm])</p></td>
-<td><p>Compute the 2-dimensional discrete Fourier Transform</p></td>
+<td><p>Compute the 2-dimensional discrete Fourier Transform.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.fft.ifft2.html#numpy.fft.ifft2" title="numpy.fft.ifft2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ifft2</span></code></a>(a[, s, axes, norm])</p></td>
 <td><p>Compute the 2-dimensional inverse discrete Fourier Transform.</p></td>
@@ -173,19 +197,19 @@
 <td><p>Compute the one-dimensional discrete Fourier Transform for real input.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.fft.irfft.html#numpy.fft.irfft" title="numpy.fft.irfft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">irfft</span></code></a>(a[, n, axis, norm])</p></td>
-<td><p>Compute the inverse of the n-point DFT for real input.</p></td>
+<td><p>Computes the inverse of <a class="reference internal" href="generated/numpy.fft.rfft.html#numpy.fft.rfft" title="numpy.fft.rfft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfft</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.fft.rfft2.html#numpy.fft.rfft2" title="numpy.fft.rfft2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfft2</span></code></a>(a[, s, axes, norm])</p></td>
 <td><p>Compute the 2-dimensional FFT of a real array.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.fft.irfft2.html#numpy.fft.irfft2" title="numpy.fft.irfft2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">irfft2</span></code></a>(a[, s, axes, norm])</p></td>
-<td><p>Compute the 2-dimensional inverse FFT of a real array.</p></td>
+<td><p>Computes the inverse of <a class="reference internal" href="generated/numpy.fft.rfft2.html#numpy.fft.rfft2" title="numpy.fft.rfft2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfft2</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.fft.rfftn.html#numpy.fft.rfftn" title="numpy.fft.rfftn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfftn</span></code></a>(a[, s, axes, norm])</p></td>
 <td><p>Compute the N-dimensional discrete Fourier Transform for real input.</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.fft.irfftn.html#numpy.fft.irfftn" title="numpy.fft.irfftn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">irfftn</span></code></a>(a[, s, axes, norm])</p></td>
-<td><p>Compute the inverse of the N-dimensional FFT of real input.</p></td>
+<td><p>Computes the inverse of <a class="reference internal" href="generated/numpy.fft.rfftn.html#numpy.fft.rfftn" title="numpy.fft.rfftn"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rfftn</span></code></a>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -291,15 +315,21 @@ argument and the default normalization by <img class="math" src="../_images/math
 <h2>Type Promotion<a class="headerlink" href="#type-promotion" title="Permalink to this headline">¶</a></h2>
 <p><a class="reference internal" href="#module-numpy.fft" title="numpy.fft"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.fft</span></code></a> promotes <code class="docutils literal notranslate"><span class="pre">float32</span></code> and <code class="docutils literal notranslate"><span class="pre">complex64</span></code> arrays to <code class="docutils literal notranslate"><span class="pre">float64</span></code> and
 <code class="docutils literal notranslate"><span class="pre">complex128</span></code> arrays respectively. For an FFT implementation that does not
-promote input arrays, see <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fftpack.html#module-scipy.fftpack" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.fftpack</span></code></a>.</p>
+promote input arrays, see <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fftpack.html#module-scipy.fftpack" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.fftpack</span></code></a>.</p>
 </div>
 <div class="section" id="normalization">
 <h2>Normalization<a class="headerlink" href="#normalization" title="Permalink to this headline">¶</a></h2>
-<p>The default normalization has the direct transforms unscaled and the inverse
-transforms are scaled by <img class="math" src="../_images/math/cb0504c49ba210e1759afd1e6491992917aa174a.svg" alt="1/n"/>. It is possible to obtain unitary
-transforms by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">norm</span></code> to <code class="docutils literal notranslate"><span class="pre">&quot;ortho&quot;</span></code> (default is
-<em class="xref py py-obj">None</em>) so that both direct and inverse transforms will be scaled by
-<img class="math" src="../_images/math/5c1e385692393dc6b3247fca6807fdd874ab311e.svg" alt="1/\sqrt{n}"/>.</p>
+<p>The argument <code class="docutils literal notranslate"><span class="pre">norm</span></code> indicates which direction of the pair of direct/inverse
+transforms is scaled and with what normalization factor.
+The default normalization (<code class="docutils literal notranslate"><span class="pre">&quot;backward&quot;</span></code>) has the direct (forward) transforms
+unscaled and the inverse (backward) transforms scaled by <img class="math" src="../_images/math/cb0504c49ba210e1759afd1e6491992917aa174a.svg" alt="1/n"/>. It is
+possible to obtain unitary transforms by setting the keyword argument <code class="docutils literal notranslate"><span class="pre">norm</span></code>
+to <code class="docutils literal notranslate"><span class="pre">&quot;ortho&quot;</span></code> so that both direct and inverse transforms are scaled by
+<img class="math" src="../_images/math/5c1e385692393dc6b3247fca6807fdd874ab311e.svg" alt="1/\sqrt{n}"/>. Finally, setting the keyword argument <code class="docutils literal notranslate"><span class="pre">norm</span></code> to
+<code class="docutils literal notranslate"><span class="pre">&quot;forward&quot;</span></code> has the direct transforms scaled by <img class="math" src="../_images/math/cb0504c49ba210e1759afd1e6491992917aa174a.svg" alt="1/n"/> and the inverse
+transforms unscaled (i.e. exactly opposite to the default <code class="docutils literal notranslate"><span class="pre">&quot;backward&quot;</span></code>).
+<em class="xref py py-obj">None</em> is an alias of the default option <code class="docutils literal notranslate"><span class="pre">&quot;backward&quot;</span></code> for backward
+compatibility.</p>
 </div>
 <div class="section" id="real-and-hermitian-transforms">
 <h2>Real and Hermitian transforms<a class="headerlink" href="#real-and-hermitian-transforms" title="Permalink to this headline">¶</a></h2>
@@ -376,10 +406,10 @@ machine calculation of complex Fourier series,” <em>Math. Comput.</em>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

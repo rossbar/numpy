@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>NumPy manual contents &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>NumPy Documentation &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,15 +29,37 @@
     <link rel="author" title="About these documents" href="about.html" >
     <link rel="index" title="Index" href="genindex.html" >
     <link rel="search" title="Search" href="search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="index.html" >
-    <link rel="next" title="Setting up" href="user/setting-up.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="index.html" >
+    <link rel="next" title="Setting up" href="user/setting-up.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="index.html">
-      <img border=0 alt="NumPy" src="_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -53,7 +75,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="index.html">NumPy v1.20.dev0 Manual</a></li>
         
  
     </ul>
@@ -100,8 +122,8 @@
         <div class="bodywrapper">
           <div class="body" id="spc-section-body">
             
-  <div class="section" id="numpy-manual-contents">
-<span id="manual"></span><h1>NumPy manual contents<a class="headerlink" href="#numpy-manual-contents" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="numpy-documentation">
+<span id="numpy-docs-mainpage"></span><h1>NumPy Documentation<a class="headerlink" href="#numpy-documentation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="user/setting-up.html">Setting up</a><ul>
@@ -111,6 +133,21 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="user/install.html">Installing NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="user/troubleshooting-importerror.html">Troubleshooting ImportError</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="user/troubleshooting-importerror.html#importerror">ImportError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#using-python-from-conda-anaconda">Using Python from <code class="docutils literal notranslate"><span class="pre">conda</span></code> (Anaconda)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#using-pycharm-with-anaconda-conda-python">Using PyCharm with Anaconda/conda Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#using-vscode-with-anaconda-conda-python-or-environments">Using VSCode with Anaconda/conda Python (or environments)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#using-eclipse-pydev-with-anaconda-conda-python-or-environments">Using Eclipse/PyDev with Anaconda/conda Python (or environments)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#raspberry-pi">Raspberry Pi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#debug-build-on-windows">Debug build on Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#all-setups">All Setups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#development-setup">Development Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user/troubleshooting-importerror.html#check-environment-variables">Check Environment Variables</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="user/quickstart.html">Quickstart tutorial</a><ul>
@@ -193,286 +230,8 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="user/tutorials_index.html">NumPy Tutorials</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="user/basics.html">NumPy basics</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.types.html">Data types</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.types.html#array-types-and-conversions-between-types">Array types and conversions between types</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.types.html#array-scalars">Array Scalars</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.types.html#overflow-errors">Overflow Errors</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.types.html#extended-precision">Extended Precision</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.creation.html">Array creation</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.creation.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.creation.html#converting-python-array-like-objects-to-numpy-arrays">Converting Python array_like Objects to NumPy Arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.creation.html#intrinsic-numpy-array-creation">Intrinsic NumPy Array Creation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.creation.html#reading-arrays-from-disk">Reading Arrays From Disk</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.creation.html#standard-binary-formats">Standard Binary Formats</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.creation.html#common-ascii-formats">Common ASCII Formats</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.creation.html#custom-binary-formats">Custom Binary Formats</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.creation.html#use-of-special-libraries">Use of Special Libraries</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.io.html">I/O with NumPy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.io.genfromtxt.html">Importing data with <code class="xref py py-func docutils literal notranslate"><span class="pre">genfromtxt</span></code></a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#defining-the-input">Defining the input</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#splitting-the-lines-into-columns">Splitting the lines into columns</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-delimiter-argument">The <code class="docutils literal notranslate"><span class="pre">delimiter</span></code> argument</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-autostrip-argument">The <code class="docutils literal notranslate"><span class="pre">autostrip</span></code> argument</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-comments-argument">The <code class="docutils literal notranslate"><span class="pre">comments</span></code> argument</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#skipping-lines-and-choosing-columns">Skipping lines and choosing columns</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-skip-header-and-skip-footer-arguments">The <code class="docutils literal notranslate"><span class="pre">skip_header</span></code> and <code class="docutils literal notranslate"><span class="pre">skip_footer</span></code> arguments</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-usecols-argument">The <code class="docutils literal notranslate"><span class="pre">usecols</span></code> argument</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#choosing-the-data-type">Choosing the data type</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#setting-the-names">Setting the names</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-names-argument">The <code class="docutils literal notranslate"><span class="pre">names</span></code> argument</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-defaultfmt-argument">The <code class="docutils literal notranslate"><span class="pre">defaultfmt</span></code> argument</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#validating-names">Validating names</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#tweaking-the-conversion">Tweaking the conversion</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#the-converters-argument">The <code class="docutils literal notranslate"><span class="pre">converters</span></code> argument</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#using-missing-and-filling-values">Using missing and filling values</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#missing-values"><code class="docutils literal notranslate"><span class="pre">missing_values</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#filling-values"><code class="docutils literal notranslate"><span class="pre">filling_values</span></code></a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.io.genfromtxt.html#usemask"><code class="docutils literal notranslate"><span class="pre">usemask</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.io.genfromtxt.html#shortcut-functions">Shortcut functions</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.indexing.html">Indexing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#assignment-vs-referencing">Assignment vs referencing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#single-element-indexing">Single element indexing</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#other-indexing-options">Other indexing options</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#index-arrays">Index arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#indexing-multi-dimensional-arrays">Indexing Multi-dimensional arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#boolean-or-mask-index-arrays">Boolean or “mask” index arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#combining-index-arrays-with-slices">Combining index arrays with slices</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#structural-indexing-tools">Structural indexing tools</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#assigning-values-to-indexed-arrays">Assigning values to indexed arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.indexing.html#dealing-with-variable-numbers-of-indices-within-programs">Dealing with variable numbers of indices within programs</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.broadcasting.html">Broadcasting</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.broadcasting.html#general-broadcasting-rules">General Broadcasting Rules</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.byteswapping.html">Byte-swapping</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.byteswapping.html#introduction-to-byte-ordering-and-ndarrays">Introduction to byte ordering and ndarrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.byteswapping.html#changing-byte-ordering">Changing byte ordering</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.byteswapping.html#data-and-dtype-endianness-don-t-match-change-dtype-to-match-data">Data and dtype endianness don’t match, change dtype to match data</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.byteswapping.html#data-and-type-endianness-don-t-match-change-data-to-match-dtype">Data and type endianness don’t match, change data to match dtype</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.byteswapping.html#data-and-dtype-endianness-match-swap-data-and-dtype">Data and dtype endianness match, swap data and dtype</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.rec.html">Structured arrays</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.rec.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.rec.html#structured-datatypes">Structured Datatypes</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#structured-datatype-creation">Structured Datatype Creation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#manipulating-and-displaying-structured-datatypes">Manipulating and Displaying Structured Datatypes</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#automatic-byte-offsets-and-alignment">Automatic Byte Offsets and Alignment</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#field-titles">Field Titles</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#union-types">Union types</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.rec.html#indexing-and-assignment-to-structured-arrays">Indexing and Assignment to Structured arrays</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#assigning-data-to-a-structured-array">Assigning data to a Structured Array</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#assignment-from-python-native-types-tuples">Assignment from Python Native Types (Tuples)</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#assignment-from-scalars">Assignment from Scalars</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#assignment-from-other-structured-arrays">Assignment from other Structured Arrays</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#assignment-involving-subarrays">Assignment involving subarrays</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#indexing-structured-arrays">Indexing Structured Arrays</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#accessing-individual-fields">Accessing Individual Fields</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#accessing-multiple-fields">Accessing Multiple Fields</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/basics.rec.html#indexing-with-an-integer-to-get-a-structured-scalar">Indexing with an Integer to get a Structured Scalar</a></li>
-</ul>
-</li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#viewing-structured-arrays-containing-objects">Viewing Structured Arrays Containing Objects</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.rec.html#structure-comparison">Structure Comparison</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.rec.html#record-arrays">Record Arrays</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.rec.html#module-numpy.lib.recfunctions">Recarray Helper Functions</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.dispatch.html">Writing custom array containers</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/basics.subclassing.html">Subclassing ndarray</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#introduction">Introduction</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.subclassing.html#ndarrays-and-object-creation">ndarrays and object creation</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#view-casting">View casting</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#creating-new-from-template">Creating new from template</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#relationship-of-view-casting-and-new-from-template">Relationship of view casting and new-from-template</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#implications-for-subclassing">Implications for subclassing</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.subclassing.html#a-brief-python-primer-on-new-and-init">A brief Python primer on <code class="docutils literal notranslate"><span class="pre">__new__</span></code> and <code class="docutils literal notranslate"><span class="pre">__init__</span></code></a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/basics.subclassing.html#the-role-of-array-finalize">The role of <code class="docutils literal notranslate"><span class="pre">__array_finalize__</span></code></a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#simple-example-adding-an-extra-attribute-to-ndarray">Simple example - adding an extra attribute to ndarray</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#slightly-more-realistic-example-attribute-added-to-existing-array">Slightly more realistic example - attribute added to existing array</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#array-ufunc-for-ufuncs"><code class="docutils literal notranslate"><span class="pre">__array_ufunc__</span></code> for ufuncs</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#array-wrap-for-ufuncs-and-other-functions"><code class="docutils literal notranslate"><span class="pre">__array_wrap__</span></code> for ufuncs and other functions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#extra-gotchas-custom-del-methods-and-ndarray-base">Extra gotchas - custom <code class="docutils literal notranslate"><span class="pre">__del__</span></code> methods and ndarray.base</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/basics.subclassing.html#subclassing-and-downstream-compatibility">Subclassing and Downstream Compatibility</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="user/misc.html">Miscellaneous</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/misc.html#ieee-754-floating-point-special-values">IEEE 754 Floating Point Special Values</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/misc.html#how-numpy-handles-numerical-exceptions">How numpy handles numerical exceptions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/misc.html#examples">Examples</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/misc.html#interfacing-to-c">Interfacing to C</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/misc.html#interfacing-to-fortran">Interfacing to Fortran:</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/misc.html#id1">Interfacing to C++:</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="user/numpy-for-matlab-users.html">NumPy for Matlab users</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#introduction">Introduction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#some-key-differences">Some Key Differences</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#array-or-matrix-which-should-i-use">‘array’ or ‘matrix’? Which should I use?</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/numpy-for-matlab-users.html#short-answer">Short answer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/numpy-for-matlab-users.html#long-answer">Long answer</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#table-of-rough-matlab-numpy-equivalents">Table of Rough MATLAB-NumPy Equivalents</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/numpy-for-matlab-users.html#general-purpose-equivalents">General Purpose Equivalents</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/numpy-for-matlab-users.html#linear-algebra-equivalents">Linear Algebra Equivalents</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#notes">Notes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#customizing-your-environment">Customizing Your Environment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/numpy-for-matlab-users.html#links">Links</a></li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="user/tutorial-svd.html">Tutorial: Linear algebra on n-dimensional arrays</a></li>
-<li class="toctree-l2"><a class="reference internal" href="user/building.html">Building from source</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/building.html#prerequisites">Prerequisites</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/building.html#basic-installation">Basic Installation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="user/building.html#testing">Testing</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#parallel-builds">Parallel builds</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#choosing-the-fortran-compiler">Choosing the fortran compiler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#how-to-check-the-abi-of-blas-lapack-libraries">How to check the ABI of BLAS/LAPACK libraries</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/building.html#accelerated-blas-lapack-libraries">Accelerated BLAS/LAPACK libraries</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#blas">BLAS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#lapack">LAPACK</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#disabling-atlas-and-other-accelerated-libraries">Disabling ATLAS and other accelerated libraries</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/building.html#bit-blas-and-lapack">64-bit BLAS and LAPACK</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/building.html#supplying-additional-compiler-flags">Supplying additional compiler flags</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="user/c-info.html">Using NumPy C-API</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="user/c-info.how-to-extend.html">How to extend NumPy</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.how-to-extend.html#writing-an-extension-module">Writing an extension module</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.how-to-extend.html#required-subroutine">Required subroutine</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.how-to-extend.html#defining-functions">Defining functions</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.how-to-extend.html#functions-without-keyword-arguments">Functions without keyword arguments</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.how-to-extend.html#functions-with-keyword-arguments">Functions with keyword arguments</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.how-to-extend.html#reference-counting">Reference counting</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.how-to-extend.html#dealing-with-array-objects">Dealing with array objects</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.how-to-extend.html#converting-an-arbitrary-sequence-object">Converting an arbitrary sequence object</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.how-to-extend.html#creating-a-brand-new-ndarray">Creating a brand-new ndarray</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.how-to-extend.html#getting-at-ndarray-memory-and-accessing-elements-of-the-ndarray">Getting at ndarray memory and accessing elements of the ndarray</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.how-to-extend.html#example">Example</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/c-info.python-as-glue.html">Using Python as glue</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.python-as-glue.html#calling-other-compiled-libraries-from-python">Calling other compiled libraries from Python</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.python-as-glue.html#hand-generated-wrappers">Hand-generated wrappers</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.python-as-glue.html#f2py">f2py</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#creating-source-for-a-basic-extension-module">Creating source for a basic extension module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#creating-a-compiled-extension-module">Creating a compiled extension module</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#improving-the-basic-interface">Improving the basic interface</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#inserting-directives-in-fortran-source">Inserting directives in Fortran source</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#a-filtering-example">A filtering example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#calling-f2py-from-python">Calling f2py from Python</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#automatic-extension-module-generation">Automatic extension module generation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.python-as-glue.html#cython">Cython</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#complex-addition-in-cython">Complex addition in Cython</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#image-filter-in-cython">Image filter in Cython</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#id2">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.python-as-glue.html#index-3">ctypes</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#having-a-shared-library">Having a shared library</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#loading-the-shared-library">Loading the shared library</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#converting-arguments">Converting arguments</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#calling-the-function">Calling the function</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#complete-example">Complete example</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#id5">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.python-as-glue.html#additional-tools-you-may-find-useful">Additional tools you may find useful</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#swig">SWIG</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#sip">SIP</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#boost-python">Boost Python</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.python-as-glue.html#pyfort">PyFort</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/c-info.ufunc-tutorial.html">Writing your own ufunc</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.ufunc-tutorial.html#creating-a-new-universal-function">Creating a new universal function</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.ufunc-tutorial.html#example-non-ufunc-extension">Example Non-ufunc extension</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.ufunc-tutorial.html#example-numpy-ufunc-for-one-dtype">Example NumPy ufunc for one dtype</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.ufunc-tutorial.html#example-numpy-ufunc-with-multiple-dtypes">Example NumPy ufunc with multiple dtypes</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.ufunc-tutorial.html#example-numpy-ufunc-with-multiple-arguments-return-values">Example NumPy ufunc with multiple arguments/return values</a></li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.ufunc-tutorial.html#example-numpy-ufunc-with-structured-array-dtype-arguments">Example NumPy ufunc with structured array dtype arguments</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="user/c-info.beyond-basics.html">Beyond the Basics</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.beyond-basics.html#iterating-over-elements-in-the-array">Iterating over elements in the array</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#basic-iteration">Basic Iteration</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#iterating-over-all-but-one-axis">Iterating over all but one axis</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#iterating-over-multiple-arrays">Iterating over multiple arrays</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#broadcasting-over-multiple-arrays">Broadcasting over multiple arrays</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.beyond-basics.html#user-defined-data-types">User-defined data-types</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#adding-the-new-data-type">Adding the new data-type</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#registering-a-casting-function">Registering a casting function</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#registering-coercion-rules">Registering coercion rules</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#registering-a-ufunc-loop">Registering a ufunc loop</a></li>
-</ul>
-</li>
-<li class="toctree-l4"><a class="reference internal" href="user/c-info.beyond-basics.html#subtyping-the-ndarray-in-c">Subtyping the ndarray in C</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#creating-sub-types">Creating sub-types</a></li>
-<li class="toctree-l5"><a class="reference internal" href="user/c-info.beyond-basics.html#specific-features-of-ndarray-sub-typing">Specific features of ndarray sub-typing</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="user/c-info.beyond-basics.html#the-array-finalize-method">The __array_finalize__ method</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/c-info.beyond-basics.html#the-array-priority-attribute">The __array_priority__ attribute</a></li>
-<li class="toctree-l6"><a class="reference internal" href="user/c-info.beyond-basics.html#the-array-wrap-method">The __array_wrap__ method</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="user/tutorial-ma.html">Tutorial: Masked Arrays</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="user/howtos_index.html">NumPy How Tos</a><ul>
@@ -1501,13 +1260,13 @@
 </ul>
 </li>
 <li class="toctree-l6"><a class="reference internal" href="reference/routines.ma.html#joining-arrays">Joining arrays</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.stack.html">numpy.ma.stack</a></li>
-<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.column_stack.html">numpy.ma.column_stack</a></li>
 <li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.concatenate.html">numpy.ma.concatenate</a></li>
-<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.append.html">numpy.ma.append</a></li>
-<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.dstack.html">numpy.ma.dstack</a></li>
-<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.hstack.html">numpy.ma.hstack</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.stack.html">numpy.ma.stack</a></li>
 <li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.vstack.html">numpy.ma.vstack</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.hstack.html">numpy.ma.hstack</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.dstack.html">numpy.ma.dstack</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.column_stack.html">numpy.ma.column_stack</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/generated/numpy.ma.append.html">numpy.ma.append</a></li>
 </ul>
 </li>
 </ul>
@@ -1729,6 +1488,15 @@
 <li class="toctree-l3"><a class="reference internal" href="reference/ufuncs.html#casting-rules">Casting Rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/ufuncs.html#overriding-ufunc-behavior">Overriding Ufunc behavior</a></li>
 <li class="toctree-l3"><a class="reference internal" href="reference/ufuncs.html#ufunc"><code class="xref py py-class docutils literal notranslate"><span class="pre">ufunc</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/generated/numpy.ufunc.html">numpy.ufunc</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.__call__.html">numpy.ufunc.__call__</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.accumulate.html">numpy.ufunc.accumulate</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.at.html">numpy.ufunc.at</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.outer.html">numpy.ufunc.outer</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.reduce.html">numpy.ufunc.reduce</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.reduceat.html">numpy.ufunc.reduceat</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="reference/ufuncs.html#optional-keyword-arguments">Optional keyword arguments</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/ufuncs.html#attributes">Attributes</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ufunc.nin.html">numpy.ufunc.nin</a></li>
@@ -1879,11 +1647,11 @@
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.array-manipulation.html#joining-arrays">Joining arrays</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.concatenate.html">numpy.concatenate</a></li>
 <li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.stack.html">numpy.stack</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.column_stack.html">numpy.column_stack</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.dstack.html">numpy.dstack</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.hstack.html">numpy.hstack</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.vstack.html">numpy.vstack</a></li>
 <li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.block.html">numpy.block</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.vstack.html">numpy.vstack</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.hstack.html">numpy.hstack</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.dstack.html">numpy.dstack</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.column_stack.html">numpy.column_stack</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.array-manipulation.html#splitting-arrays">Splitting arrays</a><ul>
@@ -2123,7 +1891,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="reference/routines.dual.html">Optionally Scipy-accelerated routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.dual</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/routines.dual.html">Optionally SciPy-accelerated routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.dual</span></code>)</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.dual.html#linear-algebra">Linear algebra</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.dual.html#fft">FFT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.dual.html#other">Other</a></li>
@@ -2188,22 +1956,6 @@
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.fft.html#higher-dimensions">Higher dimensions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.fft.html#references">References</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.fft.html#examples">Examples</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="reference/routines.financial.html">Financial functions</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="reference/routines.financial.html#simple-financial-functions">Simple financial functions</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.fv.html">numpy.fv</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.pv.html">numpy.pv</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.npv.html">numpy.npv</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.pmt.html">numpy.pmt</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ppmt.html">numpy.ppmt</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.ipmt.html">numpy.ipmt</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.irr.html">numpy.irr</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.mirr.html">numpy.mirr</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.nper.html">numpy.nper</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.rate.html">numpy.rate</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="reference/routines.functional.html">Functional programming</a><ul>
@@ -2328,6 +2080,7 @@
 <li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.memmap.flush.html">numpy.memmap.flush</a></li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="reference/generated/numpy.lib.format.open_memmap.html">numpy.lib.format.open_memmap</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.io.html#text-formatting-options">Text formatting options</a><ul>
@@ -2553,13 +2306,13 @@
 </ul>
 </li>
 <li class="toctree-l5"><a class="reference internal" href="reference/routines.ma.html#joining-arrays">Joining arrays</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.stack.html">numpy.ma.stack</a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.column_stack.html">numpy.ma.column_stack</a></li>
 <li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.concatenate.html">numpy.ma.concatenate</a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.append.html">numpy.ma.append</a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.dstack.html">numpy.ma.dstack</a></li>
-<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.hstack.html">numpy.ma.hstack</a></li>
+<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.stack.html">numpy.ma.stack</a></li>
 <li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.vstack.html">numpy.ma.vstack</a></li>
+<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.hstack.html">numpy.ma.hstack</a></li>
+<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.dstack.html">numpy.ma.dstack</a></li>
+<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.column_stack.html">numpy.ma.column_stack</a></li>
+<li class="toctree-l6"><a class="reference internal" href="reference/generated/numpy.ma.append.html">numpy.ma.append</a></li>
 </ul>
 </li>
 </ul>
@@ -3717,8 +3470,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="reference/random/c-api.html">Cython API for random</a></li>
-<li class="toctree-l5"><a class="reference internal" href="reference/random/c-api.html#c-api-for-random">C API for random</a></li>
+<li class="toctree-l5"><a class="reference internal" href="reference/random/c-api.html">C API for random</a></li>
 <li class="toctree-l5"><a class="reference internal" href="reference/random/extending.html">Examples of using Numba, Cython, CFFI</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="reference/random/extending.html#numba">Numba</a></li>
 <li class="toctree-l6"><a class="reference internal" href="reference/random/extending.html#cython">Cython</a></li>
@@ -3873,6 +3625,12 @@
 <li class="toctree-l4"><a class="reference internal" href="reference/routines.testing.html#guidelines">Guidelines</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="reference/testing.html">Testing Guidelines</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="reference/testing.html#introduction">Introduction</a></li>
+<li class="toctree-l6"><a class="reference internal" href="reference/testing.html#testing-numpy">Testing NumPy</a><ul>
+<li class="toctree-l7"><a class="reference internal" href="reference/testing.html#running-tests-from-inside-python">Running tests from inside Python</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/testing.html#running-tests-from-the-command-line">Running tests from the command line</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/testing.html#other-methods-of-running-tests">Other methods of running tests</a></li>
+</ul>
+</li>
 <li class="toctree-l6"><a class="reference internal" href="reference/testing.html#writing-your-own-tests">Writing your own tests</a><ul>
 <li class="toctree-l7"><a class="reference internal" href="reference/testing.html#labeling-tests">Labeling tests</a></li>
 <li class="toctree-l7"><a class="reference internal" href="reference/testing.html#easier-setup-and-teardown-functions-methods">Easier setup and teardown functions / methods</a></li>
@@ -3886,6 +3644,7 @@
 <li class="toctree-l7"><a class="reference internal" href="reference/testing.html#creating-many-similar-tests">Creating many similar tests</a></li>
 <li class="toctree-l7"><a class="reference internal" href="reference/testing.html#known-failures-skipping-tests">Known failures &amp; skipping tests</a></li>
 <li class="toctree-l7"><a class="reference internal" href="reference/testing.html#tests-on-random-data">Tests on random data</a></li>
+<li class="toctree-l7"><a class="reference internal" href="reference/testing.html#documentation-for-numpy-test">Documentation for <code class="docutils literal notranslate"><span class="pre">numpy.test</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -3907,10 +3666,33 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="reference/typing.html">Typing (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.typing</span></code>)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/typing.html#differences-from-the-runtime-numpy-api">Differences from the runtime NumPy API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/typing.html#arraylike">ArrayLike</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/typing.html#ndarray">ndarray</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/typing.html#dtype">dtype</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="reference/global_state.html">Global State</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/global_state.html#performance-related-options">Performance-Related Options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/global_state.html#number-of-threads-used-for-linear-algebra">Number of Threads used for Linear Algebra</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/global_state.html#madvise-hugepage-on-linux">Madvise Hugepage on Linux</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/global_state.html#interoperability-related-options">Interoperability-Related Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="reference/global_state.html#debugging-related-options">Debugging-Related Options</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/global_state.html#relaxed-strides-checking">Relaxed Strides Checking</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="reference/distutils.html">Packaging (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.distutils</span></code>)</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/distutils.html#modules-in-numpy-distutils">Modules in <code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.distutils</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="reference/distutils/misc_util.html">distutils.misc_util</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/generated/numpy.distutils.ccompiler.html">numpy.distutils.ccompiler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/generated/numpy.distutils.ccompiler_opt.html">numpy.distutils.ccompiler_opt</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/generated/numpy.distutils.cpuinfo.cpu.html">numpy.distutils.cpuinfo.cpu</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/generated/numpy.distutils.core.Extension.html">numpy.distutils.core.Extension</a></li>
 <li class="toctree-l4"><a class="reference internal" href="reference/generated/numpy.distutils.exec_command.html">numpy.distutils.exec_command</a></li>
@@ -4157,6 +3939,42 @@
 <li class="toctree-l3"><a class="reference internal" href="reference/internals.html#multidimensional-array-indexing-order-issues">Multidimensional Array Indexing Order Issues</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="reference/simd/simd-optimizations.html">SIMD Optimizations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="reference/simd/simd-optimizations.html#build-options-for-compilation">Build options for compilation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#x86-cpu-feature-names">x86 - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#x86-group-names">x86 - Group names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#ibm-power-big-endian-cpu-feature-names">IBM/POWER big-endian - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#ibm-power-little-endian-cpu-feature-names">IBM/POWER little-endian - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#armv7-a32-cpu-feature-names">ARMv7/A32 - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#armv8-a64-cpu-feature-names">ARMv8/A64 - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#x86-intel-compiler-cpu-feature-names">x86::Intel Compiler - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#x86-microsoft-visual-c-c-cpu-feature-names">x86::Microsoft Visual C/C++ - CPU feature names</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#special-options">Special options</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#notes">NOTES</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#special-cases">Special cases</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#behaviors-and-errors">Behaviors and Errors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#usage-and-examples">Usage and Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#report-and-trace">Report and Trace</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/simd/simd-optimizations.html#understanding-cpu-dispatching-how-the-numpy-dispatcher-works">Understanding CPU Dispatching, How the NumPy dispatcher works?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#configuration">1- Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#discovering-the-environment">2- Discovering the environment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#validating-the-requested-optimizations">3- Validating the requested optimizations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#generating-the-main-configuration-header">4- Generating the main configuration header</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#dispatch-able-sources-and-configuration-statements">5- Dispatch-able sources and configuration statements</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="reference/simd/simd-optimizations.html#dive-into-the-cpu-dispatcher">Dive into the CPU dispatcher</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#the-baseline">The baseline</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#dispatcher">Dispatcher</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#groups-and-policies">Groups and Policies</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reference/simd/simd-optimizations.html#id2">Report and Trace</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="reference/swig.html">NumPy and SWIG</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="reference/swig.interface-file.html">numpy.i: a SWIG Interface File for NumPy</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="reference/swig.interface-file.html#introduction">Introduction</a></li>
@@ -4293,22 +4111,16 @@
 <li class="toctree-l4"><a class="reference internal" href="dev/gitwash/git_intro.html">Install git</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dev/gitwash/following_latest.html">Get the local copy of the code</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dev/gitwash/following_latest.html#updating-the-code">Updating the code</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev/gitwash/development_setup.html">Getting started with Git development</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#basic-git-setup">Basic Git setup</a></li>
-<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#making-your-own-copy-fork-of-numpy">Making your own copy (fork) of NumPy</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="dev/gitwash/development_setup.html#set-up-and-configure-a-github-account">Set up and configure a github account</a></li>
-<li class="toctree-l6"><a class="reference internal" href="dev/gitwash/development_setup.html#create-your-own-forked-copy-of-numpy">Create your own forked copy of NumPy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev/gitwash/development_setup.html">Setting up git for NumPy development</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#install-git">Install git</a></li>
+<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#create-a-github-account">Create a GitHub account</a></li>
+<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#create-a-numpy-fork">Create a NumPy fork</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="dev/gitwash/development_setup.html#create-the-fork-repo">Create the fork repo</a></li>
+<li class="toctree-l6"><a class="reference internal" href="dev/gitwash/development_setup.html#make-the-local-copy">Make the local copy</a></li>
 </ul>
 </li>
-<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#set-up-your-fork">Set up your fork</a><ul>
-<li class="toctree-l6"><a class="reference internal" href="dev/gitwash/development_setup.html#overview">Overview</a></li>
-<li class="toctree-l6"><a class="reference internal" href="dev/gitwash/development_setup.html#in-detail">In detail</a><ul>
-<li class="toctree-l7"><a class="reference internal" href="dev/gitwash/development_setup.html#clone-your-fork">Clone your fork</a></li>
-<li class="toctree-l7"><a class="reference internal" href="dev/gitwash/development_setup.html#linking-your-repository-to-the-upstream-repo">Linking your repository to the upstream repo</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#look-it-over">Look it over</a></li>
+<li class="toctree-l5"><a class="reference internal" href="dev/gitwash/development_setup.html#optional-set-up-ssh-keys-to-avoid-passwords">Optional: set up SSH keys to avoid passwords</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="dev/gitwash/configure_git.html">Git configuration</a><ul>
@@ -4373,21 +4185,13 @@
 <li class="toctree-l4"><a class="reference internal" href="benchmarking.html#writing-benchmarks">Writing benchmarks</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="dev/style_guide.html">NumPy C Style Guide</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="dev/style_guide.html#introduction">Introduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev/style_guide.html#c-dialect">C dialect</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev/style_guide.html#code-lay-out">Code lay-out</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev/style_guide.html#naming-conventions">Naming conventions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dev/style_guide.html#function-documentation">Function documentation</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="dev/style_guide.html">NumPy C Style Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dev/releasing.html">Releasing a Version</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="dev/releasing.html#how-to-prepare-a-release">How to Prepare a Release</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="dev/releasing.html#current-build-and-release-info">Current build and release info</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#source-tree">Source tree</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#numpy-docs">NumPy Docs</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#scipy-org-wiki">SciPy.org wiki</a></li>
-<li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#doc-wiki">Doc wiki</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#release-scripts">Release Scripts</a></li>
 </ul>
 </li>
@@ -4422,7 +4226,7 @@
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#check-the-release-notes">Check the release notes</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#update-the-release-status-and-create-a-release-tag">Update the release status and create a release “tag”</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#update-the-version-of-the-master-branch">Update the version of the master branch</a></li>
-<li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#trigger-the-wheel-builds-on-travis-ci-and-appveyor">Trigger the wheel builds on travis-ci and Appveyor</a></li>
+<li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#trigger-the-wheel-builds">Trigger the wheel builds</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#make-the-release">Make the release</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#build-and-archive-documentation">Build and archive documentation</a></li>
 <li class="toctree-l6"><a class="reference internal" href="dev/releasing.html#update-pypi">Update PyPI</a></li>
@@ -4491,6 +4295,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="dev/howto-docs.html">How to contribute to the NumPy documentation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="dev/howto-docs.html#documentation-team-meetings">Documentation team meetings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev/howto-docs.html#what-s-needed">What’s needed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev/howto-docs.html#contributing-fixes">Contributing fixes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev/howto-docs.html#contributing-new-pages">Contributing new pages</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="dev/howto-docs.html#formula-writing">Formula writing</a></li>
+<li class="toctree-l5"><a class="reference internal" href="dev/howto-docs.html#more-on-contributing">More on contributing</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="dev/howto-docs.html#contributing-indirectly">Contributing indirectly</a></li>
+<li class="toctree-l4"><a class="reference internal" href="dev/howto-docs.html#documentation-reading">Documentation reading</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -4498,6 +4315,43 @@
 <li class="toctree-l1"><a class="reference internal" href="dev/underthehood.html">Under-the-hood Documentation for developers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="docs/index.html">NumPy’s Documentation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html">A Guide to NumPy/SciPy Documentation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#user-documentation">User documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#docstrings">Docstrings</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="docs/howto_document.html#numpydoc-docstring-guide">numpydoc docstring guide</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#overview">Overview</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#import-conventions">Import conventions</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#docstring-standard">Docstring Standard</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#sections">Sections</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#documenting-classes">Documenting classes</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="docs/howto_document.html#class-docstring">Class docstring</a></li>
+<li class="toctree-l6"><a class="reference internal" href="docs/howto_document.html#method-docstrings">Method docstrings</a></li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#documenting-class-instances">Documenting class instances</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#documenting-generators">Documenting generators</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#documenting-constants">Documenting constants</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#documenting-modules">Documenting modules</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#other-points-to-keep-in-mind">Other points to keep in mind</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#common-rest-concepts">Common reST concepts</a></li>
+<li class="toctree-l5"><a class="reference internal" href="docs/howto_document.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#example-source">Example Source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#example-rendered">Example Rendered</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/howto_build_docs.html">Building the NumPy API and reference docs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="docs/howto_build_docs.html#instructions">Instructions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="docs/howto_build_docs.html#sphinx-extensions">Sphinx extensions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docs/howto_document.html">A Guide to NumPy/SciPy Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#user-documentation">User documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#docstrings">Docstrings</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#numpydoc-docstring-guide">numpydoc docstring guide</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="docs/howto_document.html#overview">Overview</a></li>
 <li class="toctree-l4"><a class="reference internal" href="docs/howto_document.html#import-conventions">Import conventions</a></li>
@@ -4519,35 +4373,6 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#example-source">Example Source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#example-rendered">Example Rendered</a></li>
-<li class="toctree-l2"><a class="reference internal" href="docs/howto_build_docs.html">Building the NumPy API and reference docs</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_build_docs.html#instructions">Instructions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_build_docs.html#sphinx-extensions">Sphinx extensions</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="docs/howto_document.html">A Guide to NumPy/SciPy Documentation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="docs/howto_document.html#numpydoc-docstring-guide">numpydoc docstring guide</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#overview">Overview</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#import-conventions">Import conventions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#docstring-standard">Docstring Standard</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#sections">Sections</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#documenting-classes">Documenting classes</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="docs/howto_document.html#class-docstring">Class docstring</a></li>
-<li class="toctree-l4"><a class="reference internal" href="docs/howto_document.html#method-docstrings">Method docstrings</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#documenting-class-instances">Documenting class instances</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#documenting-generators">Documenting generators</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#documenting-constants">Documenting constants</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#documenting-modules">Documenting modules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#other-points-to-keep-in-mind">Other points to keep in mind</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#common-rest-concepts">Common reST concepts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="docs/howto_document.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="docs/howto_document.html#example-source">Example Source</a></li>
@@ -4559,7 +4384,83 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="bugs.html">Reporting bugs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="release.html">Release Notes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="release/1.19.0-notes.html">1.19.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release/1.20.0-notes.html">1.20.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="release/1.19.1-notes.html">1.19.1</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.1-notes.html#contributors">Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.1-notes.html#pull-requests-merged">Pull requests merged</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release/1.19.0-notes.html">1.19.0</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#highlights">Highlights</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#expired-deprecations">Expired deprecations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-insert-and-numpy-delete-can-no-longer-be-passed-an-axis-on-0d-arrays"><code class="docutils literal notranslate"><span class="pre">numpy.insert</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.delete</span></code> can no longer be passed an axis on 0d arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-delete-no-longer-ignores-out-of-bounds-indices"><code class="docutils literal notranslate"><span class="pre">numpy.delete</span></code> no longer ignores out-of-bounds indices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-insert-and-numpy-delete-no-longer-accept-non-integral-indices"><code class="docutils literal notranslate"><span class="pre">numpy.insert</span></code> and <code class="docutils literal notranslate"><span class="pre">numpy.delete</span></code> no longer accept non-integral indices</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-delete-no-longer-casts-boolean-indices-to-integers"><code class="docutils literal notranslate"><span class="pre">numpy.delete</span></code> no longer casts boolean indices to integers</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#compatibility-notes">Compatibility notes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#changed-random-variate-stream-from-numpy-random-generator-dirichlet">Changed random variate stream from <code class="docutils literal notranslate"><span class="pre">numpy.random.Generator.dirichlet</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#scalar-promotion-in-pyarray-converttocommontype">Scalar promotion in <code class="docutils literal notranslate"><span class="pre">PyArray_ConvertToCommonType</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#fasttake-and-fastputmask-slots-are-deprecated-and-null-ed">Fasttake and fastputmask slots are deprecated and NULL’ed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#np-ediff1d-casting-behaviour-with-to-end-and-to-begin"><code class="docutils literal notranslate"><span class="pre">np.ediff1d</span></code> casting behaviour with <code class="docutils literal notranslate"><span class="pre">to_end</span></code> and <code class="docutils literal notranslate"><span class="pre">to_begin</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#converting-of-empty-array-like-objects-to-numpy-arrays">Converting of empty array-like objects to NumPy arrays</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#removed-multiarray-int-asbuffer">Removed <code class="docutils literal notranslate"><span class="pre">multiarray.int_asbuffer</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-distutils-compat-has-been-removed"><code class="docutils literal notranslate"><span class="pre">numpy.distutils.compat</span></code> has been removed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#issubdtype-no-longer-interprets-float-as-np-floating"><code class="docutils literal notranslate"><span class="pre">issubdtype</span></code> no longer interprets <code class="docutils literal notranslate"><span class="pre">float</span></code> as <code class="docutils literal notranslate"><span class="pre">np.floating</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#change-output-of-round-on-scalars-to-be-consistent-with-python">Change output of <code class="docutils literal notranslate"><span class="pre">round</span></code> on scalars to be consistent with Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#the-numpy-ndarray-constructor-no-longer-interprets-strides-as-strides-none">The <code class="docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> constructor no longer interprets <code class="docutils literal notranslate"><span class="pre">strides=()</span></code> as <code class="docutils literal notranslate"><span class="pre">strides=None</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#c-level-string-to-datetime-casts-changed">C-Level string to datetime casts changed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#seedsequence-with-small-seeds-no-longer-conflicts-with-spawning"><code class="docutils literal notranslate"><span class="pre">SeedSequence</span></code> with small seeds no longer conflicts with spawning</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#deprecations">Deprecations</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#deprecate-automatic-dtype-object-for-ragged-input">Deprecate automatic <code class="docutils literal notranslate"><span class="pre">dtype=object</span></code> for ragged input</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#passing-shape-0-to-factory-functions-in-numpy-rec-is-deprecated">Passing <code class="docutils literal notranslate"><span class="pre">shape=0</span></code> to factory functions in <code class="docutils literal notranslate"><span class="pre">numpy.rec</span></code> is deprecated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#deprecation-of-probably-unused-c-api-functions">Deprecation of probably unused C-API functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#converting-certain-types-to-dtypes-is-deprecated">Converting certain types to dtypes is Deprecated</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#deprecation-of-round-for-np-complexfloating-scalars">Deprecation of <code class="docutils literal notranslate"><span class="pre">round</span></code> for <code class="docutils literal notranslate"><span class="pre">np.complexfloating</span></code> scalars</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-ndarray-tostring-is-deprecated-in-favor-of-tobytes"><code class="docutils literal notranslate"><span class="pre">numpy.ndarray.tostring()</span></code> is deprecated in favor of <code class="docutils literal notranslate"><span class="pre">tobytes()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#c-api-changes">C API changes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#better-support-for-const-dimensions-in-api-functions">Better support for <code class="docutils literal notranslate"><span class="pre">const</span></code> dimensions in API functions</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#const-qualify-ufunc-inner-loops">Const qualify UFunc inner loops</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#new-features">New Features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-frompyfunc-now-accepts-an-identity-argument"><code class="docutils literal notranslate"><span class="pre">numpy.frompyfunc</span></code> now accepts an identity argument</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#np-str-scalars-now-support-the-buffer-protocol"><code class="docutils literal notranslate"><span class="pre">np.str_</span></code> scalars now support the buffer protocol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#subok-option-for-numpy-copy"><code class="docutils literal notranslate"><span class="pre">subok</span></code> option for <code class="docutils literal notranslate"><span class="pre">numpy.copy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-linalg-multi-dot-now-accepts-an-out-argument"><code class="docutils literal notranslate"><span class="pre">numpy.linalg.multi_dot</span></code> now accepts an <code class="docutils literal notranslate"><span class="pre">out</span></code> argument</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#keepdims-parameter-for-numpy-count-nonzero"><code class="docutils literal notranslate"><span class="pre">keepdims</span></code> parameter for <code class="docutils literal notranslate"><span class="pre">numpy.count_nonzero</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#equal-nan-parameter-for-numpy-array-equal"><code class="docutils literal notranslate"><span class="pre">equal_nan</span></code> parameter for <code class="docutils literal notranslate"><span class="pre">numpy.array_equal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#improvements">Improvements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#improve-detection-of-cpu-features">Improve detection of CPU features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#use-64-bit-integer-size-on-64-bit-platforms-in-fallback-lapack-lite">Use 64-bit integer size on 64-bit platforms in fallback lapack_lite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#use-avx512-intrinsic-to-implement-np-exp-when-input-is-np-float64">Use AVX512 intrinsic to implement <code class="docutils literal notranslate"><span class="pre">np.exp</span></code> when input is <code class="docutils literal notranslate"><span class="pre">np.float64</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#ability-to-disable-madvise-hugepages">Ability to disable madvise hugepages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-einsum-accepts-numpy-int64-type-in-subscript-list"><code class="docutils literal notranslate"><span class="pre">numpy.einsum</span></code> accepts NumPy <code class="docutils literal notranslate"><span class="pre">int64</span></code> type in subscript list</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#np-logaddexp2-identity-changed-to-inf"><code class="docutils literal notranslate"><span class="pre">np.logaddexp2.identity</span></code> changed to <code class="docutils literal notranslate"><span class="pre">-inf</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.19.0-notes.html#changes">Changes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#remove-handling-of-extra-argument-to-array">Remove handling of extra argument to <code class="docutils literal notranslate"><span class="pre">__array__</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#numpy-random-bit-generator-moved-to-numpy-random-bit-generator"><code class="docutils literal notranslate"><span class="pre">numpy.random._bit_generator</span></code> moved to <code class="docutils literal notranslate"><span class="pre">numpy.random.bit_generator</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#cython-access-to-the-random-distributions-is-provided-via-a-pxd-file">Cython access to the random distributions is provided via a <code class="docutils literal notranslate"><span class="pre">pxd</span></code> file</a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#fixed-eigh-and-cholesky-methods-in-numpy-random-multivariate-normal">Fixed <code class="docutils literal notranslate"><span class="pre">eigh</span></code> and <code class="docutils literal notranslate"><span class="pre">cholesky</span></code> methods in <code class="docutils literal notranslate"><span class="pre">numpy.random.multivariate_normal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="release/1.19.0-notes.html#fixed-the-jumping-implementation-in-mt19937-jumped">Fixed the jumping implementation in <code class="docutils literal notranslate"><span class="pre">MT19937.jumped</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release/1.18.4-notes.html">1.18.4</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="release/1.18.4-notes.html#contributors">Contributors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="release/1.18.4-notes.html#pull-requests-merged">Pull requests merged</a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="release/1.18.3-notes.html">1.18.3</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="release/1.18.3-notes.html#highlights">Highlights</a></li>
 <li class="toctree-l3"><a class="reference internal" href="release/1.18.3-notes.html#contributors">Contributors</a></li>
@@ -5746,10 +5647,10 @@
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

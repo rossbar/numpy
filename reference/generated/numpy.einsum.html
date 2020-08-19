@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.einsum &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.einsum &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.einsum_path" href="numpy.einsum_path.html" >
-    <link rel="prev" title="numpy.tensordot" href="numpy.tensordot.html" > 
+    <link rel="prev" title="numpy.tensordot" href="numpy.tensordot.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.einsum<a class="headerlink" href="#numpy-einsum" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.einsum">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">einsum</code><span class="sig-paren">(</span><em class="sig-param">subscripts</em>, <em class="sig-param">*operands</em>, <em class="sig-param">out=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">order='K'</em>, <em class="sig-param">casting='safe'</em>, <em class="sig-param">optimize=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/einsumfunc.py#L992-L1410"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.einsum" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">einsum</code><span class="sig-paren">(</span><em class="sig-param">subscripts</em>, <em class="sig-param">*operands</em>, <em class="sig-param">out=None</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">order='K'</em>, <em class="sig-param">casting='safe'</em>, <em class="sig-param">optimize=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/einsumfunc.py#L997-L1422"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.einsum" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evaluates the Einstein summation convention on the operands.</p>
 <p>Using the Einstein summation convention, many common multi-dimensional,
 linear algebraic array operations can be represented in a simple fashion.
@@ -129,16 +151,16 @@ subscript labels.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>subscripts</strong><span class="classifier">str</span></dt><dd><p>Specifies the subscripts for summation as comma separated list of
+<dt><strong>subscripts</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></span></dt><dd><p>Specifies the subscripts for summation as comma separated list of
 subscript labels. An implicit (classical Einstein summation)
 calculation is performed unless the explicit indicator ‘-&gt;’ is
 included as well as subscript labels of the precise output form.</p>
 </dd>
-<dt><strong>operands</strong><span class="classifier">list of array_like</span></dt><dd><p>These are the arrays for the operation.</p>
+<dt><strong>operands</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>These are the arrays for the operation.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>If provided, the calculation is done into this array.</p>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>If provided, the calculation is done into this array.</p>
 </dd>
-<dt><strong>dtype</strong><span class="classifier">{data-type, None}, optional</span></dt><dd><p>If provided, forces the calculation to use the data type specified.
+<dt><strong>dtype</strong><span class="classifier">{data-type, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>}, optional</span></dt><dd><p>If provided, forces the calculation to use the data type specified.
 Note that you may have to also give a more liberal <em class="xref py py-obj">casting</em>
 parameter to allow the conversions. Default is None.</p>
 </dd>
@@ -163,7 +185,7 @@ like float64 to float32, are allowed.</p></li>
 </div></blockquote>
 <p>Default is ‘safe’.</p>
 </dd>
-<dt><strong>optimize</strong><span class="classifier">{False, True, ‘greedy’, ‘optimal’}, optional</span></dt><dd><p>Controls if intermediate optimization should occur. No optimization
+<dt><strong>optimize</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>, ‘greedy’, ‘optimal’}, optional</span></dt><dd><p>Controls if intermediate optimization should occur. No optimization
 will occur if False and True will default to the ‘greedy’ algorithm.
 Also accepts an explicit contraction list from the <code class="docutils literal notranslate"><span class="pre">np.einsum_path</span></code>
 function. See <code class="docutils literal notranslate"><span class="pre">np.einsum_path</span></code> for more details. Defaults to False.</p>
@@ -171,15 +193,17 @@ function. See <code class="docutils literal notranslate"><span class="pre">np.ei
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>output</strong><span class="classifier">ndarray</span></dt><dd><p>The calculation based on the Einstein summation convention.</p>
+<dd class="field-even"><dl>
+<dt><strong>output</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The calculation based on the Einstein summation convention.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.einsum_path.html#numpy.einsum_path" title="numpy.einsum_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">einsum_path</span></code></a>, <a class="reference internal" href="numpy.dot.html#numpy.dot" title="numpy.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>, <a class="reference internal" href="numpy.inner.html#numpy.inner" title="numpy.inner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner</span></code></a>, <a class="reference internal" href="numpy.outer.html#numpy.outer" title="numpy.outer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outer</span></code></a>, <a class="reference internal" href="numpy.tensordot.html#numpy.tensordot" title="numpy.tensordot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensordot</span></code></a>, <a class="reference internal" href="numpy.linalg.multi_dot.html#numpy.linalg.multi_dot" title="numpy.linalg.multi_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linalg.multi_dot</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.einsum_path.html#numpy.einsum_path" title="numpy.einsum_path"><code class="xref py py-obj docutils literal notranslate"><span class="pre">einsum_path</span></code></a>, <a class="reference internal" href="numpy.dot.html#numpy.dot" title="numpy.dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dot</span></code></a>, <a class="reference internal" href="numpy.inner.html#numpy.inner" title="numpy.inner"><code class="xref py py-obj docutils literal notranslate"><span class="pre">inner</span></code></a>, <a class="reference internal" href="numpy.outer.html#numpy.outer" title="numpy.outer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">outer</span></code></a>, <a class="reference internal" href="numpy.tensordot.html#numpy.tensordot" title="numpy.tensordot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensordot</span></code></a>, <a class="reference internal" href="numpy.linalg.multi_dot.html#numpy.linalg.multi_dot" title="numpy.linalg.multi_dot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">linalg.multi_dot</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -474,10 +498,10 @@ particularly significant with larger arrays:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

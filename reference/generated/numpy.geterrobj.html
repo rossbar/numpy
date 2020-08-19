@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.geterrobj &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.geterrobj &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Floating point error handling" href="../routines.err.html" >
     <link rel="next" title="Discrete Fourier Transform (numpy.fft)" href="../routines.fft.html" >
-    <link rel="prev" title="numpy.seterrobj" href="numpy.seterrobj.html" > 
+    <link rel="prev" title="numpy.seterrobj" href="numpy.seterrobj.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -125,7 +147,7 @@ functions that get and set error handling behavior (<a class="reference internal
 <dl class="field-list">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><dl>
-<dt><strong>errobj</strong><span class="classifier">list</span></dt><dd><p>The error object, a list containing three elements:
+<dt><strong>errobj</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a></span></dt><dd><p>The error object, a list containing three elements:
 [internal numpy buffer size, error mask, error callback function].</p>
 <p>The error mask is a single integer that holds the treatment information
 on all four floating point errors. The information for each error type
@@ -146,7 +168,10 @@ can see what treatment is set for “invalid”, “under”, “over”, and
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.seterrobj.html#numpy.seterrobj" title="numpy.seterrobj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterrobj</span></code></a>, <a class="reference internal" href="numpy.seterr.html#numpy.seterr" title="numpy.seterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterr</span></code></a>, <a class="reference internal" href="numpy.geterr.html#numpy.geterr" title="numpy.geterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterr</span></code></a>, <a class="reference internal" href="numpy.seterrcall.html#numpy.seterrcall" title="numpy.seterrcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterrcall</span></code></a>, <a class="reference internal" href="numpy.geterrcall.html#numpy.geterrcall" title="numpy.geterrcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterrcall</span></code></a>, <a class="reference internal" href="numpy.getbufsize.html#numpy.getbufsize" title="numpy.getbufsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getbufsize</span></code></a>, <a class="reference internal" href="numpy.setbufsize.html#numpy.setbufsize" title="numpy.setbufsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setbufsize</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.seterrobj.html#numpy.seterrobj" title="numpy.seterrobj"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterrobj</span></code></a>, <a class="reference internal" href="numpy.seterr.html#numpy.seterr" title="numpy.seterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterr</span></code></a>, <a class="reference internal" href="numpy.geterr.html#numpy.geterr" title="numpy.geterr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterr</span></code></a>, <a class="reference internal" href="numpy.seterrcall.html#numpy.seterrcall" title="numpy.seterrcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seterrcall</span></code></a>, <a class="reference internal" href="numpy.geterrcall.html#numpy.geterrcall" title="numpy.geterrcall"><code class="xref py py-obj docutils literal notranslate"><span class="pre">geterrcall</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="numpy.getbufsize.html#numpy.getbufsize" title="numpy.getbufsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">getbufsize</span></code></a>, <a class="reference internal" href="numpy.setbufsize.html#numpy.setbufsize" title="numpy.setbufsize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">setbufsize</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>For complete documentation of the types of floating-point exceptions and
@@ -200,10 +225,10 @@ treatment options, see <a class="reference internal" href="numpy.seterr.html#num
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

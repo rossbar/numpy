@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>UFunc API &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>UFunc API &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy C-API" href="index.html" >
     <link rel="next" title="Generalized Universal Function API" href="generalized-ufuncs.html" >
-    <link rel="prev" title="Array Iterator API" href="iterator.html" > 
+    <link rel="prev" title="Array Iterator API" href="iterator.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -143,32 +165,32 @@ be <strong>DIVIDEBYZERO</strong>, <strong>OVERFLOW</strong>, <strong>UNDERFLOW</
 <dl class="var">
 <dt>
 <code class="sig-name descname">PyUFunc_{VALUE}</code></dt>
-<dd><dl class="var">
+<dd><dl class="macro">
 <dt id="c.PyUFunc_One">
 <code class="sig-name descname">PyUFunc_One</code><a class="headerlink" href="#c.PyUFunc_One" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.PyUFunc_Zero">
 <code class="sig-name descname">PyUFunc_Zero</code><a class="headerlink" href="#c.PyUFunc_Zero" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.PyUFunc_MinusOne">
 <code class="sig-name descname">PyUFunc_MinusOne</code><a class="headerlink" href="#c.PyUFunc_MinusOne" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.PyUFunc_ReorderableNone">
 <code class="sig-name descname">PyUFunc_ReorderableNone</code><a class="headerlink" href="#c.PyUFunc_ReorderableNone" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.PyUFunc_None">
 <code class="sig-name descname">PyUFunc_None</code><a class="headerlink" href="#c.PyUFunc_None" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.PyUFunc_IdentityValue">
 <code class="sig-name descname">PyUFunc_IdentityValue</code><a class="headerlink" href="#c.PyUFunc_IdentityValue" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -199,7 +221,7 @@ was released (because loop-&gt;obj was not true).</p>
 <h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
 <dl class="function">
 <dt id="c.PyUFunc_FromFuncAndData">
-<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>* <code class="sig-name descname">PyUFunc_FromFuncAndData</code><span class="sig-paren">(</span>PyUFuncGenericFunction*<em> func</em>, void**<em> data</em>, char*<em> types</em>, int<em> ntypes</em>, int<em> nin</em>, int<em> nout</em>, int<em> identity</em>, char*<em> name</em>, char*<em> doc</em>, int<em> unused</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_FromFuncAndData" title="Permalink to this definition">¶</a></dt>
+<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>* <code class="sig-name descname">PyUFunc_FromFuncAndData</code><span class="sig-paren">(</span>PyUFuncGenericFunction*<em> func</em>, void**<em> data</em>, char*<em> types</em>, int<em> ntypes</em>, int<em> nin</em>, int<em> nout</em>, int<em> identity</em>, char*<em> name</em>, char*<em> doc</em>, int<em> unused</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_FromFuncAndData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new broadcasting universal function from required variables.
 Each ufunc builds around the notion of an element-by-element
 operation. Each ufunc object contains pointers to 1-d loops
@@ -317,7 +339,7 @@ accessing the <strong>__doc__</strong> attribute of the ufunc.</p></li>
 
 <dl class="function">
 <dt id="c.PyUFunc_FromFuncAndDataAndSignature">
-<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>* <code class="sig-name descname">PyUFunc_FromFuncAndDataAndSignature</code><span class="sig-paren">(</span>PyUFuncGenericFunction*<em> func</em>, void**<em> data</em>, char*<em> types</em>, int<em> ntypes</em>, int<em> nin</em>, int<em> nout</em>, int<em> identity</em>, char*<em> name</em>, char*<em> doc</em>, int<em> unused</em>, char<em> *signature</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_FromFuncAndDataAndSignature" title="Permalink to this definition">¶</a></dt>
+<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>* <code class="sig-name descname">PyUFunc_FromFuncAndDataAndSignature</code><span class="sig-paren">(</span>PyUFuncGenericFunction*<em> func</em>, void**<em> data</em>, char*<em> types</em>, int<em> ntypes</em>, int<em> nin</em>, int<em> nout</em>, int<em> identity</em>, char*<em> name</em>, char*<em> doc</em>, int<em> unused</em>, char<em> *signature</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_FromFuncAndDataAndSignature" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is very similar to PyUFunc_FromFuncAndData above, but has
 an extra <em>signature</em> argument, to define a
 <a class="reference internal" href="generalized-ufuncs.html#c-api-generalized-ufuncs"><span class="std std-ref">generalized universal functions</span></a>.
@@ -337,7 +359,7 @@ so the passed in buffer can be freed.</p></li>
 
 <dl class="function">
 <dt id="c.PyUFunc_FromFuncAndDataAndSignatureAndIdentity">
-<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>* <code class="sig-name descname">PyUFunc_FromFuncAndDataAndSignatureAndIdentity</code><span class="sig-paren">(</span>PyUFuncGenericFunction<em> *func</em>, void<em> **data</em>, char<em> *types</em>, int<em> ntypes</em>, int<em> nin</em>, int<em> nout</em>, int<em> identity</em>, char<em> *name</em>, char<em> *doc</em>, int<em> unused</em>, char<em> *signature</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a><em> *identity_value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_FromFuncAndDataAndSignatureAndIdentity" title="Permalink to this definition">¶</a></dt>
+<a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>* <code class="sig-name descname">PyUFunc_FromFuncAndDataAndSignatureAndIdentity</code><span class="sig-paren">(</span>PyUFuncGenericFunction<em> *func</em>, void<em> **data</em>, char<em> *types</em>, int<em> ntypes</em>, int<em> nin</em>, int<em> nout</em>, int<em> identity</em>, char<em> *name</em>, char<em> *doc</em>, int<em> unused</em>, char<em> *signature</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a><em> *identity_value</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_FromFuncAndDataAndSignatureAndIdentity" title="Permalink to this definition">¶</a></dt>
 <dd><p>This function is very similar to <em class="xref py py-obj">PyUFunc_FromFuncAndDataAndSignature</em> above,
 but has an extra <em>identity_value</em> argument, to define an arbitrary identity
 for the ufunc when <code class="docutils literal notranslate"><span class="pre">identity</span></code> is passed as <code class="docutils literal notranslate"><span class="pre">PyUFunc_IdentityValue</span></code>.</p>
@@ -391,7 +413,7 @@ followed by the outputs assumed by the 1-d loop.</p>
 
 <dl class="function">
 <dt id="c.PyUFunc_GenericFunction">
-int <code class="sig-name descname">PyUFunc_GenericFunction</code><span class="sig-paren">(</span><a class="reference internal" href="types-and-structures.html#c.PyUFuncObject" title="PyUFuncObject">PyUFuncObject</a>*<em> self</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>*<em> args</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>*<em> kwds</em>, <a class="reference internal" href="types-and-structures.html#c.PyArrayObject" title="PyArrayObject">PyArrayObject</a>**<em> mps</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_GenericFunction" title="Permalink to this definition">¶</a></dt>
+int <code class="sig-name descname">PyUFunc_GenericFunction</code><span class="sig-paren">(</span><a class="reference internal" href="types-and-structures.html#c.PyUFuncObject" title="PyUFuncObject">PyUFuncObject</a>*<em> self</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>*<em> args</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>*<em> kwds</em>, <a class="reference internal" href="types-and-structures.html#c.PyArrayObject" title="PyArrayObject">PyArrayObject</a>**<em> mps</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_GenericFunction" title="Permalink to this definition">¶</a></dt>
 <dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version NumPy: </span>1.19</p>
 <p>Unless NumPy is made aware of an issue with this, this function
@@ -406,14 +428,14 @@ using <code class="docutils literal notranslate"><span class="pre">PyArray_FromA
 
 <dl class="function">
 <dt id="c.PyUFunc_checkfperr">
-int <code class="sig-name descname">PyUFunc_checkfperr</code><span class="sig-paren">(</span>int<em> errmask</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>*<em> errobj</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_checkfperr" title="Permalink to this definition">¶</a></dt>
+int <code class="sig-name descname">PyUFunc_checkfperr</code><span class="sig-paren">(</span>int<em> errmask</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>*<em> errobj</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_checkfperr" title="Permalink to this definition">¶</a></dt>
 <dd><p>A simple interface to the IEEE error-flag checking support. The
-<em>errmask</em> argument is a mask of <code class="xref c c-data docutils literal notranslate"><span class="pre">UFUNC_MASK_{ERR}</span></code> bitmasks
+<em>errmask</em> argument is a mask of <code class="docutils literal notranslate"><span class="pre">UFUNC_MASK_{ERR}</span></code> bitmasks
 indicating which errors to check for (and how to check for
 them). The <em>errobj</em> must be a Python tuple with two elements: a
 string containing the name which will be used in any communication
 of error and either a callable Python object (call-back function)
-or <a class="reference external" href="https://docs.python.org/dev/c-api/none.html#c.Py_None" title="(in Python v3.9)"><code class="xref c c-data docutils literal notranslate"><span class="pre">Py_None</span></code></a>. The callable object will only be used if
+or <a class="reference external" href="https://docs.python.org/dev/c-api/none.html#c.Py_None" title="(in Python v3.10)"><code class="xref c c-data docutils literal notranslate"><span class="pre">Py_None</span></code></a>. The callable object will only be used if
 <code class="xref c c-data docutils literal notranslate"><span class="pre">UFUNC_ERR_CALL</span></code> is set as the desired error checking
 method. This routine manages the GIL and is safe to call even
 after releasing the GIL. If an error in the IEEE-compatible
@@ -429,7 +451,7 @@ void <code class="sig-name descname">PyUFunc_clearfperr</code><span class="sig-p
 
 <dl class="function">
 <dt id="c.PyUFunc_GetPyValues">
-void <code class="sig-name descname">PyUFunc_GetPyValues</code><span class="sig-paren">(</span>char*<em> name</em>, int*<em> bufsize</em>, int*<em> errmask</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.9)">PyObject</a>**<em> errobj</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_GetPyValues" title="Permalink to this definition">¶</a></dt>
+void <code class="sig-name descname">PyUFunc_GetPyValues</code><span class="sig-paren">(</span>char*<em> name</em>, int*<em> bufsize</em>, int*<em> errmask</em>, <a class="reference external" href="https://docs.python.org/dev/c-api/structures.html#c.PyObject" title="(in Python v3.10)">PyObject</a>**<em> errobj</em><span class="sig-paren">)</span><a class="headerlink" href="#c.PyUFunc_GetPyValues" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get the Python values used for ufunc processing from the
 thread-local storage area unless the defaults have been set in
 which case the name lookup is bypassed. The name is placed as a
@@ -648,12 +670,12 @@ outputs are placed into their object arrays.</p>
 </div>
 <div class="section" id="importing-the-api">
 <h2>Importing the API<a class="headerlink" href="#importing-the-api" title="Permalink to this headline">¶</a></h2>
-<dl class="var">
+<dl class="macro">
 <dt id="c.PY_UFUNC_UNIQUE_SYMBOL">
 <code class="sig-name descname">PY_UFUNC_UNIQUE_SYMBOL</code><a class="headerlink" href="#c.PY_UFUNC_UNIQUE_SYMBOL" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NO_IMPORT_UFUNC">
 <code class="sig-name descname">NO_IMPORT_UFUNC</code><a class="headerlink" href="#c.NO_IMPORT_UFUNC" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -704,10 +726,10 @@ by other files depending on the state of
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

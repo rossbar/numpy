@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.laguerre.lagvander2d &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.polynomial.laguerre.lagvander2d &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Laguerre Series (numpy.polynomial.laguerre)" href="../routines.polynomials.laguerre.html" >
     <link rel="next" title="numpy.polynomial.laguerre.lagvander3d" href="numpy.polynomial.laguerre.lagvander3d.html" >
-    <link rel="prev" title="numpy.polynomial.laguerre.lagvander" href="numpy.polynomial.laguerre.lagvander.html" > 
+    <link rel="prev" title="numpy.polynomial.laguerre.lagvander" href="numpy.polynomial.laguerre.lagvander.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -117,7 +139,7 @@
 <h1>numpy.polynomial.laguerre.lagvander2d<a class="headerlink" href="#numpy-polynomial-laguerre-lagvander2d" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.polynomial.laguerre.lagvander2d">
-<code class="sig-prename descclassname">numpy.polynomial.laguerre.</code><code class="sig-name descname">lagvander2d</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">deg</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/laguerre.py#L1160-L1210"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.laguerre.lagvander2d" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.polynomial.laguerre.</code><code class="sig-name descname">lagvander2d</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">deg</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/polynomial/laguerre.py#L1159-L1209"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.polynomial.laguerre.lagvander2d" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pseudo-Vandermonde matrix of given degrees.</p>
 <p>Returns the pseudo-Vandermonde matrix of degrees <em class="xref py py-obj">deg</em> and sample
 points <em class="xref py py-obj">(x, y)</em>. The pseudo-Vandermonde matrix is defined by</p>
@@ -135,21 +157,21 @@ correspond to the elements of a 2-D coefficient array <em class="xref py py-obj"
 up to roundoff. This equivalence is useful both for least squares
 fitting and for the evaluation of a large number of 2-D Laguerre
 series of the same degrees and sample points.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x, y</strong><span class="classifier">array_like</span></dt><dd><p>Arrays of point coordinates, all of the same shape. The dtypes
+<dd class="field-odd"><dl>
+<dt><strong>x, y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Arrays of point coordinates, all of the same shape. The dtypes
 will be converted to either float64 or complex128 depending on
 whether any of the elements are complex. Scalars are converted to
 1-D arrays.</p>
 </dd>
-<dt><strong>deg</strong><span class="classifier">list of ints</span></dt><dd><p>List of maximum degrees of the form [x_deg, y_deg].</p>
+<dt><strong>deg</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of ints</span></dt><dd><p>List of maximum degrees of the form [x_deg, y_deg].</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>vander2d</strong><span class="classifier">ndarray</span></dt><dd><p>The shape of the returned matrix is <code class="docutils literal notranslate"><span class="pre">x.shape</span> <span class="pre">+</span> <span class="pre">(order,)</span></code>, where
+<dd class="field-even"><dl>
+<dt><strong>vander2d</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The shape of the returned matrix is <code class="docutils literal notranslate"><span class="pre">x.shape</span> <span class="pre">+</span> <span class="pre">(order,)</span></code>, where
 <img class="math" src="../../_images/math/ae7ea645a7b6c22db8f4b0e4d9b39313e7408d4e.svg" alt="order = (deg[0]+1)*(deg[1]+1)"/>.  The dtype will be the same
 as the converted <em class="xref py py-obj">x</em> and <em class="xref py py-obj">y</em>.</p>
 </dd>
@@ -158,7 +180,9 @@ as the converted <em class="xref py py-obj">x</em> and <em class="xref py py-obj
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.polynomial.laguerre.lagvander.html#numpy.polynomial.laguerre.lagvander" title="numpy.polynomial.laguerre.lagvander"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagvander</span></code></a>, <a class="reference internal" href="numpy.polynomial.laguerre.lagvander3d.html#numpy.polynomial.laguerre.lagvander3d" title="numpy.polynomial.laguerre.lagvander3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagvander3d</span></code></a>, <a class="reference internal" href="numpy.polynomial.laguerre.lagval2d.html#numpy.polynomial.laguerre.lagval2d" title="numpy.polynomial.laguerre.lagval2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagval2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.laguerre.lagval3d.html#numpy.polynomial.laguerre.lagval3d" title="numpy.polynomial.laguerre.lagval3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagval3d</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.polynomial.laguerre.lagvander.html#numpy.polynomial.laguerre.lagvander" title="numpy.polynomial.laguerre.lagvander"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagvander</span></code></a>, <a class="reference internal" href="numpy.polynomial.laguerre.lagvander3d.html#numpy.polynomial.laguerre.lagvander3d" title="numpy.polynomial.laguerre.lagvander3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagvander3d</span></code></a>, <a class="reference internal" href="numpy.polynomial.laguerre.lagval2d.html#numpy.polynomial.laguerre.lagval2d" title="numpy.polynomial.laguerre.lagval2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagval2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.laguerre.lagval3d.html#numpy.polynomial.laguerre.lagval3d" title="numpy.polynomial.laguerre.lagval3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">lagval3d</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -189,10 +213,10 @@ as the converted <em class="xref py py-obj">x</em> and <em class="xref py py-obj
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

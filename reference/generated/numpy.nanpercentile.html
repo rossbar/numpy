@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.nanpercentile &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.nanpercentile &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Statistics" href="../routines.statistics.html" >
     <link rel="next" title="numpy.quantile" href="numpy.quantile.html" >
-    <link rel="prev" title="numpy.percentile" href="numpy.percentile.html" > 
+    <link rel="prev" title="numpy.percentile" href="numpy.percentile.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -126,21 +148,21 @@ while ignoring nan values.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Input array or object that can be converted to an array, containing
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input array or object that can be converted to an array, containing
 nan values to be ignored.</p>
 </dd>
-<dt><strong>q</strong><span class="classifier">array_like of float</span></dt><dd><p>Percentile or sequence of percentiles to compute, which must be between
+<dt><strong>q</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Percentile or sequence of percentiles to compute, which must be between
 0 and 100 inclusive.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">{int, tuple of int, None}, optional</span></dt><dd><p>Axis or axes along which the percentiles are computed. The
+<dt><strong>axis</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>}, optional</span></dt><dd><p>Axis or axes along which the percentiles are computed. The
 default is to compute the percentile(s) along a flattened
 version of the array.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>Alternative output array in which to place the result. It must
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>Alternative output array in which to place the result. It must
 have the same shape and buffer length as the expected output,
 but the type (of the output) will be cast if necessary.</p>
 </dd>
-<dt><strong>overwrite_input</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, then allow the input array <em class="xref py py-obj">a</em> to be modified by intermediate
+<dt><strong>overwrite_input</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, then allow the input array <em class="xref py py-obj">a</em> to be modified by intermediate
 calculations, to save memory. In this case, the contents of the input
 <em class="xref py py-obj">a</em> after this function completes is undefined.</p>
 </dd>
@@ -157,7 +179,7 @@ and <code class="docutils literal notranslate"><span class="pre">j</span></code>
 <li><p>‘midpoint’: <code class="docutils literal notranslate"><span class="pre">(i</span> <span class="pre">+</span> <span class="pre">j)</span> <span class="pre">/</span> <span class="pre">2</span></code>.</p></li>
 </ul>
 </dd>
-<dt><strong>keepdims</strong><span class="classifier">bool, optional</span></dt><dd><p>If this is set to True, the axes which are reduced are left in
+<dt><strong>keepdims</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If this is set to True, the axes which are reduced are left in
 the result as dimensions with size one. With this option, the
 result will broadcast correctly against the original array <em class="xref py py-obj">a</em>.</p>
 <p>If this is anything but the default value it will be passed
@@ -169,8 +191,8 @@ will raise a RuntimeError.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>percentile</strong><span class="classifier">scalar or ndarray</span></dt><dd><p>If <em class="xref py py-obj">q</em> is a single percentile and <em class="xref py py-obj">axis=None</em>, then the result
+<dd class="field-even"><dl>
+<dt><strong>percentile</strong><span class="classifier"><span class="xref std std-ref">scalar</span> or <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>If <em class="xref py py-obj">q</em> is a single percentile and <em class="xref py py-obj">axis=None</em>, then the result
 is a scalar. If multiple percentiles are given, first axis of
 the result corresponds to the percentiles. The other axes are
 the axes that remain after the reduction of <em class="xref py py-obj">a</em>. If the input
@@ -184,13 +206,11 @@ returned instead.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.nanmean.html#numpy.nanmean" title="numpy.nanmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanmean</span></code></a></p>
 <dl class="simple">
+<dt><a class="reference internal" href="numpy.nanmean.html#numpy.nanmean" title="numpy.nanmean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanmean</span></code></a></dt><dd></dd>
 <dt><a class="reference internal" href="numpy.nanmedian.html#numpy.nanmedian" title="numpy.nanmedian"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanmedian</span></code></a></dt><dd><p>equivalent to <code class="docutils literal notranslate"><span class="pre">nanpercentile(...,</span> <span class="pre">50)</span></code></p>
 </dd>
-</dl>
-<p><a class="reference internal" href="numpy.percentile.html#numpy.percentile" title="numpy.percentile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">percentile</span></code></a>, <a class="reference internal" href="numpy.median.html#numpy.median" title="numpy.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>, <a class="reference internal" href="numpy.mean.html#numpy.mean" title="numpy.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a></p>
-<dl class="simple">
+<dt><a class="reference internal" href="numpy.percentile.html#numpy.percentile" title="numpy.percentile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">percentile</span></code></a>, <a class="reference internal" href="numpy.median.html#numpy.median" title="numpy.median"><code class="xref py py-obj docutils literal notranslate"><span class="pre">median</span></code></a>, <a class="reference internal" href="numpy.mean.html#numpy.mean" title="numpy.mean"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mean</span></code></a></dt><dd></dd>
 <dt><a class="reference internal" href="numpy.nanquantile.html#numpy.nanquantile" title="numpy.nanquantile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">nanquantile</span></code></a></dt><dd><p>equivalent to nanpercentile, but with q in the range [0, 1].</p>
 </dd>
 </dl>
@@ -258,10 +278,10 @@ same as the maximum if <code class="docutils literal notranslate"><span class="p
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

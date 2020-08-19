@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.block &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.block &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Array manipulation routines" href="../routines.array-manipulation.html" >
-    <link rel="next" title="numpy.split" href="numpy.split.html" >
-    <link rel="prev" title="numpy.vstack" href="numpy.vstack.html" > 
+    <link rel="next" title="numpy.vstack" href="numpy.vstack.html" >
+    <link rel="prev" title="numpy.stack" href="numpy.stack.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -70,11 +92,11 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="numpy.split.html" title="numpy.split"
+        <a href="numpy.vstack.html" title="numpy.vstack"
            accesskey="N">next</a>
       </li>
       <li class="active">
-        <a href="numpy.vstack.html" title="numpy.vstack"
+        <a href="numpy.stack.html" title="numpy.stack"
            accesskey="P">previous</a>
       </li>
     </ul>
@@ -88,11 +110,11 @@
       <div class="spc-rightsidebar span3">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="numpy.vstack.html"
-                        title="previous chapter">numpy.vstack</a></p>
+  <p class="topless"><a href="numpy.stack.html"
+                        title="previous chapter">numpy.stack</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="numpy.split.html"
-                        title="next chapter">numpy.split</a></p>
+  <p class="topless"><a href="numpy.vstack.html"
+                        title="next chapter">numpy.vstack</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -116,7 +138,7 @@
 <h1>numpy.block<a class="headerlink" href="#numpy-block" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.block">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">block</code><span class="sig-paren">(</span><em class="sig-param">arrays</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/shape_base.py#L678-L846"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.block" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">block</code><span class="sig-paren">(</span><em class="sig-param">arrays</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/shape_base.py#L680-L849"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assemble an nd-array from nested lists of blocks.</p>
 <p>Blocks in the innermost lists are concatenated (see <a class="reference internal" href="numpy.concatenate.html#numpy.concatenate" title="numpy.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a>) along
 the last dimension (-1), then these are concatenated along the
@@ -134,7 +156,7 @@ constructed from their components.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>arrays</strong><span class="classifier">nested list of array_like or scalars (but not tuples)</span></dt><dd><p>If passed a single ndarray or scalar (a nested list of depth 0), this
+<dt><strong>arrays</strong><span class="classifier">nested <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> or scalars (but not tuples)</span></dt><dd><p>If passed a single ndarray or scalar (a nested list of depth 0), this
 is returned unmodified (and not copied).</p>
 <p>Elements shapes must match along the appropriate axes (without
 broadcasting), but leading 1s will be prepended to the shape as
@@ -144,7 +166,7 @@ necessary to make the dimensions match.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>block_array</strong><span class="classifier">ndarray</span></dt><dd><p>The array assembled from the given blocks.</p>
+<dt><strong>block_array</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The array assembled from the given blocks.</p>
 <p>The dimensionality of the output is equal to the greatest of:
 * the dimensionality of all the inputs
 * the depth to which the input list is nested</p>
@@ -153,7 +175,7 @@ necessary to make the dimensions match.</p>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ValueError</strong></dt><dd><ul class="simple">
+<dt>ValueError</dt><dd><ul class="simple">
 <li><p>If list depths are mismatched - for instance, <code class="docutils literal notranslate"><span class="pre">[[a,</span> <span class="pre">b],</span> <span class="pre">c]</span></code> is
 illegal, and should be spelt <code class="docutils literal notranslate"><span class="pre">[[a,</span> <span class="pre">b],</span> <span class="pre">[c]]</span></code></p></li>
 <li><p>If lists are empty - for instance, <code class="docutils literal notranslate"><span class="pre">[[a,</span> <span class="pre">b],</span> <span class="pre">[]]</span></code></p></li>
@@ -165,17 +187,19 @@ illegal, and should be spelt <code class="docutils literal notranslate"><span cl
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference internal" href="numpy.concatenate.html#numpy.concatenate" title="numpy.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a></dt><dd><p>Join a sequence of arrays together.</p>
+<dt><a class="reference internal" href="numpy.concatenate.html#numpy.concatenate" title="numpy.concatenate"><code class="xref py py-obj docutils literal notranslate"><span class="pre">concatenate</span></code></a></dt><dd><p>Join a sequence of arrays along an existing axis.</p>
 </dd>
-<dt><a class="reference internal" href="numpy.stack.html#numpy.stack" title="numpy.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a></dt><dd><p>Stack arrays in sequence along a new dimension.</p>
-</dd>
-<dt><a class="reference internal" href="numpy.hstack.html#numpy.hstack" title="numpy.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a></dt><dd><p>Stack arrays in sequence horizontally (column wise).</p>
+<dt><a class="reference internal" href="numpy.stack.html#numpy.stack" title="numpy.stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">stack</span></code></a></dt><dd><p>Join a sequence of arrays along a new axis.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.vstack.html#numpy.vstack" title="numpy.vstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vstack</span></code></a></dt><dd><p>Stack arrays in sequence vertically (row wise).</p>
 </dd>
-<dt><a class="reference internal" href="numpy.dstack.html#numpy.dstack" title="numpy.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstack</span></code></a></dt><dd><p>Stack arrays in sequence depth wise (along third dimension).</p>
+<dt><a class="reference internal" href="numpy.hstack.html#numpy.hstack" title="numpy.hstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hstack</span></code></a></dt><dd><p>Stack arrays in sequence horizontally (column wise).</p>
 </dd>
-<dt><a class="reference internal" href="numpy.vsplit.html#numpy.vsplit" title="numpy.vsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsplit</span></code></a></dt><dd><p>Split array into a list of multiple sub-arrays vertically.</p>
+<dt><a class="reference internal" href="numpy.dstack.html#numpy.dstack" title="numpy.dstack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dstack</span></code></a></dt><dd><p>Stack arrays in sequence depth wise (along third axis).</p>
+</dd>
+<dt><a class="reference internal" href="numpy.column_stack.html#numpy.column_stack" title="numpy.column_stack"><code class="xref py py-obj docutils literal notranslate"><span class="pre">column_stack</span></code></a></dt><dd><p>Stack 1-D arrays as columns into a 2-D array.</p>
+</dd>
+<dt><a class="reference internal" href="numpy.vsplit.html#numpy.vsplit" title="numpy.vsplit"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vsplit</span></code></a></dt><dd><p>Split an array into multiple sub-arrays vertically (row-wise).</p>
 </dd>
 </dl>
 </div>
@@ -295,10 +319,10 @@ equivalent to <code class="docutils literal notranslate"><span class="pre">np.bl
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

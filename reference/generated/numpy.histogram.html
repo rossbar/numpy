@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.histogram &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.histogram &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Statistics" href="../routines.statistics.html" >
     <link rel="next" title="numpy.histogram2d" href="numpy.histogram2d.html" >
-    <link rel="prev" title="numpy.cov" href="numpy.cov.html" > 
+    <link rel="prev" title="numpy.cov" href="numpy.cov.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -121,9 +143,9 @@
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Input data. The histogram is computed over the flattened array.</p>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input data. The histogram is computed over the flattened array.</p>
 </dd>
-<dt><strong>bins</strong><span class="classifier">int or sequence of scalars or str, optional</span></dt><dd><p>If <em class="xref py py-obj">bins</em> is an int, it defines the number of equal-width
+<dt><strong>bins</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of scalars or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>If <em class="xref py py-obj">bins</em> is an int, it defines the number of equal-width
 bins in the given range (10, by default). If <em class="xref py py-obj">bins</em> is a
 sequence, it defines a monotonically increasing array of bin edges,
 including the rightmost edge, allowing for non-uniform bin widths.</p>
@@ -133,7 +155,7 @@ including the rightmost edge, allowing for non-uniform bin widths.</p>
 <p>If <em class="xref py py-obj">bins</em> is a string, it defines the method used to calculate the
 optimal bin width, as defined by <a class="reference internal" href="numpy.histogram_bin_edges.html#numpy.histogram_bin_edges" title="numpy.histogram_bin_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram_bin_edges</span></code></a>.</p>
 </dd>
-<dt><strong>range</strong><span class="classifier">(float, float), optional</span></dt><dd><p>The lower and upper range of the bins.  If not provided, range
+<dt><strong>range</strong><span class="classifier">(<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>), optional</span></dt><dd><p>The lower and upper range of the bins.  If not provided, range
 is simply <code class="docutils literal notranslate"><span class="pre">(a.min(),</span> <span class="pre">a.max())</span></code>.  Values outside the range are
 ignored. The first element of the range must be less than or
 equal to the second. <em class="xref py py-obj">range</em> affects the automatic bin
@@ -141,7 +163,7 @@ computation as well. While bin width is computed to be optimal
 based on the actual data within <em class="xref py py-obj">range</em>, the bin count will fill
 the entire range including portions containing no data.</p>
 </dd>
-<dt><strong>normed</strong><span class="classifier">bool, optional</span></dt><dd><div class="deprecated">
+<dt><strong>normed</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.6.0.</span></p>
 </div>
 <p>This is equivalent to the <em class="xref py py-obj">density</em> argument, but produces incorrect
@@ -150,13 +172,13 @@ results for unequal bin widths. It should not be used.</p>
 <p><span class="versionmodified changed">Changed in version 1.15.0: </span>DeprecationWarnings are actually emitted.</p>
 </div>
 </dd>
-<dt><strong>weights</strong><span class="classifier">array_like, optional</span></dt><dd><p>An array of weights, of the same shape as <em class="xref py py-obj">a</em>.  Each value in
+<dt><strong>weights</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, optional</span></dt><dd><p>An array of weights, of the same shape as <em class="xref py py-obj">a</em>.  Each value in
 <em class="xref py py-obj">a</em> only contributes its associated weight towards the bin count
 (instead of 1). If <em class="xref py py-obj">density</em> is True, the weights are
 normalized, so that the integral of the density over the range
 remains 1.</p>
 </dd>
-<dt><strong>density</strong><span class="classifier">bool, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the result will contain the number of samples in
+<dt><strong>density</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If <code class="docutils literal notranslate"><span class="pre">False</span></code>, the result will contain the number of samples in
 each bin. If <code class="docutils literal notranslate"><span class="pre">True</span></code>, the result is the value of the
 probability <em>density</em> function at the bin, normalized such that
 the <em>integral</em> over the range is 1. Note that the sum of the
@@ -167,18 +189,20 @@ width are chosen; it is not a probability <em>mass</em> function.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>hist</strong><span class="classifier">array</span></dt><dd><p>The values of the histogram. See <em class="xref py py-obj">density</em> and <em class="xref py py-obj">weights</em> for a
+<dd class="field-even"><dl>
+<dt><strong>hist</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>The values of the histogram. See <em class="xref py py-obj">density</em> and <em class="xref py py-obj">weights</em> for a
 description of the possible semantics.</p>
 </dd>
-<dt><strong>bin_edges</strong><span class="classifier">array of dtype float</span></dt><dd><p>Return the bin edges <code class="docutils literal notranslate"><span class="pre">(length(hist)+1)</span></code>.</p>
+<dt><strong>bin_edges</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> of dtype <a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>Return the bin edges <code class="docutils literal notranslate"><span class="pre">(length(hist)+1)</span></code>.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.histogramdd.html#numpy.histogramdd" title="numpy.histogramdd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogramdd</span></code></a>, <a class="reference internal" href="numpy.bincount.html#numpy.bincount" title="numpy.bincount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bincount</span></code></a>, <a class="reference internal" href="numpy.searchsorted.html#numpy.searchsorted" title="numpy.searchsorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">searchsorted</span></code></a>, <a class="reference internal" href="numpy.digitize.html#numpy.digitize" title="numpy.digitize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">digitize</span></code></a>, <a class="reference internal" href="numpy.histogram_bin_edges.html#numpy.histogram_bin_edges" title="numpy.histogram_bin_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram_bin_edges</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.histogramdd.html#numpy.histogramdd" title="numpy.histogramdd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogramdd</span></code></a>, <a class="reference internal" href="numpy.bincount.html#numpy.bincount" title="numpy.bincount"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bincount</span></code></a>, <a class="reference internal" href="numpy.searchsorted.html#numpy.searchsorted" title="numpy.searchsorted"><code class="xref py py-obj docutils literal notranslate"><span class="pre">searchsorted</span></code></a>, <a class="reference internal" href="numpy.digitize.html#numpy.digitize" title="numpy.digitize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">digitize</span></code></a>, <a class="reference internal" href="numpy.histogram_bin_edges.html#numpy.histogram_bin_edges" title="numpy.histogram_bin_edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">histogram_bin_edges</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>All but the last (righthand-most) bin is half-open.  In other words,
@@ -251,10 +275,10 @@ with 2000 points:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

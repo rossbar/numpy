@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Using Python as glue &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Using Python as glue &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,36 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
-    <link rel="up" title="Using NumPy C-API" href="c-info.html" >
-    <link rel="next" title="Writing your own ufunc" href="c-info.ufunc-tutorial.html" >
-    <link rel="prev" title="How to extend NumPy" href="c-info.how-to-extend.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,11 +74,9 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
-
-          <li class="active"><a href="tutorials_index.html" >NumPy Tutorials</a></li>
-          <li class="active"><a href="c-info.html" accesskey="U">Using NumPy C-API</a></li> 
+ 
     </ul>
               
               
@@ -67,14 +84,6 @@
       <li class="active">
         <a href="../genindex.html" title="General Index"
            accesskey="I">index</a>
-      </li>
-      <li class="active">
-        <a href="c-info.ufunc-tutorial.html" title="Writing your own ufunc"
-           accesskey="N">next</a>
-      </li>
-      <li class="active">
-        <a href="c-info.how-to-extend.html" title="How to extend NumPy"
-           accesskey="P">previous</a>
       </li>
     </ul>
               
@@ -128,12 +137,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="c-info.how-to-extend.html"
-                        title="previous chapter">How to extend NumPy</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="c-info.ufunc-tutorial.html"
-                        title="next chapter">Writing your own ufunc</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -297,26 +300,29 @@ be imported from Python:</p>
 </pre></div>
 </div>
 <p>This command leaves a file named add.{ext} in the current directory
-(where {ext} is the appropriate extension for a python extension
+(where {ext} is the appropriate extension for a Python extension
 module on your platform — so, pyd, <em>etc.</em> ). This module may then be
 imported from Python. It will contain a method for each subroutine in
 add (zadd, cadd, dadd, sadd). The docstring of each method contains
 information about how the module method may be called:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">add</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="o">.</span><span class="vm">__doc__</span>
-<span class="go">zadd - Function signature:</span>
-<span class="go">  zadd(a,b,c,n)</span>
-<span class="go">Required arguments:</span>
-<span class="go">  a : input rank-1 array(&#39;D&#39;) with bounds (*)</span>
-<span class="go">  b : input rank-1 array(&#39;D&#39;) with bounds (*)</span>
-<span class="go">  c : input rank-1 array(&#39;D&#39;) with bounds (*)</span>
-<span class="go">  n : input int</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="go">zadd(a,b,c,n)</span>
+
+<span class="go">Wrapper for ``zadd``.</span>
+
+<span class="go">Parameters</span>
+<span class="go">----------</span>
+<span class="go">a : input rank-1 array(&#39;D&#39;) with bounds (*)</span>
+<span class="go">b : input rank-1 array(&#39;D&#39;) with bounds (*)</span>
+<span class="go">c : input rank-1 array(&#39;D&#39;) with bounds (*)</span>
+<span class="go">n : input int</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="improving-the-basic-interface">
 <h3>Improving the basic interface<a class="headerlink" href="#improving-the-basic-interface" title="Permalink to this headline">¶</a></h3>
-<p>The default interface is a very literal translation of the fortran
+<p>The default interface is a very literal translation of the Fortran
 code into Python. The Fortran array arguments must now be NumPy arrays
 and the integer argument should be an integer. The interface will
 attempt to convert all arguments to their required types (and shapes)
@@ -324,7 +330,7 @@ and issue an error if unsuccessful. However, because it knows nothing
 about the semantics of the arguments (such that C is an output and n
 should really match the array sizes), it is possible to abuse this
 function in ways that can cause Python to crash. For example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="mi">1000</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="mi">1000</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>will cause a program crash on most systems. Under the covers, the
@@ -367,26 +373,31 @@ get it from the size of <code class="docutils literal notranslate"><span class="
 necessary to tell f2py that the value of n depends on the input a (so
 that it won’t try to create the variable n until the variable a is
 created).</p>
-<p>After modifying <code class="docutils literal notranslate"><span class="pre">add.pyf</span></code>, the new python module file can be generated
-by compiling both <code class="docutils literal notranslate"><span class="pre">add.f95</span></code> and <code class="docutils literal notranslate"><span class="pre">add.pyf</span></code>:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f2py</span> <span class="o">-</span><span class="n">c</span> <span class="n">add</span><span class="o">.</span><span class="n">pyf</span> <span class="n">add</span><span class="o">.</span><span class="n">f95</span>
+<p>After modifying <code class="docutils literal notranslate"><span class="pre">add.pyf</span></code>, the new Python module file can be generated
+by compiling both <code class="docutils literal notranslate"><span class="pre">add.f</span></code> and <code class="docutils literal notranslate"><span class="pre">add.pyf</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f2py</span> <span class="o">-</span><span class="n">c</span> <span class="n">add</span><span class="o">.</span><span class="n">pyf</span> <span class="n">add</span><span class="o">.</span><span class="n">f</span>
 </pre></div>
 </div>
 <p>The new interface has docstring:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">add</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span> <span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="o">.</span><span class="vm">__doc__</span>
-<span class="go">zadd - Function signature:</span>
-<span class="go">  c = zadd(a,b)</span>
-<span class="go">Required arguments:</span>
-<span class="go">  a : input rank-1 array(&#39;D&#39;) with bounds (n)</span>
-<span class="go">  b : input rank-1 array(&#39;D&#39;) with bounds (n)</span>
-<span class="go">Return objects:</span>
-<span class="go">  c : rank-1 array(&#39;D&#39;) with bounds (n)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+<span class="go">c = zadd(a,b)</span>
+
+<span class="go">Wrapper for ``zadd``.</span>
+
+<span class="go">Parameters</span>
+<span class="go">----------</span>
+<span class="go">a : input rank-1 array(&#39;D&#39;) with bounds (n)</span>
+<span class="go">b : input rank-1 array(&#39;D&#39;) with bounds (n)</span>
+
+<span class="go">Returns</span>
+<span class="go">-------</span>
+<span class="go">c : rank-1 array(&#39;D&#39;) with bounds (n)</span>
 </pre></div>
 </div>
 <p>Now, the function can be called in a much more robust way:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
-<span class="go">array([ 5.+0.j,  7.+0.j,  9.+0.j])</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">add</span><span class="o">.</span><span class="n">zadd</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+<span class="go">array([5.+0.j, 7.+0.j, 9.+0.j])</span>
 </pre></div>
 </div>
 <p>Notice the automatic conversion to the correct format that occurred.</p>
@@ -394,7 +405,7 @@ by compiling both <code class="docutils literal notranslate"><span class="pre">a
 <div class="section" id="inserting-directives-in-fortran-source">
 <h3>Inserting directives in Fortran source<a class="headerlink" href="#inserting-directives-in-fortran-source" title="Permalink to this headline">¶</a></h3>
 <p>The nice interface can also be generated automatically by placing the
-variable directives as special comments in the original fortran code.
+variable directives as special comments in the original Fortran code.
 Thus, if I modify the source code to contain:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>C
       SUBROUTINE ZADD(A,B,C,N)
@@ -720,7 +731,7 @@ code.</p>
 <ol class="arabic simple">
 <li><p>Have a shared library.</p></li>
 <li><p>Load the shared library.</p></li>
-<li><p>Convert the python objects to ctypes-understood arguments.</p></li>
+<li><p>Convert the Python objects to ctypes-understood arguments.</p></li>
 <li><p>Call the function from the library with the ctypes arguments.</p></li>
 </ol>
 <div class="section" id="having-a-shared-library">
@@ -732,7 +743,7 @@ simply have a shared library available to you). Items to remember are:</p>
 <ul>
 <li><p>A shared library must be compiled in a special way ( <em>e.g.</em> using
 the <code class="docutils literal notranslate"><span class="pre">-shared</span></code> flag with gcc).</p></li>
-<li><p>On some platforms (<em>e.g.</em> Windows) , a shared library requires a
+<li><p>On some platforms (<em>e.g.</em> Windows), a shared library requires a
 .def file that specifies the functions to be exported. For example a
 mylib.def file might contain:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LIBRARY</span> <span class="n">mylib</span><span class="o">.</span><span class="n">dll</span>
@@ -851,7 +862,7 @@ installed).</p>
 <h3>Calling the function<a class="headerlink" href="#calling-the-function" title="Permalink to this headline">¶</a></h3>
 <p>The function is accessed as an attribute of or an item from the loaded
 shared-library. Thus, if <code class="docutils literal notranslate"><span class="pre">./mylib.so</span></code> has a function named
-<code class="docutils literal notranslate"><span class="pre">cool_function1</span></code> , I could access this function either as:</p>
+<code class="docutils literal notranslate"><span class="pre">cool_function1</span></code>, I could access this function either as:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">lib</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">ctypeslib</span><span class="o">.</span><span class="n">load_library</span><span class="p">(</span><span class="s1">&#39;mylib&#39;</span><span class="p">,</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
 <span class="n">func1</span> <span class="o">=</span> <span class="n">lib</span><span class="o">.</span><span class="n">cool_function1</span>  <span class="c1"># or equivalently</span>
 <span class="n">func1</span> <span class="o">=</span> <span class="n">lib</span><span class="p">[</span><span class="s1">&#39;cool_function1&#39;</span><span class="p">]</span>
@@ -1204,10 +1215,10 @@ well which now support either Fortran or C-style contiguous arrays.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

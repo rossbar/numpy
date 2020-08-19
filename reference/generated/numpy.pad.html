@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.pad &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.pad &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Padding Arrays" href="../routines.padding.html" >
     <link rel="next" title="Polynomials" href="../routines.polynomials.html" >
-    <link rel="prev" title="Padding Arrays" href="../routines.padding.html" > 
+    <link rel="prev" title="Padding Arrays" href="../routines.padding.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,21 +138,21 @@
 <h1>numpy.pad<a class="headerlink" href="#numpy-pad" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.pad">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">pad</code><span class="sig-paren">(</span><em class="sig-param">array</em>, <em class="sig-param">pad_width</em>, <em class="sig-param">mode='constant'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/arraypad.py#L532-L879"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.pad" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">pad</code><span class="sig-paren">(</span><em class="sig-param">array</em>, <em class="sig-param">pad_width</em>, <em class="sig-param">mode='constant'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/arraypad.py#L529-L876"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.pad" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pad an array.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>array</strong><span class="classifier">array_like of rank N</span></dt><dd><p>The array to pad.</p>
+<dt><strong>array</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a> of rank N</span></dt><dd><p>The array to pad.</p>
 </dd>
-<dt><strong>pad_width</strong><span class="classifier">{sequence, array_like, int}</span></dt><dd><p>Number of values padded to the edges of each axis.
+<dt><strong>pad_width</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>, <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>}</span></dt><dd><p>Number of values padded to the edges of each axis.
 ((before_1, after_1), … (before_N, after_N)) unique pad widths
 for each axis.
 ((before, after),) yields same before and after pad for each axis.
 (pad,) or int is a shortcut for before = after = pad width for all
 axes.</p>
 </dd>
-<dt><strong>mode</strong><span class="classifier">str or function, optional</span></dt><dd><p>One of the following string values or a user supplied function.</p>
+<dt><strong>mode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or function, optional</span></dt><dd><p>One of the following string values or a user supplied function.</p>
 <dl>
 <dt>‘constant’ (default)</dt><dd><p>Pads with a constant value.</p>
 </dd>
@@ -171,7 +193,7 @@ end values are used to pad the beginning.</p>
 </dd>
 </dl>
 </dd>
-<dt><strong>stat_length</strong><span class="classifier">sequence or int, optional</span></dt><dd><p>Used in ‘maximum’, ‘mean’, ‘median’, and ‘minimum’.  Number of
+<dt><strong>stat_length</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> or <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Used in ‘maximum’, ‘mean’, ‘median’, and ‘minimum’.  Number of
 values at edge of each axis used to calculate the statistic value.</p>
 <p>((before_1, after_1), … (before_N, after_N)) unique statistic
 lengths for each axis.</p>
@@ -181,7 +203,7 @@ for each axis.</p>
 length for all axes.</p>
 <p>Default is <code class="docutils literal notranslate"><span class="pre">None</span></code>, to use the entire axis.</p>
 </dd>
-<dt><strong>constant_values</strong><span class="classifier">sequence or scalar, optional</span></dt><dd><p>Used in ‘constant’.  The values to set the padded values for each
+<dt><strong>constant_values</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> or <span class="xref std std-ref">scalar</span>, optional</span></dt><dd><p>Used in ‘constant’.  The values to set the padded values for each
 axis.</p>
 <p><code class="docutils literal notranslate"><span class="pre">((before_1,</span> <span class="pre">after_1),</span> <span class="pre">...</span> <span class="pre">(before_N,</span> <span class="pre">after_N))</span></code> unique pad constants
 for each axis.</p>
@@ -191,7 +213,7 @@ axis.</p>
 all axes.</p>
 <p>Default is 0.</p>
 </dd>
-<dt><strong>end_values</strong><span class="classifier">sequence or scalar, optional</span></dt><dd><p>Used in ‘linear_ramp’.  The values used for the ending value of the
+<dt><strong>end_values</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> or <span class="xref std std-ref">scalar</span>, optional</span></dt><dd><p>Used in ‘linear_ramp’.  The values used for the ending value of the
 linear_ramp and that will form the edge of the padded array.</p>
 <p><code class="docutils literal notranslate"><span class="pre">((before_1,</span> <span class="pre">after_1),</span> <span class="pre">...</span> <span class="pre">(before_N,</span> <span class="pre">after_N))</span></code> unique end values
 for each axis.</p>
@@ -209,8 +231,8 @@ subtracting the reflected values from two times the edge value.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>pad</strong><span class="classifier">ndarray</span></dt><dd><p>Padded array of rank equal to <a class="reference internal" href="numpy.array.html#numpy.array" title="numpy.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> with shape increased
+<dd class="field-even"><dl>
+<dt><strong>pad</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Padded array of rank equal to <a class="reference internal" href="numpy.array.html#numpy.array" title="numpy.array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> with shape increased
 according to <em class="xref py py-obj">pad_width</em>.</p>
 </dd>
 </dl>
@@ -351,10 +373,10 @@ the end of vector.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

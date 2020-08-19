@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <title>numpy.distutils.ccompiler_opt &mdash; NumPy v1.20.dev0 Manual</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
+    <link rel="stylesheet" href="../../_static/scipy.css" type="text/css" >
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" >
+    <link rel="stylesheet" href="../../_static/graphviz.css" type="text/css" >
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.20.0.dev0+64619c5',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  false
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../_static/language_data.js"></script>
+    <script type="text/javascript" src="../../_static/js/copybutton.js"></script>
+    <link rel="author" title="About these documents" href="../../about.html" >
+    <link rel="index" title="Index" href="../../genindex.html" >
+    <link rel="search" title="Search" href="../../search.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
+    <link rel="up" title="Packaging (numpy.distutils)" href="../distutils.html" >
+    <link rel="next" title="numpy.distutils.cpuinfo.cpu" href="numpy.distutils.cpuinfo.cpu.html" >
+    <link rel="prev" title="numpy.distutils.ccompiler" href="numpy.distutils.ccompiler.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
+  </head>
+  <body>
+<div class="container">
+  <div class="top-scipy-org-logo-header">
+    <a href="../../index.html">
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
+  </div>
+</div>
+
+
+    <div class="container">
+      <div class="main">
+        
+	<div class="row-fluid">
+	  <div class="span12">
+	    <div class="spc-navbar">
+              
+    <ul class="nav nav-pills pull-left">
+        <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
+        <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
+        
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
+        
+
+          <li class="active"><a href="../index.html" >NumPy Reference</a></li>
+          <li class="active"><a href="../distutils.html" accesskey="U">Packaging (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.distutils</span></code>)</a></li> 
+    </ul>
+              
+              
+    <ul class="nav nav-pills pull-right">
+      <li class="active">
+        <a href="../../genindex.html" title="General Index"
+           accesskey="I">index</a>
+      </li>
+      <li class="active">
+        <a href="numpy.distutils.cpuinfo.cpu.html" title="numpy.distutils.cpuinfo.cpu"
+           accesskey="N">next</a>
+      </li>
+      <li class="active">
+        <a href="numpy.distutils.ccompiler.html" title="numpy.distutils.ccompiler"
+           accesskey="P">previous</a>
+      </li>
+    </ul>
+              
+	    </div>
+	  </div>
+	</div>
+        
+
+	<div class="row-fluid">
+      <div class="spc-rightsidebar span3">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="numpy.distutils.ccompiler.html"
+                        title="previous chapter">numpy.distutils.ccompiler</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="numpy.distutils.cpuinfo.cpu.html"
+                        title="next chapter">numpy.distutils.cpuinfo.cpu</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h4>Quick search</h4>
+    <div>
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" style="width: inherit;" name="q" />
+      <input type="submit" value="search" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+          <div class="span9">
+            
+        <div class="bodywrapper">
+          <div class="body" id="spc-section-body">
+            
+  <div class="section" id="module-numpy.distutils.ccompiler_opt">
+<span id="numpy-distutils-ccompiler-opt"></span><h1>numpy.distutils.ccompiler_opt<a class="headerlink" href="#module-numpy.distutils.ccompiler_opt" title="Permalink to this headline">¶</a></h1>
+<p>Provides the <code class="xref py py-obj docutils literal notranslate"><span class="pre">CCompilerOpt</span></code> class, used for handling the CPU/hardware
+optimization, starting from parsing the command arguments, to managing the
+relation between the CPU baseline and dispatch-able features,
+also generating the required C headers and ending with compiling
+the sources with proper compiler’s flags.</p>
+<p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CCompilerOpt</span></code> doesn’t provide runtime detection for the CPU features,
+instead only focuses on the compiler side, but it creates abstract C headers
+that can be used later for the final runtime dispatching process.</p>
+<p class="rubric">Functions</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">new_ccompiler_opt</span></code>(compiler, **kwargs)</p></td>
+<td><p>Create a new instance of ‘CCompilerOpt’ and generate the dispatch header inside NumPy source dir.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">CCompilerOpt</span></code>(ccompiler[, cpu_baseline, …])</p></td>
+<td><p>A helper class for <em class="xref py py-obj">CCompiler</em> aims to provide extra build options to effectively control of compiler optimizations that are directly related to CPU features.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+          </div>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container container-navbar-bottom">
+      <div class="spc-navbar">
+        
+      </div>
+    </div>
+    <div class="container">
+    <div class="footer">
+    <div class="row-fluid">
+    <ul class="inline pull-left">
+      <li>
+        &copy; Copyright 2008-2020, The SciPy community.
+      </li>
+      <li>
+      Last updated on Aug 19, 2020.
+      </li>
+      <li>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
+      </li>
+    </ul>
+    </div>
+    </div>
+    </div>
+  </body>
+</html>

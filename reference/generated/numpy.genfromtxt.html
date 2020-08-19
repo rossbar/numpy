@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.genfromtxt &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.genfromtxt &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Input and output" href="../routines.io.html" >
     <link rel="next" title="numpy.fromregex" href="numpy.fromregex.html" >
-    <link rel="prev" title="numpy.savetxt" href="numpy.savetxt.html" > 
+    <link rel="prev" title="numpy.savetxt" href="numpy.savetxt.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,15 +138,15 @@
 <h1>numpy.genfromtxt<a class="headerlink" href="#numpy-genfromtxt" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.genfromtxt">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">genfromtxt</code><span class="sig-paren">(</span><em class="sig-param">fname</em>, <em class="sig-param">dtype=&lt;class 'float'&gt;</em>, <em class="sig-param">comments='#'</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">skip_header=0</em>, <em class="sig-param">skip_footer=0</em>, <em class="sig-param">converters=None</em>, <em class="sig-param">missing_values=None</em>, <em class="sig-param">filling_values=None</em>, <em class="sig-param">usecols=None</em>, <em class="sig-param">names=None</em>, <em class="sig-param">excludelist=None</em>, <em class="sig-param">deletechars=&quot; !#$%&amp;'()*+</em>, <em class="sig-param">-./:;&lt;=&gt;?&#64;[\]^{|}~&quot;</em>, <em class="sig-param">replace_space='_'</em>, <em class="sig-param">autostrip=False</em>, <em class="sig-param">case_sensitive=True</em>, <em class="sig-param">defaultfmt='f%i'</em>, <em class="sig-param">unpack=None</em>, <em class="sig-param">usemask=False</em>, <em class="sig-param">loose=True</em>, <em class="sig-param">invalid_raise=True</em>, <em class="sig-param">max_rows=None</em>, <em class="sig-param">encoding='bytes'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L1538-L2231"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.genfromtxt" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">genfromtxt</code><span class="sig-paren">(</span><em class="sig-param">fname</em>, <em class="sig-param">dtype=&lt;class 'float'&gt;</em>, <em class="sig-param">comments='#'</em>, <em class="sig-param">delimiter=None</em>, <em class="sig-param">skip_header=0</em>, <em class="sig-param">skip_footer=0</em>, <em class="sig-param">converters=None</em>, <em class="sig-param">missing_values=None</em>, <em class="sig-param">filling_values=None</em>, <em class="sig-param">usecols=None</em>, <em class="sig-param">names=None</em>, <em class="sig-param">excludelist=None</em>, <em class="sig-param">deletechars=&quot; !#$%&amp;'()*+</em>, <em class="sig-param">-./:;&lt;=&gt;?&#64;[\\]^{|}~&quot;</em>, <em class="sig-param">replace_space='_'</em>, <em class="sig-param">autostrip=False</em>, <em class="sig-param">case_sensitive=True</em>, <em class="sig-param">defaultfmt='f%i'</em>, <em class="sig-param">unpack=None</em>, <em class="sig-param">usemask=False</em>, <em class="sig-param">loose=True</em>, <em class="sig-param">invalid_raise=True</em>, <em class="sig-param">max_rows=None</em>, <em class="sig-param">encoding='bytes'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L1557-L2250"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.genfromtxt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load data from a text file, with missing values handled as specified.</p>
 <p>Each line past the first <em class="xref py py-obj">skip_header</em> lines is split at the <em class="xref py py-obj">delimiter</em>
 character, and characters following the <em class="xref py py-obj">comments</em> character are discarded.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>fname</strong><span class="classifier">file, str, pathlib.Path, list of str, generator</span></dt><dd><p>File, filename, list, or generator to read.  If the filename
-extension is <em class="xref py py-obj">gz</em> or <a class="reference external" href="https://docs.python.org/dev/library/bz2.html#module-bz2" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bz2</span></code></a>, the file is first decompressed. Note
+<dt><strong>fname</strong><span class="classifier">file, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, pathlib.Path, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-generator" title="(in Python v3.10)"><span>generator</span></a></span></dt><dd><p>File, filename, list, or generator to read.  If the filename
+extension is <em class="xref py py-obj">gz</em> or <a class="reference external" href="https://docs.python.org/dev/library/bz2.html#module-bz2" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bz2</span></code></a>, the file is first decompressed. Note
 that generators must return byte strings. The strings
 in a list or produced by a generator are treated as lines.</p>
 </dd>
@@ -132,18 +154,18 @@ in a list or produced by a generator are treated as lines.</p>
 If None, the dtypes will be determined by the contents of each
 column, individually.</p>
 </dd>
-<dt><strong>comments</strong><span class="classifier">str, optional</span></dt><dd><p>The character used to indicate the start of a comment.
+<dt><strong>comments</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>The character used to indicate the start of a comment.
 All the characters occurring on a line after a comment are discarded</p>
 </dd>
-<dt><strong>delimiter</strong><span class="classifier">str, int, or sequence, optional</span></dt><dd><p>The string used to separate values.  By default, any consecutive
+<dt><strong>delimiter</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>, optional</span></dt><dd><p>The string used to separate values.  By default, any consecutive
 whitespaces act as delimiter.  An integer or sequence of integers
 can also be provided as width(s) of each field.</p>
 </dd>
-<dt><strong>skiprows</strong><span class="classifier">int, optional</span></dt><dd><p><em class="xref py py-obj">skiprows</em> was removed in numpy 1.10. Please use <em class="xref py py-obj">skip_header</em> instead.</p>
+<dt><strong>skiprows</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p><em class="xref py py-obj">skiprows</em> was removed in numpy 1.10. Please use <em class="xref py py-obj">skip_header</em> instead.</p>
 </dd>
-<dt><strong>skip_header</strong><span class="classifier">int, optional</span></dt><dd><p>The number of lines to skip at the beginning of the file.</p>
+<dt><strong>skip_header</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The number of lines to skip at the beginning of the file.</p>
 </dd>
-<dt><strong>skip_footer</strong><span class="classifier">int, optional</span></dt><dd><p>The number of lines to skip at the end of the file.</p>
+<dt><strong>skip_footer</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The number of lines to skip at the end of the file.</p>
 </dd>
 <dt><strong>converters</strong><span class="classifier">variable, optional</span></dt><dd><p>The set of functions that convert the data of a column to a value.
 The converters can also be used to provide a default value
@@ -156,54 +178,54 @@ instead.</p>
 </dd>
 <dt><strong>filling_values</strong><span class="classifier">variable, optional</span></dt><dd><p>The set of values to be used as default when the data are missing.</p>
 </dd>
-<dt><strong>usecols</strong><span class="classifier">sequence, optional</span></dt><dd><p>Which columns to read, with 0 being the first.  For example,
+<dt><strong>usecols</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>, optional</span></dt><dd><p>Which columns to read, with 0 being the first.  For example,
 <code class="docutils literal notranslate"><span class="pre">usecols</span> <span class="pre">=</span> <span class="pre">(1,</span> <span class="pre">4,</span> <span class="pre">5)</span></code> will extract the 2nd, 5th and 6th columns.</p>
 </dd>
-<dt><strong>names</strong><span class="classifier">{None, True, str, sequence}, optional</span></dt><dd><p>If <em class="xref py py-obj">names</em> is True, the field names are read from the first line after
+<dt><strong>names</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>}, optional</span></dt><dd><p>If <em class="xref py py-obj">names</em> is True, the field names are read from the first line after
 the first <em class="xref py py-obj">skip_header</em> lines.  This line can optionally be proceeded
 by a comment delimiter. If <em class="xref py py-obj">names</em> is a sequence or a single-string of
 comma-separated names, the names will be used to define the field names
 in a structured dtype. If <em class="xref py py-obj">names</em> is None, the names of the dtype
 fields will be used, if any.</p>
 </dd>
-<dt><strong>excludelist</strong><span class="classifier">sequence, optional</span></dt><dd><p>A list of names to exclude. This list is appended to the default list
+<dt><strong>excludelist</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>, optional</span></dt><dd><p>A list of names to exclude. This list is appended to the default list
 [‘return’,’file’,’print’]. Excluded names are appended an underscore:
 for example, <em class="xref py py-obj">file</em> would become <em class="xref py py-obj">file_</em>.</p>
 </dd>
-<dt><strong>deletechars</strong><span class="classifier">str, optional</span></dt><dd><p>A string combining invalid characters that must be deleted from the
+<dt><strong>deletechars</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>A string combining invalid characters that must be deleted from the
 names.</p>
 </dd>
-<dt><strong>defaultfmt</strong><span class="classifier">str, optional</span></dt><dd><p>A format used to define default field names, such as “f%i” or “f_%02i”.</p>
+<dt><strong>defaultfmt</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>A format used to define default field names, such as “f%i” or “f_%02i”.</p>
 </dd>
-<dt><strong>autostrip</strong><span class="classifier">bool, optional</span></dt><dd><p>Whether to automatically strip white spaces from the variables.</p>
+<dt><strong>autostrip</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Whether to automatically strip white spaces from the variables.</p>
 </dd>
 <dt><strong>replace_space</strong><span class="classifier">char, optional</span></dt><dd><p>Character(s) used in replacement of white spaces in the variables
 names. By default, use a ‘_’.</p>
 </dd>
-<dt><strong>case_sensitive</strong><span class="classifier">{True, False, ‘upper’, ‘lower’}, optional</span></dt><dd><p>If True, field names are case sensitive.
+<dt><strong>case_sensitive</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, ‘upper’, ‘lower’}, optional</span></dt><dd><p>If True, field names are case sensitive.
 If False or ‘upper’, field names are converted to upper case.
 If ‘lower’, field names are converted to lower case.</p>
 </dd>
-<dt><strong>unpack</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, the returned array is transposed, so that arguments may be
+<dt><strong>unpack</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, the returned array is transposed, so that arguments may be
 unpacked using <code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y,</span> <span class="pre">z</span> <span class="pre">=</span> <span class="pre">loadtxt(...)</span></code></p>
 </dd>
-<dt><strong>usemask</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, return a masked array.
+<dt><strong>usemask</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, return a masked array.
 If False, return a regular array.</p>
 </dd>
-<dt><strong>loose</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, do not raise errors for invalid values.</p>
+<dt><strong>loose</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, do not raise errors for invalid values.</p>
 </dd>
-<dt><strong>invalid_raise</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, an exception is raised if an inconsistency is detected in the
+<dt><strong>invalid_raise</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, an exception is raised if an inconsistency is detected in the
 number of columns.
 If False, a warning is emitted and the offending lines are skipped.</p>
 </dd>
-<dt><strong>max_rows</strong><span class="classifier">int,  optional</span></dt><dd><p>The maximum number of rows to read. Must not be used with skip_footer
+<dt><strong>max_rows</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>,  optional</span></dt><dd><p>The maximum number of rows to read. Must not be used with skip_footer
 at the same time.  If given, the value must be at least 1. Default is
 to read the entire file.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.10.0.</span></p>
 </div>
 </dd>
-<dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>Encoding used to decode the inputfile. Does not apply when <em class="xref py py-obj">fname</em> is
+<dt><strong>encoding</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Encoding used to decode the inputfile. Does not apply when <em class="xref py py-obj">fname</em> is
 a file object.  The special value ‘bytes’ enables backward compatibility
 workarounds that ensure that you receive byte arrays when possible
 and passes latin1 encoded strings to converters. Override this value to
@@ -216,8 +238,8 @@ to None the system default is used. The default value is ‘bytes’.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>Data read from the text file. If <em class="xref py py-obj">usemask</em> is True, this is a
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Data read from the text file. If <em class="xref py py-obj">usemask</em> is True, this is a
 masked array.</p>
 </dd>
 </dl>
@@ -322,10 +344,10 @@ When using a custom converter, make sure the function does remove spaces.</p></l
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

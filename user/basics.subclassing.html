@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Subclassing ndarray &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Subclassing ndarray &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,36 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
-    <link rel="up" title="NumPy basics" href="basics.html" >
-    <link rel="next" title="Miscellaneous" href="misc.html" >
-    <link rel="prev" title="Writing custom array containers" href="basics.dispatch.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,11 +74,9 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
-
-          <li class="active"><a href="tutorials_index.html" >NumPy Tutorials</a></li>
-          <li class="active"><a href="basics.html" accesskey="U">NumPy basics</a></li> 
+ 
     </ul>
               
               
@@ -67,14 +84,6 @@
       <li class="active">
         <a href="../genindex.html" title="General Index"
            accesskey="I">index</a>
-      </li>
-      <li class="active">
-        <a href="misc.html" title="Miscellaneous"
-           accesskey="N">next</a>
-      </li>
-      <li class="active">
-        <a href="basics.dispatch.html" title="Writing custom array containers"
-           accesskey="P">previous</a>
       </li>
     </ul>
               
@@ -111,12 +120,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="basics.dispatch.html"
-                        title="previous chapter">Writing custom array containers</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="misc.html"
-                        title="next chapter">Miscellaneous</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -525,7 +528,7 @@ as our type, and adds an extra attribute.</p>
 <p>A subclass can override what happens when executing numpy ufuncs on it by
 overriding the default <code class="docutils literal notranslate"><span class="pre">ndarray.__array_ufunc__</span></code> method. This method is
 executed <em>instead</em> of the ufunc and should return either the result of the
-operation, or <a class="reference external" href="https://docs.python.org/dev/library/constants.html#NotImplemented" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> if the operation requested is not
+operation, or <a class="reference external" href="https://docs.python.org/dev/library/constants.html#NotImplemented" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">NotImplemented</span></code></a> if the operation requested is not
 implemented.</p>
 <p>The signature of <code class="docutils literal notranslate"><span class="pre">__array_ufunc__</span></code> is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>def __array_ufunc__(ufunc, method, *inputs, **kwargs):
@@ -846,10 +849,10 @@ your function’s signature should accept <code class="docutils literal notransl
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.fill_diagonal &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.fill_diagonal &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Indexing routines" href="../routines.indexing.html" >
     <link rel="next" title="numpy.nditer" href="numpy.nditer.html" >
-    <link rel="prev" title="numpy.putmask" href="numpy.putmask.html" > 
+    <link rel="prev" title="numpy.putmask" href="numpy.putmask.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,20 +138,22 @@
 <h1>numpy.fill_diagonal<a class="headerlink" href="#numpy-fill-diagonal" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.fill_diagonal">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">fill_diagonal</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">val</em>, <em class="sig-param">wrap=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/index_tricks.py#L745-L874"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fill_diagonal" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">fill_diagonal</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">val</em>, <em class="sig-param">wrap=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/index_tricks.py#L759-L890"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fill_diagonal" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fill the main diagonal of the given array of any dimensionality.</p>
 <p>For an array <em class="xref py py-obj">a</em> with <code class="docutils literal notranslate"><span class="pre">a.ndim</span> <span class="pre">&gt;=</span> <span class="pre">2</span></code>, the diagonal is the list of
 locations with indices <code class="docutils literal notranslate"><span class="pre">a[i,</span> <span class="pre">...,</span> <span class="pre">i]</span></code> all identical. This function
 modifies the input array in-place, it does not return a value.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array, at least 2-D.</span></dt><dd><p>Array whose diagonal is to be filled, it gets modified in-place.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a>, at least 2-D.</span></dt><dd><p>Array whose diagonal is to be filled, it gets modified in-place.</p>
 </dd>
-<dt><strong>val</strong><span class="classifier">scalar</span></dt><dd><p>Value to be written on the diagonal, its type must be compatible with
-that of the array a.</p>
+<dt><strong>val</strong><span class="classifier"><span class="xref std std-ref">scalar</span> or <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Value(s) to write on the diagonal. If <em class="xref py py-obj">val</em> is scalar, the value is
+written along the diagonal. If array-like, the flattened <em class="xref py py-obj">val</em> is
+written along the diagonal, repeating if necessary to fill all
+diagonal entries.</p>
 </dd>
-<dt><strong>wrap</strong><span class="classifier">bool</span></dt><dd><p>For tall matrices in NumPy version up to 1.6.2, the
+<dt><strong>wrap</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>For tall matrices in NumPy version up to 1.6.2, the
 diagonal “wrapped” after N columns. You can have this behavior
 with this option. This affects only tall matrices.</p>
 </dd>
@@ -138,7 +162,9 @@ with this option. This affects only tall matrices.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.diag_indices.html#numpy.diag_indices" title="numpy.diag_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diag_indices</span></code></a>, <a class="reference internal" href="numpy.diag_indices_from.html#numpy.diag_indices_from" title="numpy.diag_indices_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diag_indices_from</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.diag_indices.html#numpy.diag_indices" title="numpy.diag_indices"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diag_indices</span></code></a>, <a class="reference internal" href="numpy.diag_indices_from.html#numpy.diag_indices_from" title="numpy.diag_indices_from"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diag_indices_from</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -250,10 +276,10 @@ on the flip function.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

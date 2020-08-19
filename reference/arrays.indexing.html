@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Indexing &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Indexing &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="Array objects" href="arrays.html" >
     <link rel="next" title="Iterating Over Arrays" href="arrays.nditer.html" >
-    <link rel="prev" title="numpy.dtype.__setstate__" href="generated/numpy.dtype.__setstate__.html" > 
+    <link rel="prev" title="numpy.dtype.__setstate__" href="generated/numpy.dtype.__setstate__.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="index.html" >NumPy Reference</a></li>
@@ -150,7 +172,7 @@ for the former.</p>
 <div class="section" id="basic-slicing-and-indexing">
 <h2>Basic Slicing and Indexing<a class="headerlink" href="#basic-slicing-and-indexing" title="Permalink to this headline">¶</a></h2>
 <p>Basic slicing extends Python’s basic concept of slicing to N
-dimensions. Basic slicing occurs when <em>obj</em> is a <a class="reference external" href="https://docs.python.org/dev/library/functions.html#slice" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">slice</span></code></a> object
+dimensions. Basic slicing occurs when <em>obj</em> is a <a class="reference external" href="https://docs.python.org/dev/library/functions.html#slice" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">slice</span></code></a> object
 (constructed by <code class="docutils literal notranslate"><span class="pre">start:stop:step</span></code> notation inside of brackets), an
 integer, or a tuple of slice objects and integers. <code class="xref py py-const docutils literal notranslate"><span class="pre">Ellipsis</span></code>
 and <a class="reference internal" href="constants.html#numpy.newaxis" title="numpy.newaxis"><code class="xref py py-const docutils literal notranslate"><span class="pre">newaxis</span></code></a> objects can be interspersed with these as
@@ -158,8 +180,8 @@ well.</p>
 <div class="deprecated">
 <p><span class="versionmodified deprecated">Deprecated since version 1.15.0: </span>In order to remain backward compatible with a common usage in
 Numeric, basic slicing is also initiated if the selection object is
-any non-ndarray and non-tuple sequence (such as a <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) containing
-<a class="reference external" href="https://docs.python.org/dev/library/functions.html#slice" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">slice</span></code></a> objects, the <code class="xref py py-const docutils literal notranslate"><span class="pre">Ellipsis</span></code> object, or the <a class="reference internal" href="constants.html#numpy.newaxis" title="numpy.newaxis"><code class="xref py py-const docutils literal notranslate"><span class="pre">newaxis</span></code></a>
+any non-ndarray and non-tuple sequence (such as a <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">list</span></code></a>) containing
+<a class="reference external" href="https://docs.python.org/dev/library/functions.html#slice" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">slice</span></code></a> objects, the <code class="xref py py-const docutils literal notranslate"><span class="pre">Ellipsis</span></code> object, or the <a class="reference internal" href="constants.html#numpy.newaxis" title="numpy.newaxis"><code class="xref py py-const docutils literal notranslate"><span class="pre">newaxis</span></code></a>
 object, but not for integer arrays or other embedded sequences.</p>
 </div>
 <p id="index-1">The simplest case of indexing with <em>N</em> integers returns an <a class="reference internal" href="arrays.scalars.html#arrays-scalars"><span class="std std-ref">array
@@ -230,7 +252,7 @@ axis.</p>
 </div>
 </li>
 <li><p>If the number of objects in the selection tuple is less than
-<em>N</em> , then <code class="docutils literal notranslate"><span class="pre">:</span></code> is assumed for any subsequent dimensions.</p>
+<em>N</em>, then <code class="docutils literal notranslate"><span class="pre">:</span></code> is assumed for any subsequent dimensions.</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">]],</span> <span class="p">[[</span><span class="mi">4</span><span class="p">],[</span><span class="mi">5</span><span class="p">],[</span><span class="mi">6</span><span class="p">]]])</span>
@@ -484,14 +506,14 @@ type, such as may be returned from comparison operators. A single
 boolean index array is practically identical to <code class="docutils literal notranslate"><span class="pre">x[obj.nonzero()]</span></code> where,
 as described above, <a class="reference internal" href="generated/numpy.ndarray.nonzero.html#numpy.ndarray.nonzero" title="numpy.ndarray.nonzero"><code class="xref py py-meth docutils literal notranslate"><span class="pre">obj.nonzero()</span></code></a> returns a
 tuple (of length <a class="reference internal" href="generated/numpy.ndarray.ndim.html#numpy.ndarray.ndim" title="numpy.ndarray.ndim"><code class="xref py py-attr docutils literal notranslate"><span class="pre">obj.ndim</span></code></a>) of integer index
-arrays showing the <code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code> elements of <em>obj</em>. However, it is
+arrays showing the <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">True</span></code></a> elements of <em>obj</em>. However, it is
 faster when <code class="docutils literal notranslate"><span class="pre">obj.shape</span> <span class="pre">==</span> <span class="pre">x.shape</span></code>.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">obj.ndim</span> <span class="pre">==</span> <span class="pre">x.ndim</span></code>, <code class="docutils literal notranslate"><span class="pre">x[obj]</span></code> returns a 1-dimensional array
-filled with the elements of <em>x</em> corresponding to the <code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code>
+filled with the elements of <em>x</em> corresponding to the <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">True</span></code></a>
 values of <em>obj</em>.  The search order will be <a class="reference internal" href="../glossary.html#term-row-major"><span class="xref std std-term">row-major</span></a>,
-C-style. If <em>obj</em> has <code class="xref py py-const docutils literal notranslate"><span class="pre">True</span></code> values at entries that are outside
+C-style. If <em>obj</em> has <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">True</span></code></a> values at entries that are outside
 of the bounds of <em>x</em>, then an index error will be raised. If <em>obj</em> is
-smaller than <em>x</em> it is identical to filling it with <code class="xref py py-const docutils literal notranslate"><span class="pre">False</span></code>.</p>
+smaller than <em>x</em> it is identical to filling it with <a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="xref py py-data docutils literal notranslate"><span class="pre">False</span></code></a>.</p>
 <div class="admonition-example admonition">
 <p class="admonition-title">Example</p>
 <p>A common use case for this is filtering for desired element values.
@@ -675,10 +697,10 @@ returned array is therefore the shape of the integer indexing object.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.insert &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.insert &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Array manipulation routines" href="../routines.array-manipulation.html" >
     <link rel="next" title="numpy.append" href="numpy.append.html" >
-    <link rel="prev" title="numpy.delete" href="numpy.delete.html" > 
+    <link rel="prev" title="numpy.delete" href="numpy.delete.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,14 +138,14 @@
 <h1>numpy.insert<a class="headerlink" href="#numpy-insert" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.insert">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">arr</em>, <em class="sig-param">obj</em>, <em class="sig-param">values</em>, <em class="sig-param">axis=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L4389-L4577"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.insert" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param">arr</em>, <em class="sig-param">obj</em>, <em class="sig-param">values</em>, <em class="sig-param">axis=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L4537-L4725"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.insert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert values along the given axis before the given indices.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>arr</strong><span class="classifier">array_like</span></dt><dd><p>Input array.</p>
+<dt><strong>arr</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input array.</p>
 </dd>
-<dt><strong>obj</strong><span class="classifier">int, slice or sequence of ints</span></dt><dd><p>Object that defines the index or indices before which <em class="xref py py-obj">values</em> is
+<dt><strong>obj</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, slice or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ints</span></dt><dd><p>Object that defines the index or indices before which <em class="xref py py-obj">values</em> is
 inserted.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.8.0.</span></p>
@@ -132,19 +154,19 @@ inserted.</p>
 sequence with one element (similar to calling insert multiple
 times).</p>
 </dd>
-<dt><strong>values</strong><span class="classifier">array_like</span></dt><dd><p>Values to insert into <em class="xref py py-obj">arr</em>. If the type of <em class="xref py py-obj">values</em> is different
+<dt><strong>values</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Values to insert into <em class="xref py py-obj">arr</em>. If the type of <em class="xref py py-obj">values</em> is different
 from that of <em class="xref py py-obj">arr</em>, <em class="xref py py-obj">values</em> is converted to the type of <em class="xref py py-obj">arr</em>.
 <em class="xref py py-obj">values</em> should be shaped so that <code class="docutils literal notranslate"><span class="pre">arr[...,obj,...]</span> <span class="pre">=</span> <span class="pre">values</span></code>
 is legal.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>Axis along which to insert <em class="xref py py-obj">values</em>.  If <em class="xref py py-obj">axis</em> is None then <em class="xref py py-obj">arr</em>
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Axis along which to insert <em class="xref py py-obj">values</em>.  If <em class="xref py py-obj">axis</em> is None then <em class="xref py py-obj">arr</em>
 is flattened first.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>A copy of <em class="xref py py-obj">arr</em> with <em class="xref py py-obj">values</em> inserted.  Note that <a class="reference internal" href="#numpy.insert" title="numpy.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>A copy of <em class="xref py py-obj">arr</em> with <em class="xref py py-obj">values</em> inserted.  Note that <a class="reference internal" href="#numpy.insert" title="numpy.insert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">insert</span></code></a>
 does not occur in-place: a new array is returned. If
 <em class="xref py py-obj">axis</em> is None, <em class="xref py py-obj">out</em> is a flattened array.</p>
 </dd>
@@ -237,10 +259,10 @@ from <em class="xref py py-obj">obj=[0]</em> just like <em class="xref py py-obj
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

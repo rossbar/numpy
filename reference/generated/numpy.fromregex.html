@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.fromregex &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.fromregex &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Input and output" href="../routines.io.html" >
     <link rel="next" title="numpy.array2string" href="numpy.array2string.html" >
-    <link rel="prev" title="numpy.genfromtxt" href="numpy.genfromtxt.html" > 
+    <link rel="prev" title="numpy.genfromtxt" href="numpy.genfromtxt.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.fromregex<a class="headerlink" href="#numpy-fromregex" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.fromregex">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">fromregex</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">regexp</em>, <em class="sig-param">dtype</em>, <em class="sig-param">encoding=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L1439-L1530"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fromregex" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">fromregex</code><span class="sig-paren">(</span><em class="sig-param">file</em>, <em class="sig-param">regexp</em>, <em class="sig-param">dtype</em>, <em class="sig-param">encoding=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/npyio.py#L1458-L1549"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.fromregex" title="Permalink to this definition">¶</a></dt>
 <dd><p>Construct an array from a text file, using regular expression parsing.</p>
 <p>The returned array is always a structured array, and is constructed from
 all matches of the regular expression in the file. Groups in the regular
@@ -124,14 +146,14 @@ expression are converted to fields of the structured array.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>file</strong><span class="classifier">str or file</span></dt><dd><p>Filename or file object to read.</p>
+<dt><strong>file</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or file</span></dt><dd><p>Filename or file object to read.</p>
 </dd>
-<dt><strong>regexp</strong><span class="classifier">str or regexp</span></dt><dd><p>Regular expression used to parse the file.
+<dt><strong>regexp</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or regexp</span></dt><dd><p>Regular expression used to parse the file.
 Groups in the regular expression correspond to fields in the dtype.</p>
 </dd>
-<dt><strong>dtype</strong><span class="classifier">dtype or list of dtypes</span></dt><dd><p>Dtype for the structured array.</p>
+<dt><strong>dtype</strong><span class="classifier">dtype or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of dtypes</span></dt><dd><p>Dtype for the structured array.</p>
 </dd>
-<dt><strong>encoding</strong><span class="classifier">str, optional</span></dt><dd><p>Encoding used to decode the inputfile. Does not apply to input streams.</p>
+<dt><strong>encoding</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Encoding used to decode the inputfile. Does not apply to input streams.</p>
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.14.0.</span></p>
 </div>
@@ -139,22 +161,24 @@ Groups in the regular expression correspond to fields in the dtype.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>output</strong><span class="classifier">ndarray</span></dt><dd><p>The output array, containing the part of the content of <em class="xref py py-obj">file</em> that
+<dd class="field-even"><dl>
+<dt><strong>output</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The output array, containing the part of the content of <em class="xref py py-obj">file</em> that
 was matched by <em class="xref py py-obj">regexp</em>. <em class="xref py py-obj">output</em> is always a structured array.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>TypeError</strong></dt><dd><p>When <a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a> is not a valid dtype for a structured array.</p>
+<dt>TypeError</dt><dd><p>When <a class="reference internal" href="numpy.dtype.html#numpy.dtype" title="numpy.dtype"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dtype</span></code></a> is not a valid dtype for a structured array.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.fromstring.html#numpy.fromstring" title="numpy.fromstring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromstring</span></code></a>, <a class="reference internal" href="numpy.loadtxt.html#numpy.loadtxt" title="numpy.loadtxt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadtxt</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.fromstring.html#numpy.fromstring" title="numpy.fromstring"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fromstring</span></code></a>, <a class="reference internal" href="numpy.loadtxt.html#numpy.loadtxt" title="numpy.loadtxt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">loadtxt</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>Dtypes for structured arrays can be specified in several forms, but all
@@ -201,10 +225,10 @@ forms specify at least the data type and field name. For details see
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

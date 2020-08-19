@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.repeat &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.repeat &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Array manipulation routines" href="../routines.array-manipulation.html" >
     <link rel="next" title="numpy.delete" href="numpy.delete.html" >
-    <link rel="prev" title="numpy.tile" href="numpy.tile.html" > 
+    <link rel="prev" title="numpy.tile" href="numpy.tile.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,24 +138,24 @@
 <h1>numpy.repeat<a class="headerlink" href="#numpy-repeat" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.repeat">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">repeat</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">repeats</em>, <em class="sig-param">axis=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/fromnumeric.py#L437-L479"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.repeat" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">repeat</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">repeats</em>, <em class="sig-param">axis=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/fromnumeric.py#L437-L480"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.repeat" title="Permalink to this definition">¶</a></dt>
 <dd><p>Repeat elements of an array.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Input array.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input array.</p>
 </dd>
-<dt><strong>repeats</strong><span class="classifier">int or array of ints</span></dt><dd><p>The number of repetitions for each element.  <em class="xref py py-obj">repeats</em> is broadcasted
+<dt><strong>repeats</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> of ints</span></dt><dd><p>The number of repetitions for each element.  <em class="xref py py-obj">repeats</em> is broadcasted
 to fit the shape of the given axis.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>The axis along which to repeat values.  By default, use the
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The axis along which to repeat values.  By default, use the
 flattened input array, and return a flat output array.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>repeated_array</strong><span class="classifier">ndarray</span></dt><dd><p>Output array which has the same shape as <em class="xref py py-obj">a</em>, except along
+<dd class="field-even"><dl>
+<dt><strong>repeated_array</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Output array which has the same shape as <em class="xref py py-obj">a</em>, except along
 the given axis.</p>
 </dd>
 </dl>
@@ -143,6 +165,8 @@ the given axis.</p>
 <p class="admonition-title">See also</p>
 <dl class="simple">
 <dt><a class="reference internal" href="numpy.tile.html#numpy.tile" title="numpy.tile"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tile</span></code></a></dt><dd><p>Tile an array.</p>
+</dd>
+<dt><a class="reference internal" href="numpy.unique.html#numpy.unique" title="numpy.unique"><code class="xref py py-obj docutils literal notranslate"><span class="pre">unique</span></code></a></dt><dd><p>Find the unique elements of an array.</p>
 </dd>
 </dl>
 </div>
@@ -186,10 +210,10 @@ the given axis.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.ma.average &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.ma.average &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Masked array operations" href="../routines.ma.html" >
     <link rel="next" title="numpy.ma.conjugate" href="numpy.ma.conjugate.html" >
-    <link rel="prev" title="numpy.ma.anomalies" href="numpy.ma.anomalies.html" > 
+    <link rel="prev" title="numpy.ma.anomalies" href="numpy.ma.anomalies.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -117,18 +139,18 @@
 <h1>numpy.ma.average<a class="headerlink" href="#numpy-ma-average" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.ma.average">
-<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">average</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">weights=None</em>, <em class="sig-param">returned=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/ma/extras.py#L533-L636"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.average" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.ma.</code><code class="sig-name descname">average</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">axis=None</em>, <em class="sig-param">weights=None</em>, <em class="sig-param">returned=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/ma/extras.py#L528-L631"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.ma.average" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the weighted average of array over the given axis.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Data to be averaged.
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Data to be averaged.
 Masked entries are not taken into account in the computation.</p>
 </dd>
-<dt><strong>axis</strong><span class="classifier">int, optional</span></dt><dd><p>Axis along which to average <em class="xref py py-obj">a</em>. If None, averaging is done over
+<dt><strong>axis</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Axis along which to average <em class="xref py py-obj">a</em>. If None, averaging is done over
 the flattened array.</p>
 </dd>
-<dt><strong>weights</strong><span class="classifier">array_like, optional</span></dt><dd><p>The importance that each element has in the computation of the average.
+<dt><strong>weights</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, optional</span></dt><dd><p>The importance that each element has in the computation of the average.
 The weights array can either be 1-D (in which case its length must be
 the size of <em class="xref py py-obj">a</em> along the given axis) or of the same shape as <em class="xref py py-obj">a</em>.
 If <code class="docutils literal notranslate"><span class="pre">weights=None</span></code>, then all data in <em class="xref py py-obj">a</em> are assumed to have a
@@ -138,15 +160,15 @@ weight equal to one.  The 1-D calculation is:</p>
 </div>
 <p>The only constraint on <em class="xref py py-obj">weights</em> is that <em class="xref py py-obj">sum(weights)</em> must not be 0.</p>
 </dd>
-<dt><strong>returned</strong><span class="classifier">bool, optional</span></dt><dd><p>Flag indicating whether a tuple <code class="docutils literal notranslate"><span class="pre">(result,</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">weights)</span></code>
+<dt><strong>returned</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Flag indicating whether a tuple <code class="docutils literal notranslate"><span class="pre">(result,</span> <span class="pre">sum</span> <span class="pre">of</span> <span class="pre">weights)</span></code>
 should be returned as output (True), or just the result (False).
 Default is False.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>average, [sum_of_weights]</strong><span class="classifier">(tuple of) scalar or MaskedArray</span></dt><dd><p>The average along the specified axis. When returned is <em class="xref py py-obj">True</em>,
+<dd class="field-even"><dl>
+<dt><strong>average, [sum_of_weights]</strong><span class="classifier">(<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of) <span class="xref std std-ref">scalar</span> or MaskedArray</span></dt><dd><p>The average along the specified axis. When returned is <em class="xref py py-obj">True</em>,
 return a tuple with the average as the first element and the sum
 of the weights as the second element. The return type is <em class="xref py py-obj">np.float64</em>
 if <em class="xref py py-obj">a</em> is of integer type and floats smaller than <em class="xref py py-obj">float64</em>, or the
@@ -203,10 +225,10 @@ input data-type, otherwise. If returned, <em class="xref py py-obj">sum_of_weigh
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

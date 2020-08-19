@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Cython API for random &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>C API for random &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Random sampling (numpy.random)" href="index.html" >
     <link rel="next" title="Extending" href="extending.html" >
-    <link rel="prev" title="Performance" href="performance.html" > 
+    <link rel="prev" title="Performance" href="performance.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -87,12 +109,6 @@
 	<div class="row-fluid">
       <div class="spc-rightsidebar span3">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="../../contents.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Cython API for random</a></li>
-<li><a class="reference internal" href="#c-api-for-random">C API for random</a></li>
-</ul>
-
   <h4>Previous topic</h4>
   <p class="topless"><a href="performance.html"
                         title="previous chapter">Performance</a></p>
@@ -118,18 +134,13 @@
         <div class="bodywrapper">
           <div class="body" id="spc-section-body">
             
-  <div class="section" id="cython-api-for-random">
-<h1>Cython API for random<a class="headerlink" href="#cython-api-for-random" title="Permalink to this headline">¶</a></h1>
-<p>Typed versions of many of the <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a> and <a class="reference internal" href="bit_generators/generated/numpy.random.BitGenerator.html#numpy.random.BitGenerator" title="numpy.random.BitGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BitGenerator</span></code></a> methods as well as
-the classes themselves can be accessed directly from Cython via</p>
-<div class="highlight-cython notranslate"><div class="highlight"><pre><span></span><span class="k">cimport</span> <span class="nn">numpy.random</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="c-api-for-random">
+  <div class="section" id="c-api-for-random">
 <h1>C API for random<a class="headerlink" href="#c-api-for-random" title="Permalink to this headline">¶</a></h1>
-<p>Access to various distributions is available via Cython or C-wrapper libraries
-like CFFI. All the functions accept a <a class="reference internal" href="#c.bitgen_t" title="bitgen_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">bitgen_t</span></code></a> as their first argument.</p>
+<p>Access to various distributions below is available via Cython or C-wrapper
+libraries like CFFI. All the functions accept a <a class="reference internal" href="#c.bitgen_t" title="bitgen_t"><code class="xref c c-type docutils literal notranslate"><span class="pre">bitgen_t</span></code></a> as their
+first argument.  To access these from Cython or C, you must link with the
+<code class="docutils literal notranslate"><span class="pre">npyrandom</span></code> library which is part of the NumPy distribution, located in
+<code class="docutils literal notranslate"><span class="pre">numpy/random/lib</span></code>.</p>
 <dl class="type">
 <dt id="c.bitgen_t">
 <code class="sig-name descname">bitgen_t</code><a class="headerlink" href="#c.bitgen_t" title="Permalink to this definition">¶</a></dt>
@@ -487,10 +498,10 @@ void <code class="sig-name descname">random_multivariate_hypergeometric_marginal
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

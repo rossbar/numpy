@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.convolve &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.convolve &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Mathematical functions" href="../routines.math.html" >
     <link rel="next" title="numpy.clip" href="numpy.clip.html" >
-    <link rel="prev" title="numpy.conjugate" href="numpy.conjugate.html" > 
+    <link rel="prev" title="numpy.conjugate" href="numpy.conjugate.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.convolve<a class="headerlink" href="#numpy-convolve" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.convolve">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">convolve</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">v</em>, <em class="sig-param">mode='full'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py#L720-L817"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.convolve" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">convolve</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">v</em>, <em class="sig-param">mode='full'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py#L721-L818"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.convolve" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the discrete, linear convolution of two one-dimensional sequences.</p>
 <p>The convolution operator is often seen in signal processing, where it
 models the effect of a linear time-invariant system on a signal <a class="reference internal" href="#r95849f33d2b1-1" id="id1">[1]</a>.  In
@@ -124,12 +146,12 @@ probability theory, the sum of two independent random variables is
 distributed according to the convolution of their individual
 distributions.</p>
 <p>If <em class="xref py py-obj">v</em> is longer than <em class="xref py py-obj">a</em>, the arrays are swapped before computation.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">(N,) array_like</span></dt><dd><p>First one-dimensional input array.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier">(N,) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>First one-dimensional input array.</p>
 </dd>
-<dt><strong>v</strong><span class="classifier">(M,) array_like</span></dt><dd><p>Second one-dimensional input array.</p>
+<dt><strong>v</strong><span class="classifier">(M,) <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Second one-dimensional input array.</p>
 </dd>
 <dt><strong>mode</strong><span class="classifier">{‘full’, ‘valid’, ‘same’}, optional</span></dt><dd><dl class="simple">
 <dt>‘full’:</dt><dd><p>By default, mode is ‘full’.  This returns the convolution
@@ -150,8 +172,8 @@ the signal boundary have no effect.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>Discrete, linear convolution of <em class="xref py py-obj">a</em> and <em class="xref py py-obj">v</em>.</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Discrete, linear convolution of <em class="xref py py-obj">a</em> and <em class="xref py py-obj">v</em>.</p>
 </dd>
 </dl>
 </dd>
@@ -159,9 +181,9 @@ the signal boundary have no effect.</p>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve</span></code></a></dt><dd><p>Convolve two arrays using the Fast Fourier Transform.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve</span></code></a></dt><dd><p>Convolve two arrays using the Fast Fourier Transform.</p>
 </dd>
-<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.toeplitz.html#scipy.linalg.toeplitz" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.toeplitz</span></code></a></dt><dd><p>Used to construct the convolution operator.</p>
+<dt><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.toeplitz.html#scipy.linalg.toeplitz" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg.toeplitz</span></code></a></dt><dd><p>Used to construct the convolution operator.</p>
 </dd>
 <dt><a class="reference internal" href="numpy.polymul.html#numpy.polymul" title="numpy.polymul"><code class="xref py py-obj docutils literal notranslate"><span class="pre">polymul</span></code></a></dt><dd><p>Polynomial multiplication. Same output as convolve, but also accepts poly1d objects as input.</p>
 </dd>
@@ -175,7 +197,7 @@ the signal boundary have no effect.</p>
 is equivalent to the multiplication <img class="math" src="../../_images/math/ab559a702530db5f848b610d5b35a57c6d0afc28.svg" alt="X(f) Y(f)"/> in the Fourier
 domain, after appropriate padding (padding is necessary to prevent
 circular convolution).  Since multiplication is more efficient (faster)
-than convolution, the function <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve</span></code></a> exploits the
+than convolution, the function <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve</span></code></a> exploits the
 FFT to calculate the convolution of large data-sets.</p>
 <p class="rubric">References</p>
 <dl class="citation">
@@ -229,10 +251,10 @@ is only one position where they completely overlap:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

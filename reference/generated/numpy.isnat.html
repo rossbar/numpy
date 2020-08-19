@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.isnat &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.isnat &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Logic functions" href="../routines.logic.html" >
     <link rel="next" title="numpy.isneginf" href="numpy.isneginf.html" >
-    <link rel="prev" title="numpy.isnan" href="numpy.isnan.html" > 
+    <link rel="prev" title="numpy.isnan" href="numpy.isnan.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -121,17 +143,17 @@
 <div class="versionadded">
 <p><span class="versionmodified added">New in version 1.13.0.</span></p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>x</strong><span class="classifier">array_like</span></dt><dd><p>Input array with datetime or timedelta data type.</p>
+<dd class="field-odd"><dl>
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input array with datetime or timedelta data type.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, None, or tuple of ndarray and None, optional</span></dt><dd><p>A location into which the result is stored. If provided, it must have
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#tuple" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">tuple</span></code></a> of <a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> and <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, optional</span></dt><dd><p>A location into which the result is stored. If provided, it must have
 a shape that the inputs broadcast to. If not provided or None,
 a freshly-allocated array is returned. A tuple (possible only as a
 keyword argument) must have length equal to the number of outputs.</p>
 </dd>
-<dt><strong>where</strong><span class="classifier">array_like, optional</span></dt><dd><p>This condition is broadcast over the input. At locations where the
+<dt><strong>where</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, optional</span></dt><dd><p>This condition is broadcast over the input. At locations where the
 condition is True, the <em class="xref py py-obj">out</em> array will be set to the ufunc result.
 Elsewhere, the <em class="xref py py-obj">out</em> array will retain its original value.
 Note that if an uninitialized <em class="xref py py-obj">out</em> array is created via the default
@@ -144,8 +166,8 @@ remain uninitialized.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">ndarray or bool</span></dt><dd><p>True where <code class="docutils literal notranslate"><span class="pre">x</span></code> is NaT, false otherwise.
+<dd class="field-even"><dl>
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>True where <code class="docutils literal notranslate"><span class="pre">x</span></code> is NaT, false otherwise.
 This is a scalar if <em class="xref py py-obj">x</em> is a scalar.</p>
 </dd>
 </dl>
@@ -153,7 +175,9 @@ This is a scalar if <em class="xref py py-obj">x</em> is a scalar.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.isnan.html#numpy.isnan" title="numpy.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>, <a class="reference internal" href="numpy.isinf.html#numpy.isinf" title="numpy.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>, <a class="reference internal" href="numpy.isneginf.html#numpy.isneginf" title="numpy.isneginf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isneginf</span></code></a>, <a class="reference internal" href="numpy.isposinf.html#numpy.isposinf" title="numpy.isposinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isposinf</span></code></a>, <a class="reference internal" href="numpy.isfinite.html#numpy.isfinite" title="numpy.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.isnan.html#numpy.isnan" title="numpy.isnan"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isnan</span></code></a>, <a class="reference internal" href="numpy.isinf.html#numpy.isinf" title="numpy.isinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isinf</span></code></a>, <a class="reference internal" href="numpy.isneginf.html#numpy.isneginf" title="numpy.isneginf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isneginf</span></code></a>, <a class="reference internal" href="numpy.isposinf.html#numpy.isposinf" title="numpy.isposinf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isposinf</span></code></a>, <a class="reference internal" href="numpy.isfinite.html#numpy.isfinite" title="numpy.isfinite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isfinite</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">isnat</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="s2">&quot;NaT&quot;</span><span class="p">))</span>
@@ -189,10 +213,10 @@ This is a scalar if <em class="xref py py-obj">x</em> is a scalar.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

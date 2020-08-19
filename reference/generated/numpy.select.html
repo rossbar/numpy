@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.select &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.select &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Indexing routines" href="../routines.indexing.html" >
     <link rel="next" title="numpy.lib.stride_tricks.as_strided" href="numpy.lib.stride_tricks.as_strided.html" >
-    <link rel="prev" title="numpy.diagonal" href="numpy.diagonal.html" > 
+    <link rel="prev" title="numpy.diagonal" href="numpy.diagonal.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,25 +138,25 @@
 <h1>numpy.select<a class="headerlink" href="#numpy-select" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.select">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">select</code><span class="sig-paren">(</span><em class="sig-param">condlist</em>, <em class="sig-param">choicelist</em>, <em class="sig-param">default=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L624-L707"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.select" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">select</code><span class="sig-paren">(</span><em class="sig-param">condlist</em>, <em class="sig-param">choicelist</em>, <em class="sig-param">default=0</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/function_base.py#L626-L708"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return an array drawn from elements in choicelist, depending on conditions.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>condlist</strong><span class="classifier">list of bool ndarrays</span></dt><dd><p>The list of conditions which determine from which array in <em class="xref py py-obj">choicelist</em>
+<dd class="field-odd"><dl>
+<dt><strong>condlist</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a> ndarrays</span></dt><dd><p>The list of conditions which determine from which array in <em class="xref py py-obj">choicelist</em>
 the output elements are taken. When multiple conditions are satisfied,
 the first one encountered in <em class="xref py py-obj">condlist</em> is used.</p>
 </dd>
-<dt><strong>choicelist</strong><span class="classifier">list of ndarrays</span></dt><dd><p>The list of arrays from which the output elements are taken. It has
+<dt><strong>choicelist</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of ndarrays</span></dt><dd><p>The list of arrays from which the output elements are taken. It has
 to be of the same length as <em class="xref py py-obj">condlist</em>.</p>
 </dd>
-<dt><strong>default</strong><span class="classifier">scalar, optional</span></dt><dd><p>The element inserted in <em class="xref py py-obj">output</em> when all conditions evaluate to False.</p>
+<dt><strong>default</strong><span class="classifier"><span class="xref std std-ref">scalar</span>, optional</span></dt><dd><p>The element inserted in <em class="xref py py-obj">output</em> when all conditions evaluate to False.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>output</strong><span class="classifier">ndarray</span></dt><dd><p>The output at position m is the m-th element of the array in
+<dd class="field-even"><dl>
+<dt><strong>output</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The output at position m is the m-th element of the array in
 <em class="xref py py-obj">choicelist</em> where the m-th element of the corresponding array in
 <em class="xref py py-obj">condlist</em> is True.</p>
 </dd>
@@ -146,8 +168,8 @@ to be of the same length as <em class="xref py py-obj">condlist</em>.</p>
 <dl class="simple">
 <dt><a class="reference internal" href="numpy.where.html#numpy.where" title="numpy.where"><code class="xref py py-obj docutils literal notranslate"><span class="pre">where</span></code></a></dt><dd><p>Return elements from one of two arrays depending on condition.</p>
 </dd>
+<dt><a class="reference internal" href="numpy.take.html#numpy.take" title="numpy.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>, <a class="reference internal" href="numpy.choose.html#numpy.choose" title="numpy.choose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choose</span></code></a>, <a class="reference internal" href="numpy.compress.html#numpy.compress" title="numpy.compress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compress</span></code></a>, <a class="reference internal" href="numpy.diag.html#numpy.diag" title="numpy.diag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diag</span></code></a>, <a class="reference internal" href="numpy.diagonal.html#numpy.diagonal" title="numpy.diagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diagonal</span></code></a></dt><dd></dd>
 </dl>
-<p><a class="reference internal" href="numpy.take.html#numpy.take" title="numpy.take"><code class="xref py py-obj docutils literal notranslate"><span class="pre">take</span></code></a>, <a class="reference internal" href="numpy.choose.html#numpy.choose" title="numpy.choose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">choose</span></code></a>, <a class="reference internal" href="numpy.compress.html#numpy.compress" title="numpy.compress"><code class="xref py py-obj docutils literal notranslate"><span class="pre">compress</span></code></a>, <a class="reference internal" href="numpy.diag.html#numpy.diag" title="numpy.diag"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diag</span></code></a>, <a class="reference internal" href="numpy.diagonal.html#numpy.diagonal" title="numpy.diagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">diagonal</span></code></a></p>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -182,10 +204,10 @@ to be of the same length as <em class="xref py py-obj">condlist</em>.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

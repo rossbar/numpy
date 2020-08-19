@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>NumPy core libraries &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>NumPy core libraries &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="NumPy C-API" href="index.html" >
     <link rel="next" title="C API Deprecations" href="deprecations.html" >
-    <link rel="prev" title="Generalized Universal Function API" href="generalized-ufuncs.html" > 
+    <link rel="prev" title="Generalized Universal Function API" href="generalized-ufuncs.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -146,7 +168,7 @@ same API as the C99 ones, except for the npy_* prefix.</p>
 in doubt.</p>
 <div class="section" id="floating-point-classification">
 <h3>Floating point classification<a class="headerlink" href="#floating-point-classification" title="Permalink to this headline">¶</a></h3>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_NAN">
 <code class="sig-name descname">NPY_NAN</code><a class="headerlink" href="#c.NPY_NAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to a NaN (Not a Number), and is guaranteed to have
@@ -154,21 +176,21 @@ the signbit unset (‘positive’ NaN). The corresponding single and extension
 precision macro are available with the suffix F and L.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_INFINITY">
 <code class="sig-name descname">NPY_INFINITY</code><a class="headerlink" href="#c.NPY_INFINITY" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to a positive inf. The corresponding single and
 extension precision macro are available with the suffix F and L.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_PZERO">
 <code class="sig-name descname">NPY_PZERO</code><a class="headerlink" href="#c.NPY_PZERO" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to positive zero. The corresponding single and
 extension precision macro are available with the suffix F and L.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_NZERO">
 <code class="sig-name descname">NPY_NZERO</code><a class="headerlink" href="#c.NPY_NZERO" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to negative zero (that is with the sign bit set). The
@@ -224,67 +246,67 @@ precisions are available with suffix f and l.</p>
 <p>The following math constants are available in <code class="docutils literal notranslate"><span class="pre">npy_math.h</span></code>. Single
 and extended precision are also available by adding the <code class="docutils literal notranslate"><span class="pre">f</span></code> and
 <code class="docutils literal notranslate"><span class="pre">l</span></code> suffixes respectively.</p>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_E">
 <code class="sig-name descname">NPY_E</code><a class="headerlink" href="#c.NPY_E" title="Permalink to this definition">¶</a></dt>
 <dd><p>Base of natural logarithm (<img class="math" src="../../_images/math/60f4822f02b44d931c5d0595da71dcf34e270437.svg" alt="e"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_LOG2E">
 <code class="sig-name descname">NPY_LOG2E</code><a class="headerlink" href="#c.NPY_LOG2E" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logarithm to base 2 of the Euler constant (<img class="math" src="../../_images/math/555c12d9ef7b3c07710f53ea806e49300926cd1e.svg" alt="\frac{\ln(e)}{\ln(2)}"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_LOG10E">
 <code class="sig-name descname">NPY_LOG10E</code><a class="headerlink" href="#c.NPY_LOG10E" title="Permalink to this definition">¶</a></dt>
 <dd><p>Logarithm to base 10 of the Euler constant (<img class="math" src="../../_images/math/3b7d1e46ce737db2cde69beda1c2e9d1cad87f3b.svg" alt="\frac{\ln(e)}{\ln(10)}"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_LOGE2">
 <code class="sig-name descname">NPY_LOGE2</code><a class="headerlink" href="#c.NPY_LOGE2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural logarithm of 2 (<img class="math" src="../../_images/math/44e752e3aac7f4279bbbfe72627df00ad3fce0a1.svg" alt="\ln(2)"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_LOGE10">
 <code class="sig-name descname">NPY_LOGE10</code><a class="headerlink" href="#c.NPY_LOGE10" title="Permalink to this definition">¶</a></dt>
 <dd><p>Natural logarithm of 10 (<img class="math" src="../../_images/math/6360a243d975c95fa094f0792d1181ebd894773a.svg" alt="\ln(10)"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_PI">
 <code class="sig-name descname">NPY_PI</code><a class="headerlink" href="#c.NPY_PI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pi (<img class="math" src="../../_images/math/9cc8517129c87252edd7fe2e4532af9dcf7a54d9.svg" alt="\pi"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_PI_2">
 <code class="sig-name descname">NPY_PI_2</code><a class="headerlink" href="#c.NPY_PI_2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pi divided by 2 (<img class="math" src="../../_images/math/2e50ff98888514864ee0d5ebd6ecadeee8ee7a00.svg" alt="\frac{\pi}{2}"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_PI_4">
 <code class="sig-name descname">NPY_PI_4</code><a class="headerlink" href="#c.NPY_PI_4" title="Permalink to this definition">¶</a></dt>
 <dd><p>Pi divided by 4 (<img class="math" src="../../_images/math/8ca7bbdc8bfd1cb42fa7468a2cb54c68ce99f0af.svg" alt="\frac{\pi}{4}"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_1_PI">
 <code class="sig-name descname">NPY_1_PI</code><a class="headerlink" href="#c.NPY_1_PI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reciprocal of pi (<img class="math" src="../../_images/math/41820ace4e9562a0ad6e45d8786ba42193c71a7f.svg" alt="\frac{1}{\pi}"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_2_PI">
 <code class="sig-name descname">NPY_2_PI</code><a class="headerlink" href="#c.NPY_2_PI" title="Permalink to this definition">¶</a></dt>
 <dd><p>Two times the reciprocal of pi (<img class="math" src="../../_images/math/38f9c2fbd885991de8eacf2bfe6c922c71b9d64d.svg" alt="\frac{2}{\pi}"/>)</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_EULER">
 <code class="sig-name descname">NPY_EULER</code><a class="headerlink" href="#c.NPY_EULER" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="simple">
@@ -488,49 +510,49 @@ or double and back again, as in the following example.</p>
 <li><p><a class="reference external" href="https://www.khronos.org/registry/OpenGL/extensions/ARB/ARB_half_float_pixel.txt">OpenGL Half Float Pixel Support</a></p></li>
 <li><p><a class="reference external" href="https://www.openexr.com/about.html">The OpenEXR image format</a>.</p></li>
 </ul>
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_ZERO">
 <code class="sig-name descname">NPY_HALF_ZERO</code><a class="headerlink" href="#c.NPY_HALF_ZERO" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to positive zero.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_PZERO">
 <code class="sig-name descname">NPY_HALF_PZERO</code><a class="headerlink" href="#c.NPY_HALF_PZERO" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to positive zero.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_NZERO">
 <code class="sig-name descname">NPY_HALF_NZERO</code><a class="headerlink" href="#c.NPY_HALF_NZERO" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to negative zero.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_ONE">
 <code class="sig-name descname">NPY_HALF_ONE</code><a class="headerlink" href="#c.NPY_HALF_ONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to 1.0.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_NEGONE">
 <code class="sig-name descname">NPY_HALF_NEGONE</code><a class="headerlink" href="#c.NPY_HALF_NEGONE" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to -1.0.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_PINF">
 <code class="sig-name descname">NPY_HALF_PINF</code><a class="headerlink" href="#c.NPY_HALF_PINF" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to +inf.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_NINF">
 <code class="sig-name descname">NPY_HALF_NINF</code><a class="headerlink" href="#c.NPY_HALF_NINF" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to -inf.</p>
 </dd></dl>
 
-<dl class="var">
+<dl class="macro">
 <dt id="c.NPY_HALF_NAN">
 <code class="sig-name descname">NPY_HALF_NAN</code><a class="headerlink" href="#c.NPY_HALF_NAN" title="Permalink to this definition">¶</a></dt>
 <dd><p>This macro is defined to a NaN value, guaranteed to have its sign bit unset.</p>
@@ -728,10 +750,10 @@ into a 64-bit double-precision float, stored as a uint64.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

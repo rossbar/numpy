@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Tutorial: Linear algebra on n-dimensional arrays &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Tutorial: Linear algebra on n-dimensional arrays &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="up" title="NumPy Tutorials" href="tutorials_index.html" >
-    <link rel="next" title="Building from source" href="building.html" >
-    <link rel="prev" title="NumPy for Matlab users" href="numpy-for-matlab-users.html" > 
+    <link rel="next" title="Tutorial: Masked Arrays" href="tutorial-ma.html" >
+    <link rel="prev" title="NumPy Tutorials" href="tutorials_index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="tutorials_index.html" accesskey="U">NumPy Tutorials</a></li> 
@@ -68,11 +90,11 @@
            accesskey="I">index</a>
       </li>
       <li class="active">
-        <a href="building.html" title="Building from source"
+        <a href="tutorial-ma.html" title="Tutorial: Masked Arrays"
            accesskey="N">next</a>
       </li>
       <li class="active">
-        <a href="numpy-for-matlab-users.html" title="NumPy for Matlab users"
+        <a href="tutorials_index.html" title="NumPy Tutorials"
            accesskey="P">previous</a>
       </li>
     </ul>
@@ -86,11 +108,11 @@
       <div class="spc-rightsidebar span3">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="numpy-for-matlab-users.html"
-                        title="previous chapter">NumPy for Matlab users</a></p>
+  <p class="topless"><a href="tutorials_index.html"
+                        title="previous chapter">NumPy Tutorials</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="building.html"
-                        title="next chapter">Building from source</a></p>
+  <p class="topless"><a href="tutorial-ma.html"
+                        title="next chapter">Tutorial: Masked Arrays</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -115,7 +137,7 @@
 <p><strong>Prerequisites</strong></p>
 <p>Before reading this tutorial, you should know a bit of Python. If you
 would like to refresh your memory, take a look at the
-<a class="reference external" href="https://docs.python.org/dev/tutorial/index.html" title="(in Python v3.9)"><span class="xref std std-doc">Python tutorial</span></a>.</p>
+<a class="reference external" href="https://docs.python.org/dev/tutorial/index.html" title="(in Python v3.10)"><span class="xref std std-doc">Python tutorial</span></a>.</p>
 <p>If you want to be able to run the examples in this tutorial, you should also
 have <a class="reference external" href="https://matplotlib.org/">matplotlib</a> and <a class="reference external" href="https://scipy.org">SciPy</a>
 installed on your computer.</p>
@@ -138,7 +160,7 @@ arrays without using for-loops;</p></li>
 <p><strong>Content</strong></p>
 <p>In this tutorial, we will use a <a class="reference external" href="https://en.wikipedia.org/wiki/Matrix_decomposition">matrix decomposition</a> from linear algebra, the
 Singular Value Decomposition, to generate a compressed approximation of an
-image. We’ll use the <code class="docutils literal notranslate"><span class="pre">face</span></code> image from the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/misc.html#module-scipy.misc" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.misc</span></code></a> module:</p>
+image. We’ll use the <code class="docutils literal notranslate"><span class="pre">face</span></code> image from the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/misc.html#module-scipy.misc" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.misc</span></code></a> module:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">misc</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">img</span> <span class="o">=</span> <span class="n">misc</span><span class="o">.</span><span class="n">face</span><span class="p">()</span>
 </pre></div>
@@ -147,11 +169,11 @@ image. We’ll use the <code class="docutils literal notranslate"><span class="p
 <p class="admonition-title">Note</p>
 <p>If you prefer, you can use your own image as you work through this tutorial.
 In order to transform your image into a NumPy array that can be manipulated,
-you can use the <code class="docutils literal notranslate"><span class="pre">imread</span></code> function from the <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></a> submodule.
-Alternatively, you can use the <a class="reference external" href="https://imageio.readthedocs.io/en/stable/userapi.html#imageio.imread" title="(in imageio v2.8)"><code class="xref py py-func docutils literal notranslate"><span class="pre">imageio.imread</span></code></a> function from the
+you can use the <code class="docutils literal notranslate"><span class="pre">imread</span></code> function from the <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot" title="(in Matplotlib v3.3.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></a> submodule.
+Alternatively, you can use the <a class="reference external" href="https://imageio.readthedocs.io/en/stable/userapi.html#imageio.imread" title="(in imageio v2.9)"><code class="xref py py-func docutils literal notranslate"><span class="pre">imageio.imread</span></code></a> function from the
 <code class="docutils literal notranslate"><span class="pre">imageio</span></code> library. Be aware that if you use your own image, you’ll likely
 need to adapt the steps below. For more information on how images are treated
-when converted to NumPy arrays, see <a class="reference external" href="https://scikit-image.org/docs/stable/user_guide/numpy_images.html" title="(in skimage v0.16.1)"><span>A crash course on NumPy for images</span></a> from
+when converted to NumPy arrays, see <a class="reference external" href="https://scikit-image.org/docs/stable/user_guide/numpy_images.html" title="(in skimage v0.17.2)"><span>A crash course on NumPy for images</span></a> from
 the <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> documentation.</p>
 </div>
 <p>Now, <code class="docutils literal notranslate"><span class="pre">img</span></code> is a NumPy array, as we can see when using the <code class="docutils literal notranslate"><span class="pre">type</span></code> function:</p>
@@ -159,7 +181,7 @@ the <code class="docutils literal notranslate"><span class="pre">scikit-image</s
 <span class="go">&lt;class &#39;numpy.ndarray&#39;&gt;</span>
 </pre></div>
 </div>
-<p>We can see the image using the <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.2.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></a> function:</p>
+<p>We can see the image using the <a class="reference external" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.3.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow</span></code></a> function:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
 </pre></div>
@@ -185,7 +207,7 @@ property of this NumPy array gives us a different result:</p>
 <span class="go">(768, 1024, 3)</span>
 </pre></div>
 </div>
-<p>The output is a <a class="reference external" href="https://docs.python.org/dev/tutorial/datastructures.html#tut-tuples" title="(in Python v3.9)"><span class="xref std std-ref">tuple</span></a> with three elements, which means
+<p>The output is a <a class="reference external" href="https://docs.python.org/dev/tutorial/datastructures.html#tut-tuples" title="(in Python v3.10)"><span class="xref std std-ref">tuple</span></a> with three elements, which means
 that this is a three-dimensional array. In fact, since this is a color image, and
 we have used the <code class="docutils literal notranslate"><span class="pre">imread</span></code> function to read it, the data is organized in three 2D
 arrays, representing color channels (in this case, red, green and blue - RGB). You
@@ -212,7 +234,7 @@ can access this by using the syntax</p>
 <p>From the output above, we can see that every value in <code class="docutils literal notranslate"><span class="pre">img[:,:,0]</span></code> is an
 integer value between 0 and 255, representing the level of red in each
 corresponding image pixel (keep in mind that this might be different if you
-use your own image instead of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.face.html#scipy.misc.face" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.misc.face</span></code></a>).</p>
+use your own image instead of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.misc.face.html#scipy.misc.face" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.misc.face</span></code></a>).</p>
 <p>As expected, this is a 768x1024 matrix:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">[:,</span> <span class="p">:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
 <span class="go">(768, 1024)</span>
@@ -227,7 +249,7 @@ matrices to represent the RGB values. We can do that by setting</p>
 <p>This operation, dividing an array by a scalar, works because of NumPy’s
 <a class="reference internal" href="theory.broadcasting.html#array-broadcasting-in-numpy"><span class="std std-ref">broadcasting rules</span></a>). (Note that in
 real-world applications, it would be better to use, for example, the
-<a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.html#skimage.img_as_float" title="(in skimage v0.16.1)"><code class="xref py py-func docutils literal notranslate"><span class="pre">img_as_float</span></code></a> utility function from
+<a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.html#skimage.img_as_float" title="(in skimage v0.17.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">img_as_float</span></code></a> utility function from
 <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>).</p>
 <p>You can check that the above works by doing some tests; for example, inquiring
 about maximum and minimum values for this array:</p>
@@ -256,12 +278,12 @@ still retaining some of its features.</p>
 <p class="admonition-title">Note</p>
 <p>We will use NumPy’s linear algebra module, <a class="reference internal" href="../reference/routines.linalg.html#module-numpy.linalg" title="numpy.linalg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.linalg</span></code></a>, to
 perform the operations in this tutorial. Most of the linear algebra
-functions in this module can also be found in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a>, and
-users are encouraged to use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/index.html#module-scipy" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy</span></code></a> module for real-world
+functions in this module can also be found in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a>, and
+users are encouraged to use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/index.html#module-scipy" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy</span></code></a> module for real-world
 applications. However, it is currently not possible to apply linear
-algebra operations to n-dimensional arrays using the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.4.1)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a>
+algebra operations to n-dimensional arrays using the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.5.2)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a>
 module. For more information on this, check the
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html" title="(in SciPy v1.4.1)"><span class="xref std std-doc">scipy.linalg Reference</span></a>.</p>
+<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/linalg.html" title="(in SciPy v1.5.2)"><span class="xref std std-doc">scipy.linalg Reference</span></a>.</p>
 </div>
 <p>To proceed, import the linear algebra submodule from NumPy:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">linalg</span>
@@ -524,9 +546,9 @@ C. F. Van Loan, Matrix Computations, Baltimore, MD, Johns Hopkins University
 Press, 1985</em>.</p>
 <p><strong>Further reading</strong></p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/dev/tutorial/index.html" title="(in Python v3.9)"><span class="xref std std-doc">Python tutorial</span></a></p></li>
+<li><p><a class="reference external" href="https://docs.python.org/dev/tutorial/index.html" title="(in Python v3.10)"><span class="xref std std-doc">Python tutorial</span></a></p></li>
 <li><p><a class="reference internal" href="../reference/index.html#reference"><span class="std std-ref">NumPy Reference</span></a></p></li>
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/index.html" title="(in SciPy v1.4.1)"><span class="xref std std-doc">SciPy Tutorial</span></a></p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/tutorial/index.html" title="(in SciPy v1.5.2)"><span class="xref std std-doc">SciPy Tutorial</span></a></p></li>
 <li><p><a class="reference external" href="https://scipy-lectures.org">SciPy Lecture Notes</a></p></li>
 <li><p><a class="reference external" href="http://mathesaurus.sf.net/">A matlab, R, IDL, NumPy/SciPy dictionary</a></p></li>
 </ul>
@@ -553,10 +575,10 @@ Press, 1985</em>.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

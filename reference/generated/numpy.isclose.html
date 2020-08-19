@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.isclose &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.isclose &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Logic functions" href="../routines.logic.html" >
     <link rel="next" title="numpy.array_equal" href="numpy.array_equal.html" >
-    <link rel="prev" title="numpy.allclose" href="numpy.allclose.html" > 
+    <link rel="prev" title="numpy.allclose" href="numpy.allclose.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,7 +138,7 @@
 <h1>numpy.isclose<a class="headerlink" href="#numpy-isclose" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.isclose">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">isclose</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">rtol=1e-05</em>, <em class="sig-param">atol=1e-08</em>, <em class="sig-param">equal_nan=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py#L2166-L2279"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.isclose" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">isclose</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">b</em>, <em class="sig-param">rtol=1e-05</em>, <em class="sig-param">atol=1e-08</em>, <em class="sig-param">equal_nan=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/numeric.py#L2200-L2316"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.isclose" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns a boolean array where two arrays are element-wise equal within a
 tolerance.</p>
 <p>The tolerance values are positive, typically very small numbers.  The
@@ -128,23 +150,23 @@ between <em class="xref py py-obj">a</em> and <em class="xref py py-obj">b</em>.
 <p>The default <em class="xref py py-obj">atol</em> is not appropriate for comparing numbers
 that are much smaller than one (see Notes).</p>
 </div>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a, b</strong><span class="classifier">array_like</span></dt><dd><p>Input arrays to compare.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a, b</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input arrays to compare.</p>
 </dd>
-<dt><strong>rtol</strong><span class="classifier">float</span></dt><dd><p>The relative tolerance parameter (see Notes).</p>
+<dt><strong>rtol</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The relative tolerance parameter (see Notes).</p>
 </dd>
-<dt><strong>atol</strong><span class="classifier">float</span></dt><dd><p>The absolute tolerance parameter (see Notes).</p>
+<dt><strong>atol</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a></span></dt><dd><p>The absolute tolerance parameter (see Notes).</p>
 </dd>
-<dt><strong>equal_nan</strong><span class="classifier">bool</span></dt><dd><p>Whether to compare NaN’s as equal.  If True, NaN’s in <em class="xref py py-obj">a</em> will be
+<dt><strong>equal_nan</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>Whether to compare NaN’s as equal.  If True, NaN’s in <em class="xref py py-obj">a</em> will be
 considered equal to NaN’s in <em class="xref py py-obj">b</em> in the output array.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>y</strong><span class="classifier">array_like</span></dt><dd><p>Returns a boolean array of where <em class="xref py py-obj">a</em> and <em class="xref py py-obj">b</em> are equal within the
+<dd class="field-even"><dl>
+<dt><strong>y</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Returns a boolean array of where <em class="xref py py-obj">a</em> and <em class="xref py py-obj">b</em> are equal within the
 given tolerance. If both <em class="xref py py-obj">a</em> and <em class="xref py py-obj">b</em> are scalars, returns a single
 boolean value.</p>
 </dd>
@@ -153,7 +175,10 @@ boolean value.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.allclose.html#numpy.allclose" title="numpy.allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allclose</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.allclose.html#numpy.allclose" title="numpy.allclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">allclose</span></code></a></dt><dd></dd>
+<dt><a class="reference external" href="https://docs.python.org/dev/library/math.html#math.isclose" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">math.isclose</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <div class="versionadded">
@@ -164,7 +189,7 @@ two floating point values are equivalent.</p>
 <blockquote>
 <div><p>absolute(<em class="xref py py-obj">a</em> - <em class="xref py py-obj">b</em>) &lt;= (<em class="xref py py-obj">atol</em> + <em class="xref py py-obj">rtol</em> * absolute(<em class="xref py py-obj">b</em>))</p>
 </div></blockquote>
-<p>Unlike the built-in <a class="reference external" href="https://docs.python.org/dev/library/math.html#math.isclose" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">math.isclose</span></code></a>, the above equation is not symmetric
+<p>Unlike the built-in <a class="reference external" href="https://docs.python.org/dev/library/math.html#math.isclose" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">math.isclose</span></code></a>, the above equation is not symmetric
 in <em class="xref py py-obj">a</em> and <em class="xref py py-obj">b</em> – it assumes <em class="xref py py-obj">b</em> is the reference value – so that
 <em class="xref py py-obj">isclose(a, b)</em> might be different from <em class="xref py py-obj">isclose(b, a)</em>. Furthermore,
 the default value of atol is not zero, and is used to determine what
@@ -173,6 +198,7 @@ appropriate for expected values of order unity: if the expected values
 are significantly smaller than one, it can result in false positives.
 <em class="xref py py-obj">atol</em> should be carefully selected for the use case at hand. A zero value
 for <em class="xref py py-obj">atol</em> will result in <em class="xref py py-obj">False</em> if either <em class="xref py py-obj">a</em> or <em class="xref py py-obj">b</em> is zero.</p>
+<p><a class="reference internal" href="#numpy.isclose" title="numpy.isclose"><code class="xref py py-obj docutils literal notranslate"><span class="pre">isclose</span></code></a> is not defined for non-numeric data types.</p>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">([</span><span class="mf">1e10</span><span class="p">,</span><span class="mf">1e-7</span><span class="p">],</span> <span class="p">[</span><span class="mf">1.00001e10</span><span class="p">,</span><span class="mf">1e-8</span><span class="p">])</span>
 <span class="go">array([ True, False])</span>
@@ -219,10 +245,10 @@ for <em class="xref py py-obj">atol</em> will result in <em class="xref py py-ob
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

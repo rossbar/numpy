@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.polyutils.as_series &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.polynomial.polyutils.as_series &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Polyutils" href="../routines.polynomials.polyutils.html" >
     <link rel="next" title="numpy.polynomial.polyutils.trimseq" href="numpy.polynomial.polyutils.trimseq.html" >
-    <link rel="prev" title="numpy.polynomial.polyutils.PolyBase" href="numpy.polynomial.polyutils.PolyBase.html" > 
+    <link rel="prev" title="numpy.polynomial.polyutils.PolyBase" href="numpy.polynomial.polyutils.PolyBase.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -125,25 +147,25 @@ size one; a 2-d argument of shape <code class="docutils literal notranslate"><sp
 of size <code class="docutils literal notranslate"><span class="pre">N</span></code> (i.e., is “parsed by row”); and a higher dimensional array
 raises a Value Error if it is not first reshaped into either a 1-d or 2-d
 array.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>alist</strong><span class="classifier">array_like</span></dt><dd><p>A 1- or 2-d array_like</p>
+<dd class="field-odd"><dl>
+<dt><strong>alist</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>A 1- or 2-d array_like</p>
 </dd>
-<dt><strong>trim</strong><span class="classifier">boolean, optional</span></dt><dd><p>When True, trailing zeros are removed from the inputs.
+<dt><strong>trim</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>When True, trailing zeros are removed from the inputs.
 When False, the inputs are passed through intact.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>[a1, a2,…]</strong><span class="classifier">list of 1-D arrays</span></dt><dd><p>A copy of the input data as a list of 1-d arrays.</p>
+<dd class="field-even"><dl>
+<dt><strong>[a1, a2,…]</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of 1-D arrays</span></dt><dd><p>A copy of the input data as a list of 1-d arrays.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>ValueError</strong></dt><dd><p>Raised when <a class="reference internal" href="#numpy.polynomial.polyutils.as_series" title="numpy.polynomial.polyutils.as_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_series</span></code></a> cannot convert its input to 1-d arrays, or at
+<dt>ValueError</dt><dd><p>Raised when <a class="reference internal" href="#numpy.polynomial.polyutils.as_series" title="numpy.polynomial.polyutils.as_series"><code class="xref py py-obj docutils literal notranslate"><span class="pre">as_series</span></code></a> cannot convert its input to 1-d arrays, or at
 least one of the resulting arrays is empty.</p>
 </dd>
 </dl>
@@ -196,10 +218,10 @@ least one of the resulting arrays is empty.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

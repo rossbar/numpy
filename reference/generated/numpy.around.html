@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.around &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.around &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Mathematical functions" href="../routines.math.html" >
     <link rel="next" title="numpy.round_" href="numpy.round_.html" >
-    <link rel="prev" title="numpy.arctanh" href="numpy.arctanh.html" > 
+    <link rel="prev" title="numpy.arctanh" href="numpy.arctanh.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,18 +138,18 @@
 <h1>numpy.around<a class="headerlink" href="#numpy-around" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.around">
-<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">around</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">decimals=0</em>, <em class="sig-param">out=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/fromnumeric.py#L3143-L3237"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.around" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.</code><code class="sig-name descname">around</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">decimals=0</em>, <em class="sig-param">out=None</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/core/fromnumeric.py#L3177-L3271"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.around" title="Permalink to this definition">¶</a></dt>
 <dd><p>Evenly round to the given number of decimals.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Input data.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input data.</p>
 </dd>
-<dt><strong>decimals</strong><span class="classifier">int, optional</span></dt><dd><p>Number of decimal places to round to (default: 0).  If
+<dt><strong>decimals</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of decimal places to round to (default: 0).  If
 decimals is negative, it specifies the number of positions to
 the left of the decimal point.</p>
 </dd>
-<dt><strong>out</strong><span class="classifier">ndarray, optional</span></dt><dd><p>Alternative output array in which to place the result. It must have
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, optional</span></dt><dd><p>Alternative output array in which to place the result. It must have
 the same shape as the expected output, but the type of the output
 values will be cast if necessary. See <em class="xref py py-obj">ufuncs-output-type</em> for more
 details.</p>
@@ -136,7 +158,7 @@ details.</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><dl>
-<dt><strong>rounded_array</strong><span class="classifier">ndarray</span></dt><dd><p>An array of the same type as <em class="xref py py-obj">a</em>, containing the rounded values.
+<dt><strong>rounded_array</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>An array of the same type as <em class="xref py py-obj">a</em>, containing the rounded values.
 Unless <em class="xref py py-obj">out</em> was specified, a new array is created.  A reference to
 the result is returned.</p>
 <p>The real and imaginary parts of complex numbers are rounded
@@ -150,8 +172,8 @@ separately.  The result of rounding a float is a float.</p>
 <dl class="simple">
 <dt><a class="reference internal" href="numpy.ndarray.round.html#numpy.ndarray.round" title="numpy.ndarray.round"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.round</span></code></a></dt><dd><p>equivalent method</p>
 </dd>
+<dt><a class="reference internal" href="numpy.ceil.html#numpy.ceil" title="numpy.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>, <a class="reference internal" href="numpy.fix.html#numpy.fix" title="numpy.fix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fix</span></code></a>, <a class="reference internal" href="numpy.floor.html#numpy.floor" title="numpy.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>, <a class="reference internal" href="numpy.rint.html#numpy.rint" title="numpy.rint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rint</span></code></a>, <a class="reference internal" href="numpy.trunc.html#numpy.trunc" title="numpy.trunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trunc</span></code></a></dt><dd></dd>
 </dl>
-<p><a class="reference internal" href="numpy.ceil.html#numpy.ceil" title="numpy.ceil"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ceil</span></code></a>, <a class="reference internal" href="numpy.fix.html#numpy.fix" title="numpy.fix"><code class="xref py py-obj docutils literal notranslate"><span class="pre">fix</span></code></a>, <a class="reference internal" href="numpy.floor.html#numpy.floor" title="numpy.floor"><code class="xref py py-obj docutils literal notranslate"><span class="pre">floor</span></code></a>, <a class="reference internal" href="numpy.rint.html#numpy.rint" title="numpy.rint"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rint</span></code></a>, <a class="reference internal" href="numpy.trunc.html#numpy.trunc" title="numpy.trunc"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trunc</span></code></a></p>
 </div>
 <p class="rubric">Notes</p>
 <p>For values exactly halfway between rounded decimal values, NumPy
@@ -177,7 +199,7 @@ printed decimals:</p>
 <p>The float printing routines use an accurate but much more computationally
 demanding algorithm to compute the number of digits after the decimal
 point.</p>
-<p>Alternatively, Python’s builtin <a class="reference external" href="https://docs.python.org/dev/library/functions.html#round" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a> function uses a more accurate
+<p>Alternatively, Python’s builtin <a class="reference external" href="https://docs.python.org/dev/library/functions.html#round" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">round</span></code></a> function uses a more accurate
 but slower algorithm for 64-bit floating point values:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="mf">56294995342131.5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="go">56294995342131.5</span>
@@ -235,10 +257,10 @@ Roundoff in Floating-Point Computation?”, William Kahan,
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

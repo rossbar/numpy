@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.polynomial.hermite_e.hermeval &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.polynomial.hermite_e.hermeval &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="HermiteE Series, “Probabilists” (numpy.polynomial.hermite_e)" href="../routines.polynomials.hermite_e.html" >
     <link rel="next" title="numpy.polynomial.hermite_e.hermeval2d" href="numpy.polynomial.hermite_e.hermeval2d.html" >
-    <link rel="prev" title="numpy.polynomial.hermite_e.hermepow" href="numpy.polynomial.hermite_e.hermepow.html" > 
+    <link rel="prev" title="numpy.polynomial.hermite_e.hermepow" href="numpy.polynomial.hermite_e.hermepow.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -136,18 +158,18 @@ they should be avoided if efficiency is a concern.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>x</strong><span class="classifier">array_like, compatible object</span></dt><dd><p>If <em class="xref py py-obj">x</em> is a list or tuple, it is converted to an ndarray, otherwise
+<dt><strong>x</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, compatible object</span></dt><dd><p>If <em class="xref py py-obj">x</em> is a list or tuple, it is converted to an ndarray, otherwise
 it is left unchanged and treated as a scalar. In either case, <em class="xref py py-obj">x</em>
 or its elements must support addition and multiplication with
 with themselves and with the elements of <em class="xref py py-obj">c</em>.</p>
 </dd>
-<dt><strong>c</strong><span class="classifier">array_like</span></dt><dd><p>Array of coefficients ordered so that the coefficients for terms of
+<dt><strong>c</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Array of coefficients ordered so that the coefficients for terms of
 degree n are contained in c[n]. If <em class="xref py py-obj">c</em> is multidimensional the
 remaining indices enumerate multiple polynomials. In the two
 dimensional case the coefficients may be thought of as stored in
 the columns of <em class="xref py py-obj">c</em>.</p>
 </dd>
-<dt><strong>tensor</strong><span class="classifier">boolean, optional</span></dt><dd><p>If True, the shape of the coefficient array is extended with ones
+<dt><strong>tensor</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, the shape of the coefficient array is extended with ones
 on the right, one for each dimension of <em class="xref py py-obj">x</em>. Scalars have dimension 0
 for this action. The result is that every column of coefficients in
 <em class="xref py py-obj">c</em> is evaluated for every element of <em class="xref py py-obj">x</em>. If False, <em class="xref py py-obj">x</em> is broadcast
@@ -160,15 +182,17 @@ when <em class="xref py py-obj">c</em> is multidimensional. The default value is
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>values</strong><span class="classifier">ndarray, algebra_like</span></dt><dd><p>The shape of the return value is described above.</p>
+<dd class="field-even"><dl>
+<dt><strong>values</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a>, algebra_like</span></dt><dd><p>The shape of the return value is described above.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.polynomial.hermite_e.hermeval2d.html#numpy.polynomial.hermite_e.hermeval2d" title="numpy.polynomial.hermite_e.hermeval2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermeval2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite_e.hermegrid2d.html#numpy.polynomial.hermite_e.hermegrid2d" title="numpy.polynomial.hermite_e.hermegrid2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermegrid2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite_e.hermeval3d.html#numpy.polynomial.hermite_e.hermeval3d" title="numpy.polynomial.hermite_e.hermeval3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermeval3d</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite_e.hermegrid3d.html#numpy.polynomial.hermite_e.hermegrid3d" title="numpy.polynomial.hermite_e.hermegrid3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermegrid3d</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.polynomial.hermite_e.hermeval2d.html#numpy.polynomial.hermite_e.hermeval2d" title="numpy.polynomial.hermite_e.hermeval2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermeval2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite_e.hermegrid2d.html#numpy.polynomial.hermite_e.hermegrid2d" title="numpy.polynomial.hermite_e.hermegrid2d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermegrid2d</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite_e.hermeval3d.html#numpy.polynomial.hermite_e.hermeval3d" title="numpy.polynomial.hermite_e.hermeval3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermeval3d</span></code></a>, <a class="reference internal" href="numpy.polynomial.hermite_e.hermegrid3d.html#numpy.polynomial.hermite_e.hermegrid3d" title="numpy.polynomial.hermite_e.hermegrid3d"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hermegrid3d</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>The evaluation uses Clenshaw recursion, aka synthetic division.</p>
@@ -207,10 +231,10 @@ when <em class="xref py py-obj">c</em> is multidimensional. The default value is
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

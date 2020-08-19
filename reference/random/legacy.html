@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Legacy Random Generation &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Legacy Random Generation &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Random sampling (numpy.random)" href="index.html" >
     <link rel="next" title="numpy.random.RandomState.get_state" href="generated/numpy.random.RandomState.get_state.html" >
-    <link rel="prev" title="numpy.random.Generator.zipf" href="generated/numpy.random.Generator.zipf.html" > 
+    <link rel="prev" title="numpy.random.Generator.zipf" href="generated/numpy.random.Generator.zipf.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -185,10 +207,10 @@ same results up to roundoff error except when the values were incorrect.
 are required by changes in the the internals of Numpy. More substantial
 changes, including algorithmic improvements, are reserved for
 <a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a>.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>seed</strong><span class="classifier">{None, int, array_like, BitGenerator}, optional</span></dt><dd><p>Random seed used to initialize the pseudo-random number generator or
+<dd class="field-odd"><dl>
+<dt><strong>seed</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, <a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a>, BitGenerator}, optional</span></dt><dd><p>Random seed used to initialize the pseudo-random number generator or
 an instantized BitGenerator.  If an integer or array, used as a seed for
 the MT19937 BitGenerator. Values can be any integer between 0 and
 2**32 - 1 inclusive, an array (or other sequence) of such integers,
@@ -202,7 +224,11 @@ otherwise.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a>, <a class="reference internal" href="bit_generators/mt19937.html#numpy.random.MT19937" title="numpy.random.MT19937"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MT19937</span></code></a>, <a class="reference internal" href="bit_generators/generated/numpy.random.BitGenerator.html#numpy.random.BitGenerator" title="numpy.random.BitGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.BitGenerator</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="generator.html#numpy.random.Generator" title="numpy.random.Generator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Generator</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="bit_generators/mt19937.html#numpy.random.MT19937" title="numpy.random.MT19937"><code class="xref py py-obj docutils literal notranslate"><span class="pre">MT19937</span></code></a></dt><dd></dd>
+<dt><a class="reference internal" href="bit_generators/generated/numpy.random.BitGenerator.html#numpy.random.BitGenerator" title="numpy.random.BitGenerator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.random.BitGenerator</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
 <p>The Python stdlib module “random” also contains a Mersenne Twister
@@ -513,13 +539,13 @@ of probability distributions to choose from.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.random.random_sample.html#numpy.random.random_sample" title="numpy.random.random_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_sample</span></code></a>([size])</p></td>
 <td><p>Return random floats in the half-open interval [0.0, 1.0).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.random.ranf.html#numpy.random.ranf" title="numpy.random.ranf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ranf</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.random.ranf.html#numpy.random.ranf" title="numpy.random.ranf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ranf</span></code></a></p></td>
 <td><p>This is an alias of <a class="reference internal" href="generated/numpy.random.random_sample.html#numpy.random.random_sample" title="numpy.random.random_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_sample</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.random.rayleigh.html#numpy.random.rayleigh" title="numpy.random.rayleigh"><code class="xref py py-obj docutils literal notranslate"><span class="pre">rayleigh</span></code></a>([scale, size])</p></td>
 <td><p>Draw samples from a Rayleigh distribution.</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.random.sample.html#numpy.random.sample" title="numpy.random.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/numpy.random.sample.html#numpy.random.sample" title="numpy.random.sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sample</span></code></a></p></td>
 <td><p>This is an alias of <a class="reference internal" href="generated/numpy.random.random_sample.html#numpy.random.random_sample" title="numpy.random.random_sample"><code class="xref py py-obj docutils literal notranslate"><span class="pre">random_sample</span></code></a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/numpy.random.seed.html#numpy.random.seed" title="numpy.random.seed"><code class="xref py py-obj docutils literal notranslate"><span class="pre">seed</span></code></a>(self[, seed])</p></td>
@@ -590,10 +616,10 @@ of probability distributions to choose from.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

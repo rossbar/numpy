@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.set_printoptions &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.set_printoptions &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Input and output" href="../routines.io.html" >
     <link rel="next" title="numpy.get_printoptions" href="numpy.get_printoptions.html" >
-    <link rel="prev" title="numpy.format_float_scientific" href="numpy.format_float_scientific.html" > 
+    <link rel="prev" title="numpy.lib.format.open_memmap" href="numpy.lib.format.open_memmap.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -74,7 +96,7 @@
            accesskey="N">next</a>
       </li>
       <li class="active">
-        <a href="numpy.format_float_scientific.html" title="numpy.format_float_scientific"
+        <a href="numpy.lib.format.open_memmap.html" title="numpy.lib.format.open_memmap"
            accesskey="P">previous</a>
       </li>
     </ul>
@@ -88,8 +110,8 @@
       <div class="spc-rightsidebar span3">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="numpy.format_float_scientific.html"
-                        title="previous chapter">numpy.format_float_scientific</a></p>
+  <p class="topless"><a href="numpy.lib.format.open_memmap.html"
+                        title="previous chapter">numpy.lib.format.open_memmap</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="numpy.get_printoptions.html"
                         title="next chapter">numpy.get_printoptions</a></p>
@@ -123,36 +145,36 @@ other NumPy objects are displayed.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>precision</strong><span class="classifier">int or None, optional</span></dt><dd><p>Number of digits of precision for floating point output (default 8).
+<dt><strong>precision</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>, optional</span></dt><dd><p>Number of digits of precision for floating point output (default 8).
 May be None if <em class="xref py py-obj">floatmode</em> is not <em class="xref py py-obj">fixed</em>, to print as many digits as
 necessary to uniquely specify the value.</p>
 </dd>
-<dt><strong>threshold</strong><span class="classifier">int, optional</span></dt><dd><p>Total number of array elements which trigger summarization
+<dt><strong>threshold</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Total number of array elements which trigger summarization
 rather than full repr (default 1000).
-To always use the full repr without summarization, pass <a class="reference external" href="https://docs.python.org/dev/library/sys.html#sys.maxsize" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.maxsize</span></code></a>.</p>
+To always use the full repr without summarization, pass <a class="reference external" href="https://docs.python.org/dev/library/sys.html#sys.maxsize" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">sys.maxsize</span></code></a>.</p>
 </dd>
-<dt><strong>edgeitems</strong><span class="classifier">int, optional</span></dt><dd><p>Number of array items in summary at beginning and end of
+<dt><strong>edgeitems</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of array items in summary at beginning and end of
 each dimension (default 3).</p>
 </dd>
-<dt><strong>linewidth</strong><span class="classifier">int, optional</span></dt><dd><p>The number of characters per line for the purpose of inserting
+<dt><strong>linewidth</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>The number of characters per line for the purpose of inserting
 line breaks (default 75).</p>
 </dd>
-<dt><strong>suppress</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, always print floating point numbers using fixed point
+<dt><strong>suppress</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, always print floating point numbers using fixed point
 notation, in which case numbers equal to zero in the current precision
 will print as zero.  If False, then scientific notation is used when
 absolute value of the smallest number is &lt; 1e-4 or the ratio of the
 maximum absolute value to the minimum is &gt; 1e3. The default is False.</p>
 </dd>
-<dt><strong>nanstr</strong><span class="classifier">str, optional</span></dt><dd><p>String representation of floating point not-a-number (default nan).</p>
+<dt><strong>nanstr</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>String representation of floating point not-a-number (default nan).</p>
 </dd>
-<dt><strong>infstr</strong><span class="classifier">str, optional</span></dt><dd><p>String representation of floating point infinity (default inf).</p>
+<dt><strong>infstr</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>String representation of floating point infinity (default inf).</p>
 </dd>
-<dt><strong>sign</strong><span class="classifier">string, either ‘-‘, ‘+’, or ‘ ‘, optional</span></dt><dd><p>Controls printing of the sign of floating-point types. If ‘+’, always
+<dt><strong>sign</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, either ‘-‘, ‘+’, or ‘ ‘, optional</span></dt><dd><p>Controls printing of the sign of floating-point types. If ‘+’, always
 print the sign of positive values. If ‘ ‘, always prints a space
 (whitespace character) in the sign position of positive values.  If
 ‘-‘, omit the sign character of positive values. (default ‘-‘)</p>
 </dd>
-<dt><strong>formatter</strong><span class="classifier">dict of callables, optional</span></dt><dd><p>If not None, the keys should indicate the type(s) that the respective
+<dt><strong>formatter</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#dict" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a> of callables, optional</span></dt><dd><p>If not None, the keys should indicate the type(s) that the respective
 formatting function applies to.  Callables should return a string.
 Types that are not specified (by their corresponding keys) are handled
 by the default formatters.  Individual types for which a formatter
@@ -179,7 +201,7 @@ can be set are:</p>
 <li><p>‘str_kind’ : sets ‘str’ and ‘numpystr’</p></li>
 </ul>
 </dd>
-<dt><strong>floatmode</strong><span class="classifier">str, optional</span></dt><dd><p>Controls the interpretation of the <em class="xref py py-obj">precision</em> option for
+<dt><strong>floatmode</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Controls the interpretation of the <em class="xref py py-obj">precision</em> option for
 floating-point types. Can take the following values
 (default maxprec_equal):</p>
 <ul class="simple">
@@ -211,7 +233,7 @@ many digits for all elements.</p>
 </li>
 </ul>
 </dd>
-<dt><strong>legacy</strong><span class="classifier">string or <em class="xref py py-obj">False</em>, optional</span></dt><dd><p>If set to the string <em class="xref py py-obj">‘1.13’</em> enables 1.13 legacy printing mode. This
+<dt><strong>legacy</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <em class="xref py py-obj">False</em>, optional</span></dt><dd><p>If set to the string <em class="xref py py-obj">‘1.13’</em> enables 1.13 legacy printing mode. This
 approximates numpy 1.13 print output by including a space in the sign
 position of floats and different behavior for 0d arrays. If set to
 <em class="xref py py-obj">False</em>, disables legacy mode. Unrecognized strings will be ignored
@@ -225,10 +247,12 @@ with a warning for forward compatibility.</p>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.get_printoptions.html#numpy.get_printoptions" title="numpy.get_printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_printoptions</span></code></a>, <a class="reference internal" href="numpy.printoptions.html#numpy.printoptions" title="numpy.printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">printoptions</span></code></a>, <a class="reference internal" href="numpy.set_string_function.html#numpy.set_string_function" title="numpy.set_string_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_string_function</span></code></a>, <a class="reference internal" href="numpy.array2string.html#numpy.array2string" title="numpy.array2string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array2string</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.get_printoptions.html#numpy.get_printoptions" title="numpy.get_printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_printoptions</span></code></a>, <a class="reference internal" href="numpy.printoptions.html#numpy.printoptions" title="numpy.printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">printoptions</span></code></a>, <a class="reference internal" href="numpy.set_string_function.html#numpy.set_string_function" title="numpy.set_string_function"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_string_function</span></code></a>, <a class="reference internal" href="numpy.array2string.html#numpy.array2string" title="numpy.array2string"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array2string</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Notes</p>
-<p><a class="reference external" href="https://docs.python.org/dev/library/formatter.html#module-formatter" title="(in Python v3.9)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">formatter</span></code></a> is always reset with a call to <a class="reference internal" href="#numpy.set_printoptions" title="numpy.set_printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_printoptions</span></code></a>.</p>
+<p><a class="reference external" href="https://docs.python.org/dev/library/formatter.html#module-formatter" title="(in Python v3.10)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">formatter</span></code></a> is always reset with a call to <a class="reference internal" href="#numpy.set_printoptions" title="numpy.set_printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_printoptions</span></code></a>.</p>
 <p>Use <a class="reference internal" href="numpy.printoptions.html#numpy.printoptions" title="numpy.printoptions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">printoptions</span></code></a> as a context manager to set the values temporarily.</p>
 <p class="rubric">Examples</p>
 <p>Floating point precision can be set:</p>
@@ -300,10 +324,10 @@ with a warning for forward compatibility.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

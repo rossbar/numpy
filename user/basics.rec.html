@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>Structured arrays &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>Structured arrays &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,36 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
-    <link rel="up" title="NumPy basics" href="basics.html" >
-    <link rel="next" title="Writing custom array containers" href="basics.dispatch.html" >
-    <link rel="prev" title="Byte-swapping" href="basics.byteswapping.html" > 
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,11 +74,9 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
-
-          <li class="active"><a href="tutorials_index.html" >NumPy Tutorials</a></li>
-          <li class="active"><a href="basics.html" accesskey="U">NumPy basics</a></li> 
+ 
     </ul>
               
               
@@ -67,14 +84,6 @@
       <li class="active">
         <a href="../genindex.html" title="General Index"
            accesskey="I">index</a>
-      </li>
-      <li class="active">
-        <a href="basics.dispatch.html" title="Writing custom array containers"
-           accesskey="N">next</a>
-      </li>
-      <li class="active">
-        <a href="basics.byteswapping.html" title="Byte-swapping"
-           accesskey="P">previous</a>
       </li>
     </ul>
               
@@ -122,12 +131,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="basics.byteswapping.html"
-                        title="previous chapter">Byte-swapping</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="basics.dispatch.html"
-                        title="next chapter">Writing custom array containers</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h4>Quick search</h4>
     <div>
@@ -453,7 +456,7 @@ structured datatype has just a single field:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">nostruct</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">twofield</span>
 <span class="gt">Traceback (most recent call last):</span>
 <span class="c">...</span>
-<span class="gr">TypeError</span>: <span class="n">Cannot cast scalar from dtype([(&#39;A&#39;, &#39;&lt;i4&#39;), (&#39;B&#39;, &#39;&lt;i4&#39;)]) to dtype(&#39;int32&#39;) according to the rule &#39;unsafe&#39;</span>
+<span class="gr">TypeError</span>: <span class="n">Cannot cast array data from dtype([(&#39;A&#39;, &#39;&lt;i4&#39;), (&#39;B&#39;, &#39;&lt;i4&#39;)]) to dtype(&#39;int32&#39;) according to the rule &#39;unsafe&#39;</span>
 </pre></div>
 </div>
 </div>
@@ -760,24 +763,24 @@ matplotlib.  They have been rewritten and extended for convenience.</p>
 the corresponding values with the <em class="xref py py-obj">data</em> arguments.
 If a single field is appended, <em class="xref py py-obj">names</em>, <em class="xref py py-obj">data</em> and <em class="xref py py-obj">dtypes</em> do not have
 to be lists but just values.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>base</strong><span class="classifier">array</span></dt><dd><p>Input array to extend.</p>
+<dd class="field-odd"><dl>
+<dt><strong>base</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Input array to extend.</p>
 </dd>
-<dt><strong>names</strong><span class="classifier">string, sequence</span></dt><dd><p>String or sequence of strings corresponding to the names
+<dt><strong>names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a></span></dt><dd><p>String or sequence of strings corresponding to the names
 of the new fields.</p>
 </dd>
-<dt><strong>data</strong><span class="classifier">array or sequence of arrays</span></dt><dd><p>Array or sequence of arrays storing the fields to add to the base.</p>
+<dt><strong>data</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of arrays</span></dt><dd><p>Array or sequence of arrays storing the fields to add to the base.</p>
 </dd>
-<dt><strong>dtypes</strong><span class="classifier">sequence of datatypes, optional</span></dt><dd><p>Datatype or sequence of datatypes.
+<dt><strong>dtypes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of datatypes, optional</span></dt><dd><p>Datatype or sequence of datatypes.
 If None, the datatypes are estimated from the <em class="xref py py-obj">data</em>.</p>
 </dd>
-<dt><strong>fill_value</strong><span class="classifier">{float}, optional</span></dt><dd><p>Filling value used to pad missing data on the shorter arrays.</p>
+<dt><strong>fill_value</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>}, optional</span></dt><dd><p>Filling value used to pad missing data on the shorter arrays.</p>
 </dd>
-<dt><strong>usemask</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a masked array or not.</p>
+<dt><strong>usemask</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a masked array or not.</p>
 </dd>
-<dt><strong>asrecarray</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a recarray (MaskedRecords) or not.</p>
+<dt><strong>asrecarray</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a recarray (MaskedRecords) or not.</p>
 </dd>
 </dl>
 </dd>
@@ -792,19 +795,19 @@ If None, the datatypes are estimated from the <em class="xref py py-obj">data</e
 structured array as an extra axis. The fields are all first cast to a
 common type following the type-promotion rules from <a class="reference internal" href="../reference/generated/numpy.result_type.html#numpy.result_type" title="numpy.result_type"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.result_type</span></code></a>
 applied to the field’s dtypes.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
+<dd class="field-odd"><dl>
 <dt><strong>func</strong><span class="classifier">function</span></dt><dd><p>Function to apply on the “field” dimension. This function must
 support an <em class="xref py py-obj">axis</em> argument, like np.mean, np.sum, etc.</p>
 </dd>
-<dt><strong>arr</strong><span class="classifier">ndarray</span></dt><dd><p>Structured array for which to apply func.</p>
+<dt><strong>arr</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Structured array for which to apply func.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>Result of the recution operation</p>
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Result of the recution operation</p>
 </dd>
 </dl>
 </dd>
@@ -832,13 +835,13 @@ copied to the first field of the dst, and so on, regardless of field name.</p>
 are assigned from the identically named field in the src. This applies
 recursively for nested structures. This is how structure assignment worked
 in numpy &gt;= 1.6 to &lt;= 1.13.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>dst</strong><span class="classifier">ndarray</span></dt><dd></dd>
-<dt><strong>src</strong><span class="classifier">ndarray</span></dt><dd><p>The source and destination arrays during assignment.</p>
+<dd class="field-odd"><dl>
+<dt><strong>dst</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd></dd>
+<dt><strong>src</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>The source and destination arrays during assignment.</p>
 </dd>
-<dt><strong>zero_unassigned</strong><span class="classifier">bool, optional</span></dt><dd><p>If True, fields in the dst for which there was no matching
+<dt><strong>zero_unassigned</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If True, fields in the dst for which there was no matching
 field in the src are filled with the value 0 (zero). This
 was the behavior of numpy &lt;= 1.13. If False, those fields
 are not modified.</p>
@@ -858,17 +861,17 @@ are not modified.</p>
 rather than returning <code class="docutils literal notranslate"><span class="pre">None</span></code> as it did previously.</p>
 </dd>
 </dl>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>base</strong><span class="classifier">array</span></dt><dd><p>Input array</p>
+<dd class="field-odd"><dl>
+<dt><strong>base</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Input array</p>
 </dd>
-<dt><strong>drop_names</strong><span class="classifier">string or sequence</span></dt><dd><p>String or sequence of strings corresponding to the names of the
+<dt><strong>drop_names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a></span></dt><dd><p>String or sequence of strings corresponding to the names of the
 fields to drop.</p>
 </dd>
-<dt><strong>usemask</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a masked array or not.</p>
+<dt><strong>usemask</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a masked array or not.</p>
 </dd>
-<dt><strong>asrecarray</strong><span class="classifier">string or sequence, optional</span></dt><dd><p>Whether to return a recarray or a mrecarray (<em class="xref py py-obj">asrecarray=True</em>) or
+<dt><strong>asrecarray</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>, optional</span></dt><dd><p>Whether to return a recarray or a mrecarray (<em class="xref py py-obj">asrecarray=True</em>) or
 a plain ndarray or masked array with flexible dtype. The default
 is False.</p>
 </dd>
@@ -894,17 +897,17 @@ is False.</p>
 <dt id="numpy.lib.recfunctions.find_duplicates">
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">find_duplicates</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">key=None</em>, <em class="sig-param">ignoremask=True</em>, <em class="sig-param">return_index=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L1331-L1386"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.find_duplicates" title="Permalink to this definition">¶</a></dt>
 <dd><p>Find the duplicates in a structured array along a given key</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array-like</span></dt><dd><p>Input array</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Input array</p>
 </dd>
-<dt><strong>key</strong><span class="classifier">{string, None}, optional</span></dt><dd><p>Name of the fields along which to check the duplicates.
+<dt><strong>key</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#None" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">None</span></code></a>}, optional</span></dt><dd><p>Name of the fields along which to check the duplicates.
 If None, the search is performed by records</p>
 </dd>
-<dt><strong>ignoremask</strong><span class="classifier">{True, False}, optional</span></dt><dd><p>Whether masked data should be discarded or considered as duplicates.</p>
+<dt><strong>ignoremask</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>}, optional</span></dt><dd><p>Whether masked data should be discarded or considered as duplicates.</p>
 </dd>
-<dt><strong>return_index</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return the indices of the duplicated values.</p>
+<dt><strong>return_index</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return the indices of the duplicated values.</p>
 </dd>
 </dl>
 </dd>
@@ -1036,10 +1039,10 @@ to the fields used to join the array.  An exception is raised if the
 <em class="xref py py-obj">r2</em> should have any duplicates along <em class="xref py py-obj">key</em>: the presence of duplicates
 will make the output quite unreliable. Note that duplicates are not
 looked for by the algorithm.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>key</strong><span class="classifier">{string, sequence}</span></dt><dd><p>A string or a sequence of strings corresponding to the fields used
+<dd class="field-odd"><dl>
+<dt><strong>key</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a>}</span></dt><dd><p>A string or a sequence of strings corresponding to the fields used
 for comparison.</p>
 </dd>
 <dt><strong>r1, r2</strong><span class="classifier">arrays</span></dt><dd><p>Structured arrays.</p>
@@ -1050,18 +1053,18 @@ r1 not in r2 and the elements of not in r2.
 If ‘leftouter’, returns the common elements and the elements of r1
 not in r2.</p>
 </dd>
-<dt><strong>r1postfix</strong><span class="classifier">string, optional</span></dt><dd><p>String appended to the names of the fields of r1 that are present
+<dt><strong>r1postfix</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>String appended to the names of the fields of r1 that are present
 in r2 but absent of the key.</p>
 </dd>
-<dt><strong>r2postfix</strong><span class="classifier">string, optional</span></dt><dd><p>String appended to the names of the fields of r2 that are present
+<dt><strong>r2postfix</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>String appended to the names of the fields of r2 that are present
 in r1 but absent of the key.</p>
 </dd>
 <dt><strong>defaults</strong><span class="classifier">{dictionary}, optional</span></dt><dd><p>Dictionary mapping field names to the corresponding default values.</p>
 </dd>
-<dt><strong>usemask</strong><span class="classifier">{True, False}, optional</span></dt><dd><p>Whether to return a MaskedArray (or MaskedRecords is
+<dt><strong>usemask</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>}, optional</span></dt><dd><p>Whether to return a MaskedArray (or MaskedRecords is
 <em class="xref py py-obj">asrecarray==True</em>) or a ndarray.</p>
 </dd>
-<dt><strong>asrecarray</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a recarray (or MaskedRecords if <em class="xref py py-obj">usemask==True</em>)
+<dt><strong>asrecarray</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a recarray (or MaskedRecords if <em class="xref py py-obj">usemask==True</em>)
 or just a flexible-type ndarray.</p>
 </dd>
 </dl>
@@ -1082,18 +1085,18 @@ preserved if there are some duplicates…</p></li>
 <dt id="numpy.lib.recfunctions.merge_arrays">
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">merge_arrays</code><span class="sig-paren">(</span><em class="sig-param">seqarrays</em>, <em class="sig-param">fill_value=-1</em>, <em class="sig-param">flatten=False</em>, <em class="sig-param">usemask=False</em>, <em class="sig-param">asrecarray=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L369-L502"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.merge_arrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Merge arrays field by field.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>seqarrays</strong><span class="classifier">sequence of ndarrays</span></dt><dd><p>Sequence of arrays</p>
+<dd class="field-odd"><dl>
+<dt><strong>seqarrays</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of ndarrays</span></dt><dd><p>Sequence of arrays</p>
 </dd>
-<dt><strong>fill_value</strong><span class="classifier">{float}, optional</span></dt><dd><p>Filling value used to pad missing data on the shorter arrays.</p>
+<dt><strong>fill_value</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/functions.html#float" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">float</span></code></a>}, optional</span></dt><dd><p>Filling value used to pad missing data on the shorter arrays.</p>
 </dd>
-<dt><strong>flatten</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to collapse nested fields.</p>
+<dt><strong>flatten</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to collapse nested fields.</p>
 </dd>
-<dt><strong>usemask</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a masked array or not.</p>
+<dt><strong>usemask</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a masked array or not.</p>
 </dd>
-<dt><strong>asrecarray</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a recarray (MaskedRecords) or not.</p>
+<dt><strong>asrecarray</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a recarray (MaskedRecords) or not.</p>
 </dd>
 </dl>
 </dd>
@@ -1140,17 +1143,17 @@ depending on what its corresponding type:</p>
 the corresponding values with the <em class="xref py py-obj">data</em> arguments.
 If a single field is appended, <em class="xref py py-obj">names</em>, <em class="xref py py-obj">data</em> and <em class="xref py py-obj">dtypes</em> do not have
 to be lists but just values.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>base</strong><span class="classifier">array</span></dt><dd><p>Input array to extend.</p>
+<dd class="field-odd"><dl>
+<dt><strong>base</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a></span></dt><dd><p>Input array to extend.</p>
 </dd>
-<dt><strong>names</strong><span class="classifier">string, sequence</span></dt><dd><p>String or sequence of strings corresponding to the names
+<dt><strong>names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a></span></dt><dd><p>String or sequence of strings corresponding to the names
 of the new fields.</p>
 </dd>
-<dt><strong>data</strong><span class="classifier">array or sequence of arrays</span></dt><dd><p>Array or sequence of arrays storing the fields to add to the base.</p>
+<dt><strong>data</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of arrays</span></dt><dd><p>Array or sequence of arrays storing the fields to add to the base.</p>
 </dd>
-<dt><strong>dtypes</strong><span class="classifier">sequence of datatypes, optional</span></dt><dd><p>Datatype or sequence of datatypes.
+<dt><strong>dtypes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a> of datatypes, optional</span></dt><dd><p>Datatype or sequence of datatypes.
 If None, the datatypes are estimated from the <em class="xref py py-obj">data</em>.</p>
 </dd>
 </dl>
@@ -1163,7 +1166,9 @@ If None, the datatypes are estimated from the <em class="xref py py-obj">data</e
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="#numpy.lib.recfunctions.append_fields" title="numpy.lib.recfunctions.append_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append_fields</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="#numpy.lib.recfunctions.append_fields" title="numpy.lib.recfunctions.append_fields"><code class="xref py py-obj docutils literal notranslate"><span class="pre">append_fields</span></code></a></dt><dd></dd>
+</dl>
 </div>
 </dd></dl>
 
@@ -1192,12 +1197,12 @@ Alternative to join_by, that always returns a np.recarray.</p>
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">recursive_fill_fields</code><span class="sig-paren">(</span><em class="sig-param">input</em>, <em class="sig-param">output</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L36-L72"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.recursive_fill_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>Fills fields from output with fields from input,
 with support for nested structures.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>input</strong><span class="classifier">ndarray</span></dt><dd><p>Input array.</p>
+<dd class="field-odd"><dl>
+<dt><strong>input</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Input array.</p>
 </dd>
-<dt><strong>output</strong><span class="classifier">ndarray</span></dt><dd><p>Output array.</p>
+<dt><strong>output</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Output array.</p>
 </dd>
 </dl>
 </dd>
@@ -1221,10 +1226,10 @@ with support for nested structures.</p>
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">rename_fields</code><span class="sig-paren">(</span><em class="sig-param">base</em>, <em class="sig-param">namemapper</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L615-L652"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.rename_fields" title="Permalink to this definition">¶</a></dt>
 <dd><p>Rename the fields from a flexible-datatype ndarray or recarray.</p>
 <p>Nested fields are supported.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>base</strong><span class="classifier">ndarray</span></dt><dd><p>Input array whose fields must be modified.</p>
+<dd class="field-odd"><dl>
+<dt><strong>base</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Input array whose fields must be modified.</p>
 </dd>
 <dt><strong>namemapper</strong><span class="classifier">dictionary</span></dt><dd><p>Dictionary mapping old field names to their new version.</p>
 </dd>
@@ -1258,20 +1263,20 @@ bytes are removed.</p>
 <p>If <em class="xref py py-obj">align=True</em>, this methods produces an “aligned” memory layout in which
 each field’s offset is a multiple of its alignment, and the total itemsize
 is a multiple of the largest alignment, by adding padding bytes as needed.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">ndarray or dtype</span></dt><dd><p>array or dtype for which to repack the fields.</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or dtype</span></dt><dd><p>array or dtype for which to repack the fields.</p>
 </dd>
-<dt><strong>align</strong><span class="classifier">boolean</span></dt><dd><p>If true, use an “aligned” memory layout, otherwise use a “packed” layout.</p>
+<dt><strong>align</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If true, use an “aligned” memory layout, otherwise use a “packed” layout.</p>
 </dd>
-<dt><strong>recurse</strong><span class="classifier">boolean</span></dt><dd><p>If True, also repack nested structures.</p>
+<dt><strong>recurse</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a></span></dt><dd><p>If True, also repack nested structures.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>repacked</strong><span class="classifier">ndarray or dtype</span></dt><dd><p>Copy of <em class="xref py py-obj">a</em> with fields repacked, or <em class="xref py py-obj">a</em> itself if no repacking was
+<dd class="field-even"><dl>
+<dt><strong>repacked</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a> or dtype</span></dt><dd><p>Copy of <em class="xref py py-obj">a</em> with fields repacked, or <em class="xref py py-obj">a</em> itself if no repacking was
 needed.</p>
 </dd>
 </dl>
@@ -1309,18 +1314,18 @@ same name in the source array. This has the effect of creating a new
 ndarray containing only the fields “required” by the required_dtype.</p>
 <p>If a field name in the required_dtype does not exist in the
 input array, that field is created and set to 0 in the output array.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">ndarray</span></dt><dd><p>array to cast</p>
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>array to cast</p>
 </dd>
 <dt><strong>required_dtype</strong><span class="classifier">dtype</span></dt><dd><p>datatype for output array</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>out</strong><span class="classifier">ndarray</span></dt><dd><p>array with the new dtype, with field values copied from the fields in
+<dd class="field-even"><dl>
+<dt><strong>out</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>array with the new dtype, with field values copied from the fields in
 the input array with the same name</p>
 </dd>
 </dl>
@@ -1343,20 +1348,20 @@ the input array with the same name</p>
 <dt id="numpy.lib.recfunctions.stack_arrays">
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">stack_arrays</code><span class="sig-paren">(</span><em class="sig-param">arrays</em>, <em class="sig-param">defaults=None</em>, <em class="sig-param">usemask=True</em>, <em class="sig-param">asrecarray=False</em>, <em class="sig-param">autoconvert=False</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L1238-L1323"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.stack_arrays" title="Permalink to this definition">¶</a></dt>
 <dd><p>Superposes arrays fields by fields</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>arrays</strong><span class="classifier">array or sequence</span></dt><dd><p>Sequence of input arrays.</p>
+<dd class="field-odd"><dl>
+<dt><strong>arrays</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">array</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/glossary.html#term-sequence" title="(in Python v3.10)"><span>sequence</span></a></span></dt><dd><p>Sequence of input arrays.</p>
 </dd>
 <dt><strong>defaults</strong><span class="classifier">dictionary, optional</span></dt><dd><p>Dictionary mapping field names to the corresponding default values.</p>
 </dd>
-<dt><strong>usemask</strong><span class="classifier">{True, False}, optional</span></dt><dd><p>Whether to return a MaskedArray (or MaskedRecords is
+<dt><strong>usemask</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>}, optional</span></dt><dd><p>Whether to return a MaskedArray (or MaskedRecords is
 <em class="xref py py-obj">asrecarray==True</em>) or a ndarray.</p>
 </dd>
-<dt><strong>asrecarray</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether to return a recarray (or MaskedRecords if <em class="xref py py-obj">usemask==True</em>)
+<dt><strong>asrecarray</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether to return a recarray (or MaskedRecords if <em class="xref py py-obj">usemask==True</em>)
 or just a flexible-type ndarray.</p>
 </dd>
-<dt><strong>autoconvert</strong><span class="classifier">{False, True}, optional</span></dt><dd><p>Whether automatically cast the type of the field to the maximum.</p>
+<dt><strong>autoconvert</strong><span class="classifier">{<a class="reference external" href="https://docs.python.org/dev/library/constants.html#False" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">False</span></code></a>, <a class="reference external" href="https://docs.python.org/dev/library/constants.html#True" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">True</span></code></a>}, optional</span></dt><dd><p>Whether automatically cast the type of the field to the maximum.</p>
 </dd>
 </dl>
 </dd>
@@ -1385,21 +1390,21 @@ or just a flexible-type ndarray.</p>
 <dl class="function">
 <dt id="numpy.lib.recfunctions.structured_to_unstructured">
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">structured_to_unstructured</code><span class="sig-paren">(</span><em class="sig-param">arr</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">copy=False</em>, <em class="sig-param">casting='unsafe'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L899-L988"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.structured_to_unstructured" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts and n-D structured array into an (n+1)-D unstructured array.</p>
+<dd><p>Converts an n-D structured array into an (n+1)-D unstructured array.</p>
 <p>The new array will have a new last dimension equal in size to the
 number of field-elements of the input array. If not supplied, the output
 datatype is determined from the numpy type promotion rules applied to all
 the field datatypes.</p>
 <p>Nested fields, as well as each element of any subarray fields, all count
 as a single field-elements.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>arr</strong><span class="classifier">ndarray</span></dt><dd><p>Structured array or dtype to convert. Cannot contain object datatype.</p>
+<dd class="field-odd"><dl>
+<dt><strong>arr</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Structured array or dtype to convert. Cannot contain object datatype.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">dtype, optional</span></dt><dd><p>The dtype of the output unstructured array.</p>
 </dd>
-<dt><strong>copy</strong><span class="classifier">bool, optional</span></dt><dd><p>See copy argument to <code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.astype</span></code>. If true, always return a copy.
+<dt><strong>copy</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>See copy argument to <code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.astype</span></code>. If true, always return a copy.
 If false, and <em class="xref py py-obj">dtype</em> requirements are satisfied, a view is returned.</p>
 </dd>
 <dt><strong>casting</strong><span class="classifier">{‘no’, ‘equiv’, ‘safe’, ‘same_kind’, ‘unsafe’}, optional</span></dt><dd><p>See casting argument of <code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.astype</span></code>. Controls what kind of data
@@ -1408,8 +1413,8 @@ casting may occur.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>unstructured</strong><span class="classifier">ndarray</span></dt><dd><p>Unstructured array with one more dimension.</p>
+<dd class="field-even"><dl>
+<dt><strong>unstructured</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Unstructured array with one more dimension.</p>
 </dd>
 </dl>
 </dd>
@@ -1439,7 +1444,7 @@ casting may occur.</p>
 <dl class="function">
 <dt id="numpy.lib.recfunctions.unstructured_to_structured">
 <code class="sig-prename descclassname">numpy.lib.recfunctions.</code><code class="sig-name descname">unstructured_to_structured</code><span class="sig-paren">(</span><em class="sig-param">arr</em>, <em class="sig-param">dtype=None</em>, <em class="sig-param">names=None</em>, <em class="sig-param">align=False</em>, <em class="sig-param">copy=False</em>, <em class="sig-param">casting='unsafe'</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/lib/recfunctions.py#L995-L1097"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.lib.recfunctions.unstructured_to_structured" title="Permalink to this definition">¶</a></dt>
-<dd><p>Converts and n-D unstructured array into an (n-1)-D structured array.</p>
+<dd><p>Converts an n-D unstructured array into an (n-1)-D structured array.</p>
 <p>The last dimension of the input array is converted into a structure, with
 number of field-elements equal to the size of the last dimension of the
 input array. By default all output fields have the input array’s dtype, but
@@ -1447,19 +1452,19 @@ an output structured dtype with an equal number of fields-elements can be
 supplied instead.</p>
 <p>Nested fields, as well as each element of any subarray fields, all count
 towards the number of field-elements.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>arr</strong><span class="classifier">ndarray</span></dt><dd><p>Unstructured array or dtype to convert.</p>
+<dd class="field-odd"><dl>
+<dt><strong>arr</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Unstructured array or dtype to convert.</p>
 </dd>
 <dt><strong>dtype</strong><span class="classifier">dtype, optional</span></dt><dd><p>The structured dtype of the output array</p>
 </dd>
-<dt><strong>names</strong><span class="classifier">list of strings, optional</span></dt><dd><p>If dtype is not supplied, this specifies the field names for the output
+<dt><strong>names</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of strings, optional</span></dt><dd><p>If dtype is not supplied, this specifies the field names for the output
 dtype, in order. The field dtypes will be the same as the input array.</p>
 </dd>
-<dt><strong>align</strong><span class="classifier">boolean, optional</span></dt><dd><p>Whether to create an aligned memory layout.</p>
+<dt><strong>align</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>Whether to create an aligned memory layout.</p>
 </dd>
-<dt><strong>copy</strong><span class="classifier">bool, optional</span></dt><dd><p>See copy argument to <code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.astype</span></code>. If true, always return a copy.
+<dt><strong>copy</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>See copy argument to <code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.astype</span></code>. If true, always return a copy.
 If false, and <em class="xref py py-obj">dtype</em> requirements are satisfied, a view is returned.</p>
 </dd>
 <dt><strong>casting</strong><span class="classifier">{‘no’, ‘equiv’, ‘safe’, ‘same_kind’, ‘unsafe’}, optional</span></dt><dd><p>See casting argument of <code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray.astype</span></code>. Controls what kind of data
@@ -1468,8 +1473,8 @@ casting may occur.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>structured</strong><span class="classifier">ndarray</span></dt><dd><p>Structured array with fewer dimensions.</p>
+<dd class="field-even"><dl>
+<dt><strong>structured</strong><span class="classifier"><a class="reference internal" href="../reference/generated/numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p>Structured array with fewer dimensions.</p>
 </dd>
 </dl>
 </dd>
@@ -1515,10 +1520,10 @@ casting may occur.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

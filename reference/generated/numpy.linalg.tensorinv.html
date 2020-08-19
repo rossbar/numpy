@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.linalg.tensorinv &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.linalg.tensorinv &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Linear algebra (numpy.linalg)" href="../routines.linalg.html" >
     <link rel="next" title="numpy.linalg.LinAlgError" href="numpy.linalg.LinAlgError.html" >
-    <link rel="prev" title="numpy.linalg.pinv" href="numpy.linalg.pinv.html" > 
+    <link rel="prev" title="numpy.linalg.pinv" href="numpy.linalg.pinv.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -116,39 +138,41 @@
 <h1>numpy.linalg.tensorinv<a class="headerlink" href="#numpy-linalg-tensorinv" title="Permalink to this headline">¶</a></h1>
 <dl class="function">
 <dt id="numpy.linalg.tensorinv">
-<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">tensorinv</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">ind=2</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L403-L468"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.tensorinv" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">numpy.linalg.</code><code class="sig-name descname">tensorinv</code><span class="sig-paren">(</span><em class="sig-param">a</em>, <em class="sig-param">ind=2</em><span class="sig-paren">)</span><a class="reference external" href="https://github.com/numpy/numpy/blob/master/numpy/linalg/linalg.py#L402-L467"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#numpy.linalg.tensorinv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the ‘inverse’ of an N-dimensional array.</p>
 <p>The result is an inverse for <em class="xref py py-obj">a</em> relative to the tensordot operation
 <code class="docutils literal notranslate"><span class="pre">tensordot(a,</span> <span class="pre">b,</span> <span class="pre">ind)</span></code>, i. e., up to floating-point accuracy,
 <code class="docutils literal notranslate"><span class="pre">tensordot(tensorinv(a),</span> <span class="pre">a,</span> <span class="pre">ind)</span></code> is the “identity” tensor for the
 tensordot operation.</p>
-<dl class="field-list simple">
+<dl class="field-list">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><dl class="simple">
-<dt><strong>a</strong><span class="classifier">array_like</span></dt><dd><p>Tensor to ‘invert’. Its shape must be ‘square’, i. e.,
+<dd class="field-odd"><dl>
+<dt><strong>a</strong><span class="classifier"><a class="reference internal" href="../../glossary.html#term-array-like"><span class="xref std std-term">array_like</span></a></span></dt><dd><p>Tensor to ‘invert’. Its shape must be ‘square’, i. e.,
 <code class="docutils literal notranslate"><span class="pre">prod(a.shape[:ind])</span> <span class="pre">==</span> <span class="pre">prod(a.shape[ind:])</span></code>.</p>
 </dd>
-<dt><strong>ind</strong><span class="classifier">int, optional</span></dt><dd><p>Number of first indices that are involved in the inverse sum.
+<dt><strong>ind</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#int" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">int</span></code></a>, optional</span></dt><dd><p>Number of first indices that are involved in the inverse sum.
 Must be a positive integer, default is 2.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>b</strong><span class="classifier">ndarray</span></dt><dd><p><em class="xref py py-obj">a</em>’s tensordot inverse, shape <code class="docutils literal notranslate"><span class="pre">a.shape[ind:]</span> <span class="pre">+</span> <span class="pre">a.shape[:ind]</span></code>.</p>
+<dd class="field-even"><dl>
+<dt><strong>b</strong><span class="classifier"><a class="reference internal" href="numpy.ndarray.html#numpy.ndarray" title="numpy.ndarray"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ndarray</span></code></a></span></dt><dd><p><em class="xref py py-obj">a</em>’s tensordot inverse, shape <code class="docutils literal notranslate"><span class="pre">a.shape[ind:]</span> <span class="pre">+</span> <span class="pre">a.shape[:ind]</span></code>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-odd">Raises</dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>LinAlgError</strong></dt><dd><p>If <em class="xref py py-obj">a</em> is singular or not ‘square’ (in the above sense).</p>
+<dt>LinAlgError</dt><dd><p>If <em class="xref py py-obj">a</em> is singular or not ‘square’ (in the above sense).</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
-<p><a class="reference internal" href="numpy.tensordot.html#numpy.tensordot" title="numpy.tensordot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.tensordot</span></code></a>, <a class="reference internal" href="numpy.linalg.tensorsolve.html#numpy.linalg.tensorsolve" title="numpy.linalg.tensorsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorsolve</span></code></a></p>
+<dl class="simple">
+<dt><a class="reference internal" href="numpy.tensordot.html#numpy.tensordot" title="numpy.tensordot"><code class="xref py py-obj docutils literal notranslate"><span class="pre">numpy.tensordot</span></code></a>, <a class="reference internal" href="numpy.linalg.tensorsolve.html#numpy.linalg.tensorsolve" title="numpy.linalg.tensorsolve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">tensorsolve</span></code></a></dt><dd></dd>
+</dl>
 </div>
 <p class="rubric">Examples</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="mi">6</span><span class="p">)</span>
@@ -196,10 +220,10 @@ Must be a positive integer, default is 2.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

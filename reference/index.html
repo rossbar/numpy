@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>NumPy Reference &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>NumPy Reference &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,16 +29,38 @@
     <link rel="author" title="About these documents" href="../about.html" >
     <link rel="index" title="Index" href="../genindex.html" >
     <link rel="search" title="Search" href="../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../index.html" >
     <link rel="next" title="Array objects" href="arrays.html" >
-    <link rel="prev" title="How to read and write data using NumPy" href="../user/ionumpy.html" > 
+    <link rel="prev" title="How to read and write data using NumPy" href="../user/ionumpy.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../index.html">
-      <img border=0 alt="NumPy" src="../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -54,7 +76,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../index.html">NumPy v1.20.dev0 Manual</a></li>
         
  
     </ul>
@@ -120,15 +142,15 @@
 <span id="reference"></span><h1>NumPy Reference<a class="headerlink" href="#numpy-reference" title="Permalink to this headline">¶</a></h1>
 <dl class="field-list simple">
 <dt class="field-odd">Release</dt>
-<dd class="field-odd"><p>1.19.dev0</p>
+<dd class="field-odd"><p>1.20.dev0</p>
 </dd>
 <dt class="field-even">Date</dt>
-<dd class="field-even"><p>April 25, 2020</p>
+<dd class="field-even"><p>August 19, 2020</p>
 </dd>
 </dl>
 <span class="target" id="module-numpy"></span><p>This reference manual details functions, modules, and objects
 included in NumPy, describing what they are and what they do.
-For learning how to use NumPy, see the <a class="reference internal" href="../contents.html#manual"><span class="std std-ref">complete documentation</span></a>.</p>
+For learning how to use NumPy, see the <a class="reference internal" href="../contents.html#numpy-docs-mainpage"><span class="std std-ref">complete documentation</span></a>.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="arrays.html">Array objects</a><ul>
@@ -163,11 +185,10 @@ For learning how to use NumPy, see the <a class="reference internal" href="../co
 <li class="toctree-l2"><a class="reference internal" href="routines.ctypeslib.html">C-Types Foreign Function Interface (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.ctypeslib</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.datetime.html">Datetime Support Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.dtype.html">Data type routines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routines.dual.html">Optionally Scipy-accelerated routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.dual</span></code>)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="routines.dual.html">Optionally SciPy-accelerated routines (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.dual</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.emath.html">Mathematical functions with automatic domain (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.emath</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.err.html">Floating point error handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.fft.html">Discrete Fourier Transform (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.fft</span></code>)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="routines.financial.html">Financial functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.functional.html">Functional programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.help.html">NumPy-specific help functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.indexing.html">Indexing routines</a></li>
@@ -186,6 +207,16 @@ For learning how to use NumPy, see the <a class="reference internal" href="../co
 <li class="toctree-l2"><a class="reference internal" href="routines.statistics.html">Statistics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.testing.html">Test Support (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.testing</span></code>)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routines.window.html">Window functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="typing.html">Typing (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.typing</span></code>)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="typing.html#differences-from-the-runtime-numpy-api">Differences from the runtime NumPy API</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="global_state.html">Global State</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="global_state.html#performance-related-options">Performance-Related Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_state.html#interoperability-related-options">Interoperability-Related Options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="global_state.html#debugging-related-options">Debugging-Related Options</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="distutils.html">Packaging (<code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.distutils</span></code>)</a><ul>
@@ -220,6 +251,12 @@ For learning how to use NumPy, see the <a class="reference internal" href="../co
 <li class="toctree-l2"><a class="reference internal" href="alignment.html">Memory Alignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="internals.html#internal-organization-of-numpy-arrays">Internal organization of numpy arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="internals.html#multidimensional-array-indexing-order-issues">Multidimensional Array Indexing Order Issues</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="simd/simd-optimizations.html">SIMD Optimizations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="simd/simd-optimizations.html#build-options-for-compilation">Build options for compilation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simd/simd-optimizations.html#understanding-cpu-dispatching-how-the-numpy-dispatcher-works">Understanding CPU Dispatching, How the NumPy dispatcher works?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="simd/simd-optimizations.html#dive-into-the-cpu-dispatcher">Dive into the CPU dispatcher</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="swig.html">NumPy and SWIG</a><ul>
@@ -260,10 +297,10 @@ NumPy.</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>

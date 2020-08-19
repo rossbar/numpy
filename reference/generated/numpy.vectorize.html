@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8">
     
-    <title>numpy.vectorize &mdash; NumPy v1.19.dev0 Manual</title>
+    <title>numpy.vectorize &mdash; NumPy v1.20.dev0 Manual</title>
     
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-bootstrap.css">
     <link rel="stylesheet" type="text/css" href="../../_static/css/spc-extend.css">
@@ -15,7 +15,7 @@
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../../',
-        VERSION:     '1.19.0.dev0+b751304',
+        VERSION:     '1.20.0.dev0+64619c5',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  false
@@ -29,17 +29,39 @@
     <link rel="author" title="About these documents" href="../../about.html" >
     <link rel="index" title="Index" href="../../genindex.html" >
     <link rel="search" title="Search" href="../../search.html" >
-    <link rel="top" title="NumPy v1.19.dev0 Manual" href="../../index.html" >
+    <link rel="top" title="NumPy v1.20.dev0 Manual" href="../../index.html" >
     <link rel="up" title="Functional programming" href="../routines.functional.html" >
     <link rel="next" title="numpy.vectorize.__call__" href="numpy.vectorize.__call__.html" >
-    <link rel="prev" title="numpy.apply_over_axes" href="numpy.apply_over_axes.html" > 
+    <link rel="prev" title="numpy.apply_over_axes" href="numpy.apply_over_axes.html" >
+<style>
+  .main {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header {
+    background-color: #fafafa;
+    border-bottom: 2px solid #013243; /* Warm Black */
+    margin-top: 0;
+    box-shadow: none;
+  }
+  div.top-scipy-org-logo-header img {
+    height: 100px;
+    padding-left: 27px;
+  }
+  div.spc-navbar .nav-pills > li > a {
+    background-color: #4d77cf; /* Han Blue */
+  }
+</style>
+ 
+
   </head>
   <body>
 <div class="container">
-  <div class="top-scipy-org-logo-header" style="background-color: #a2bae8;">
+  <div class="top-scipy-org-logo-header">
     <a href="../../index.html">
-      <img border=0 alt="NumPy" src="../../_static/numpy_logo.png"></a>
-    </div>
+      <img border=0 alt="NumPy" src="../../_static/numpylogo.svg">
+    </a>
   </div>
 </div>
 
@@ -55,7 +77,7 @@
         <li class="active"><a href="https://numpy.org/">NumPy.org</a></li>
         <li class="active"><a href="https://numpy.org/doc">Docs</a></li>
         
-        <li class="active"><a href="../../index.html">NumPy v1.19.dev0 Manual</a></li>
+        <li class="active"><a href="../../index.html">NumPy v1.20.dev0 Manual</a></li>
         
 
           <li class="active"><a href="../index.html" >NumPy Reference</a></li>
@@ -129,13 +151,13 @@ by specifying the <em class="xref py py-obj">otypes</em> argument.</p>
 <dl class="field-list">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><dl>
-<dt><strong>pyfunc</strong><span class="classifier">callable</span></dt><dd><p>A python function or method.</p>
+<dt><strong>pyfunc</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#callable" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">callable</span></code></a></span></dt><dd><p>A python function or method.</p>
 </dd>
-<dt><strong>otypes</strong><span class="classifier">str or list of dtypes, optional</span></dt><dd><p>The output data type. It must be specified as either a string of
+<dt><strong>otypes</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a> or <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#list" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">list</span></code></a> of dtypes, optional</span></dt><dd><p>The output data type. It must be specified as either a string of
 typecode characters or a list of data type specifiers. There should
 be one data type specifier for each output.</p>
 </dd>
-<dt><strong>doc</strong><span class="classifier">str, optional</span></dt><dd><p>The docstring for the function. If None, the docstring will be the
+<dt><strong>doc</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>The docstring for the function. If None, the docstring will be the
 <code class="docutils literal notranslate"><span class="pre">pyfunc.__doc__</span></code>.</p>
 </dd>
 <dt><strong>excluded</strong><span class="classifier">set, optional</span></dt><dd><p>Set of strings or integers representing the positional or keyword
@@ -145,7 +167,7 @@ passed directly to <em class="xref py py-obj">pyfunc</em> unmodified.</p>
 <p><span class="versionmodified added">New in version 1.7.0.</span></p>
 </div>
 </dd>
-<dt><strong>cache</strong><span class="classifier">bool, optional</span></dt><dd><p>If <em class="xref py py-obj">True</em>, then cache the first function call that determines the number
+<dt><strong>cache</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#bltin-boolean-values" title="(in Python v3.10)"><span class="xref std std-ref">bool</span></a>, optional</span></dt><dd><p>If <em class="xref py py-obj">True</em>, then cache the first function call that determines the number
 of outputs if <em class="xref py py-obj">otypes</em> is not provided.</p>
 <blockquote>
 <div><div class="versionadded">
@@ -153,7 +175,7 @@ of outputs if <em class="xref py py-obj">otypes</em> is not provided.</p>
 </div>
 </div></blockquote>
 </dd>
-<dt><strong>signature</strong><span class="classifier">string, optional</span></dt><dd><p>Generalized universal function signature, e.g., <code class="docutils literal notranslate"><span class="pre">(m,n),(n)-&gt;(m)</span></code> for
+<dt><strong>signature</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#str" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">str</span></code></a>, optional</span></dt><dd><p>Generalized universal function signature, e.g., <code class="docutils literal notranslate"><span class="pre">(m,n),(n)-&gt;(m)</span></code> for
 vectorized matrix-vector multiplication. If provided, <code class="docutils literal notranslate"><span class="pre">pyfunc</span></code> will
 be called with (and expected to return) arrays with shapes given by the
 size of corresponding core dimensions. By default, <code class="docutils literal notranslate"><span class="pre">pyfunc</span></code> is
@@ -165,8 +187,8 @@ assumed to take scalars as input and output.</p>
 </dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><dl class="simple">
-<dt><strong>vectorized</strong><span class="classifier">callable</span></dt><dd><p>Vectorized function.</p>
+<dd class="field-even"><dl>
+<dt><strong>vectorized</strong><span class="classifier"><a class="reference external" href="https://docs.python.org/dev/library/functions.html#callable" title="(in Python v3.10)"><code class="docutils literal notranslate"><span class="pre">callable</span></code></a></span></dt><dd><p>Vectorized function.</p>
 </dd>
 </dl>
 </dd>
@@ -191,8 +213,8 @@ calls, so only do this if your function is expensive.</p>
 further degrades performance.</p>
 <p class="rubric">References</p>
 <dl class="citation">
-<dt class="label" id="r5cc1f1f25381-1"><span class="brackets">R5cc1f1f25381-1</span></dt>
-<dd><p>NumPy Reference, section <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/c-api.generalized-ufuncs.html">Generalized Universal Function API</a>.</p>
+<dt class="label" id="r5cc1f1f25381-1"><span class="brackets">1</span></dt>
+<dd><p><a class="reference internal" href="../c-api/generalized-ufuncs.html"><span class="doc">Generalized Universal Function API</span></a></p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -275,7 +297,7 @@ vectorized calculation of Pearson correlation coefficient and its p-value:</p>
 <col style="width: 90%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="numpy.vectorize.__call__.html#numpy.vectorize.__call__" title="numpy.vectorize.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(self, \*args, \*\*kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="numpy.vectorize.__call__.html#numpy.vectorize.__call__" title="numpy.vectorize.__call__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__call__</span></code></a>(*args, **kwargs)</p></td>
 <td><p>Return arrays with the results of <em class="xref py py-obj">pyfunc</em> broadcast (vectorized) over <em class="xref py py-obj">args</em> and <em class="xref py py-obj">kwargs</em> not in <em class="xref py py-obj">excluded</em>.</p></td>
 </tr>
 </tbody>
@@ -305,10 +327,10 @@ vectorized calculation of Pearson correlation coefficient and its p-value:</p>
         &copy; Copyright 2008-2020, The SciPy community.
       </li>
       <li>
-      Last updated on Apr 25, 2020.
+      Last updated on Aug 19, 2020.
       </li>
       <li>
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.3.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 2.4.4.
       </li>
     </ul>
     </div>
